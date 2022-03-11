@@ -1,11 +1,11 @@
 import { useWizard } from 'react-use-wizard';
-import { Button, Row, Col, Input, Card } from 'antd';
+import { Button, Row, Col, Card } from 'antd';
 import { RingProgress } from '@ant-design/plots';
 import { Typography } from 'antd';
 
 const DTIGraphPause: React.FC = () => {
     const { handleStep, nextStep, previousStep } = useWizard();
-    const { Title, Text } = Typography;
+    const { Title } = Typography;
 
     const config = {
         height: 100,
@@ -50,7 +50,7 @@ const DTIGraphPause: React.FC = () => {
                 <div style={{ textAlign: 'center' }}>
                     <Button
                         type="primary"
-                        htmlType="submit"
+                        onClick={() => nextStep()}
                         style={{ color: '#000', borderColor: '#ff1a8c', borderRadius: '5px', marginTop: '20px' }}
                         ghost>
                         Continue

@@ -3,7 +3,7 @@ import { useWizard } from 'react-use-wizard';
 import { Button, Row, Col, Radio, Space } from 'antd';
 import { Typography } from 'antd';
 
-const EmploymentHistory: React.FC = () => {
+const CreditScore: React.FC = () => {
     const { handleStep, nextStep, previousStep } = useWizard();
     const { Title, Text } = Typography;
 
@@ -17,25 +17,22 @@ const EmploymentHistory: React.FC = () => {
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
             <Col>
                 <Title level={4}>
-                    Lenders will analyze your employment history.
-                </Title>
-                <Title level={4}>
-                    Check any below that apply to you.
+                    Your credit score plays a major role in both your approvability odds as well as the interest rate. What do you think your credit score is?
                 </Title>
                 <div style={{ textAlign: 'center' }}>
                     <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
                         <Space direction="vertical" align="start">
-                            <Radio value={0}>Employment gaps in the past 24 months</Radio>
-                            <Radio value={1}>Changed jobs in the past 12 months</Radio>
-                            <Radio value={2}>I’m Self-employed</Radio>
-                            <Radio value={2}>Cannot document my income</Radio>
-                            <Radio value={2}>Receive commissions or bonus income</Radio>
-                            <Radio value={2}>None of the above</Radio>
+                            <Radio value={0}>Less than 500</Radio>
+                            <Radio value={1}>500 - 580</Radio>
+                            <Radio value={2}>580 - 620</Radio>
+                            <Radio value={2}>620 - 680</Radio>
+                            <Radio value={2}>680 - 720</Radio>
+                            <Radio value={2}>Above 720</Radio>
                         </Space>
                     </Radio.Group>
                 </div>
                 <Text italic>
-                    Checking any of these does not mean you will be denied. It just means you will need further documentation. We’ll help you with that.
+                    If you are unsure, give us your best guess and we’ll figure it out later. Don’t worry if your score isn’t where you want it, we have strategies to help you improve yours fast.
                 </Text>
                 <Button onClick={() => previousStep()}>Previous</Button>
             </Col>
@@ -43,4 +40,4 @@ const EmploymentHistory: React.FC = () => {
     )
 }
 
-export default EmploymentHistory;
+export default CreditScore;
