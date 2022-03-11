@@ -7,7 +7,8 @@ const CoLienJudgement: React.FC = () => {
     const { handleStep, nextStep, previousStep } = useWizard();
     const { Title, Text } = Typography;
 
-    const [value, setValue] = useState(0)
+    const [yourValue, setYourValue] = useState(0)
+    const [coValue, setCoValue] = useState(0)
     // Attach an optional handler
     handleStep(() => {
 
@@ -22,21 +23,40 @@ const CoLienJudgement: React.FC = () => {
                 <Title level={4}>
                     Please check all that apply.
                 </Title>
-                <div style={{ textAlign: 'center' }}>
-                    <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
+                <Row gutter={[16, 16]}>
+                    <Col xs={2}>Your</Col>
+                    <Col xs={2}>Jane</Col>
+                    <Col xs={20}></Col>
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col xs={2}>
+                    <Radio.Group onChange={(e) => { setYourValue(e.target.value) }} value={yourValue}>
+                        <Space direction="vertical" align="start">
+                            <Radio value={0}></Radio>
+                            <Radio value={1}></Radio>
+                            <Radio value={2}></Radio>
+                            <Radio value={3}></Radio>
+                            <Radio value={4}></Radio>
+                        </Space>
+                    </Radio.Group>
+                    </Col>
+                    <Col xs={22}>
+                    <Radio.Group onChange={(e) => { setCoValue(e.target.value)}} value={coValue}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>Tax lien within the past 24 months</Radio>
                             <Radio value={1}>Foreclosure within past 24 months</Radio>
                             <Radio value={2}>Foreclosure within past 36 months </Radio>
-                            <Radio value={2}>Foreclosure within past 48 months </Radio>
-                            <Radio value={2}>Judgement</Radio>
+                            <Radio value={3}>Foreclosure within past 48 months </Radio>
+                            <Radio value={4}>Judgement</Radio>
                         </Space>
                     </Radio.Group>
-                </div>
+                    </Col>
+                </Row>
                 <Text italic>
                     This will help us further refine your Success Plan.
                 </Text>
                 <Button onClick={() => previousStep()}>Previous</Button>
+                <Button onClick={() => nextStep()}>Next</Button>
             </Col>
         </Row>
     )

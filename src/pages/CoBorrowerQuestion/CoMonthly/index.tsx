@@ -1,5 +1,5 @@
 import { useWizard } from 'react-use-wizard';
-import { Form, Button, Row, Col, Input } from 'antd';
+import { Button, Row, Col, Input } from 'antd';
 import { Typography } from 'antd';
 
 const CoMonthly: React.FC = () => {
@@ -17,55 +17,32 @@ const CoMonthly: React.FC = () => {
                     OK, Now let's look at your expenses.
                     Enter your monthly payment for any that apply...
                 </Title>
-                <Form
-                    name="monthlypayment"
-                    labelCol={{ span: 8 }}
-                    wrapperCol={{ span: 16 }}
-                    initialValues={{ remember: true }}
-                    autoComplete="off"
-                >
-                    <Form.Item
-                    >
-                        <Input placeholder="Yours" readOnly/>
-                        <Input placeholder="Jane's" readOnly/>
-                    </Form.Item>
-                    <Form.Item
-                        label="Auto Payments"
-                        labelAlign='right'
-                        name="AutoPayments"
-                        rules={[{ required: true, message: 'Please input Payment!' }]}
-                    >
-                        <Input placeholder="Payment" />
-                        <Input placeholder="Payment" />
-                    </Form.Item>
-                    <Form.Item
-                        label="Credit Cards"
-                        labelAlign='right'
-                        name="CreditCards"
-                        rules={[{ required: true, message: 'Please input Payment!' }]}
-                    >
-                        <Input placeholder="Payment" />
-                        <Input placeholder="Payment" />
-                    </Form.Item>
-                    <Form.Item
-                        label="Student Loans"
-                        labelAlign='right'
-                        name="StudentLoans"
-                        rules={[{ required: true, message: 'Please input Payment!' }]}
-                    >
-                        <Input placeholder="Payment" />
-                        <Input placeholder="Payment" />
-                    </Form.Item>
-                    <Form.Item
-                        label="Any Other"
-                        labelAlign='right'
-                        name="AnyOther"
-                        rules={[{ required: true, message: 'Please input Payment!' }]}
-                    >
-                        <Input placeholder="Payment" />
-                        <Input placeholder="Payment" />
-                    </Form.Item>
-                </Form>
+                <Row gutter={[16, 16]}>
+                    <Col xs={8}>Yours</Col>
+                    <Col xs={8}>Jane's</Col>
+                    <Col xs={8}></Col>
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col xs={8}><Input placeholder="Payment" /></Col>
+                    <Col xs={8}><Input placeholder="Payment" /></Col>
+                    <Col xs={8}>Auto Payments</Col>
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col xs={8}><Input placeholder="Payment" /></Col>
+                    <Col xs={8}><Input placeholder="Payment" /></Col>
+                    <Col xs={8}>Credit Cards</Col>
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col xs={8}><Input placeholder="Payment" /></Col>
+                    <Col xs={8}><Input placeholder="Payment" /></Col>
+                    <Col xs={8}>Student Loans</Col>
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col xs={8}><Input placeholder="Payment" /></Col>
+                    <Col xs={8}><Input placeholder="Payment" /></Col>
+                    <Col xs={8}>Any Other</Col>
+                </Row>
+
                 <Text italic>
                     Don’t list expenses like utilities, mobile payments, insurance, etc.  Only those items on your credit report.
                 </Text>
