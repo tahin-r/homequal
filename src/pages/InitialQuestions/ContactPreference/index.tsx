@@ -12,7 +12,7 @@ const ContactPreference: React.FC = () => {
   });
 
   return (
-    <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
+    <Row justify="center" align="middle" style={{ minHeight: '100vh', padding:'20px' }}>
       <Col>
         <Title level={4}>
           Nice to meet you Dave. We will be sending you information you request, specifics about your purchasing ability, and home buying tips.
@@ -20,7 +20,7 @@ const ContactPreference: React.FC = () => {
         <Title level={4}>
           How would you prefer we contact you?
         </Title>
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', marginBottom:'20px' }}>
             <Button
               type="primary"
               style={{ color: '#000', borderColor: '#ff1a8c', borderRadius:'10px', marginTop: '20px' }}
@@ -38,7 +38,7 @@ const ContactPreference: React.FC = () => {
               Email Me
             </Button>
           </div>
-        <Text>
+        <Text style={{ color:'#737373'}}>
           You will receive a message shortly to confirm your contact information along with your member account access instructions.
         </Text>
         <Button onClick={() => previousStep()}>Previous</Button>
