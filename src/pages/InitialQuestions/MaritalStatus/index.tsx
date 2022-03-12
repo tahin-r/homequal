@@ -14,7 +14,7 @@ const MaritalStatus: React.FC = () => {
 
   return (
     <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-      <Col>
+      <Col style={{padding:'20px'}}>
         <Title level={4}>
           In order to determine what types of loans you may qualify for, we'll need to know your marital status.
         </Title>

@@ -31,13 +31,13 @@ const CoBuyerContact: React.FC = () => {
             name="firstname"
             rules={[{ required: true, message: 'Please input your First Name!' }]}
           >
-            <Input placeholder="First Name" />
+            <Input placeholder="First Name" style={{backgroundColor: '#e6e6e6', color:'#000'}}/>
           </Form.Item>
           <Form.Item
             name="lastname"
             rules={[{ required: true, message: 'Please input your Last Name!' }]}
           >
-            <Input placeholder="Last Name" />
+            <Input placeholder="Last Name" style={{backgroundColor: '#e6e6e6', color:'#000'}}/>
           </Form.Item>
           <Form.Item
             name="email"
@@ -51,20 +51,20 @@ const CoBuyerContact: React.FC = () => {
                 message: 'Please input your E-mail!',
               },]}
           >
-            <Input placeholder="Email" />
+            <Input placeholder="Email" style={{backgroundColor: '#e6e6e6', color:'#000'}}/>
           </Form.Item>
           <Form.Item
             name="phone"
             rules={[{ required: true, message: 'Please input your phone number!' }]}
           >
-            <Input placeholder="Mobile" />
+            <Input placeholder="Mobile" style={{backgroundColor: '#e6e6e6', color:'#000'}}/>
           </Form.Item>
       
           <div style={{ textAlign: 'center' }}>
             <Button
               type="primary"
               htmlType="submit"
-              style={{ color: '#000', borderColor: '#ff1a8c', borderRadius:'5px', marginTop: '20px' }}
+              style={{ width:'70%', color: '#000', borderColor: '#ff1a8c', borderRadius:'10px', marginTop: '20px' }}
               ghost>
               Continue
             </Button>

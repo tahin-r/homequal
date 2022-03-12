@@ -12,11 +12,11 @@ const AvailableFunds: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{padding:'20px'}}>
                 <Title level={4}>
                     How much money will you have available to purchase your new home?
                 </Title>
-                <Input placeholder="Enter Amount Available" />
+                <Input placeholder="Enter Amount Available" style={{backgroundColor: '#e6e6e6', color:'#000', marginTop:'20px', marginBottom:'150px'}}/>
 
                 <Text italic style={{ marginTop: '20px' }}>
                     Tip:  Enter the amount you will have saved by the time you apply for a mortgage.

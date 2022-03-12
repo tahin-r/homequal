@@ -14,16 +14,16 @@ const MoveDate: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{padding: '30px'}}>
                 <Title level={4}>
                     When would you like to be in your new home?
                 </Title>
-                <Input placeholder="Enter Date" />
+                <Input placeholder="Enter Date" style={{backgroundColor: '#e6e6e6', color:'#000', marginTop:'20px', marginBottom:'20px'}}/>
 
                 <Title level={4}>
                     or select an approximate date
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', marginTop:'20px', marginBottom:'30px' }}>
                     <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>1 – 3 Months</Radio>
@@ -33,7 +33,7 @@ const MoveDate: React.FC = () => {
                         </Space>
                     </Radio.Group>
                 </div>
-                <Text italic style={{ marginTop: '20px' }}>
+                <Text italic>
                     TIP:  If you are leasing now, you might want to enter your lease expiration date.
                 </Text>
                 <Button onClick={() => previousStep()}>Previous</Button>

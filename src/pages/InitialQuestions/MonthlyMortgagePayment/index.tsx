@@ -12,11 +12,11 @@ const MonthlyMortgagePayment: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{padding:'20px'}}>
                 <Title level={4}>
                     What is the maximum you want to spend monthly on your mortgage payment?
                 </Title>
-                <Input placeholder="Maximum Monthly Payment" />
+                <Input placeholder="Maximum Monthly Payment" style={{backgroundColor: '#e6e6e6', color:'#000', marginTop:'20px', marginBottom:'20px'}}/>
 
                 <Text italic style={{ marginTop: '20px' }}>
                     We may find that you qualify for more or less, and we will show you that later.

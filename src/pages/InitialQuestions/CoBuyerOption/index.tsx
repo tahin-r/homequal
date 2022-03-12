@@ -2,6 +2,7 @@ import {useState} from 'react';
 import { useWizard } from 'react-use-wizard';
 import { Button, Row, Col, Radio, Space } from 'antd';
 import { Typography } from 'antd';
+import './CoBuyerOption.scss'
 
 const CoBuyerOption: React.FC = () => {
   const { handleStep, nextStep, previousStep } = useWizard();
@@ -15,7 +16,7 @@ const CoBuyerOption: React.FC = () => {
 
   return (
     <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-      <Col>
+      <Col  style={{padding:'20px'}}>
         <Title level={4}>
           Let’s get started!
         </Title>
