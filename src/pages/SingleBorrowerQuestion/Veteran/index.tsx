@@ -15,11 +15,11 @@ const Veteran: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     Let’s see if you qualify for special veteran programs.
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', marginTop:'40px' }}>
                     <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>I’m a Veteran</Radio>

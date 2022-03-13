@@ -15,16 +15,16 @@ const PaymentHistory: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     Lenders pay close attention to items on your report as well.
                 </Title>
                 <Title level={4}>
                     Check any that apply.
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', marginTop:'30px', marginBottom:'30px' }}>
                     <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
-                        <Space direction="vertical" align="start">
+                        <Space direction="vertical" align="start" style={{ textAlign: 'left' }}>
                             <Radio value={0}>Late payments in last 12 months</Radio>
                             <Radio value={1}>Collections in last 12 months</Radio>
                             <Radio value={2}>Late student loan payments</Radio>

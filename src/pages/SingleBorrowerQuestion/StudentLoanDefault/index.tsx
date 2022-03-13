@@ -15,11 +15,11 @@ const StudentLoanDefault: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     Are any of your student loans in default?
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', marginTop: '30px', marginBottom: '150px' }}>
                     <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>Yes</Radio>
