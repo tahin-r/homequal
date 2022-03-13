@@ -15,22 +15,22 @@ const EmploymentHistory: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     Lenders will analyze your employment history.
                 </Title>
                 <Title level={4}>
                     Check any below that apply to you.
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', marginTop:'30px', marginBottom:'30px' }}>
                     <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>Employment gaps in the past 24 months</Radio>
                             <Radio value={1}>Changed jobs in the past 12 months</Radio>
                             <Radio value={2}>I’m Self-employed</Radio>
-                            <Radio value={2}>Cannot document my income</Radio>
-                            <Radio value={2}>Receive commissions or bonus income</Radio>
-                            <Radio value={2}>None of the above</Radio>
+                            <Radio value={3}>Cannot document my income</Radio>
+                            <Radio value={4}>Receive commissions or bonus income</Radio>
+                            <Radio value={5}>None of the above</Radio>
                         </Space>
                     </Radio.Group>
                 </div>

@@ -15,19 +15,19 @@ const CreditScore: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     Your credit score plays a major role in both your approvability odds as well as the interest rate. What do you think your credit score is?
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', marginTop: '30px', marginBottom: '30px' }}>
                     <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>Less than 500</Radio>
                             <Radio value={1}>500 - 580</Radio>
-                            <Radio value={2}>580 - 620</Radio>
-                            <Radio value={2}>620 - 680</Radio>
-                            <Radio value={2}>680 - 720</Radio>
-                            <Radio value={2}>Above 720</Radio>
+                            <Radio value={3}>580 - 620</Radio>
+                            <Radio value={4}>620 - 680</Radio>
+                            <Radio value={5}>680 - 720</Radio>
+                            <Radio value={6}>Above 720</Radio>
                         </Space>
                     </Radio.Group>
                 </div>

@@ -15,14 +15,14 @@ const LienJudgement: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     You said you had a tax lien, judgement or foreclosure.
                 </Title>
                 <Title level={4}>
                     Please check all that apply.
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', marginTop: '30px', marginBottom: '30px' }}>
                     <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>Tax lien within the past 24 months</Radio>
