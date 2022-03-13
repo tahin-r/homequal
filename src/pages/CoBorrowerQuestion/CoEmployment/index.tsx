@@ -16,20 +16,23 @@ const CoEmployment: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
-                <Title level={4}>
-                    Lenders will analyze your employment history.
-                </Title>
-                <Title level={4}>
-                    Check any below that apply to you.
-                </Title>
-                <Row gutter={[16, 16]}>
-                    <Col xs={2}>Yours</Col>
-                    <Col xs={2}>Jane's</Col>
-                    <Col xs={20}></Col>
+            <Col style={{ padding: '30px' }}>
+                <div style={{ width: '70%', marginLeft: '30px' }}>
+                    <Title level={4}>
+                        Lenders will analyze your employment history.
+                    </Title>
+                    <Title level={4}>
+                        Check any below that apply.
+                    </Title>
+                </div>
+
+                <Row gutter={[16, 16]} style={{ marginTop: '30px' }}>
+                    <Col xs={3}>You</Col>
+                    <Col xs={3}>Jane's</Col>
+                    <Col xs={18}></Col>
                 </Row>
-                <Row gutter={[16, 16]}>
-                    <Col xs={2}>
+                <Row gutter={[16, 16]} style={{ marginBottom: '30px' }}>
+                    <Col xs={4}>
                         <Radio.Group name='yours' onChange={(e) => { setYourValue(e.target.value) }} value={yourValue}>
                             <Space direction="vertical" align="start">
                                 <Radio value={0}></Radio>
@@ -41,8 +44,8 @@ const CoEmployment: React.FC = () => {
                             </Space>
                         </Radio.Group>
                     </Col>
-                    <Col xs={22}>
-                        <Radio.Group name='cobuyer' onChange={(e) => { setCoValue(e.target.value)}} value={coValue}>
+                    <Col xs={20}>
+                        <Radio.Group name='cobuyer' onChange={(e) => { setCoValue(e.target.value) }} value={coValue}>
                             <Space direction="vertical" align="start">
                                 <Radio value={0}>Employment gaps in the past 24 months</Radio>
                                 <Radio value={1}>Changed jobs in the past 12 months</Radio>

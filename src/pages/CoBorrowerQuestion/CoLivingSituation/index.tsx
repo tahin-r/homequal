@@ -16,7 +16,7 @@ const CoLivingSituation: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     Good work Dave, you’re almost done.
                 </Title>
@@ -35,7 +35,7 @@ const CoLivingSituation: React.FC = () => {
                 <Title level={4}>
                     My monthly housing payment is
                 </Title>
-                <Input placeholder='Enter Monthly Housing Payment' />
+                <Input placeholder='Enter Monthly Housing Payment' style={{ backgroundColor: '#e6e6e6', color: '#000', marginTop: '10px', marginBottom: '20px' }} />
                 <Title level={4}>
                     Jane’s current living situation is …
                 </Title>
@@ -52,7 +52,7 @@ const CoLivingSituation: React.FC = () => {
                 <Title level={4}>
                     Jane’s monthly housing payment is (only if does not live with you)
                 </Title>
-                <Input placeholder='Enter Monthly Housing Payment' />
+                <Input placeholder='Enter Monthly Housing Payment' style={{ backgroundColor: '#e6e6e6', color: '#000', marginTop: '10px', marginBottom: '20px' }} />
                 <Text italic>
                     Lenders will analyze your past 2 years living arrangements.
                 </Text>

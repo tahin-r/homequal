@@ -16,40 +16,43 @@ const CoLienJudgement: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
-                <Title level={4}>
-                    You said you had a tax lien, judgement or foreclosure.
-                </Title>
-                <Title level={4}>
-                    Please check all that apply.
-                </Title>
-                <Row gutter={[16, 16]}>
-                    <Col xs={2}>Your</Col>
-                    <Col xs={2}>Jane</Col>
-                    <Col xs={20}></Col>
+            <Col style={{ padding: '30px' }}>
+                <div style={{ marginLeft: '10px' }}>
+                    <Title level={4}>
+                        You said you had a tax lien, judgement or foreclosure.
+                    </Title>
+                    <Title level={4}>
+                        Please check all that apply.
+                    </Title>
+                </div>
+
+                <Row gutter={[16, 16]} style={{ marginTop: '30px' }}>
+                    <Col xs={3}>You</Col>
+                    <Col xs={3}>Jane</Col>
+                    <Col xs={18}></Col>
                 </Row>
-                <Row gutter={[16, 16]}>
-                    <Col xs={2}>
-                    <Radio.Group onChange={(e) => { setYourValue(e.target.value) }} value={yourValue}>
-                        <Space direction="vertical" align="start">
-                            <Radio value={0}></Radio>
-                            <Radio value={1}></Radio>
-                            <Radio value={2}></Radio>
-                            <Radio value={3}></Radio>
-                            <Radio value={4}></Radio>
-                        </Space>
-                    </Radio.Group>
+                <Row gutter={[16, 16]} style={{ marginBottom: '30px' }}>
+                    <Col xs={3}>
+                        <Radio.Group onChange={(e) => { setYourValue(e.target.value) }} value={yourValue}>
+                            <Space direction="vertical" align="start">
+                                <Radio value={0}></Radio>
+                                <Radio value={1}></Radio>
+                                <Radio value={2}></Radio>
+                                <Radio value={3}></Radio>
+                                <Radio value={4}></Radio>
+                            </Space>
+                        </Radio.Group>
                     </Col>
-                    <Col xs={22}>
-                    <Radio.Group onChange={(e) => { setCoValue(e.target.value)}} value={coValue}>
-                        <Space direction="vertical" align="start">
-                            <Radio value={0}>Tax lien within the past 24 months</Radio>
-                            <Radio value={1}>Foreclosure within past 24 months</Radio>
-                            <Radio value={2}>Foreclosure within past 36 months </Radio>
-                            <Radio value={3}>Foreclosure within past 48 months </Radio>
-                            <Radio value={4}>Judgement</Radio>
-                        </Space>
-                    </Radio.Group>
+                    <Col xs={21}>
+                        <Radio.Group onChange={(e) => { setCoValue(e.target.value) }} value={coValue}>
+                            <Space direction="vertical" align="start">
+                                <Radio value={0}>Tax lien within the past 24 months</Radio>
+                                <Radio value={1}>Foreclosure within past 24 months</Radio>
+                                <Radio value={2}>Foreclosure within past 36 months </Radio>
+                                <Radio value={3}>Foreclosure within past 48 months </Radio>
+                                <Radio value={4}>Judgement</Radio>
+                            </Space>
+                        </Radio.Group>
                     </Col>
                 </Row>
                 <Text italic>
