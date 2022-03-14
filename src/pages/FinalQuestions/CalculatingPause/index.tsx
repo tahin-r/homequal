@@ -4,7 +4,7 @@ import { Typography } from 'antd';
 
 const CalculatingPause: React.FC = () => {
     const { handleStep, previousStep } = useWizard();
-    const { Title, Text } = Typography;
+    const { Title } = Typography;
 
     // Attach an optional handler
     handleStep(() => {
@@ -13,30 +13,30 @@ const CalculatingPause: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
-                <Title level={4}>
+            <Col style={{ padding: '40px' }}>
+                <Title level={3} style={{ paddingLeft: '20px', paddingRight: '20px' }}>
                     That’s it. Give me a second
-                </Title>
-                <Title level={4}>
                     to crunch some numbers.
                 </Title>
                 {/* options */}
-                <Text style={{color:"#ff66cc"}} italic>
-                    Analyzing Financial Data ………
-                </Text>
-                <br />
-                <Text style={{color:"#ff66cc"}} italic>
-                    Identifying Potential Issues ....
-                </Text>
-                <br />
-                <Text style={{color:"#ff66cc"}} italic>
-                    Calculating Cash Reward .…….
-                </Text>
-                <br />
-                <Text style={{color:"#ff66cc"}} italic>
-                    Building Success Plan …………
-                </Text>
-                <br />
+                <div style={{ marginTop: '50px' }}>
+                    <Title level={4} style={{ color: "#ff66cc" }} italic>
+                        Analyzing Financial Data ………
+                    </Title>
+                    <br />
+                    <Title level={4} style={{ color: "#ff66cc" }} italic>
+                        Identifying Potential Issues ....
+                    </Title>
+                    <br />
+                    <Title level={4} style={{ color: "#ff66cc" }} italic>
+                        Calculating Cash Reward .…….
+                    </Title>
+                    <br />
+                    <Title level={4} style={{ color: "#ff66cc" }} italic>
+                        Building Success Plan …………
+                    </Title>
+                    <br />
+                </div>
                 <Button onClick={() => previousStep()}>Previous</Button>
             </Col>
         </Row>

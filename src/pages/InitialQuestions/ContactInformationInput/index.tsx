@@ -1,7 +1,6 @@
 import { useWizard } from 'react-use-wizard';
 import { Form, Input, Button, Row, Col } from 'antd';
 import { Typography } from 'antd';
-import './style.scss';
 
 const ContactInformationInput: React.FC = () => {
   const { handleStep, nextStep } = useWizard();
@@ -20,7 +19,6 @@ const ContactInformationInput: React.FC = () => {
     <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
       <Col>
         <Form
-          name="contact_info_input"
           className="contact-info-input"
           initialValues={{ remember: true }}
           onFinish={onFinish}
@@ -68,7 +66,7 @@ const ContactInformationInput: React.FC = () => {
             <Button
               type="primary"
               htmlType="submit"
-              style={{ width:'70%', color: '#000', borderColor: '#ff1a8c', borderRadius:'10px', marginTop: '20px' }}
+              style={{ width:'70%', color: '#000', borderColor: '#ff1a8c', borderRadius:'10px', marginTop: '20px', maxWidth:'250px' }}
               size='large'
               ghost>
               Continue

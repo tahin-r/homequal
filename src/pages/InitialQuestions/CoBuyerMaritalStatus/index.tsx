@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { useWizard } from 'react-use-wizard';
 import { Button, Row, Col, Radio, Space } from 'antd';
 import { Typography } from 'antd';
@@ -19,7 +19,7 @@ const CoBuyerMaritalStatus: React.FC = () => {
           What is Jane's marital status?
         </Title>
         <div style={{ textAlign: 'center' }}>
-          <Radio.Group onChange={(e)=>{setValue(e.target.value); nextStep()}} value={value}>
+          <Radio.Group onChange={(e) => { setValue(e.target.value); nextStep() }} value={value}>
             <Space direction="vertical" align="start">
               <Radio value={0}>Married</Radio>
               <Radio value={1}>Not married</Radio>

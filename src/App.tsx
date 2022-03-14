@@ -32,6 +32,9 @@ import CoLienJudgement from './pages/CoBorrowerQuestion/CoLienJudgement';
 import CoLivingSituation from './pages/CoBorrowerQuestion/CoLivingSituation';
 import CoVeteran from './pages/CoBorrowerQuestion/CoVeteran';
 
+import CityStateChoices from './pages/FinalQuestions/CityStateChoices';
+import CalculatingPause from './pages/FinalQuestions/CalculatingPause';
+
 function App() {
 
   return (
@@ -70,6 +73,9 @@ function App() {
         <CoLienJudgement />
         <CoLivingSituation />
         <CoVeteran />
+        {/* Final Questions */}
+        <CityStateChoices />
+        <CalculatingPause />
       </Wizard>
     </div>
   );

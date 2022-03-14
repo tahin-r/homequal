@@ -1,3 +1,6 @@
+import { Row, Col } from 'antd';
+import Header from '../Header';
+import Footer from '../Footer';
 
 interface LayoutProps {
   children: any;
@@ -6,9 +9,15 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = (props) => {
   const { children } = props;
   return (
-    <div >
-      <div >{children}</div>
-    </div>
+    <>
+      <Header />
+      <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
+        <Col style={{ padding: '30px' }}>
+          {children}
+        </Col>
+      </Row>
+      <Footer />
+    </>
   );
 };
 

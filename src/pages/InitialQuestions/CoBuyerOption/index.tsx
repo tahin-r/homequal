@@ -2,7 +2,6 @@ import {useState} from 'react';
 import { useWizard } from 'react-use-wizard';
 import { Button, Row, Col, Radio, Space } from 'antd';
 import { Typography } from 'antd';
-import './CoBuyerOption.scss'
 
 const CoBuyerOption: React.FC = () => {
   const { handleStep, nextStep, previousStep } = useWizard();

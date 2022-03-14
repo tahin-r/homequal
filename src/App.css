@@ -1,1 +1,9 @@
 @import '~antd/dist/antd.css';
+
+.ant-input:placeholder-shown {
+    font-style: italic;
+ }
+
+ .ant-radio {
+    margin-right: 20px !important;
+}
