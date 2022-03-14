@@ -16,18 +16,18 @@ const CoStudentLoanDefault: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     Are any of your student loans in default?
                 </Title>
-                <Row gutter={[16, 16]}>
-                    <Col xs={2}>Yours</Col>
-                    <Col xs={2}>Jane's</Col>
-                    <Col xs={20}></Col>
+                <Row gutter={[16, 16]} style={{ marginBottom: '10px', marginTop: '20px' }}>
+                    <Col xs={3}>You</Col>
+                    <Col xs={3}>Jane</Col>
+                    <Col xs={18}></Col>
                 </Row>
-                <Row gutter={[16, 16]}>
-                    <Col xs={2}>
-                        <Radio.Group onChange={(e) => { setYourValue(e.target.value)}} value={yourValue}>
+                <Row gutter={[16, 16]} style={{ marginBottom: '150px' }}>
+                    <Col xs={3}>
+                        <Radio.Group onChange={(e) => { setYourValue(e.target.value) }} value={yourValue}>
                             <Space direction="vertical" align="start">
                                 <Radio value={0}></Radio>
                                 <Radio value={1}></Radio>
@@ -35,8 +35,8 @@ const CoStudentLoanDefault: React.FC = () => {
                             </Space>
                         </Radio.Group>
                     </Col>
-                    <Col xs={22}>
-                        <Radio.Group onChange={(e) => { setCoValue(e.target.value)}} value={coValue}>
+                    <Col xs={21}>
+                        <Radio.Group onChange={(e) => { setCoValue(e.target.value) }} value={coValue}>
                             <Space direction="vertical" align="start">
                                 <Radio value={0}>Yes</Radio>
                                 <Radio value={1}>Yes, but on remediation plan</Radio>

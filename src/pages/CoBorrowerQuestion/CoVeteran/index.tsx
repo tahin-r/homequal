@@ -16,11 +16,11 @@ const CoVeteran: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     Let’s see if you qualify for special veteran programs.
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ marginLeft: '20%', marginTop: '50px', marginBottom: '50px' }}>
                     <Radio.Group onChange={(e) => { setYourValue(e.target.value) }} value={yourValue}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>I’m a Veteran</Radio>
@@ -31,7 +31,7 @@ const CoVeteran: React.FC = () => {
                 <Title level={4}>
                     Is Jane a veteran?
                 </Title>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ marginLeft: '20%', marginTop: '50px' }}>
                     <Radio.Group onChange={(e) => { setCoValue(e.target.value) }} value={coValue}>
                         <Space direction="vertical" align="start">
                             <Radio value={0}>Yes</Radio>

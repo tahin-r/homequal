@@ -12,15 +12,15 @@ const CoMonthlyIncome: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
+            <Col style={{ padding: '30px' }}>
                 <Title level={4}>
                     What is your total monthly income from all sources before any taxes or deductions?
                 </Title>
-                <Input placeholder="Enter Total Monthly Income" />
+                <Input placeholder="Enter Total Monthly Income" style={{ backgroundColor: '#e6e6e6', color: '#000', marginTop: '20px', marginBottom: '50px' }} />
                 <Title level={4}>
                     What is Jane's total monthly income from all sources before any taxes or deductions?
                 </Title>
-                <Input placeholder="Enter Total Monthly Income" />
+                <Input placeholder="Enter Total Monthly Income" style={{ backgroundColor: '#e6e6e6', color: '#000', marginTop: '20px', marginBottom: '50px' }} />
                 <Text italic>
                     Enter the GROSS in come, not the amountg taken home.
                 </Text>

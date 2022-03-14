@@ -16,21 +16,24 @@ const CoPaymentHistory: React.FC = () => {
 
     return (
         <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
-            <Col>
-                <Title level={4}>
-                    Lenders pay close attention to items on your report as well.
-                </Title>
-                <Title level={4}>
-                    Check any that apply.
-                </Title>
-                <Row gutter={[16, 16]}>
-                    <Col xs={2}>Yours</Col>
-                    <Col xs={2}>Jane's</Col>
-                    <Col xs={20}></Col>
+            <Col style={{ padding: '30px' }}>
+                <div style={{ marginLeft: '20px' }}>
+                    <Title level={4}>
+                        Lenders pay close attention to items on your report as well.
+                    </Title>
+                    <Title level={4}>
+                        Check any that apply.
+                    </Title>
+                </div>
+
+                <Row gutter={[16, 16]} style={{ marginTop: '30px' }}>
+                    <Col xs={3}>Yours</Col>
+                    <Col xs={3}>Jane's</Col>
+                    <Col xs={18}></Col>
                 </Row>
-                <Row gutter={[16, 16]}>
-                    <Col xs={2}>
-                        <Radio.Group onChange={(e) => { setYourValue(e.target.value)}} value={yourValue}>
+                <Row gutter={[16, 16]} style={{ marginBottom: '30px' }}>
+                    <Col xs={4}>
+                        <Radio.Group onChange={(e) => { setYourValue(e.target.value) }} value={yourValue}>
                             <Space direction="vertical" align="start">
                                 <Radio value={0}></Radio>
                                 <Radio value={1}></Radio>
@@ -42,7 +45,7 @@ const CoPaymentHistory: React.FC = () => {
                             </Space>
                         </Radio.Group>
                     </Col>
-                    <Col xs={22}>
+                    <Col xs={20}>
                         <Radio.Group onChange={(e) => { setCoValue(e.target.value) }} value={coValue}>
                             <Space direction="vertical" align="start">
                                 <Radio value={0}>Late payments in last 12 months</Radio>
