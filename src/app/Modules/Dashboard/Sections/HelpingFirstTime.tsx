@@ -1,7 +1,9 @@
-import { Button, Typography } from '@mui/material';
-import { FC }                 from 'react';
-import styled                 from 'styled-components';
-import contentImage           from '../../../../images/dashboard/homePageMainImage.jpeg';
+import { Typography }  from '@mui/material';
+import { FC }          from 'react';
+import styled          from 'styled-components';
+import contentImage    from '../../../../assets/images/dashboard/homePageMainImage.jpeg';
+import { useNavigate } from 'react-router-dom';
+import { QualButton }  from '../../../../shared/styles/strings';
 
 
 export const Content = styled.div`
@@ -12,7 +14,7 @@ export const Content = styled.div`
   align-items     : center;
   height          : 100vh;
   box-sizing      : border-box;
-  background      : url(${ contentImage }) center 100%;
+  background      : url(${ contentImage })center no-repeat border-box;
   background-size : cover;
   padding         : 4vh 0 14vh 0;
 `;
@@ -31,28 +33,11 @@ const TextContainer = styled.div`
     font-size   : 30px;
     line-height : 1.2em;
     font-weight : 400;
-
   }
-`;
-const StartButton = styled(({ ...props }) => <Button { ...props } variant="contained"/>)`
-  display          : block;
-  width            : 80%;
-  background-color : #e10c9d;
-  max-width        : 500px;
-
-  &:focus,
-  &:hover,
-  &:active {
-    background-color : #e10c9d;
-  }
-
-  p {
-    font-size      : 20px;
-    text-transform : capitalize;
-  }
-`;
+`
 
 export const HelpingFirstTime: FC = () => {
+  const navigate = useNavigate();
 
   return (
     <Content>
@@ -62,11 +47,14 @@ export const HelpingFirstTime: FC = () => {
         </Typography>
       </TextContainer>
 
-      <StartButton sx={ { borderRadius: '30px' } }>
+      <QualButton
+        sx={ { borderRadius: '30px' } }
+        onClick={ () => navigate('Journey') }
+      >
         <Typography>
           Start Your Journey Now
         </Typography>
-      </StartButton>
+      </QualButton>
     </Content>
   )
 }

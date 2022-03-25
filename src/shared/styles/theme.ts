@@ -23,8 +23,8 @@ export interface ITheme {
 
 export const theme: ITheme = {
   colors: {
-    primary    : '#cc1fb0',
-    primaryDark: '#5a1067',
+    primary    : 'rgb(237,31,138)',
+    primaryDark: 'rgb(126,17,74)',
     secondary  : '#f3ece7',
     action     : '#69818b',
     disabled   : '#606060',
@@ -35,8 +35,8 @@ export const theme: ITheme = {
     success    : '#55bd59',
     black      : '#272932',
     white      : '#ffffff',
-    grey       : '#ebf1f6',
-    lightGrey  : '#f7fafd',
-    darkGrey   : '#8d91a5',
+    grey       : 'rgba(147,146,146,0.25)',
+    lightGrey  : 'rgba(211,211,211,0.42)',
+    darkGrey   : '#adacac',
   },
 };

@@ -1,32 +1,39 @@
-import { FC }                    from 'react';
-import { Box, Grid, Typography } from '@mui/material';
-import styled                    from 'styled-components';
-import phoneImage                from '../../../../images/phone.png'
+import { FC }               from 'react';
+import { Grid, Typography } from '@mui/material';
+import styled               from 'styled-components';
+import phoneImage           from '../../../../assets/images/phone.png'
 
 const Title = styled(({ ...props }) => <Typography { ...props }/>)`
-  margin-right: 5px;
-  margin-bottom: 20px;
-  text-align: right;
+  margin-right  : 5px;
+  margin-bottom : 20px;
+  text-align    : right;
 `
 const TextContent = styled(({ ...props }) => <Typography { ...props }/>)`
-  text-align: right;
+  text-align : right;
 `
-const PhoneImage = styled(Box)`
-  position: relative;
-  width: 80%;
-  min-height: 100%;
-  background: url(${ phoneImage }) no-repeat;
-  background-size: contain;
+const PhoneImage = styled(({ ...props }) => <img
+  src={ phoneImage }
+  alt="image"  { ...props }/>)`
+  width           : 100%;
+  min-width       : 100px;
+  max-width       : 120px;
+  background-size : contain;
+  box-sizing      : border-box;
 `
 
 export const HowItWorks: FC = () => {
 
   return (
-    <Grid container>
+    <Grid
+      container
+      wrap="nowrap"
+
+      justifyContent="flex-end"
+    >
       <Grid
         item
-        xs={ 8 }
-        sx={ { padding: '20px', minHeight: '40vh' } }
+
+        sx={ { padding: '20px', minHeight: '40vh', maxWidth: '500px' } }
       >
         <Title variant={ 'h5' }>
           How it Works
@@ -36,12 +43,10 @@ export const HowItWorks: FC = () => {
           plan!
         </TextContent>
       </Grid>
-
       <Grid
         item
-        xs={ 4 }
-        alignItems='flex-start'
-        sx={ { paddingTop: '40px' } }
+        container
+        sx={ { padding: '20px', width: 'auto', height: '100%' } }
       >
         <PhoneImage/>
       </Grid>

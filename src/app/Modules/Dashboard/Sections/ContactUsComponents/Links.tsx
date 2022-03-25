@@ -34,7 +34,11 @@ const links: Array<ILinks> = [
 
 export const Links = () => {
   return (
-    <>
+    <Grid
+      container
+      sx={ { maxWidth: '500px' } }
+    >
+
       { links.map((item, index) => (
         <Grid
           item
@@ -52,7 +56,7 @@ export const Links = () => {
           )) }
         </Grid>
       )) }
-    </>
+    </Grid>
   )
 }
 

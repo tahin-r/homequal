@@ -1,17 +1,18 @@
 import { Grid, List, ListItem, ListItemAvatar, Typography } from '@mui/material';
 import styled                                               from 'styled-components';
-import { CenteredTypography, ItalicTypography }             from '../../../../shared/styles/strings';
-import doneArrow                                            from '../../../../images/doneArrow.svg'
+import { CenteredTypography, ItalicTypography, QualButton } from '../../../../shared/styles/strings';
+import doneArrow                                            from '../../../../assets/images/doneArrow.svg'
+
 
 const ListIcon = styled(({ ...props }) => <div { ...props } />)`
-  border-radius   : 50%;
-  min-width       : 50px;
-  min-height      : 50px;
-  max-width       : 70px;
-  max-height      : 70px;
-  width           : 10vw;
-  height          : 10vw;
-  background      : transparent url(${ doneArrow }) 100% 100%;
+  border-radius : 50%;
+  min-width : 50px;
+  min-height : 50px;
+  max-width : 70px;
+  max-height : 70px;
+  width : 10vw;
+  height : 10vw;
+  background : transparent url(${ doneArrow }) 100% 100%;
   background-size : cover;
 `
 const advantages = [
@@ -47,6 +48,20 @@ export const ReadyToGetATry = () => {
             </ListItem>
           ) }
         </List>
+      </Grid>
+
+      <Grid
+        container
+        justifyContent="center"
+      >
+        <QualButton
+          sx={ { borderRadius: '30px' } }
+          onClick={ () => console.log('clicked') }
+        >
+          <Typography>
+            Give it a Try!
+          </Typography>
+        </QualButton>
       </Grid>
     </Grid>
   )

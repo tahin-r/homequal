@@ -8,13 +8,13 @@ const TextContainer = styled(Grid)`
   padding    : 40px;
   text-align : center;
   width      : 100%
-`;
+`
 const HomeQualHomeOwners = styled(TextContainer)`
   padding          : 30px;
   color            : white;
-  background-color : #9b9a9a;
+  background-color : ${props => props.theme.colors.darkGrey};
   text-align       : initial;
-`;
+`
 export const DetermineYouHome: FC = () => {
 
   return (
@@ -31,6 +31,6 @@ export const DetermineYouHome: FC = () => {
         </Typography>
       </HomeQualHomeOwners>
     </>
-  );
-};
+  )
+}
 

@@ -1,8 +1,10 @@
 import { Grid }    from '@mui/material';
 import { FC }      from 'react';
 import ReactPlayer from 'react-player';
-import styled      from 'styled-components';
-import videoImage  from './../../../../images/dashboard/videoPlayerImage.jpeg'
+import styled     from 'styled-components';
+import videoImage from '../../../../assets/images/dashboard/videoPlayerImage.jpeg';
+// @ts-ignore
+import video      from '../../../../assets/video/HomeQualVideo.mp4'
 
 const VideoWrapper = styled(({ ...props }) => <Grid { ...props }/>)`
   & .react-player__preview {
@@ -18,7 +20,7 @@ export const VideoSection: FC = () => {
       container
     >
       <ReactPlayer
-        url={ 'https://media.w3.org/2010/05/sintel/trailer.mp4' }
+        url={ video }
         controls
         playing
         height={ '100%' }

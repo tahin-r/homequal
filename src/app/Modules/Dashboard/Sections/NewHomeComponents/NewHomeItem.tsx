@@ -9,14 +9,9 @@ const ImageHolder = styled(({ ...props }) => <div { ...props } />)`
   width           : 10vw;
   height          : 10vw;
   background      : url(${ props => props.userimage }) 100% 100%;
-  background-size : cover;
+  background-size : contain;
 `
-const CardNickName = styled(({ ...props }) => <Typography { ...props } />)`
-  color : gray;
-`
-const CardText = styled(({ ...props }) => <Typography { ...props } />)`
-  color : black;
-`
+
 
 interface INewHomeItem {
   imageUrl: string
@@ -29,11 +24,11 @@ export const NewHomeItem: FC<INewHomeItem> = ({  imageUrl, name, nickName, text 
 
   return (
     <Grid
-      item
+      sx={{margin: '0 3vw'}}
     >
       <Paper
         elevation={ 8 }
-        sx={ { minWidth: '290px', width: '50vw', height: '100%', padding: '4vw', boxSizing: 'border-box' } }
+        sx={ { minWidth: '320px', width: '50vw', height: '100%', padding: '4vw', boxSizing: 'border-box' } }
       >
         <Grid
           container
@@ -43,31 +38,26 @@ export const NewHomeItem: FC<INewHomeItem> = ({  imageUrl, name, nickName, text 
           <Grid
             container
             direction="row"
-            columnGap={ 2 }
+            alignItems='center'
           >
-            <Grid
-              item
-              xs={ 4 }
-            >
               <ImageHolder userimage={ imageUrl }/>
-            </Grid>
-            <Grid
-              item
-              xs={ 6 }
-            >
-              <CardText variant="h5">
+
+            <Grid item>
+              <Typography color='black' variant="h5" sx={{marginLeft:'3vw', minWidth:'100%',fontWeight:'bold'}}>
                 { name }
-              </CardText>
-              <CardNickName variant="h6">
-                { nickName }
-              </CardNickName>
+              </Typography>
             </Grid>
-          </Grid>
+            </Grid>
+
+
+              {/*<Typography color='gray' variant="h6">*/}
+              {/*  { nickName }*/}
+              {/*</Typography>*/}
 
           <Grid sx={ { marginTop: '4vh' } }>
-            <CardText sx={{fontSize:'16px'}}>
+            <Typography color='black' sx={{fontSize:'18px'}}>
               { text }
-            </CardText>
+            </Typography>
           </Grid>
 
         </Grid>
