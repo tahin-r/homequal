@@ -133,7 +133,7 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
             sx={ { width: '100px', margin: '2vh 2vw', textAlign: 'center', fontWeight: 'bold' } }
           >{ formik.values.co_first_name }`s</Typography>
         </Grid>
-        { inputs && inputs.map((item, index: number) => <div key={index}>
+        { inputs && inputs.map((item, index: number) => <div key={ index }>
 
           <Grid
             container
@@ -178,7 +178,7 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
               value={ formik.values[coInputs[index].value] }
               name={ coInputs[index].value }
               InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-              sx={ {  maxWidth: '100px', width: 'auto', } }
+              sx={ { maxWidth: '100px', width: 'auto', } }
               error={ formik.touched[coInputs[index].value] && Boolean(formik.errors[coInputs[index].value]) }
               helperText={ formik.touched[coInputs[index].value] &&
                 <Typography
@@ -430,8 +430,8 @@ interface ICreateRadioTextQuestion extends basicData {
   coQuestion?: (state: any) => string
   co_inputs?: { text: string, value: string }[]
   question1?: (arg: any) => string,
-  co_question?: any,
-  co_question1?: string,
+  co_question?:(state:any)=> any,
+  co_question1?:(state:any)=> string,
   formName?: string,
   co_formName?: string,
 }
@@ -520,7 +520,7 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
           variant="h6"
           sx={ { fontWeight: 'bold', marginTop: '40px' } }
         >
-          { co_question1 }
+          {co_question && co_question(formik.values) }
         </Typography>
         }
 
@@ -557,7 +557,7 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
           variant="h6"
           sx={ { fontWeight: 'bold', marginTop: '40px' } }
         >
-          { co_question }
+          {co_question1 && co_question1(formik.values) }
         </Typography>
         }
 

@@ -14,11 +14,12 @@ export const Content = styled.div`
   align-items     : center;
   height          : 100vh;
   padding         : 4vh 0 14vh 0;
-  @media screen and (max-width : 2000px) {
-    background      : url(${ lendingXL }) center center no-repeat border-box ;
+  
+  @media screen and (min-width : 2001px) {
+    background      : url(${ lendingXL }) center center no-repeat border-box;
     background-size : cover;
   }
-  @media screen and (max-width : 1600px ) {
+  @media screen and (max-width : 2000px ) {
     background      : url(${ lendingLG }) center center no-repeat border-box;
     background-size : cover;
   }
@@ -26,6 +27,7 @@ export const Content = styled.div`
     background      : url(${ lendingMD }) center center no-repeat border-box;
     background-size : cover;
   }
+ 
 `;
 const TextContainer = styled.div`
   margin-top       : 10vh;

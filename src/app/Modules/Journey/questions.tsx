@@ -879,8 +879,8 @@ const Q19c = {
 const Q20c = {
   question          : () => 'Good work, you’re almost done. Now, let’s take a quick look at your current living situation…',
   question1         : (state: any) => 'My monthly housing payment is',
-  co_question       : 'Jane’s current living situation is …',
-  co_question1      : 'Jane’s monthly housing payment is (only if does not live with you)',
+  co_question       : (state:any)=> `${state.co_first_name}’s current living situation is …`,
+  co_question1      : (state:any)=> `${state.co_first_name}’s monthly housing payment is (only if does not live with you)`,
   description       : 'Lenders will analyze your past 2 years living arrangements.',
   elementConstructor: 'CreateRadioTextQuestion',
   co_formName       : 'co_living_situation',

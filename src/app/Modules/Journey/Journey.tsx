@@ -1,34 +1,38 @@
-import { Grid }            from '@mui/material'
+import { Grid } from '@mui/material'
 import {
   useState,
-}                          from 'react'
+}               from 'react'
 import {
   CreateAutoCompleteQuestion,
   CreateCheckBoxQuestion,
   CreateRadioQuestion,
   CreateTextFieldQuestion,
-}                          from './helpers'
+}               from './helpers'
 import {
   QuestionKey,
   questionsList,
   QuestionsType,
-}                          from './questions'
+}               from './questions'
 import {
   useFormik
-}                          from 'formik'
-import * as yup            from 'yup'
+}               from 'formik'
+import * as yup from 'yup'
 import {
   Route,
   Routes,
   useNavigate
-}                          from 'react-router-dom'
-import { QuestionsSchema } from './validation';
+}               from 'react-router-dom'
+import {
+  QuestionsSchema
+}               from './validation';
 import {
   CreateCOTextFieldQuestion,
   CreateDoubledCheckBoxQuestion,
   CreateDoubledRadioQuestion,
-  CreateDoubledTextFieldQuestion, CreateRadioTextQuestion, CreateVeteranQuestion
-}                          from './coHelpers';
+  CreateDoubledTextFieldQuestion,
+  CreateRadioTextQuestion,
+  CreateVeteranQuestion
+}               from './coHelpers';
 
 
 export const Journey = () => {
