@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/Journey.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/Journey.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/coHelpers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/coHelpers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/helpers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/helpers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/questions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/shared/shared.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/shared/shared.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/validation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/validation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +95,7 @@
       <workItem from="1648546545441" duration="28832000" />
       <workItem from="1648632910389" duration="27836000" />
       <workItem from="1648718105670" duration="28540000" />
-      <workItem from="1648804768825" duration="5677000" />
+      <workItem from="1648804768825" duration="10211000" />
     </task>
     <servers />
   </component>

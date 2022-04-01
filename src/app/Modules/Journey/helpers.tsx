@@ -101,8 +101,7 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
 
 }) => {
 
-  useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [ formName ])
-
+  useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [formName])
   return (
     <>
       <Wrapper
@@ -116,7 +115,7 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
         current={ current }
 
       >
-        <RadioGroup
+        {formName && formik.values[formName] &&<RadioGroup
           name={ formName }
           onBlur={ formik.handleBlur }
           onChange={ formik.handleChange }
@@ -136,7 +135,7 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
           ) }
 
 
-        </RadioGroup>
+        </RadioGroup>}
 
       </Wrapper>
     </>
@@ -186,12 +185,14 @@ export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
                 </Typography> }
               onChange={ formik.handleChange }
               key={ index }
+              autoFocus={index===0}
               variant="standard"
               color="primary"
               onBlur={ formik.handleBlur }
               value={ formik.values[item.value] }
               name={ item.value }
-              sx={ { margin: '2vh 0', maxHeight: '5vh', maxWidth: '60vw' } }
+              InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
+              sx={ { maxHeight: 'auto', maxWidth: '60vw' } }
               error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
               helperText={ formik.touched[item.value] && <Typography
                 component="span"
@@ -329,7 +330,8 @@ export const CreateAutoCompleteQuestion: FC<ICreateAutoCompleteQuestion> = ({
                 variant="standard"
                 color="primary"
                 name={ item.value }
-                sx={ { maxHeight: '5vh', width: '40vw' } }
+                InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
+                sx={ { width: '40vw' } }
                 error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
                 helperText={ formik.touched[item.value] && <Typography
                   component="span"

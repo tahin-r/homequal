@@ -123,7 +123,7 @@ const Q5 = {
 }
 
 const Q6 = {
-  question          : () => 'What is Name marital status',
+  question          : (state: any) => `What is ${ state.co_first_name } marital status`,
   description       : '',
   elementConstructor: 'CreateRadioQuestion',
   current           : 'Q6',
@@ -201,7 +201,7 @@ const Q9 = {
 }
 
 const Q10 = {
-  question          : () => 'What is the source of your $12,000 funds? Check any that apply.',
+  question          : (state: any) => `What is the source of your $${ state.home_savings } funds? Check any that apply.`,
   description       : 'Tip: When starting the mortgage process, be careful moving money in and out of accounts or having any large deposits.  Lenders will ask a lot of questions if you do!',
   elementConstructor: 'CreateCheckBoxQuestion',
   formName          : 'home_savings_details',
@@ -232,7 +232,7 @@ const Q10 = {
 }
 
 const Q11 = {
-  question          : () => 'Awesome! The next step is to see if you will qualify for a $2,200 monthly mortgage payment.To ' +
+  question          : (state: any) => `Awesome! The next step is to see if you will qualify for a $${ state.monthly_payment_amount } monthly mortgage payment. To ` +
     'help make this decision, lenders will calculate your Debt to Income Ratio.' +
     ' Let’s quickly calculate yours now.',
   description       : '',
@@ -934,7 +934,7 @@ const Q20c = {
 }
 const Q21c = {
   question          : () => 'Let’s see if you qualify for special veteran programs.',
-  co_question       : (state:any) => `Is ${state.co_first_name} a veteran?`,
+  co_question       : (state: any) => `Is ${ state.co_first_name } a veteran?`,
   description       : '',
   elementConstructor: 'CreateVeteranQuestion',
   formName          : 'veteran',

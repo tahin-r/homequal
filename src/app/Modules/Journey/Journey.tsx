@@ -82,23 +82,27 @@ export const Journey = () => {
 
   const formik = useFormik({
     validateOnBlur  : true,
-    validateOnChange: true,
     initialValues   : currentState,
     validationSchema: currentSchema,
     onSubmit        : (values) => HandleSubmit(values),
   })
+
+  const setSchema = (question: QuestionKey) => {
+    setCurrentSchema(QuestionsSchema[question] ? QuestionsSchema[question] : yup.object({}))
+  }
+
   const HandleSubmit = (values: any) => {
     if (values !== currentState) {
       setCurrentState(values)
     }
   }
+
   const setCurrentQuestionHandler = (next: QuestionKey, current: QuestionKey | string) => {
     let isAlone = formik.values.co_borrower_flag === '0'
     let isHaveStudentLoan = formik.values.member_buyer_details.includes('late_student_loan')
     let isHaveTax = formik.values.member_buyer_details.includes('tax_lien_judgement_foreclosure')
     let isCoHaveStudentLoan = formik.values.co_member_buyer_details.includes('late_student_loan')
     let isCoHaveTax = formik.values.co_member_buyer_details.includes('tax_lien_judgement_foreclosure')
-    console.log(!isAlone)
 
     if (current === 'Q4' && isAlone) {
       navigate('Q7')
@@ -122,9 +126,7 @@ export const Journey = () => {
       navigate(`${ next }`)
     }
   }
-  const setSchema = (question: QuestionKey) => {
-    setCurrentSchema(QuestionsSchema[question] ? QuestionsSchema[question] : yup.object({}))
-  }
+
 
   const constructor = (question: QuestionsType) => {
     const props = {
@@ -158,6 +160,7 @@ export const Journey = () => {
         return <CreateVeteranQuestion { ...props }/>
     }
   }
+
   const questionRoutes = Object.values(questionsList)
                                .map((el, index) => <Route
                                  path={ `/${ Object.keys(questionsList)[index] }` }

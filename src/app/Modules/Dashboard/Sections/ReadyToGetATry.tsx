@@ -2,17 +2,18 @@ import { Grid, List, ListItem, ListItemAvatar, Typography } from '@mui/material'
 import styled                                               from 'styled-components';
 import { CenteredTypography, ItalicTypography, QualButton } from '../../../../shared/styles/strings';
 import doneArrow                                            from '../../../../assets/images/doneArrow.svg'
+import { useNavigate }                                      from 'react-router-dom';
 
 
 const ListIcon = styled(({ ...props }) => <div { ...props } />)`
-  border-radius : 50%;
-  min-width : 50px;
-  min-height : 50px;
-  max-width : 70px;
-  max-height : 70px;
-  width : 10vw;
-  height : 10vw;
-  background : transparent url(${ doneArrow }) 100% 100%;
+  border-radius   : 50%;
+  min-width       : 50px;
+  min-height      : 50px;
+  max-width       : 70px;
+  max-height      : 70px;
+  width           : 10vw;
+  height          : 10vw;
+  background      : transparent url(${ doneArrow }) 100% 100%;
   background-size : cover;
 `
 const advantages = [
@@ -24,6 +25,7 @@ const advantages = [
 ]
 
 export const ReadyToGetATry = () => {
+  const navigate = useNavigate();
 
   return (
     <Grid sx={ { padding: '40px' } }>
@@ -56,7 +58,7 @@ export const ReadyToGetATry = () => {
       >
         <QualButton
           sx={ { borderRadius: '30px' } }
-          onClick={ () => console.log('clicked') }
+          onClick={ () => navigate('Journey/Q1') }
         >
           <Typography>
             Give it a Try!

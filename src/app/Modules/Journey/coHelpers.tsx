@@ -36,6 +36,7 @@ export const CreateCOTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
   coQuestion,
   coInputs
 }) => {
+
   return (
     <Wrapper
       next={ next }
@@ -98,6 +99,7 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
   coQuestion,
   coInputs
 }) => {
+
   return (
     <Wrapper
       next={ next }
@@ -131,13 +133,14 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
             sx={ { width: '100px', margin: '2vh 2vw', textAlign: 'center', fontWeight: 'bold' } }
           >{ formik.values.co_first_name }`s</Typography>
         </Grid>
-        { inputs && inputs.map((item, index: number) => <>
+        { inputs && inputs.map((item, index: number) => <div key={index}>
 
           <Grid
             container
             justifyContent="flex-start"
             alignItems="baseline"
             wrap="nowrap"
+
           >
 
             <TextField
@@ -148,7 +151,7 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
               value={ formik.values[item.value] }
               name={ item.value }
               InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-              sx={ { margin: '2vh 2vw', maxHeight: '5vh', maxWidth: '100px', width: 'auto', } }
+              sx={ { maxWidth: '100px', width: 'auto', } }
               error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
               helperText={ formik.touched[item.value] &&
                 <Typography
@@ -175,7 +178,7 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
               value={ formik.values[coInputs[index].value] }
               name={ coInputs[index].value }
               InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-              sx={ { margin: '2vh 2vw', maxHeight: '5vh', maxWidth: '100px', width: 'auto', } }
+              sx={ {  maxWidth: '100px', width: 'auto', } }
               error={ formik.touched[coInputs[index].value] && Boolean(formik.errors[coInputs[index].value]) }
               helperText={ formik.touched[coInputs[index].value] &&
                 <Typography
@@ -194,10 +197,11 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
                 </Typography> }
             />
             }
+
             <Typography variant="h6">{ item.text }</Typography>
 
           </Grid>
-        </>) }
+        </div>) }
       </Grid>
     </Wrapper>
   )
@@ -223,6 +227,7 @@ export const CreateDoubledCheckBoxQuestion: FC<ICreateDoubledCheckBoxQuestion> =
   formName,
   co_formName
 }) => {
+
   return (
     <Wrapper
       next={ next }
@@ -252,6 +257,7 @@ export const CreateDoubledCheckBoxQuestion: FC<ICreateDoubledCheckBoxQuestion> =
             sx={ { width: 'auto', textAlign: 'left', fontWeight: 'bold' } }
           >{ formik.values.co_first_name }`s</Typography>
         </Grid>
+
         <FormGroup
           onChange={ formik.handleChange }
         >
@@ -291,6 +297,7 @@ export const CreateDoubledCheckBoxQuestion: FC<ICreateDoubledCheckBoxQuestion> =
             }
           </Grid>
         </FormGroup>
+
       </Grid>
     </Wrapper>
   )
@@ -302,7 +309,6 @@ interface ICreateDoubledRadioQuestion extends basicData {
   formName?: string
   co_formName?: string
 }
-
 
 export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
   question,
@@ -412,7 +418,6 @@ export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
           </Grid>
 
         </Grid>
-
       </Grid>
     </Wrapper>
   )
@@ -424,12 +429,11 @@ interface ICreateRadioTextQuestion extends basicData {
   co_answers?: { text: string, value: string }[]
   coQuestion?: (state: any) => string
   co_inputs?: { text: string, value: string }[]
-  question1?:(arg:any)=> string,
+  question1?: (arg: any) => string,
   co_question?: any,
-  co_question1?:string,
-  formName?:string,
-  co_formName?:string,
-
+  co_question1?: string,
+  formName?: string,
+  co_formName?: string,
 }
 
 export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
@@ -497,11 +501,11 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
           </RadioGroup>
         </Grid>
 
-        {question1 &&  <Typography
+        { question1 && <Typography
           variant="h6"
           sx={ { fontWeight: 'bold', marginTop: '40px' } }
         >
-          { question1(formik.values)}
+          { question1(formik.values) }
         </Typography>
         }
 
@@ -512,15 +516,13 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
           />
         ) }
 
-        {co_question1 &&  <Typography
+        { co_question1 && <Typography
           variant="h6"
           sx={ { fontWeight: 'bold', marginTop: '40px' } }
         >
-          { co_question1}
+          { co_question1 }
         </Typography>
         }
-
-
 
         <Grid
           container
@@ -555,7 +557,7 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
           variant="h6"
           sx={ { fontWeight: 'bold', marginTop: '40px' } }
         >
-          { co_question}
+          { co_question }
         </Typography>
         }
 
@@ -576,9 +578,9 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
 interface ICreateCheckboxQuestion extends basicData {
   answers?: { text: string, value: string }[]
   formName?: string
-  co_formName?:string
+  co_formName?: string
   co_answers?: { text: string, value: string }[]
-  co_question?:any
+  co_question?: any
 
 }
 
@@ -597,7 +599,7 @@ export const CreateVeteranQuestion: FC<ICreateCheckboxQuestion> = ({
   co_question
 
 }) => {
-  useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [ formName,answers ])
+  useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [ formName, answers ])
 
   return (
     <>
@@ -610,7 +612,6 @@ export const CreateVeteranQuestion: FC<ICreateCheckboxQuestion> = ({
         formName={ formName }
         setSchema={ setSchema }
         current={ current }
-
       >
         <RadioGroup
           name={ formName }
@@ -632,7 +633,6 @@ export const CreateVeteranQuestion: FC<ICreateCheckboxQuestion> = ({
           ) }
         </RadioGroup>
 
-
         <RadioGroup
           name={ co_formName }
           onBlur={ formik.handleBlur }
@@ -645,7 +645,7 @@ export const CreateVeteranQuestion: FC<ICreateCheckboxQuestion> = ({
             variant="h6"
             sx={ { fontWeight: 'bold', marginTop: '40px' } }
           >
-            { co_question(formik.values)}
+            { co_question(formik.values) }
           </Typography>
           }
 

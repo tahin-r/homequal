@@ -3,7 +3,7 @@ import { FC }                              from 'react';
 import styled                              from 'styled-components';
 import { useNavigate }                     from 'react-router-dom';
 import { QualButton }                      from '../../../../shared/styles/strings';
-import { lendingXL, lendingLG, lendingMD } from '../../../../assets/images/dashboard/lending';
+import { lendingLG, lendingMD, lendingXL } from '../../../../assets/images/dashboard/lending';
 
 
 export const Content = styled.div`
@@ -46,7 +46,6 @@ const TextContainer = styled.div`
 `
 
 export const HelpingFirstTime: FC = () => {
-  const navigate = useNavigate();
 
   return (
     <Content>
@@ -58,7 +57,6 @@ export const HelpingFirstTime: FC = () => {
 
       <QualButton
         sx={ { borderRadius: '30px' } }
-        onClick={ () => navigate('Journey/Q1') }
       >
         <Typography>
           Start Your Journey Now

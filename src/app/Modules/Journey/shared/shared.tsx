@@ -16,8 +16,8 @@ export const InputField: FC<IInputField> = ({ formik, item }) => {
       onBlur={ formik.handleBlur }
       value={ formik.values[item.value] }
       name={ item.value }
-      InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-      sx={ { margin: '2vh 0', maxHeight: '5vh', minWidth: '300px', width: '30%', } }
+      InputProps={ { style: { fontSize: 20, fontWeight: 'bold',width:'100%' } } }
+      sx={ { margin: '2vh 0', maxHeight: '5vh', minWidth: '200px',maxWidth:'300px' } }
       error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
       helperText={ formik.touched[item.value] &&
         <Typography
@@ -30,7 +30,7 @@ export const InputField: FC<IInputField> = ({ formik, item }) => {
         <Typography
           variant="h6"
           color="black"
-          sx={ { fontStyle: 'italic', fontSize: '14px', width: '40vw' } }
+          sx={ { fontStyle: 'italic', fontSize: '14px', width: '100vw' } }
         >
           { item.text }
         </Typography> }

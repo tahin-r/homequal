@@ -4,7 +4,7 @@ export const QuestionsSchema: any = {
   Q1: yup.object({
     first_name: yup
     .string()
-    .required('Last name is required'),
+    .required('First name is required'),
 
     last_name: yup
     .string()

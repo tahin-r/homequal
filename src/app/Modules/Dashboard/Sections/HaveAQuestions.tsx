@@ -28,10 +28,10 @@ export const HaveAQuestions = () => {
       sx={{padding:'0 2vw'}}
     >
       <CenteredTypography variant={ 'h4' } sx={{marginTop:'20px'}}>
-        Have a questions, need a little assistence?
+        Have questions, need a little assistence?
       </CenteredTypography>
       <CenteredTypography variant={ 'h5' }>
-        Our interactive bots is always at your fingertips!
+        Our interactive bot is always at your fingertips!
       </CenteredTypography>
       <Bubble side={ 'right' }>
         <Typography variant="h6">Hi, how can I Help.</Typography>
