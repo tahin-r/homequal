@@ -179,7 +179,7 @@ export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
                 <Typography
                   variant="h6"
                   color="black"
-                  sx={ { fontStyle: 'italic', minWidth: '60vw' } }
+                  sx={ { fontStyle: 'italic', minWidth: '100px' } }
                 >
                   { item.text }
                 </Typography> }
@@ -192,7 +192,7 @@ export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
               value={ formik.values[item.value] }
               name={ item.value }
               InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-              sx={ { maxHeight: 'auto', maxWidth: '60vw' } }
+              sx={ { maxHeight: 'auto', maxWidth: '200px' } }
               error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
               helperText={ formik.touched[item.value] && <Typography
                 component="span"
