@@ -40,6 +40,8 @@ export const BaseStyles = createGlobalStyle`
 
   body, html {
     height : 100%;
+    overflow: initial;
+    padding: 0;
   }
 
   html {

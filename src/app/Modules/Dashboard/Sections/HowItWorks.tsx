@@ -13,7 +13,7 @@ const TextContent = styled(({ ...props }) => <Typography { ...props }/>)`
 `
 const PhoneImage = styled(({ ...props }) => <img
   src={ phoneImage }
-  alt="image"  { ...props }/>)`
+  alt="phoneImage"  { ...props }/>)`
   width           : 100%;
   min-width       : 100px;
   max-width       : 120px;
@@ -27,13 +27,12 @@ export const HowItWorks: FC = () => {
     <Grid
       container
       wrap="nowrap"
-
       justifyContent="flex-end"
     >
       <Grid
         item
 
-        sx={ { padding: '20px', minHeight: '40vh', maxWidth: '500px' } }
+        sx={ { padding: '20px', maxWidth: '500px' } }
       >
         <Title variant={ 'h5' }>
           How it Works

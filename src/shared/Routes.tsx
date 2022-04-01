@@ -11,7 +11,7 @@ export const AppRoutes = () => {
         element={ <Dashboard/> }
       />
       <Route
-        path="Journey"
+        path="Journey/*"
         element={ <Journey/> }
       />
     </Routes>

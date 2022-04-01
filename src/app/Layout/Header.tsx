@@ -54,19 +54,18 @@ export const Header = () => {
         color     : 'black', bgcolor: trigger ? 'white' : 'transparent',
         transition: 'linear 0.5s',
         maxHeight : '60px',
-        width:'100vw'
+        maxWidth:'100vw',
       } }
       elevation={ 0 }
     >
       <Toolbar>
         <IconButton
           edge="start"
-          sx={ { mr: 2, color: '#eb3492', position: 'relative' } }
-          aria-describedby={ 'menuButton' }
+          color="primary"
+          aria-label="menu"
           onClick={ handleClick }
-
         >
-          <MenuIcon/>
+          <MenuIcon />
         </IconButton>
 
         <Popover
@@ -74,14 +73,15 @@ export const Header = () => {
           open={ open }
           anchorEl={ anchorEl }
           onClose={ handleClose }
-          anchorOrigin={ {
-            vertical  : 'bottom',
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right',
+          }}
+          transformOrigin={{
+            vertical: 'top',
             horizontal: 'left',
-          } }
-          transformOrigin={ {
-            vertical  : 'top',
-            horizontal: 'left',
-          } }
+          }}
+
         >
           <List sx={ { width: '100%', maxWidth: 360 } }>
             { menuItems.map((item, index) =>

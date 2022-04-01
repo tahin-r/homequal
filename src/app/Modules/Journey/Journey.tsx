@@ -1,104 +1,181 @@
-import { Grid } from '@mui/material'
+import { Grid }            from '@mui/material'
 import {
-  useEffect,
   useState,
-}               from 'react'
+}                          from 'react'
 import {
+  CreateAutoCompleteQuestion,
+  CreateCheckBoxQuestion,
   CreateRadioQuestion,
   CreateTextFieldQuestion,
-  CreateCheckBoxQuestion,
-  CreateAutoCompleteQuestion,
-}               from './helpers'
+}                          from './helpers'
 import {
   QuestionKey,
   questionsList,
   QuestionsType,
-}               from './questions'
-import { Formik } from 'formik'
+}                          from './questions'
+import {
+  useFormik
+}                          from 'formik'
+import * as yup            from 'yup'
+import {
+  Route,
+  Routes,
+  useNavigate
+}                          from 'react-router-dom'
+import { QuestionsSchema } from './validation';
+import {
+  CreateCOTextFieldQuestion,
+  CreateDoubledCheckBoxQuestion,
+  CreateDoubledRadioQuestion,
+  CreateDoubledTextFieldQuestion, CreateRadioTextQuestion, CreateVeteranQuestion
+}                          from './coHelpers';
 
 
 export const Journey = () => {
-  const [ currentQuestion, setCurrentQuestion ] = useState<any>()
 
   const initialState = {
-    first_name   : null,
-    last_name    : null,
-    email_address: null,
-    cell_phone   : null,
-    withWho      : null,
-    marital      : null,
-    //if some else Route
-    maritalForAnother: null,
-    date             : null,
-    mortgagePayment  : null,
-    PaymentFormHouse : null,
-    sourceOfPayments : null,
-    monthlyTotal     : null,
-    expenses         : {
-      auto   : null,
-      credit : null,
-      student: null,
-      other  : null,
-    },
-    spouseExpenses   : {
-      auto   : null,
-      credit : null,
-      student: null,
-      other  : null,
-    },
-    history          : null,
-    creditScore      : null,
-    lenderPay        : null,
-    livingSituation  : null,
-    housePayments    : null,
-    isVeteran        : null,
-    location         : null,
-    coBorrower       : {
-      fName : null,
-      lName : null,
-      email : null,
-      mobile: null,
-    },
+    first_name                     : '',
+    last_name                      : '',
+    email_address                  : '',
+    cell_phone                     : '',
+    communication_preference_id    : '',
+    co_borrower_flag               : '',
+    marital_status                 : '',
+    co_first_name                  : '',
+    co_last_name                   : '',
+    co_email_address               : '',
+    co_cell_phone                  : '',
+    co_marital_status              : '',
+    move_range                     : '',
+    monthly_payment_amount         : '',
+    home_savings                   : '',
+    home_savings_details           : [],
+    monthly_income                 : '',
+    co_monthly_income              : '',
+    auto_expense                   : '',
+    credit_card_expense            : '',
+    student_loans                  : '',
+    other_expenses                 : '',
+    co_auto_expense                : '',
+    co_credit_card_expense         : '',
+    co_student_loans               : '',
+    co_other_expenses              : '',
+    co_member_buyer_details        : [],
+    member_buyer_details           : [],
+    co_member_buyer_student_details: '',
+    member_buyer_student_details   : '',
+    credit_score_range             : '',
+    co_credit_score_range          : '',
+    living_situation               : '',
+    co_living_situation            : '',
+    housing_payment_amount         : '',
+    co_housing_payment_amount      : '',
+    veteran                        : '',
+    live_state_1                   : '',
+    live_state_2                   : '',
+    live_state_3                   : '',
   }
 
-  useEffect(() => {
-    setCurrentQuestion(questionsList.Q1)
-  }, [])
+  const navigate = useNavigate()
+  const [ currentState, setCurrentState ] = useState<any>({ ...initialState })
+  const [ currentSchema, setCurrentSchema ] = useState(QuestionsSchema.Q1)
 
-  const setCurrentQuestionHandler: (next: QuestionKey) => void = (next) => {
-
-    setCurrentQuestion(questionsList[next])
-  }
-
-
-  const constructor = (question: QuestionsType) => {
-    switch (question.elementConstructor) {
-      case('createTextFieldQuestion'):
-        return <CreateTextFieldQuestion { ...question } next={ question.next as QuestionKey }
-                                        setCurrentQuestionHandler={ setCurrentQuestionHandler }
-        />
-      case('CreateRadioQuestion'):
-        return <CreateRadioQuestion  { ...question } next={ question.next as QuestionKey }
-                                     setCurrentQuestionHandler={ setCurrentQuestionHandler }
-        />
-      case('CreateCheckBoxQuestion'):
-        return <CreateCheckBoxQuestion{ ...question } next={ question.next as QuestionKey }
-                                      setCurrentQuestionHandler={ setCurrentQuestionHandler }
-        />
-      case('CreateAutoCompleteQuestion'):
-        return <CreateAutoCompleteQuestion { ...question } next={ question.next as QuestionKey }
-                                           setCurrentQuestionHandler={ setCurrentQuestionHandler }
-        />
+  const formik = useFormik({
+    validateOnBlur  : true,
+    validateOnChange: true,
+    initialValues   : currentState,
+    validationSchema: currentSchema,
+    onSubmit        : (values) => HandleSubmit(values),
+  })
+  const HandleSubmit = (values: any) => {
+    if (values !== currentState) {
+      setCurrentState(values)
     }
   }
+  const setCurrentQuestionHandler = (next: QuestionKey, current: QuestionKey | string) => {
+    let isAlone = formik.values.co_borrower_flag === '0'
+    let isHaveStudentLoan = formik.values.member_buyer_details.includes('late_student_loan')
+    let isHaveTax = formik.values.member_buyer_details.includes('tax_lien_judgement_foreclosure')
+    let isCoHaveStudentLoan = formik.values.co_member_buyer_details.includes('late_student_loan')
+    let isCoHaveTax = formik.values.co_member_buyer_details.includes('tax_lien_judgement_foreclosure')
+    console.log('stud = ', isHaveStudentLoan, 'tax', isHaveTax, 'costud = ', isCoHaveStudentLoan, 'cotax', isCoHaveTax)
+
+    if (current === 'Q4' && formik.values.co_borrower_flag === '0') {
+      navigate('Q7')
+    } else if (current === 'Q5' && !isAlone) {
+      navigate('Q7')
+    } else if (current === 'Q17' && !isHaveStudentLoan && !isHaveTax) {
+      navigate('Q20')
+    } else if (current === 'Q17' && isHaveTax && !isHaveStudentLoan) {
+      navigate('Q19')
+    } else if (current === 'Q18' && !isHaveTax) {
+      navigate('Q20')
+    } else if (current === 'Q17C' && !isHaveStudentLoan && !isHaveTax && !isCoHaveStudentLoan && !isCoHaveTax) {
+      navigate('Q20')
+    } else if (current === 'Q17C' && !isHaveStudentLoan && !isCoHaveStudentLoan && (isHaveTax || isCoHaveTax)) {
+      navigate('Q19')
+    } else if (current === 'Q18C' && !isHaveTax && !isCoHaveTax) {
+      navigate('Q20')
+    } else if (current === 'Q11' && !isAlone) {
+      navigate('Q12c')
+    } else {
+      navigate(`${ next }`)
+    }
+  }
+  const setSchema = (question: QuestionKey) => {
+    setCurrentSchema(QuestionsSchema[question] ? QuestionsSchema[question] : yup.object({}))
+  }
+
+  const constructor = (question: QuestionsType) => {
+    const props = {
+      ...question,
+      formik : formik,
+      current: question.current,
+      next   : question.next as QuestionKey,
+      setCurrentQuestionHandler,
+      setSchema,
+    }
+    switch (question.elementConstructor) {
+      case('createTextFieldQuestion'):
+        return <CreateTextFieldQuestion { ...props }/>
+      case('CreateRadioQuestion'):
+        return <CreateRadioQuestion  { ...props }/>
+      case('CreateCheckBoxQuestion'):
+        return <CreateCheckBoxQuestion{ ...props }/>
+      case('CreateAutoCompleteQuestion'):
+        return <CreateAutoCompleteQuestion { ...props }/>
+      case('CreateCOTextFieldQuestion'):
+        return <CreateCOTextFieldQuestion { ...props }/>
+      case('CreateDoubledTextFieldQuestion'):
+        return <CreateDoubledTextFieldQuestion { ...props }/>
+      case('CreateDoubledCheckBoxQuestion'):
+        return <CreateDoubledCheckBoxQuestion { ...props }/>
+      case ('CreateDoubledRadioQuestion'):
+        return <CreateDoubledRadioQuestion { ...props }/>
+      case ('CreateRadioTextQuestion'):
+        return <CreateRadioTextQuestion { ...props } />
+      case('CreateVeteranQuestion'):
+        return <CreateVeteranQuestion { ...props }/>
+    }
+  }
+  const questionRoutes = Object.values(questionsList)
+                               .map((el, index) => <Route
+                                 path={ `/${ Object.keys(questionsList)[index] }` }
+                                 element={ constructor(el) }
+                                 key={ index }
+                               />)
+
   return (
     <Grid
       overflow="hidden"
-      sx={ { width: '100vw' } }
+      sx={ { maxWidth: '100vw' } }
     >
-      { currentQuestion ? constructor(currentQuestion) : null }
+      <Routes>
+        { questionRoutes }
+      </Routes>
     </Grid>
 
   )
 }
+
 

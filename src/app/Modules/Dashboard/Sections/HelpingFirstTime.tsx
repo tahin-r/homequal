@@ -1,9 +1,9 @@
-import { Typography }  from '@mui/material';
-import { FC }          from 'react';
-import styled          from 'styled-components';
-import contentImage    from '../../../../assets/images/dashboard/homePageMainImage.jpeg';
-import { useNavigate } from 'react-router-dom';
-import { QualButton }  from '../../../../shared/styles/strings';
+import { Typography }                      from '@mui/material';
+import { FC }                              from 'react';
+import styled                              from 'styled-components';
+import { useNavigate }                     from 'react-router-dom';
+import { QualButton }                      from '../../../../shared/styles/strings';
+import { lendingXL, lendingLG, lendingMD } from '../../../../assets/images/dashboard/lending';
 
 
 export const Content = styled.div`
@@ -13,10 +13,19 @@ export const Content = styled.div`
   flex-direction  : column;
   align-items     : center;
   height          : 100vh;
-  box-sizing      : border-box;
-  background      : url(${ contentImage })center no-repeat border-box;
-  background-size : cover;
   padding         : 4vh 0 14vh 0;
+  @media screen and (max-width : 2000px) {
+    background      : url(${ lendingXL }) center center no-repeat border-box ;
+    background-size : cover;
+  }
+  @media screen and (max-width : 1600px ) {
+    background      : url(${ lendingLG }) center center no-repeat border-box;
+    background-size : cover;
+  }
+  @media screen and (max-width : 900px) {
+    background      : url(${ lendingMD }) center center no-repeat border-box;
+    background-size : cover;
+  }
 `;
 const TextContainer = styled.div`
   margin-top       : 10vh;
@@ -49,7 +58,7 @@ export const HelpingFirstTime: FC = () => {
 
       <QualButton
         sx={ { borderRadius: '30px' } }
-        onClick={ () => navigate('Journey') }
+        onClick={ () => navigate('Journey/Q1') }
       >
         <Typography>
           Start Your Journey Now
