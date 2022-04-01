@@ -6,7 +6,7 @@ import { theme }             from './theme';
 
 const typography: TypographyOptions = {
   htmlFontSize: 18,
-  fontFamily  : 'Open Sans Light,serif'
+  fontFamily  : 'Open Sans Light, serif'
 };
 
 const palette: PaletteOptions = {

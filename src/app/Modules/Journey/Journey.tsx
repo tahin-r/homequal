@@ -107,10 +107,11 @@ export const Journey = () => {
     let isHaveTax = formik.values.member_buyer_details.includes('tax_lien_judgement_foreclosure')
     let isCoHaveStudentLoan = formik.values.co_member_buyer_details.includes('late_student_loan')
     let isCoHaveTax = formik.values.co_member_buyer_details.includes('tax_lien_judgement_foreclosure')
-
+    let isSpouce = formik.values.co_borrower_flag === '1'
+    console.log(formik.values.co_borrower_flag)
     if (current === 'Q4' && isAlone) {
       navigate('Q7')
-    } else if (current === 'Q5' && isAlone) {
+    } else if (current === 'Q5' && isSpouce) {
       navigate('Q7')
     } else if (current === 'Q17' && !isHaveStudentLoan && !isHaveTax) {
       navigate('Q20')

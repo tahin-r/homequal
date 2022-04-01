@@ -133,75 +133,73 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
             sx={ { width: '100px', margin: '2vh 2vw', textAlign: 'center', fontWeight: 'bold' } }
           >{ formik.values.co_first_name }`s</Typography>
         </Grid>
-        { inputs && inputs.map((item, index: number) => <div key={ index }>
+        { inputs && inputs.map((item, index: number) => <Grid
+          key={ index }
+          container
+          justifyContent="flex-start"
+          alignItems="baseline"
+          wrap="nowrap"
+        >
 
-          <Grid
-            container
-            justifyContent="flex-start"
-            alignItems="baseline"
-            wrap="nowrap"
+          <TextField
+            onChange={ formik.handleChange }
+            variant="standard"
+            color="primary"
+            onBlur={ formik.handleBlur }
+            value={ formik.values[item.value] }
+            name={ item.value }
+            InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
+            sx={ { maxWidth: '100px', width: 'auto', } }
+            error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
+            helperText={ formik.touched[item.value] &&
+              <Typography
+                component="span"
+                color="primary"
+                sx={ { fontSize: '14px' } }
+              >{ formik.errors[item.value] }
+              </Typography> }
+            label={
+              <Typography
+                variant="h6"
+                color="black"
+                sx={ { fontStyle: 'italic', fontSize: '14px', width: '40vw' } }
+              >
+                Payments
+              </Typography> }
+          />
 
-          >
+          { coInputs && <TextField
+            onChange={ formik.handleChange }
+            variant="standard"
+            color="primary"
+            onBlur={ formik.handleBlur }
+            value={ formik.values[coInputs[index].value] }
+            name={ coInputs[index].value }
+            InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
+            sx={ { maxWidth: '100px', width: 'auto', } }
+            error={ formik.touched[coInputs[index].value] && Boolean(formik.errors[coInputs[index].value]) }
+            helperText={ formik.touched[coInputs[index].value] &&
+              <Typography
+                component="span"
+                color="primary"
+                sx={ { fontSize: '14px' } }
+              >{ formik.errors[coInputs[index].value] }
+              </Typography> }
+            label={
+              <Typography
+                variant="h6"
+                color="black"
+                sx={ { fontStyle: 'italic', fontSize: '14px', width: '40vw' } }
+              >
+                Payments
+              </Typography> }
+          />
+          }
 
-            <TextField
-              onChange={ formik.handleChange }
-              variant="standard"
-              color="primary"
-              onBlur={ formik.handleBlur }
-              value={ formik.values[item.value] }
-              name={ item.value }
-              InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-              sx={ { maxWidth: '100px', width: 'auto', } }
-              error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
-              helperText={ formik.touched[item.value] &&
-                <Typography
-                  component="span"
-                  color="primary"
-                  sx={ { fontSize: '14px' } }
-                >{ formik.errors[item.value] }
-                </Typography> }
-              label={
-                <Typography
-                  variant="h6"
-                  color="black"
-                  sx={ { fontStyle: 'italic', fontSize: '14px', width: '40vw' } }
-                >
-                  Payments
-                </Typography> }
-            />
+          <Typography variant="h6">{ item.text }</Typography>
 
-            { coInputs && <TextField
-              onChange={ formik.handleChange }
-              variant="standard"
-              color="primary"
-              onBlur={ formik.handleBlur }
-              value={ formik.values[coInputs[index].value] }
-              name={ coInputs[index].value }
-              InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-              sx={ { maxWidth: '100px', width: 'auto', } }
-              error={ formik.touched[coInputs[index].value] && Boolean(formik.errors[coInputs[index].value]) }
-              helperText={ formik.touched[coInputs[index].value] &&
-                <Typography
-                  component="span"
-                  color="primary"
-                  sx={ { fontSize: '14px' } }
-                >{ formik.errors[coInputs[index].value] }
-                </Typography> }
-              label={
-                <Typography
-                  variant="h6"
-                  color="black"
-                  sx={ { fontStyle: 'italic', fontSize: '14px', width: '40vw' } }
-                >
-                  Payments
-                </Typography> }
-            />
-            }
-
-            <Typography variant="h6">{ item.text }</Typography>
-
-          </Grid>
-        </div>) }
+        </Grid>)
+        }
       </Grid>
     </Wrapper>
   )
@@ -323,6 +321,7 @@ export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
   formName,
   co_formName
 }) => {
+
   return (
     <Wrapper
       next={ next }
@@ -357,7 +356,6 @@ export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
           </Typography>
         </Grid>
 
-
         <Grid
           container
           wrap="nowrap"
@@ -369,7 +367,6 @@ export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
             wrap="nowrap"
             sx={ { width: '40px', marginRight: '10px' } }
           >
-
             <RadioGroup
               name={ formName }
               onBlur={ formik.handleBlur }
@@ -430,8 +427,8 @@ interface ICreateRadioTextQuestion extends basicData {
   coQuestion?: (state: any) => string
   co_inputs?: { text: string, value: string }[]
   question1?: (arg: any) => string,
-  co_question?:(state:any)=> any,
-  co_question1?:(state:any)=> string,
+  co_question?: (state: any) => any,
+  co_question1?: (state: any) => string,
   formName?: string,
   co_formName?: string,
 }
@@ -453,7 +450,6 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
   co_question1,
   formName,
   co_formName
-
 }) => {
   return (
     <Wrapper
@@ -466,7 +462,6 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
       current={ current }
       setSchema={ setSchema }
     >
-
       <Grid
         container
         direction="column"
@@ -509,7 +504,8 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
         </Typography>
         }
 
-        { inputs && inputs.map((item, index: number) => <InputField
+        { inputs && inputs.map((item, index: number) =>
+          <InputField
             key={ index }
             item={ item }
             formik={ formik }
@@ -520,7 +516,7 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
           variant="h6"
           sx={ { fontWeight: 'bold', marginTop: '40px' } }
         >
-          {co_question && co_question(formik.values) }
+          { co_question && co_question(formik.values) }
         </Typography>
         }
 
@@ -552,25 +548,22 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
           </RadioGroup>
         </Grid>
 
-
         { co_question && <Typography
           variant="h6"
           sx={ { fontWeight: 'bold', marginTop: '40px' } }
         >
-          {co_question1 && co_question1(formik.values) }
+          { co_question1 && co_question1(formik.values) }
         </Typography>
         }
 
         { co_inputs && co_inputs.map((item, index: number) => <InputField
             item={ item }
             formik={ formik }
-
             key={ index }
           />
         ) }
 
       </Grid>
-
     </Wrapper>
   )
 }
@@ -581,7 +574,6 @@ interface ICreateCheckboxQuestion extends basicData {
   co_formName?: string
   co_answers?: { text: string, value: string }[]
   co_question?: any
-
 }
 
 export const CreateVeteranQuestion: FC<ICreateCheckboxQuestion> = ({
@@ -597,7 +589,6 @@ export const CreateVeteranQuestion: FC<ICreateCheckboxQuestion> = ({
   co_formName,
   co_answers,
   co_question
-
 }) => {
   useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [ formName, answers ])
 

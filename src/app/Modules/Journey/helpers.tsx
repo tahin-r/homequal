@@ -13,6 +13,7 @@ import {
 import React, { FC, useEffect } from 'react'
 import { QuestionKey }          from './questions'
 import { FormikValues }         from 'formik/dist/types'
+import { InputField }           from './shared/shared';
 
 
 interface basicData {
@@ -23,12 +24,12 @@ interface basicData {
   setCurrentQuestionHandler: (next: QuestionKey, current: QuestionKey) => void
   description: string
   current: string
-  question1?:(arg:any)=> string
+  question1?: (arg: any) => string
   setSchema: (current: QuestionKey) => void
 }
 
-
 export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
+
   useEffect(() => {
     rest.setSchema(String(rest.current))
   }, [ rest.current ])
@@ -101,7 +102,7 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
 
 }) => {
 
-  useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [formName])
+  useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [ formName ])
   return (
     <>
       <Wrapper
@@ -113,9 +114,9 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
         formName={ formName }
         setSchema={ setSchema }
         current={ current }
-
       >
-        {formName && formik.values[formName] &&<RadioGroup
+
+        { formName && formik.values[formName] && <RadioGroup
           name={ formName }
           onBlur={ formik.handleBlur }
           onChange={ formik.handleChange }
@@ -133,9 +134,8 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
               label={ <Typography variant="h6"> { item.text } </Typography> }
             />,
           ) }
-
-
-        </RadioGroup>}
+        </RadioGroup>
+        }
 
       </Wrapper>
     </>
@@ -173,35 +173,12 @@ export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
         sx={ { paddingLeft: '10vw' } }
       >
 
-        { inputs && inputs.map((item: any, index: number) => {
-            return <TextField
-              label={
-                <Typography
-                  variant="h6"
-                  color="black"
-                  sx={ { fontStyle: 'italic', minWidth: '100px' } }
-                >
-                  { item.text }
-                </Typography> }
-              onChange={ formik.handleChange }
-              key={ index }
-              autoFocus={index===0}
-              variant="standard"
-              color="primary"
-              onBlur={ formik.handleBlur }
-              value={ formik.values[item.value] }
-              name={ item.value }
-              InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-              sx={ { maxHeight: 'auto', maxWidth: '200px' } }
-              error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
-              helperText={ formik.touched[item.value] && <Typography
-                component="span"
-                color="primary"
-                sx={ { fontSize: '15px' } }
-              >{ formik.errors[item.value] }</Typography> }
-            />
-          }
-        ) }
+        { inputs && inputs.map((item: any, index: number) => <InputField
+          formik={ formik }
+          item={ item }
+          key={ index }
+          index={ index }
+        />) }
       </Grid>
 
     </Wrapper>
@@ -308,42 +285,22 @@ export const CreateAutoCompleteQuestion: FC<ICreateAutoCompleteQuestion> = ({
       >
         { inputs && inputs.map((item, index: number) => (
           <Grid
-            item
-            sx={ { margin: '2vh 0' } }
             key={ index }
           >
             <Typography variant="h6">Option { index + 1 }</Typography>
-            <Grid container>
-              <TextField
-                label={
-                  <Typography
-                    component="span"
-                    color="black"
-                    sx={ { fontStyle: 'italic', width: '200px' } }
-                  >
-                    { item.text }
-                  </Typography> }
-                onChange={ formik.handleChange }
-                onBlur={ formik.handleBlur }
-                value={ formik.values[item.value] }
-                key={ index }
-                variant="standard"
-                color="primary"
-                name={ item.value }
-                InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-                sx={ { width: '40vw' } }
-                error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
-                helperText={ formik.touched[item.value] && <Typography
-                  component="span"
-                  color="primary"
-                  sx={ { fontSize: '15px' } }
-                >{ formik.errors[item.value] }</Typography> }
+            <Grid
+              container
+              wrap="nowrap"
+            >
+              <InputField
+                formik={ formik }
+                item={ item }
               />
               <Autocomplete
                 id={ `${ formName }[1]` }
                 onChange={ (event, value) => formik.setFieldValue(`${ formName }[${ index }][1]`, value) }
                 options={ states }
-                sx={ { width: '40vw' } }
+                sx={ { minWidth: '170px' } }
                 renderInput={ (params) =>
                   <TextField { ...params } label="State"/> }
               />

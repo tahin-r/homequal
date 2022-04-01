@@ -80,7 +80,7 @@ export const BaseStyles = createGlobalStyle`
   }
 
   body {
-    font-family : "Lato", "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family : "Open Sans Light", serif;
   }
 
   a {
