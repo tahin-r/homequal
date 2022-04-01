@@ -238,7 +238,7 @@ const Q11 = {
   description       : '',
   elementConstructor: 'createTextFieldQuestion',
   current           : 'Q11',
-  next              : 'Q12C',
+  next              : 'Q12',
   inputs            : [],
 }
 
