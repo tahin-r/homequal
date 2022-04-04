@@ -2,18 +2,43 @@ import React             from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Dashboard }     from '../app/Modules/Dashboard/Dashboard';
 import { Journey }       from '../app/Modules/Journey/Journey';
+import { PartnerWithUs } from '../app/Modules/Company/PartnerWithUs/PartnerWithUs';
+
+//
+// link: '/FAQs'
+// link: '/homebuyer_library'
+// link: '/real_estate'
+// link: '/lending'
+// link: '/about_us'
+// link: '/careers'
+// link: '/partner_with_us'
+// link: '/privacy_policy'
+// link: '/terms_of_Use'
+
+const mainRoutes = [
+  {
+    path   : '/',
+    element: <Dashboard/>
+  },
+  {
+    path   : 'Journey/*',
+    element: <Journey/>
+  },
+  {
+    path   : '/partner_with_us',
+    element: <PartnerWithUs/>
+  }
+]
 
 export const AppRoutes = () => {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={ <Dashboard/> }
-      />
-      <Route
-        path="Journey/*"
-        element={ <Journey/> }
-      />
+      { mainRoutes.map((item, index) => <Route
+        key={ index }
+        path={ item.path }
+        element={ item.element }
+      />) }
+
     </Routes>
   )
 }

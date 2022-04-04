@@ -2,6 +2,7 @@ import {
   Autocomplete,
   Button,
   Checkbox,
+  CircularProgress,
   FormControlLabel,
   FormGroup,
   Grid,
@@ -9,12 +10,15 @@ import {
   RadioGroup,
   TextField,
   Typography,
-}                               from '@mui/material'
-import React, { FC, useEffect } from 'react'
-import { QuestionKey }          from './questions'
-import { FormikValues }         from 'formik/dist/types'
-import { InputField }           from './shared/shared';
-
+}                                         from '@mui/material'
+import React, { FC, useEffect, useState } from 'react'
+import { QuestionKey }                    from './questions'
+import { FormikValues }                   from 'formik/dist/types'
+import { InputField }                     from './shared/shared';
+import { PieChart }                       from 'react-minimal-pie-chart';
+import { CenteredTypography }             from '../../../shared/styles/strings';
+import doneArrow                          from '../../../assets/images/doneArrow.svg'
+import { useNavigate }                    from 'react-router-dom';
 
 interface basicData {
   formik: FormikValues
@@ -29,9 +33,9 @@ interface basicData {
 }
 
 export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
-
+  const navigate = useNavigate();
   useEffect(() => {
-    rest.setSchema(String(rest.current))
+    rest.setSchema && rest.setSchema(String(rest.current))
   }, [ rest.current ])
 
   const handleClick = async () => {
@@ -45,9 +49,11 @@ export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
   return (
 
     <Grid
+      position={ 'relative' }
       container
+      wrap={ 'nowrap' }
       direction="column"
-      sx={ { minHeight: 'calc( 100vh - 60px )' } }
+      sx={ { minHeight: 'calc( 100vh - 60px )', height: 'auto' } }
     >
       <Typography
         variant="h6"
@@ -55,30 +61,32 @@ export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
       >
         { rest.question(rest.formik.values) }
       </Typography>
-      <form onSubmit={ rest.formik.handleSubmit }>
 
+      <form onSubmit={ rest.formik.handleSubmit }>
         { children }
 
         <Typography sx={ { marginTop: '5vh', fontStyle: 'italic', padding: '3vw' } }>
           { rest.description }
         </Typography>
 
-        <Grid
-          item
+
+        { (rest.current !== 'Q23' || rest.status === 3) && <Grid
+          flexShrink={ 0 }
           container
           justifyContent="center"
-          flexShrink="0"
-          sx={ { bottom: '40px', height: '50px', marginTop: 'auto', marginBottom: '5vh' } }
+          sx={ { bottom: '5px', height: '50px', marginTop: 'auto', marginBottom: '20px' } }
         >
           <Button
             variant="outlined"
             color="primary"
             type="button"
-            onClick={ () => handleClick() }
+            sx={ { transition: '2s' } }
+            onClick={ () => rest.current !== 'Q23' ? handleClick() : navigate('/') }
           >
             <Typography variant="h6">Continue</Typography>
           </Button>
-        </Grid>
+
+        </Grid> }
       </form>
     </Grid>
   )
@@ -103,6 +111,7 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
 }) => {
 
   useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [ formName ])
+
   return (
     <>
       <Wrapper
@@ -156,6 +165,7 @@ export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
   current,
   setSchema,
 }) => {
+
   return (
     <Wrapper
       next={ next }
@@ -202,6 +212,7 @@ export const CreateCheckBoxQuestion: FC<ICreateCheckBoxQuestion> = ({
   setSchema,
 
 }) => {
+
   return (
     <Wrapper
       next={ next }
@@ -313,5 +324,184 @@ export const CreateAutoCompleteQuestion: FC<ICreateAutoCompleteQuestion> = ({
   )
 }
 
+export const CreateDiagramQuestion: FC<basicData> = ({
+  question,
+  setCurrentQuestionHandler,
+  next,
+  formik,
+  current,
+}) => {
+  const totalIncome = Number(formik.values.monthly_income) + Number(formik.values.co_monthly_income)
+  const totalExpenses = Number(formik.values.auto_expense) +
+    Number(formik.values.credit_card_expense) +
+    Number(formik.values.student_loans) +
+    Number(formik.values.other_expenses) +
+    Number(formik.values.co_auto_expense) +
+    Number(formik.values.co_credit_card_expense) +
+    Number(formik.values.co_student_loans) +
+    Number(formik.values.co_other_expenses)
+
+  const ratio = Math.ceil(totalExpenses / totalIncome * 100)
+
+  const pieData = [
+    {
+      title: 'Monthly Income',
+      value: totalIncome,
+      color: '#676dde'
+    },
+    {
+      title: 'Monthly expenses',
+      value: totalExpenses,
+      color: '#d55854'
+    },
+  ]
+
+  return (
+    <Wrapper
+      next={ next }
+      setCurrentQuestionHandler={ setCurrentQuestionHandler }
+      question={ question }
+      formik={ formik }
+      current={ current }
+    >
+      <Grid
+        container
+        direction="column"
+        wrap="nowrap"
+        alignItems="center"
+        sx={ { marginTop: '30px', height: '100%' } }
+      >
+        <Typography
+          variant="h6"
+          component="span"
+          sx={ { padding: '10px', backgroundColor: 'rgba(29,106,141,0.63)', width: 'auto', color: 'white' } }
+        > Debt to Income Ratio </Typography>
+
+        <Grid
+          container
+          position={ 'relative' }
+          sx={ { maxWidth: '250px' } }
+        >
+          <PieChart
+            startAngle={ 270 }
+            paddingAngle={ 2 }
+            data={ pieData }
+            lineWidth={ 20 }
+            label={ (item) => item.dataIndex === 0 ? `${ ratio }%` : null }
+            labelPosition={ 0 }
+            labelStyle={ { fill: '#676dde', fontSize: '13px', fontWeight: 'bold' } }
+            radius={ PieChart.defaultProps.radius - 20 }
+          />
+        </Grid>
+
+        <Grid
+          direction="column"
+          width="70%"
+          container
+          maxWidth={ 400 }
+        >
+          <Grid
+            container
+            justifyContent="space-between"
+            wrap={ 'nowrap' }
+            mb={ 2 }
+          >
+            <Typography variant="h6">Monthly Income</Typography>
+            <Typography
+              variant="h6"
+              sx={ { minWidth: '70px', padding: '5px', bgcolor: '#676dde', color: 'white', textAlign: 'right' } }
+            >{ totalIncome }</Typography>
+          </Grid>
+
+          <Grid
+            container
+            justifyContent="space-between"
+            wrap={ 'nowrap' }
+          >
+            <Typography
+              variant="h6"
+              justifyContent="space-between"
+            > Monthly Expenses</Typography>
+            <Typography
+              variant="h6"
+              sx={ {
+                minWidth: '70px', padding: '5px', bgcolor: '#d55854', color: 'white', textAlign: 'right'
+              } }
+            >{ totalExpenses }
+            </Typography>
+
+          </Grid>
+        </Grid>
+      </Grid>
+    </Wrapper>
+  )
+}
+
+export const CreateEndQuestion: FC<basicData> = ({
+  setCurrentQuestionHandler,
+  next,
+  question,
+  description,
+  formik,
+  current,
+  setSchema,
+}) => {
+  const [ status, setStatus ] = useState(-1)
+  const items = [ ' Analyzing Financial', 'Identifying Potential Issues', 'Calculating Cash Reward', 'Building Success Plan' ]
+
+  return (
+    <Wrapper
+      next={ next }
+      setCurrentQuestionHandler={ setCurrentQuestionHandler }
+      description={ description }
+      question={ question }
+      formik={ formik }
+      setSchema={ setSchema }
+      current={ current }
+      status={ status }
+    >
+
+      <CenteredTypography variant="h5">
+        That’s it. Give me a second
+        to crunch some numbers.
+      </CenteredTypography>
 
 
+      { items.map((item, index) => {
+
+        if (index === status + 1) {
+          setTimeout(() => setStatus(status + 1), 4000)
+        }
+
+        return (
+          <Grid
+            container
+            direction="row"
+            sx={ { paddingLeft: '10vw', margin: '2vh 0', height: '50px', width: '80vw' } }
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <Typography
+              variant="h6"
+              color="primary"
+              sx={ { verticalAlign: 'bottom' } }
+            >
+              { item }
+            </Typography>
+            { status >= index ? <img
+                                src={ doneArrow }
+                                width={ 45 }
+                                height={ 45 }
+                                alt="arrow"
+                              />
+                              : <CircularProgress
+                color="primary"
+                sx={ { marginLeft: '10px', maxWidth: '35px', maxHeight: '35px' } }
+              />
+            }
+          </Grid>
+        )
+      }) }
+    </Wrapper>
+  )
+}

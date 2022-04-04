@@ -3,12 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/Journey.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/Journey.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/coHelpers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/coHelpers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/helpers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/helpers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/shared/shared.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/shared/shared.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/baseStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/baseStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/muiTheme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/muiTheme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/questions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +69,7 @@
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\images\faces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\Company\PartnerWithUs" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\assets\images\dashboard\lending" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\assets" />
     </key>
@@ -92,7 +96,8 @@
       <workItem from="1648546545441" duration="28832000" />
       <workItem from="1648632910389" duration="27836000" />
       <workItem from="1648718105670" duration="28540000" />
-      <workItem from="1648804768825" duration="17765000" />
+      <workItem from="1648804768825" duration="19575000" />
+      <workItem from="1649064228998" duration="26418000" />
     </task>
     <servers />
   </component>

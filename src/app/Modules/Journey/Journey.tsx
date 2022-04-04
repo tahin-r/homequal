@@ -1,30 +1,18 @@
-import { Grid } from '@mui/material'
-import {
-  useState,
-}               from 'react'
+import { Grid }                                       from '@mui/material'
+import { useState, }                                  from 'react'
 import {
   CreateAutoCompleteQuestion,
   CreateCheckBoxQuestion,
+  CreateDiagramQuestion,
+  CreateEndQuestion,
   CreateRadioQuestion,
   CreateTextFieldQuestion,
-}               from './helpers'
-import {
-  QuestionKey,
-  questionsList,
-  QuestionsType,
-}               from './questions'
-import {
-  useFormik
-}               from 'formik'
-import * as yup from 'yup'
-import {
-  Route,
-  Routes,
-  useNavigate
-}               from 'react-router-dom'
-import {
-  QuestionsSchema
-}               from './validation';
+}                                                     from './helpers'
+import { QuestionKey, questionsList, QuestionsType, } from './questions'
+import { useFormik }                                  from 'formik'
+import * as yup                                       from 'yup'
+import { Route, Routes, useNavigate }                 from 'react-router-dom'
+import { QuestionsSchema }                            from './validation';
 import {
   CreateCOTextFieldQuestion,
   CreateDoubledCheckBoxQuestion,
@@ -32,7 +20,7 @@ import {
   CreateDoubledTextFieldQuestion,
   CreateRadioTextQuestion,
   CreateVeteranQuestion
-}               from './coHelpers';
+}                                                     from './coHelpers';
 
 
 export const Journey = () => {
@@ -108,7 +96,6 @@ export const Journey = () => {
     let isCoHaveStudentLoan = formik.values.co_member_buyer_details.includes('late_student_loan')
     let isCoHaveTax = formik.values.co_member_buyer_details.includes('tax_lien_judgement_foreclosure')
     let isSpouce = formik.values.co_borrower_flag === '1'
-    console.log(formik.values.co_borrower_flag)
     if (current === 'Q4' && isAlone) {
       navigate('Q7')
     } else if (current === 'Q5' && isSpouce) {
@@ -163,6 +150,11 @@ export const Journey = () => {
         return <CreateRadioTextQuestion { ...props } />
       case('CreateVeteranQuestion'):
         return <CreateVeteranQuestion { ...props }/>
+      case ('CreateDiagramQuestion'):
+        return <CreateDiagramQuestion { ...props }/>
+      case ('CreateEndQuestion'): {
+        return <CreateEndQuestion { ...props }/>
+      }
     }
   }
 
@@ -176,7 +168,7 @@ export const Journey = () => {
   return (
     <Grid
       overflow="hidden"
-      sx={ { maxWidth: '100vw' } }
+      sx={ { maxWidth: '100vw', height: 'auto' } }
     >
       <Routes>
         { questionRoutes }

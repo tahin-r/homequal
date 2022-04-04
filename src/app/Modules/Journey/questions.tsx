@@ -284,9 +284,9 @@ const Q13 = {
 }
 
 const Q14 = {
-  question          : () => 'Great news! Based on your information, your Debt to Income Ratio is ACCEPTABLE! ',
+  question          : (state:any) => `${state.first_name}, great news! Based on your information, your Debt to Income Ratio is ACCEPTABLE! `,
   description       : '',
-  elementConstructor: 'createTextFieldQuestion',
+  elementConstructor: 'CreateDiagramQuestion',
   current           : 'Q14',
   next              : 'Q15',
   inputs            : [],
@@ -520,6 +520,14 @@ const Q22 = {
   ],
 }
 
+const Q23 = {
+  question          : ()=> '',
+  description       : '',
+  elementConstructor: 'CreateEndQuestion',
+  current           : 'Q23',
+  next              : 'Q23',
+}
+
 const Q12c = {
   question          : () => `What is your total monthly income from all sources before any taxes or deductions?`,
   coQuestion        : (state: any) => `What is ${ state.co_first_name }\`s total monthly income from all sources before any taxes or deductions?`,
@@ -586,9 +594,9 @@ const Q13c = {
   ],
 }
 const Q14c = {
-  question          : (state: any) => `${ state.first_name }, Great news! Based on your information, your Debt to Income Ratio is ACCEPTABLE! `,
+  question          : (state: any) => `${ state.first_name }, great news! Based on your information, your Debt to Income Ratio is ACCEPTABLE! `,
   description       : '',
-  elementConstructor: 'createTextFieldQuestion',
+  elementConstructor: 'CreateDiagramQuestion',
   current           : 'Q14c',
   next              : 'Q15c',
   inputs            : [],
@@ -997,6 +1005,7 @@ export const questionsList = {
   Q19c: Q19c,
   Q20c: Q20c,
   Q21c: Q21c,
+  Q23:Q23,
 }
 
 export type QuestionKey = keyof typeof questionsList;

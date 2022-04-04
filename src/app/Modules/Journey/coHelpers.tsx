@@ -120,17 +120,14 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
 
         sx={ { paddingLeft: '10vw' } }
       >
-        <Grid
-          container
-          sx={ {} }
-        >
+        <Grid container>
           <Typography
             variant="h6"
-            sx={ { width: '100px', margin: '2vh 2vw', textAlign: 'center', fontWeight: 'bold' } }
+            sx={ { width: '100px', margin: '2vh 1vh', textAlign: 'center', fontWeight: 'bold' } }
           >You</Typography>
           <Typography
             variant="h6"
-            sx={ { width: '100px', margin: '2vh 2vw', textAlign: 'center', fontWeight: 'bold' } }
+            sx={ { width: '100px', margin: '2vh 0', textAlign: 'center', fontWeight: 'bold' } }
           >{ formik.values.co_first_name }`s</Typography>
         </Grid>
         { inputs && inputs.map((item, index: number) => <Grid
@@ -149,7 +146,7 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
             value={ formik.values[item.value] }
             name={ item.value }
             InputProps={ { style: { fontSize: 20, fontWeight: 'bold' } } }
-            sx={ { maxWidth: '100px', width: 'auto', } }
+            sx={ { maxWidth: '100px', width: 'auto',margin:'0 1vw' } }
             error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
             helperText={ formik.touched[item.value] &&
               <Typography

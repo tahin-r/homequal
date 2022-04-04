@@ -3,16 +3,17 @@ import { FC }                   from 'react';
 import styled                   from 'styled-components';
 import { HomeQualTextTemplate } from '../../../../shared/strings/strings';
 
-const TextContainer = styled(Grid)`
-  color      : black;
+
+export const TextContainer = styled(Grid)`
+  color      : ${ (props: any) => props.color ? props.color : 'black' };
   padding    : 40px;
   text-align : center;
   width      : 100%
 `
-const HomeQualHomeOwners = styled(TextContainer)`
+export const GreyTextContainer = styled(TextContainer)`
   padding          : 30px;
-  color            : white;
-  background-color : ${props => props.theme.colors.darkGrey};
+  color            : ${ (props: any) => props.color ? props.color : 'white' };
+  background-color : ${ props => props.theme.colors.darkGrey };
   text-align       : initial;
 `
 export const DetermineYouHome: FC = () => {
@@ -24,12 +25,12 @@ export const DetermineYouHome: FC = () => {
           Determine your home buying readiness and find out what you can afford in less than two minutes.
         </Typography>
       </TextContainer>
-      <HomeQualHomeOwners>
+      <GreyTextContainer>
         <Typography variant="h6">
           <HomeQualTextTemplate variant={ 'h6' }/> homeowners realize an average savings of $2,200 per year
                                                    in lower payments!
         </Typography>
-      </HomeQualHomeOwners>
+      </GreyTextContainer>
     </>
   )
 }

@@ -2,6 +2,7 @@ import React                  from 'react';
 import { Grid, Typography }   from '@mui/material';
 import styled                 from 'styled-components';
 import { CenteredTypography } from '../../../../../shared/styles/strings';
+import { useNavigate }        from 'react-router-dom';
 
 const CenteredItemTypography = styled(CenteredTypography)`
   margin-bottom : 10px;
@@ -10,29 +11,71 @@ const CenteredItemTypography = styled(CenteredTypography)`
 
 interface ILinks {
   name: string
-  items: Array<string>
+  items: { text: string, link: string }[]
 }
 
 const links: Array<ILinks> = [
   {
     name : 'Resources',
-    items: [ 'FAQs', 'Homebuyer Library' ]
+    items: [
+      {
+        text: 'FAQs',
+        link: '/FAQs'
+      },
+      {
+        text: 'Homebuyer Library',
+        link: '/homebuyer_library'
+      },
+    ]
   },
   {
     name : 'Services',
-    items: [ 'Real Estate', 'Lending' ]
+    items: [
+      {
+        text: 'Real Estate',
+        link: '/real_estate'
+      },
+      {
+        text: 'Lending',
+        link: '/lending'
+      } ]
   },
   {
     name : 'Company',
-    items: [ 'About Us', 'Careers', 'Partner With Us' ]
+    items: [
+      {
+        text: 'About Us',
+        link: '/about_us'
+      },
+      {
+        text: 'Careers',
+        link: '/careers'
+      },
+      {
+        text: 'Partner With Us',
+        link: '/partner_with_us'
+      },
+    ]
   },
   {
     name : 'Legal',
-    items: [ 'Privacy Policy', 'Terms of Use' ]
+    items: [
+      {
+        text: 'Privacy Policy',
+        link: '/privacy_policy'
+      },
+      {
+        text: 'Terms of Use',
+        link: '/terms_of_Use'
+      },
+    ]
   },
 ]
 
 export const Links = () => {
+
+  const navigate = useNavigate()
+
   return (
     <Grid
       container
@@ -51,8 +94,9 @@ export const Links = () => {
           { item.items.map((itemLink, index) => (
             <Typography
               key={ index }
+              onClick={()=>navigate(itemLink.link)}
               sx={ { marginBottom: '5px', textAlign: 'center' } }
-            >{ itemLink }</Typography>
+            >{ itemLink.text }</Typography>
           )) }
         </Grid>
       )) }
