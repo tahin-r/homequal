@@ -384,16 +384,19 @@ export const CreateEndQuestion: FC<basicData> = ({
 
         return (
           <Grid container
+                key={index}
                 direction="row"
-                sx={ { paddingLeft: '10vw', margin: '2vh 0', height: '50px', width: '80vw' } }
+                sx={ { paddingLeft: '10vw', margin: '2vh 0', width: '80vw' } }
                 alignItems="center"
-                justifyContent="space-between">
+                justifyContent="space-between"
+                wrap='nowrap'>
+
             <Typography variant="h6" color="primary" sx={ { verticalAlign: 'bottom' } }>
               { item }
             </Typography>
             { status >= index ? <img src={ doneArrow } width={ 45 } height={ 45 } alt="arrow"/>
                               :
-              <CircularProgress color="primary" sx={ { marginLeft: '10px', maxWidth: '35px', maxHeight: '35px' } }/>
+              <CircularProgress color="primary" sx={ { marginLeft: '10px',minWidth: '35px', minHeight: '35px', maxWidth:'35px',maxHeight:'35px' } }/>
             }
           </Grid>
         )
