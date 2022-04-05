@@ -1,26 +1,18 @@
-import { Grid }                                       from '@mui/material'
-import { useState, }                                  from 'react'
+import { Grid }                                      from '@mui/material'
+import { useState }                                  from 'react'
 import {
-  CreateAutoCompleteQuestion,
-  CreateCheckBoxQuestion,
-  CreateDiagramQuestion,
-  CreateEndQuestion,
-  CreateRadioQuestion,
+  CreateAutoCompleteQuestion, CreateCheckBoxQuestion, CreateDiagramQuestion, CreateEndQuestion, CreateRadioQuestion,
   CreateTextFieldQuestion,
-}                                                     from './helpers'
-import { QuestionKey, questionsList, QuestionsType, } from './questions'
-import { useFormik }                                  from 'formik'
-import * as yup                                       from 'yup'
-import { Route, Routes, useNavigate }                 from 'react-router-dom'
-import { QuestionsSchema }                            from './validation';
+}                                                    from './helpers'
+import { QuestionKey, questionsList, QuestionsType } from './questions'
+import { useFormik }                                 from 'formik'
+import * as yup                                      from 'yup'
+import { Route, Routes, useNavigate }                from 'react-router-dom'
+import { QuestionsSchema }                           from './validation'
 import {
-  CreateCOTextFieldQuestion,
-  CreateDoubledCheckBoxQuestion,
-  CreateDoubledRadioQuestion,
-  CreateDoubledTextFieldQuestion,
-  CreateRadioTextQuestion,
-  CreateVeteranQuestion
-}                                                     from './coHelpers';
+  CreateCOTextFieldQuestion, CreateDoubledCheckBoxQuestion, CreateDoubledRadioQuestion, CreateDoubledTextFieldQuestion,
+  CreateRadioTextQuestion, CreateVeteranQuestion,
+}                                                    from './coHelpers'
 
 
 export const Journey = () => {
@@ -69,8 +61,8 @@ export const Journey = () => {
   }
 
   const navigate = useNavigate()
-  const [ currentState, setCurrentState ] = useState<any>({ ...initialState })
-  const [ currentSchema, setCurrentSchema ] = useState(QuestionsSchema.Q1)
+  const [currentState, setCurrentState] = useState<any>({ ...initialState })
+  const [currentSchema, setCurrentSchema] = useState(QuestionsSchema.Q1)
 
   const formik = useFormik({
     validateOnBlur  : true,
@@ -158,18 +150,11 @@ export const Journey = () => {
     }
   }
 
-  const questionRoutes = Object.values(questionsList)
-                               .map((el, index) => <Route
-                                 path={ `/${ Object.keys(questionsList)[index] }` }
-                                 element={ constructor(el) }
-                                 key={ index }
-                               />)
+  const questionRoutes = Object.values(questionsList).map((el, index) =>
+    <Route path={ `/${ Object.keys(questionsList)[index] }` } element={ constructor(el) } key={ index }/>)
 
   return (
-    <Grid
-      overflow="hidden"
-      sx={ { maxWidth: '100vw', height: 'auto' } }
-    >
+    <Grid overflow="hidden" sx={ { maxWidth: '100vw', height: 'auto' } }>
       <Routes>
         { questionRoutes }
       </Routes>

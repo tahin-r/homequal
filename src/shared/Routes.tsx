@@ -1,8 +1,10 @@
-import React             from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { Dashboard }     from '../app/Modules/Dashboard/Dashboard';
-import { Journey }       from '../app/Modules/Journey/Journey';
-import { PartnerWithUs } from '../app/Modules/Company/PartnerWithUs/PartnerWithUs';
+import React             from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { Dashboard }     from '../app/Modules/Dashboard/Dashboard'
+import { Journey }       from '../app/Modules/Journey/Journey'
+import { PartnerWithUs } from '../app/Modules/Company/PartnerWithUs/PartnerWithUs'
+import { Careers }       from '../app/Modules/Company/Careers/Careers'
+import { AboutUs }       from '../app/Modules/Company/AboutUs/AboutUs'
 
 //
 // link: '/FAQs'
@@ -18,31 +20,31 @@ import { PartnerWithUs } from '../app/Modules/Company/PartnerWithUs/PartnerWithU
 const mainRoutes = [
   {
     path   : '/',
-    element: <Dashboard/>
+    element: <Dashboard/>,
   },
   {
     path   : 'Journey/*',
-    element: <Journey/>
+    element: <Journey/>,
   },
   {
     path   : '/partner_with_us',
-    element: <PartnerWithUs/>
-  }
+    element: <PartnerWithUs/>,
+  },
+  {
+    path   : '/careers',
+    element: <Careers/>,
+  },
+  {
+    path   : '/about_us',
+    element: <AboutUs/>,
+  },
 ]
 
+
 export const AppRoutes = () => {
-  return (
-    <Routes>
-      { mainRoutes.map((item, index) => <Route
-        key={ index }
-        path={ item.path }
-        element={ item.element }
-      />) }
 
-    </Routes>
-  )
+  return <Routes>
+    { mainRoutes.map((item, index) => <Route key={ index } path={ item.path } element={ item.element }/>) }
+  </Routes>
+
 }
-
-
-
-

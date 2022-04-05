@@ -39,4 +39,4 @@ export const theme: ITheme = {
     lightGrey  : 'rgba(211,211,211,0.42)',
     darkGrey   : '#adacac',
   },
-};
+}

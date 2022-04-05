@@ -2,11 +2,7 @@ import { Grid } from '@mui/material'
 import React    from 'react'
 import styled   from 'styled-components'
 import {
-  FaceBookIcon,
-  LinkedInIcon,
-  TicTocIcon,
-  TwitterIcon,
-  YoutubeIcon,
+  FaceBookIcon, LinkedInIcon, TicTocIcon, TwitterIcon, YoutubeIcon,
 }               from '../../../../../assets/images/SocialMediaImages'
 
 const IconHolder = styled(({ ...props }) => <div { ...props } />)`
@@ -17,12 +13,12 @@ const IconHolder = styled(({ ...props }) => <div { ...props } />)`
   height          : 4vw;
   background      : url(${ props => props.icon }) 100% 100%;
   background-size : cover;
-  transition: 0.5s;
-  user-select: none;
-  
-  &:hover,&:active {
-    transition: 0.5s;
-    transform: scale(1.2);
+  transition      : 0.5s;
+  user-select     : none;
+
+  &:hover, &:active {
+    transition : 0.5s;
+    transform  : scale(1.2);
   }
 `
 
@@ -46,22 +42,15 @@ const icons = [
   {
     icon: FaceBookIcon,
     link: 'https://www.facebook.com/myhomequal',
-  } ]
+  }]
 
 export const SocialMedia = () => {
 
   return (
-    <Grid
-      container
-      justifyContent="space-between"
-      wrap="nowrap"
-      gap={ '10px' }
-      sx={ { maxWidth: '400px' } }
-    >
+    <Grid container justifyContent="space-between" wrap="nowrap" gap={ '10px' } sx={ { maxWidth: '400px' } }>
       { icons.map((item, index) => (
         <a href={ item.link } key={ index }>
-          <IconHolder
-            icon={ item.icon }
+          <IconHolder icon={ item.icon }
 
           />
         </a>

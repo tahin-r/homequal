@@ -1,13 +1,13 @@
-import { createTheme }       from '@material-ui/core/styles';
-import { PaletteOptions }    from '@material-ui/core/styles/createPalette';
-import { TypographyOptions } from '@material-ui/core/styles/createTypography';
-import { Overrides }         from '@material-ui/core/styles/overrides';
-import { theme }             from './theme';
+import { createTheme }       from '@material-ui/core/styles'
+import { PaletteOptions }    from '@material-ui/core/styles/createPalette'
+import { TypographyOptions } from '@material-ui/core/styles/createTypography'
+import { Overrides }         from '@material-ui/core/styles/overrides'
+import { theme }             from './theme'
 
 const typography: TypographyOptions = {
   htmlFontSize: 18,
-  fontFamily  : 'Open Sans Light, serif'
-};
+  fontFamily  : 'Open Sans Light, serif',
+}
 
 const palette: PaletteOptions = {
   primary    : {
@@ -47,7 +47,7 @@ const palette: PaletteOptions = {
     paper  : theme.colors.white,
   },
   tonalOffset: 0.2,
-};
+}
 
 const overrides: Overrides = {
 //   MuiTypography             : {
@@ -397,10 +397,10 @@ const overrides: Overrides = {
 //       minWidth: '100px'
 //     }
 //   }
-};
+}
 
 export const muiTheme = createTheme({
   typography,
   overrides,
   palette,
-});
+})

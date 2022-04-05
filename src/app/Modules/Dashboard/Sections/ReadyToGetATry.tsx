@@ -1,9 +1,8 @@
-import { Grid, List, ListItem, ListItemAvatar, Typography } from '@mui/material';
-import styled                                               from 'styled-components';
-import { CenteredTypography, ItalicTypography, QualButton } from '../../../../shared/styles/strings';
-import doneArrow                                            from '../../../../assets/images/doneArrow.svg'
-import { useNavigate }                                      from 'react-router-dom';
-
+import { Grid, List, ListItem, ListItemAvatar, Typography } from "@mui/material"
+import styled                                               from "styled-components"
+import { CenteredTypography, ItalicTypography, QualButton } from "../../../../shared/styles/strings"
+import doneArrow                                            from "../../../../assets/images/doneArrow.svg"
+import { useNavigate }                                      from "react-router-dom"
 
 const ListIcon = styled(({ ...props }) => <div { ...props } />)`
   border-radius   : 50%;
@@ -17,18 +16,18 @@ const ListIcon = styled(({ ...props }) => <div { ...props } />)`
   background-size : cover;
 `
 const advantages = [
-  'Find out what you need to qualify for a mortgage',
-  'See what you can afford',
-  'Discover any cash refunds you may qualify for',
-  'Start looking for a new home!',
-  'It’s completely FREE!',
+  "Find out what you need to qualify for a mortgage",
+  "See what you can afford",
+  "Discover any cash refunds you may qualify for",
+  "Start looking for a new home!",
+  "It’s completely FREE!",
 ]
 
 export const ReadyToGetATry = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
-    <Grid sx={ { padding: '40px' } }>
+    <Grid sx={ { padding: "40px" } }>
       <CenteredTypography variant="h4">
         Ready to Give it a Try?
       </CenteredTypography>
@@ -36,36 +35,24 @@ export const ReadyToGetATry = () => {
         In less than two minutes:
       </ItalicTypography>
 
-      <Grid
-        container
-        justifyContent="center"
-      >
-        <List sx={ { width: '100%', maxWidth: 360 } }>
-          { advantages.map((item, index) =>
+      <Grid container justifyContent="center">
+        <List sx={ { width: "100%", maxWidth: 360 } }>
+          { advantages.map((item, index) => (
             <ListItem key={ index }>
-              <ListItemAvatar sx={ { marginRight: '2vw' } }>
+              <ListItemAvatar sx={ { marginRight: "2vw" } }>
                 <ListIcon/>
               </ListItemAvatar>
               <Typography variant="h6">{ item }</Typography>
             </ListItem>
-          ) }
+          )) }
         </List>
       </Grid>
 
-      <Grid
-        container
-        justifyContent="center"
-      >
-        <QualButton
-          sx={ { borderRadius: '30px' } }
-          onClick={ () => navigate('Journey/Q1') }
-        >
-          <Typography>
-            Give it a Try!
-          </Typography>
+      <Grid container justifyContent="center">
+        <QualButton sx={ { borderRadius: "30px" } } onClick={ () => navigate("Journey/Q1") }>
+          <Typography>Give it a Try!</Typography>
         </QualButton>
       </Grid>
     </Grid>
   )
 }
-

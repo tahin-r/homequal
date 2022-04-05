@@ -1,28 +1,19 @@
 import {
-  Autocomplete,
-  Button,
-  Checkbox,
-  CircularProgress,
-  FormControlLabel,
-  FormGroup,
-  Grid,
-  Radio,
-  RadioGroup,
-  TextField,
+  Autocomplete, Button, Checkbox, CircularProgress, FormControlLabel, FormGroup, Grid, Radio, RadioGroup, TextField,
   Typography,
 }                                         from '@mui/material'
 import React, { FC, useEffect, useState } from 'react'
 import { QuestionKey }                    from './questions'
 import { FormikValues }                   from 'formik/dist/types'
-import { InputField }                     from './shared/shared';
-import { PieChart }                       from 'react-minimal-pie-chart';
-import { CenteredTypography }             from '../../../shared/styles/strings';
+import { InputField }                     from './shared/shared'
+import { PieChart }                       from 'react-minimal-pie-chart'
+import { CenteredTypography }             from '../../../shared/styles/strings'
 import doneArrow                          from '../../../assets/images/doneArrow.svg'
-import { useNavigate }                    from 'react-router-dom';
+import { useNavigate }                    from 'react-router-dom'
 
 interface basicData {
   formik: FormikValues
-  question: (state: any) => string,
+  question: (state: any) => string
   elementConstructor: string
   next: QuestionKey
   setCurrentQuestionHandler: (next: QuestionKey, current: QuestionKey) => void
@@ -33,10 +24,10 @@ interface basicData {
 }
 
 export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   useEffect(() => {
     rest.setSchema && rest.setSchema(String(rest.current))
-  }, [ rest.current ])
+  }, [rest.current])
 
   const handleClick = async () => {
     const errors = await rest.formik.validateForm()
@@ -48,17 +39,13 @@ export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
 
   return (
 
-    <Grid
-      position={ 'relative' }
-      container
-      wrap={ 'nowrap' }
-      direction="column"
-      sx={ { minHeight: 'calc( 100vh - 60px )', height: 'auto' } }
-    >
-      <Typography
-        variant="h6"
-        sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '10px' } }
-      >
+    <Grid position={ 'relative' }
+          container
+          wrap={ 'nowrap' }
+          direction="column"
+          sx={ { minHeight: 'calc( 100vh - 60px )', height: 'auto' } }>
+
+      <Typography variant="h6" sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '10px' } }>
         { rest.question(rest.formik.values) }
       </Typography>
 
@@ -70,23 +57,23 @@ export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
         </Typography>
 
 
-        { (rest.current !== 'Q23' || rest.status === 3) && <Grid
-          flexShrink={ 0 }
-          container
-          justifyContent="center"
-          sx={ { bottom: '5px', height: '50px', marginTop: 'auto', marginBottom: '20px' } }
-        >
-          <Button
-            variant="outlined"
-            color="primary"
-            type="button"
-            sx={ { transition: '2s' } }
-            onClick={ () => rest.current !== 'Q23' ? handleClick() : navigate('/') }
-          >
-            <Typography variant="h6">Continue</Typography>
-          </Button>
+        { (rest.current !== 'Q23' || rest.status === 3) && (
+          <Grid flexShrink={ 0 }
+                container
+                justifyContent="center"
+                sx={ { bottom: '5px', height: '50px', marginTop: 'auto', marginBottom: '20px' } }>
+            <Button variant="outlined"
+                    color="primary"
+                    type="button"
+                    sx={ { transition: '2s' } }
+                    onClick={ () => rest.current !== 'Q23' ? handleClick() : navigate('/') }>
 
-        </Grid> }
+              <Typography variant="h6">Continue</Typography>
+
+            </Button>
+
+          </Grid>
+        ) }
       </form>
     </Grid>
   )
@@ -107,45 +94,39 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
   formName,
   current,
   setSchema,
-
 }) => {
 
-  useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [ formName ])
+  useEffect(() => formik.setFieldValue(formName, answers && answers[0].value), [formName])
 
   return (
     <>
-      <Wrapper
-        next={ next }
-        setCurrentQuestionHandler={ setCurrentQuestionHandler }
-        description={ description }
-        question={ question }
-        formik={ formik }
-        formName={ formName }
-        setSchema={ setSchema }
-        current={ current }
-      >
+      <Wrapper next={ next }
+               setCurrentQuestionHandler={ setCurrentQuestionHandler }
+               description={ description }
+               question={ question }
+               formik={ formik }
+               formName={ formName }
+               setSchema={ setSchema }
+               current={ current }>
 
-        { formName && formik.values[formName] && <RadioGroup
-          name={ formName }
-          onBlur={ formik.handleBlur }
-          onChange={ formik.handleChange }
-          defaultValue={ answers && answers[0].value }
-          sx={ { marginTop: '4vh', paddingLeft: '10vw' } }
-        >
-          { answers && answers.map((item, index) =>
-            <FormControlLabel
-              onChange={ formik.handleChange }
-              value={ item.value }
-              name={ formName }
-              key={ index }
-              control={ <Radio/> }
-              sx={ { maxHeight: '6vh' } }
-              label={ <Typography variant="h6"> { item.text } </Typography> }
-            />,
-          ) }
-        </RadioGroup>
-        }
+        { formName && formik.values[formName] && (
+          <RadioGroup name={ formName }
+                      onBlur={ formik.handleBlur }
+                      onChange={ formik.handleChange }
+                      defaultValue={ answers && answers[0].value }
+                      sx={ { marginTop: '4vh', paddingLeft: '10vw' } }>
 
+            { answers && answers.map((item, index) =>
+              <FormControlLabel onChange={ formik.handleChange }
+                                value={ item.value }
+                                name={ formName }
+                                key={ index }
+                                control={ <Radio/> }
+                                sx={ { maxHeight: '6vh' } }
+                                label={ <Typography variant="h6"> { item.text } </Typography> }/>,
+            ) }
+          </RadioGroup>
+        ) }
       </Wrapper>
     </>
   )
@@ -167,30 +148,22 @@ export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
 }) => {
 
   return (
-    <Wrapper
-      next={ next }
-      setCurrentQuestionHandler={ setCurrentQuestionHandler }
-      description={ description }
-      question={ question }
-      formik={ formik }
-      current={ current }
-      setSchema={ setSchema }
-    >
+    <Wrapper next={ next }
+             setCurrentQuestionHandler={ setCurrentQuestionHandler }
+             description={ description }
+             question={ question }
+             formik={ formik }
+             current={ current }
+             setSchema={ setSchema }>
 
-      <Grid
-        container
-        direction="column"
-        sx={ { paddingLeft: '10vw' } }
-      >
+      <Grid container direction="column" sx={ { paddingLeft: '10vw' } }>
 
-        { inputs && inputs.map((item: any, index: number) => <InputField
-          formik={ formik }
-          item={ item }
-          key={ index }
-          index={ index }
-        />) }
+        { inputs && inputs.map((item: any, index: number) => <InputField formik={ formik }
+                                                                         item={ item }
+                                                                         key={ index }
+                                                                         index={ index }/>) }
+
       </Grid>
-
     </Wrapper>
   )
 }
@@ -198,7 +171,6 @@ export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
 interface ICreateCheckBoxQuestion extends basicData {
   answers?: { text: string, value: string }[] | undefined
   formName?: string
-
 }
 
 export const CreateCheckBoxQuestion: FC<ICreateCheckBoxQuestion> = ({
@@ -210,36 +182,26 @@ export const CreateCheckBoxQuestion: FC<ICreateCheckBoxQuestion> = ({
   formName,
   current,
   setSchema,
-
 }) => {
 
   return (
-    <Wrapper
-      next={ next }
-      setCurrentQuestionHandler={ setCurrentQuestionHandler }
-      description={ description }
-      question={ question }
-      formik={ formik }
-      current={ current }
-      setSchema={ setSchema }
-    >
+    <Wrapper next={ next }
+             setCurrentQuestionHandler={ setCurrentQuestionHandler }
+             description={ description }
+             question={ question }
+             formik={ formik }
+             current={ current }
+             setSchema={ setSchema }>
 
-      <FormGroup
-        onChange={ formik.handleChange }
-        sx={ { paddingLeft: '10vw' } }
-      >
+      <FormGroup onChange={ formik.handleChange } sx={ { paddingLeft: '10vw' } }>
         { answers && answers.map((item: any, index: number) => (
-          <FormControlLabel
-            control={ <Checkbox
-            /> }
-            label={ <Typography variant="h6"> { item.text } </Typography> }
-            name={ formName }
-            key={ index }
-            value={ item.value }
-            color="primary"
-            sx={ { margin: '1vh 0', width: '80vw' } }
-          />))
-        }
+          <FormControlLabel control={ <Checkbox/> }
+                            label={ <Typography variant="h6"> { item.text } </Typography> }
+                            name={ formName }
+                            key={ index }
+                            value={ item.value }
+                            color="primary"
+                            sx={ { margin: '1vh 0', width: '80vw' } }/>)) }
       </FormGroup>
 
     </Wrapper>
@@ -247,7 +209,7 @@ export const CreateCheckBoxQuestion: FC<ICreateCheckBoxQuestion> = ({
 }
 
 
-const states = [ 'Alaska', 'Alabama', 'Arkansas', 'American Samoa', 'Arizona', 'California', 'Colorado', 'Connecticut',
+const states = ['Alaska', 'Alabama', 'Arkansas', 'American Samoa', 'Arizona', 'California', 'Colorado', 'Connecticut',
   'District of Columbia',
   'Delaware', 'Florida', 'Georgia', 'Guam', 'Hawaii', 'Iowa', 'Idaho', 'Illinois', 'Indiana', 'Kansas', 'Kentucky',
   'Louisiana', 'Massachusetts',
@@ -256,7 +218,7 @@ const states = [ 'Alaska', 'Alabama', 'Arkansas', 'American Samoa', 'Arizona', '
   'New Jersey', 'New Mexico', 'Nevada', 'New York', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Puerto Rico',
   'Rhode Island', 'South Carolina',
   'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Virginia', 'Virgin Islands', 'Vermont', 'Washington', 'Wisconsin',
-  'West Virginia', 'Wyoming' ]
+  'West Virginia', 'Wyoming']
 
 interface ICreateAutoCompleteQuestion extends basicData {
   inputs?: { text: string, value: string }[] | undefined
@@ -276,45 +238,31 @@ export const CreateAutoCompleteQuestion: FC<ICreateAutoCompleteQuestion> = ({
 }) => {
 
   return (
-    <Wrapper
-      next={ next }
-      setCurrentQuestionHandler={ setCurrentQuestionHandler }
-      description={ description }
-      question={ question }
-      formik={ formik }
-      current={ current }
-      setSchema={ setSchema }
-    >
-      <Grid
-        container
-        direction="column"
-        wrap="nowrap"
-        alignContent="center"
-        justifyContent="space-evenly"
-        alignItems="flex-start"
-        sx={ { paddingLeft: '5vh' } }
-      >
+    <Wrapper next={ next }
+             setCurrentQuestionHandler={ setCurrentQuestionHandler }
+             description={ description }
+             question={ question }
+             formik={ formik }
+             current={ current }
+             setSchema={ setSchema }>
+      <Grid container
+            direction="column"
+            wrap="nowrap"
+            alignContent="center"
+            justifyContent="space-evenly"
+            alignItems="flex-start"
+            sx={ { paddingLeft: '5vh' } }>
         { inputs && inputs.map((item, index: number) => (
-          <Grid
-            key={ index }
-          >
+          <Grid key={ index }>
             <Typography variant="h6">Option { index + 1 }</Typography>
-            <Grid
-              container
-              wrap="nowrap"
-            >
-              <InputField
-                formik={ formik }
-                item={ item }
-              />
-              <Autocomplete
-                id={ `${ formName }[1]` }
-                onChange={ (event, value) => formik.setFieldValue(`${ formName }[${ index }][1]`, value) }
-                options={ states }
-                sx={ { minWidth: '170px' } }
-                renderInput={ (params) =>
-                  <TextField { ...params } label="State"/> }
-              />
+            <Grid container wrap="nowrap">
+              <InputField formik={ formik } item={ item }/>
+              <Autocomplete id={ `${ formName }[1]` }
+                            onChange={ (event, value) => formik.setFieldValue(`${ formName }[${ index }][1]`, value) }
+                            options={ states }
+                            sx={ { minWidth: '170px' } }
+                            renderInput={ (params) =>
+                              <TextField { ...params } label="State"/> }/>
             </Grid>
           </Grid>
         )) }
@@ -347,87 +295,50 @@ export const CreateDiagramQuestion: FC<basicData> = ({
     {
       title: 'Monthly Income',
       value: totalIncome,
-      color: '#676dde'
+      color: '#676dde',
     },
     {
       title: 'Monthly expenses',
       value: totalExpenses,
-      color: '#d55854'
+      color: '#d55854',
     },
   ]
 
   return (
-    <Wrapper
-      next={ next }
-      setCurrentQuestionHandler={ setCurrentQuestionHandler }
-      question={ question }
-      formik={ formik }
-      current={ current }
-    >
-      <Grid
-        container
-        direction="column"
-        wrap="nowrap"
-        alignItems="center"
-        sx={ { marginTop: '30px', height: '100%' } }
-      >
-        <Typography
-          variant="h6"
-          component="span"
-          sx={ { padding: '10px', backgroundColor: 'rgba(29,106,141,0.63)', width: 'auto', color: 'white' } }
-        > Debt to Income Ratio </Typography>
+    <Wrapper next={ next }
+             setCurrentQuestionHandler={ setCurrentQuestionHandler }
+             question={ question }
+             formik={ formik }
+             current={ current }>
+      <Grid container direction="column" wrap="nowrap" alignItems="center" sx={ { marginTop: '30px', height: '100%' } }>
+        <Typography variant="h6" component="span" sx={ {
+          padding: '10px', backgroundColor: 'rgba(29,106,141,0.63)', width: 'auto', color: 'white',
+        } }> Debt to Income Ratio </Typography>
 
-        <Grid
-          container
-          position={ 'relative' }
-          sx={ { maxWidth: '250px' } }
-        >
-          <PieChart
-            startAngle={ 270 }
-            paddingAngle={ 2 }
-            data={ pieData }
-            lineWidth={ 20 }
-            label={ (item) => item.dataIndex === 0 ? `${ ratio }%` : null }
-            labelPosition={ 0 }
-            labelStyle={ { fill: '#676dde', fontSize: '13px', fontWeight: 'bold' } }
-            radius={ PieChart.defaultProps.radius - 20 }
-          />
+        <Grid container position={ 'relative' } sx={ { maxWidth: '250px' } }>
+          <PieChart startAngle={ 270 }
+                    paddingAngle={ 2 }
+                    data={ pieData }
+                    lineWidth={ 20 }
+                    label={ (item) => item.dataIndex === 0 ? `${ ratio }%` : null }
+                    labelPosition={ 0 }
+                    labelStyle={ { fill: '#676dde', fontSize: '13px', fontWeight: 'bold' } }
+                    radius={ PieChart.defaultProps.radius - 20 }/>
         </Grid>
 
-        <Grid
-          direction="column"
-          width="70%"
-          container
-          maxWidth={ 400 }
-        >
-          <Grid
-            container
-            justifyContent="space-between"
-            wrap={ 'nowrap' }
-            mb={ 2 }
-          >
+        <Grid direction="column" width="70%" container maxWidth={ 400 }>
+          <Grid container justifyContent="space-between" wrap={ 'nowrap' } mb={ 2 }>
             <Typography variant="h6">Monthly Income</Typography>
-            <Typography
-              variant="h6"
-              sx={ { minWidth: '70px', padding: '5px', bgcolor: '#676dde', color: 'white', textAlign: 'right' } }
-            >{ totalIncome }</Typography>
+            <Typography variant="h6" sx={ {
+              minWidth: '70px', padding: '5px', bgcolor: '#676dde', color: 'white', textAlign: 'right',
+            } }>{ totalIncome }</Typography>
           </Grid>
 
-          <Grid
-            container
-            justifyContent="space-between"
-            wrap={ 'nowrap' }
-          >
-            <Typography
-              variant="h6"
-              justifyContent="space-between"
-            > Monthly Expenses</Typography>
-            <Typography
-              variant="h6"
-              sx={ {
-                minWidth: '70px', padding: '5px', bgcolor: '#d55854', color: 'white', textAlign: 'right'
-              } }
-            >{ totalExpenses }
+          <Grid container justifyContent="space-between" wrap={ 'nowrap' }>
+            <Typography variant="h6" justifyContent="space-between"> Monthly Expenses</Typography>
+            <Typography variant="h6" sx={ {
+              minWidth: '70px', padding: '5px', bgcolor: '#d55854', color: 'white', textAlign: 'right',
+            } }>{ totalExpenses }
             </Typography>
 
           </Grid>
@@ -446,20 +357,18 @@ export const CreateEndQuestion: FC<basicData> = ({
   current,
   setSchema,
 }) => {
-  const [ status, setStatus ] = useState(-1)
-  const items = [ ' Analyzing Financial', 'Identifying Potential Issues', 'Calculating Cash Reward', 'Building Success Plan' ]
+  const [status, setStatus] = useState(-1)
+  const items = [' Analyzing Financial', 'Identifying Potential Issues', 'Calculating Cash Reward', 'Building Success Plan']
 
   return (
-    <Wrapper
-      next={ next }
-      setCurrentQuestionHandler={ setCurrentQuestionHandler }
-      description={ description }
-      question={ question }
-      formik={ formik }
-      setSchema={ setSchema }
-      current={ current }
-      status={ status }
-    >
+    <Wrapper next={ next }
+             setCurrentQuestionHandler={ setCurrentQuestionHandler }
+             description={ description }
+             question={ question }
+             formik={ formik }
+             setSchema={ setSchema }
+             current={ current }
+             status={ status }>
 
       <CenteredTypography variant="h5">
         That’s it. Give me a second
@@ -474,30 +383,17 @@ export const CreateEndQuestion: FC<basicData> = ({
         }
 
         return (
-          <Grid
-            container
-            direction="row"
-            sx={ { paddingLeft: '10vw', margin: '2vh 0', height: '50px', width: '80vw' } }
-            alignItems="center"
-            justifyContent="space-between"
-          >
-            <Typography
-              variant="h6"
-              color="primary"
-              sx={ { verticalAlign: 'bottom' } }
-            >
+          <Grid container
+                direction="row"
+                sx={ { paddingLeft: '10vw', margin: '2vh 0', height: '50px', width: '80vw' } }
+                alignItems="center"
+                justifyContent="space-between">
+            <Typography variant="h6" color="primary" sx={ { verticalAlign: 'bottom' } }>
               { item }
             </Typography>
-            { status >= index ? <img
-                                src={ doneArrow }
-                                width={ 45 }
-                                height={ 45 }
-                                alt="arrow"
-                              />
-                              : <CircularProgress
-                color="primary"
-                sx={ { marginLeft: '10px', maxWidth: '35px', maxHeight: '35px' } }
-              />
+            { status >= index ? <img src={ doneArrow } width={ 45 } height={ 45 } alt="arrow"/>
+                              :
+              <CircularProgress color="primary" sx={ { marginLeft: '10px', maxWidth: '35px', maxHeight: '35px' } }/>
             }
           </Grid>
         )
