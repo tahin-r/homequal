@@ -71,6 +71,7 @@ export const AboutUs = () => {
 
       <Grid container columns={ 5 } justifyContent="center" maxWidth={ "1000px" } margin={ '0 auto' }>
         { list.map((item, index) => <Grid width={ 'auto' }
+                                          item
                                           xs={ 2 }
                                           container
                                           direction="column"
