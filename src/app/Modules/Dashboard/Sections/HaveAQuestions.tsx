@@ -30,15 +30,15 @@ export const HaveAQuestions = () => {
       </CenteredTypography>
 
       <Bubble side={ "right" }>
-        <Typography variant="h6">Hi, how can I Help.</Typography>
+        <Typography variant="h5">Hi, how can I Help.</Typography>
       </Bubble>
 
       <Bubble side={ "left" }>
-        <Typography variant="h6">Do I need a 20% down payment? </Typography>
+        <Typography variant="h5">Do I need a 20% down payment? </Typography>
       </Bubble>
 
       <Bubble side={ "right" }>
-        <Typography variant="h6">
+        <Typography variant="h5">
           No, you can put as little as 3% down and in some cases no money down.
           We can also show you ways to save on closing costs.
         </Typography>

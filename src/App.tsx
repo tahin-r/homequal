@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Header }           from './app/Layout/Header'
+import React, { useEffect }                  from 'react'
+import { Header }                            from './app/Layout/Header'
 import { ThemeProvider }                     from 'styled-components'
 import { muiTheme }                          from './shared/styles/muiTheme'
 import { theme }                             from './shared/styles/theme'
@@ -10,29 +10,27 @@ import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
 
 function App() {
-  const  ScrollToTop =() => {
-    const { pathname } = useLocation();
 
+  const ScrollToTop = () => {
+    const { pathname } = useLocation()
     useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
+      window.scrollTo(0, 0)
+    }, [pathname])
 
-    return null;
+    return null
   }
 
   return (
-    <>
-      <BrowserRouter>
-        <MuiThemeProvider theme={ muiTheme }>
-          <ScrollToTop/>
-          <ThemeProvider theme={ { ...muiTheme, ...theme } }>
-            <BaseStyles/>
-            <Header/>
-            <AppRoutes/>
-          </ThemeProvider>
-        </MuiThemeProvider>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <MuiThemeProvider theme={ muiTheme }>
+        <ScrollToTop/>
+        <ThemeProvider theme={ { ...muiTheme, ...theme } }>
+          <BaseStyles/>
+          <Header/>
+          <AppRoutes/>
+        </ThemeProvider>
+      </MuiThemeProvider>
+    </BrowserRouter>
   )
 }
 

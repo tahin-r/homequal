@@ -3,19 +3,19 @@ import { useState }                                  from 'react'
 import {
   CreateAutoCompleteQuestion, CreateCheckBoxQuestion, CreateDiagramQuestion, CreateEndQuestion, CreateRadioQuestion,
   CreateTextFieldQuestion,
-}                                                    from './helpers'
+}                                                    from './constructors'
 import { QuestionKey, questionsList, QuestionsType } from './questions'
 import { useFormik }                                 from 'formik'
 import * as yup                                      from 'yup'
 import { Route, Routes, useNavigate }                from 'react-router-dom'
-import { QuestionsSchema }                           from './validation'
+import { QuestionsSchema } from './validation'
 import {
   CreateCOTextFieldQuestion, CreateDoubledCheckBoxQuestion, CreateDoubledRadioQuestion, CreateDoubledTextFieldQuestion,
   CreateRadioTextQuestion, CreateVeteranQuestion,
-}                                                    from './coHelpers'
+}                          from './coConstructors'
 
 
-export const Journey = () => {
+export const QuestionsAndAnswers = () => {
 
   const initialState = {
     first_name                     : '',

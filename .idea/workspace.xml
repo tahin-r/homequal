@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/shared.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/helpers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Journey/helpers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/Journey.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/QuestionsAndAnswers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/coHelpers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/coConstructors.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/helpers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/constructors.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/questions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/shared/shared.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Journey/validation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/validation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/muiTheme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/muiTheme.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +109,7 @@
       <workItem from="1648718105670" duration="28540000" />
       <workItem from="1648804768825" duration="19575000" />
       <workItem from="1649064228998" duration="26418000" />
+      <workItem from="1649237389785" duration="11931000" />
     </task>
     <servers />
   </component>

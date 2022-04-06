@@ -5,8 +5,30 @@ import { Overrides }         from '@material-ui/core/styles/overrides'
 import { theme }             from './theme'
 
 const typography: TypographyOptions = {
-  htmlFontSize: 18,
-  fontFamily  : 'Open Sans Light, serif',
+  htmlFontSize  : 18,
+  fontFamily    : 'Open Sans, serif',
+  h1            : {
+    fontWeight: 500,
+  },
+  h2            : {
+    fontWeight: 500,
+  },
+  h3            : {
+    fontWeight: 500,
+  },
+  h4            : {
+    fontWeight: 400,
+  },
+  h5            : {
+    fontWeight: 400,
+  },
+  h6            : {
+    fontWeight: 300,
+  },
+
+  fontWeightBold: 500,
+  fontWeightLight: 300,
+
 }
 
 const palette: PaletteOptions = {
@@ -50,7 +72,7 @@ const palette: PaletteOptions = {
 }
 
 const overrides: Overrides = {
-//   MuiTypography             : {
+// MuiTypography: {
 //     body1: {
 //       fontSize  : 14,
 //       fontFamily: 'Lato, Roboto, Helvetica, Arial, sans-serif'

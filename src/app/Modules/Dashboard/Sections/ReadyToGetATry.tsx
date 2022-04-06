@@ -49,7 +49,7 @@ export const ReadyToGetATry = () => {
       </Grid>
 
       <Grid container justifyContent="center">
-        <QualButton sx={ { borderRadius: "30px" } } onClick={ () => navigate("Journey/Q1") }>
+        <QualButton sx={ { borderRadius: "30px" } } onClick={ () => navigate("Q&A/Q1") }>
           <Typography>Give it a Try!</Typography>
         </QualButton>
       </Grid>

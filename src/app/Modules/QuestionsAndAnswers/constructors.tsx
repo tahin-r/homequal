@@ -1,11 +1,10 @@
 import {
-  Autocomplete, Button, Checkbox, CircularProgress, FormControlLabel, FormGroup, Grid, Radio, RadioGroup, TextField,
-  Typography,
+  Autocomplete, Button, Checkbox, CircularProgress, FormControlLabel, FormGroup, Grid, TextField, Typography,
 }                                         from '@mui/material'
 import React, { FC, useEffect, useState } from 'react'
 import { QuestionKey }                    from './questions'
 import { FormikValues }                   from 'formik/dist/types'
-import { InputField }                     from './shared/shared'
+import { InputField, RadioField }         from './shared/shared'
 import { PieChart }                       from 'react-minimal-pie-chart'
 import { CenteredTypography }             from '../../../shared/styles/strings'
 import doneArrow                          from '../../../assets/images/doneArrow.svg'
@@ -45,7 +44,7 @@ export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
           direction="column"
           sx={ { minHeight: 'calc( 100vh - 60px )', height: 'auto' } }>
 
-      <Typography variant="h6" sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '10px' } }>
+      <Typography variant="h6" mb={ 2 } sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '10px' } }>
         { rest.question(rest.formik.values) }
       </Typography>
 
@@ -109,24 +108,8 @@ export const CreateRadioQuestion: FC<ICreateCheckboxQuestion> = ({
                setSchema={ setSchema }
                current={ current }>
 
-        { formName && formik.values[formName] && (
-          <RadioGroup name={ formName }
-                      onBlur={ formik.handleBlur }
-                      onChange={ formik.handleChange }
-                      defaultValue={ answers && answers[0].value }
-                      sx={ { marginTop: '4vh', paddingLeft: '10vw' } }>
-
-            { answers && answers.map((item, index) =>
-              <FormControlLabel onChange={ formik.handleChange }
-                                value={ item.value }
-                                name={ formName }
-                                key={ index }
-                                control={ <Radio/> }
-                                sx={ { maxHeight: '6vh' } }
-                                label={ <Typography variant="h6"> { item.text } </Typography> }/>,
-            ) }
-          </RadioGroup>
-        ) }
+        { formName && formik.values[formName] &&
+            <RadioField formik={ formik } formName={ formName } answers={ answers }/> }
       </Wrapper>
     </>
   )
@@ -384,19 +367,22 @@ export const CreateEndQuestion: FC<basicData> = ({
 
         return (
           <Grid container
-                key={index}
+                key={ index }
                 direction="row"
                 sx={ { paddingLeft: '10vw', margin: '2vh 0', width: '80vw' } }
                 alignItems="center"
                 justifyContent="space-between"
-                wrap='nowrap'>
+                wrap="nowrap">
 
-            <Typography variant="h6" color="primary" sx={ { verticalAlign: 'bottom' } }>
+            <Typography variant="h6" color="primary" sx={ { verticalAlign: 'bottom',fontWeight:'regular' } }>
               { item }
             </Typography>
             { status >= index ? <img src={ doneArrow } width={ 45 } height={ 45 } alt="arrow"/>
                               :
-              <CircularProgress color="primary" sx={ { marginLeft: '10px',minWidth: '35px', minHeight: '35px', maxWidth:'35px',maxHeight:'35px' } }/>
+              <CircularProgress color="primary" sx={ {
+                marginLeft: '10px', minWidth: '35px', minHeight: '35px', maxWidth: '35px',
+                maxHeight                                                        : '35px',
+              } }/>
             }
           </Grid>
         )

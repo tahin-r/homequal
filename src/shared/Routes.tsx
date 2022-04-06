@@ -1,8 +1,8 @@
 import React             from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Dashboard }     from '../app/Modules/Dashboard/Dashboard'
-import { Journey }       from '../app/Modules/Journey/Journey'
-import { PartnerWithUs } from '../app/Modules/Company/PartnerWithUs/PartnerWithUs'
+import { Dashboard }           from '../app/Modules/Dashboard/Dashboard'
+import { QuestionsAndAnswers } from '../app/Modules/QuestionsAndAnswers/QuestionsAndAnswers'
+import { PartnerWithUs }       from '../app/Modules/Company/PartnerWithUs/PartnerWithUs'
 import { Careers }       from '../app/Modules/Company/Careers/Careers'
 import { AboutUs }       from '../app/Modules/Company/AboutUs/AboutUs'
 
@@ -23,8 +23,8 @@ const mainRoutes = [
     element: <Dashboard/>,
   },
   {
-    path   : 'Journey/*',
-    element: <Journey/>,
+    path   : 'Q&A/*',
+    element: <QuestionsAndAnswers/>,
   },
   {
     path   : '/partner_with_us',

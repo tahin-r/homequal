@@ -25,7 +25,7 @@ export const ContactUs = () => {
 
       <EmailInfo/>
 
-      <Grid container spacing={ 2 } justifyContent="center" sx={ { padding: "20px 40px" } }>
+      <Grid container spacing={ 2 } justifyContent="center" sx={ { padding: "20px 20px" } }>
         <Links/>
 
         <Grid container item xs={ 12 } justifyContent="center">
@@ -33,8 +33,8 @@ export const ContactUs = () => {
         </Grid>
       </Grid>
 
-      <Typography sx={ { fontStyle: "italic", padding: "0 20px", textAlign: "center" } }>
-        Copyright 2021 HomeQual. All Rights Reserved
+      <Typography variant='h6' sx={ { fontStyle: "italic", padding: "5px 20px", textAlign: "center" } }>
+        Copyright 2022 HomeQual. All Rights Reserved
       </Typography>
     </ContentWrapper>
   )

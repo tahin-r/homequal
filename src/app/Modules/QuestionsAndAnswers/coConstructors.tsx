@@ -1,11 +1,9 @@
-import React, { FC, useEffect }                                                                  from "react"
-import { Checkbox, FormControlLabel, FormGroup, Grid, Radio, RadioGroup, TextField, Typography } from "@mui/material"
-import {
-  FormikValues,
-}                                                                                                from "formik/dist/types"
-import { QuestionKey }                                                                           from "./questions"
-import { Wrapper }                                                                               from "./helpers"
-import { InputField }                                                                            from "./shared/shared"
+import React, { FC, useEffect }                                               from "react"
+import { Checkbox, FormControlLabel, FormGroup, Grid, TextField, Typography } from "@mui/material"
+import { FormikValues }                                                       from "formik/dist/types"
+import { QuestionKey }            from "./questions"
+import { Wrapper }                from "./constructors"
+import { InputField, RadioField } from "./shared/shared"
 
 interface basicData {
   formik: FormikValues
@@ -312,44 +310,18 @@ export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
           </Typography>
         </Grid>
 
-        <Grid container wrap="nowrap">
+        <Grid container wrap="nowrap" width={ 'auto' }>
           <Grid container direction="column" wrap="nowrap" sx={ { width: "40px", marginRight: "10px" } }>
-            <RadioGroup name={ formName }
-                        onBlur={ formik.handleBlur }
-                        onChange={ formik.handleChange }
-                        defaultValue={ answers && answers[0].value }>
-              { answers &&
-                answers.map((item, index) => (
-                  <FormControlLabel onChange={ formik.handleChange }
-                                    value={ item.value }
-                                    name={ formName }
-                                    key={ index }
-                                    control={ <Radio/> }
-                                    label={ "" }
-                                    sx={ { height: "50px" } }/>
-                )) }
-            </RadioGroup>
+            { formName && <RadioField formik={ formik }
+                                      formName={ formName }
+                                      answers={ answers }
+                                      itemText={ ' ' }
+                                      nomarginLeft/> }
           </Grid>
 
           <Grid container direction="column" wrap="nowrap" sx={ { width: "auto" } }>
-            <RadioGroup name={ co_formName }
-                        onBlur={ formik.handleBlur }
-                        onChange={ formik.handleChange }
-                        defaultValue={ co_answers && co_answers[0].value }>
-              { answers &&
-                answers.map((item, index) => (
-                  <FormControlLabel value={ item.value }
-                                    name={ co_formName }
-                                    key={ index }
-                                    control={ <Radio/> }
-                                    sx={ { height: "50px" } }
-                                    label={
-                                      <Typography variant="h6" component="span" sx={ { paddingLeft: "10px" } }>
-                                        { item.text }
-                                      </Typography>
-                                    }/>
-                )) }
-            </RadioGroup>
+            { co_formName &&
+                <RadioField formik={ formik } formName={ co_formName } answers={ co_answers } nomarginLeft/> }
           </Grid>
         </Grid>
       </Grid>
@@ -399,24 +371,7 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
              setSchema={ setSchema }>
       <Grid container direction="column" sx={ { paddingLeft: "10vw" } }>
         <Grid container direction="column" wrap="nowrap" sx={ { width: "auto" } }>
-          <RadioGroup name={ formName }
-                      onBlur={ formik.handleBlur }
-                      onChange={ formik.handleChange }
-                      defaultValue={ answers && answers[0].value }>
-            { answers &&
-              answers.map((item, index) => (
-                <FormControlLabel value={ item.value }
-                                  name={ formName }
-                                  key={ index }
-                                  control={ <Radio/> }
-                                  sx={ { height: "50px" } }
-                                  label={
-                                    <Typography variant="h6" component="span" sx={ { paddingLeft: "10px" } }>
-                                      { item.text }
-                                    </Typography>
-                                  }/>
-              )) }
-          </RadioGroup>
+          { formName && <RadioField formik={ formik } formName={ formName } answers={ answers }/> }
         </Grid>
 
         { question1 && (
@@ -437,24 +392,7 @@ export const CreateRadioTextQuestion: FC<ICreateRadioTextQuestion> = ({
         ) }
 
         <Grid container direction="column" wrap="nowrap" sx={ { width: "auto" } }>
-          <RadioGroup name={ co_formName }
-                      onBlur={ formik.handleBlur }
-                      onChange={ formik.handleChange }
-                      defaultValue={ co_answers && co_answers[0].value }>
-            { co_answers &&
-              co_answers.map((item, index) => (
-                <FormControlLabel value={ item.value }
-                                  name={ co_formName }
-                                  key={ index }
-                                  control={ <Radio/> }
-                                  sx={ { height: "50px" } }
-                                  label={
-                                    <Typography variant="h6" component="span" sx={ { paddingLeft: "10px" } }>
-                                      { item.text }
-                                    </Typography>
-                                  }/>
-              )) }
-          </RadioGroup>
+          { co_formName && <RadioField formik={ formik } formName={ co_formName } answers={ co_answers }/> }
         </Grid>
 
         { co_question && (
@@ -509,45 +447,16 @@ export const CreateVeteranQuestion: FC<ICreateCheckboxQuestion> = ({
                formName={ formName }
                setSchema={ setSchema }
                current={ current }>
-        <RadioGroup name={ formName }
-                    onBlur={ formik.handleBlur }
-                    onChange={ formik.handleChange }
-                    defaultValue={ answers && answers[0].value }
-                    sx={ { marginTop: "4vh", paddingLeft: "10vw" } }>
-          { answers &&
-            answers.map((item, index) => (
-              <FormControlLabel onChange={ formik.handleChange }
-                                value={ item.value }
-                                name={ formName }
-                                key={ index }
-                                control={ <Radio/> }
-                                sx={ { maxHeight: "6vh" } }
-                                label={ <Typography variant="h6"> { item.text } </Typography> }/>
-            )) }
-        </RadioGroup>
 
-        <RadioGroup name={ co_formName }
-                    onBlur={ formik.handleBlur }
-                    onChange={ formik.handleChange }
-                    defaultValue={ answers && answers[0].value }
-                    sx={ { marginTop: "4vh", paddingLeft: "10vw" } }>
-          { co_question && (
-            <Typography variant="h6" sx={ { fontWeight: "bold", marginTop: "40px" } }>
-              { co_question(formik.values) }
-            </Typography>
-          ) }
+        { formName && <RadioField formik={ formik } formName={ formName } answers={ answers }/> }
 
-          { co_answers &&
-            co_answers.map((item, index) => (
-              <FormControlLabel onChange={ formik.handleChange }
-                                value={ item.value }
-                                name={ formName }
-                                key={ index }
-                                control={ <Radio/> }
-                                sx={ { maxHeight: "6vh" } }
-                                label={ <Typography variant="h6"> { item.text } </Typography> }/>
-            )) }
-        </RadioGroup>
+        { co_question && (
+          <Typography variant="h6" pl={ '10vw' } sx={ { fontWeight: "bold", marginTop: "40px" } }>
+            { co_question(formik.values) }
+          </Typography>
+        ) }
+
+        { co_formName && <RadioField formik={ formik } formName={ co_formName } answers={ co_answers }/> }
       </Wrapper>
     </>
   )

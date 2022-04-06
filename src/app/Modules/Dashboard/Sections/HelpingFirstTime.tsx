@@ -48,7 +48,7 @@ export const HelpingFirstTime: FC = () => {
   return (
     <Content>
       <TextContainer>
-        <Typography sx={ { textAlign: "left" } }>
+        <Typography variant={'h4'} sx={ { textAlign: "left",fontWeight:'light' }  }>
           Helping first-time homebuyers obtain the dream of ownership
         </Typography>
       </TextContainer>
