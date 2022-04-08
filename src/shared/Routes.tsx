@@ -1,10 +1,11 @@
-import React             from 'react'
-import { Route, Routes } from 'react-router-dom'
+import React                   from 'react'
+import { Route, Routes }       from 'react-router-dom'
 import { Dashboard }           from '../app/Modules/Dashboard/Dashboard'
 import { QuestionsAndAnswers } from '../app/Modules/QuestionsAndAnswers/QuestionsAndAnswers'
-import { PartnerWithUs }       from '../app/Modules/Company/PartnerWithUs/PartnerWithUs'
-import { Careers }       from '../app/Modules/Company/Careers/Careers'
-import { AboutUs }       from '../app/Modules/Company/AboutUs/AboutUs'
+import { PartnerWithUs }       from '../app/Modules/SmallSections/PartnerWithUs/PartnerWithUs'
+import { Careers }             from '../app/Modules/SmallSections/Careers/Careers'
+import { AboutUs }             from '../app/Modules/SmallSections/AboutUs/AboutUs'
+import { Resources }           from '../app/Modules/SmallSections/Resources/Resources'
 
 //
 // link: '/FAQs'
@@ -16,6 +17,15 @@ import { AboutUs }       from '../app/Modules/Company/AboutUs/AboutUs'
 // link: '/partner_with_us'
 // link: '/privacy_policy'
 // link: '/terms_of_Use'
+// Menu links
+// link: 'buy_a_home'
+// link: 'find_a_lender'
+// link: 'find_agent'
+// link: 'refinance'
+// link: 'speak_advisor'
+// link: 'FAQs'
+// link: 'resources'
+// link: 'my_account'
 
 const mainRoutes = [
   {
@@ -37,6 +47,10 @@ const mainRoutes = [
   {
     path   : '/about_us',
     element: <AboutUs/>,
+  },
+  {
+    path   : '/resources',
+    element: <Resources/>,
   },
 ]
 

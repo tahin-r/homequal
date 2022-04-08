@@ -24,9 +24,12 @@ const FeedbacksHolder = styled(({ ...props }) => (
     transform  : scale(1.1);
     transition : ease-in 0.5s;
   }
-
-  &::-webkit-scrollbar {
-    display : initial;
+  
+  @media screen and (max-width : 1000px) {
+    &::-webkit-scrollbar {
+      display : initial;
+    }
+   
   }
 `
 

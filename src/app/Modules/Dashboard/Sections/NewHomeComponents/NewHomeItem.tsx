@@ -25,8 +25,8 @@ export const NewHomeItem: FC<INewHomeItem> = ({ imageUrl, name, nickName, text }
   return (
     <Grid sx={ { margin: '0 3vw' } }>
       <Paper elevation={ 8 }
-             sx={ { minWidth: '320px', width: '50vw', height: '100%', padding: '4vw', boxSizing: 'border-box' } }>
-        <Grid container direction="column" justifyContent="space-between">
+             sx={ { minWidth: '320px',maxWidth:'450px',width:'35vw', minHeight: '100%',boxSizing:'border-box' } }>
+        <Grid container direction="column" justifyContent="space-between" p={3}>
           <Grid container direction="row" alignItems="center">
             <ImageHolder userimage={ imageUrl }/>
 

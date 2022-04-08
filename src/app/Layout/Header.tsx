@@ -12,20 +12,44 @@ const MenuItems = styled(Typography)`
 `
 const HqLogo = styled(({ ...props }) => <div { ...props } />)`
   background      : url(${ (props) =>
-  props.trigger === "true" ? hqlighticon : hqlighticon }) left 100% no-repeat;
+          props.trigger === "true" ? hqlighticon : hqlighticon }) left 100% no-repeat;
   width           : 250px;
   height          : 40px;
   background-size : contain;
 `
 const menuItems = [
-  "Buy a Home",
-  "Find a Lender",
-  "Find a Real Estate Agent",
-  "Refinance",
-  "Speak with an Advisor",
-  "FAQs",
-  "Resources",
-  "My Account",
+  {
+    text: "Buy a Home",
+    link: 'buy_a_home',
+  },
+  {
+    text: "Find a Lender",
+    link: 'find_a_lender',
+  },
+  {
+    text: "Find a Real Estate Agent",
+    link: 'find_agent',
+  },
+  {
+    text: "Refinance",
+    link: 'refinance',
+  },
+  {
+    text: "Speak with an Advisor",
+    link: 'speak_advisor',
+  },
+  {
+    text: "FAQs",
+    link: 'FAQs',
+  },
+  {
+    text: "Resources",
+    link: 'resources',
+  },
+  {
+    text: "My Account",
+    link: 'my_account',
+  },
 ]
 
 export const Header = () => {
@@ -70,7 +94,10 @@ export const Header = () => {
           <List sx={ { width: "100%", maxWidth: 360 } }>
             { menuItems.map((item, index) => (
               <ListItem key={ index } sx={ { margin: "0 10px" } }>
-                <MenuItems>{ item }</MenuItems>
+                <MenuItems onClick={ () => {
+                  navigate(item.link)
+                  handleClose()
+                } }>{ item.text }</MenuItems>
               </ListItem>
             )) }
           </List>
