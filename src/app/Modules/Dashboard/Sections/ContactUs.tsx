@@ -26,7 +26,7 @@ export const ContactUs = () => {
 
       <EmailInfo/>
 
-      <Grid container spacing={ 2 } justifyContent="center" sx={ { padding: "20px 20px" } }>
+      <Grid container justifyContent="center" sx={ { padding: "0 20px" } }>
         <Links/>
 
         <Grid container justifyContent="center">

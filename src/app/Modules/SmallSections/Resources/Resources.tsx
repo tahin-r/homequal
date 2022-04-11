@@ -23,7 +23,7 @@ const ItemPaper = styled(({ ...props }) => <Paper { ...props }  />)`
     min-height : 200px;
     margin     : 10px;
   }
-  @media screen and (min-width : 960px)  {
+  @media screen and (min-width : 900px)  {
     min-width  : 350px;
     min-height : 300px;
     width      : 35vw;

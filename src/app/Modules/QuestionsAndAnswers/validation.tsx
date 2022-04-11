@@ -37,107 +37,107 @@ export const QuestionsSchema: any = {
     co_email_address: yup
       .string()
       .email("Enter a valid email")
-      .required("Cell is  required"),
+      .required("Email is required"),
   }),
 
   Q8: yup.object({
     monthly_payment_amount: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Monthly payment is required"),
   }),
 
   Q9: yup.object({
     home_savings: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Available yo purchase money is required"),
   }),
 
   Q12: yup.object({
     monthly_income: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Total monthly income is required"),
   }),
 
   Q12C: yup.object({
     monthly_income: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Total monthly income is required"),
 
     co_monthly_income: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Total monthly income is required"),
   }),
 
   Q13: yup.object({
     auto_expense: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Auto payments value is required"),
 
     credit_card_expense: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Credit card payments is required"),
 
     student_loans: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Student loans payments is required"),
 
     other_expenses: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Other expenses is required"),
   }),
 
   Q13C: yup.object({
     auto_expense: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Auto payments value is required"),
 
     credit_card_expense: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Credit card payments is required"),
 
     student_loans: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Student loans payments is required"),
 
     other_expenses: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Other expenses is required"),
 
     co_auto_expense: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Auto payments value is required"),
 
     co_credit_card_expense: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Credit card payments is required"),
 
     co_student_loans: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Student loans payments is required"),
 
     co_other_expenses: yup
       .number()
       .typeError("You must specify a number")
-      .required("Field is required"),
+      .required("Other expenses is required"),
   }),
 
   Q22: yup.object({
-    live_state_1: yup.string().required("One field required!"),
+    live_state_1: yup.string().required("One city is required!"),
   }),
 }

@@ -44,14 +44,14 @@ export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
           direction="column"
           sx={ { minHeight: 'calc( 100vh - 60px )', height: 'auto' } }>
 
-      <Typography variant="h5" mb={ 2 } sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '10px' } }>
+      <Typography variant="h5" mb={ 2 } sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '25px' } }>
         { rest.question(rest.formik.values) }
       </Typography>
 
       <form onSubmit={ rest.formik.handleSubmit }>
         { children }
 
-        <Typography variant="h6" sx={ { marginTop: '5vh', fontStyle: 'italic', padding: '3vw' } }>
+        <Typography variant="h6" sx={ { marginTop: '5vh', fontStyle: 'italic', padding: '3vw 3vw 3vw 10vw' } }>
           { rest.description }
         </Typography>
 

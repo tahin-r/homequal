@@ -15,7 +15,7 @@ export const DetermineYouHome: FC = () => {
       </TextContainer>
       <GreyTextContainer>
         <Typography variant="h6">
-          <HomeQualTextTemplate variant={ "h6" }/>homeowners realize an average avings of $2,200 per year in lower
+          <HomeQualTextTemplate variant={ "h6" }/> homeowners realize an average savings of $2,200 per year in lower
                                                   payments!
         </Typography>
       </GreyTextContainer>

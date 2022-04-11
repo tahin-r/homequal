@@ -13,9 +13,10 @@ const MenuItems = styled(Typography)`
 const HqLogo = styled(({ ...props }) => <div { ...props } />)`
   background      : url(${ (props) =>
           props.trigger === "true" ? hqlighticon : hqlighticon }) left 100% no-repeat;
-  width           : 250px;
-  height          : 40px;
+  width           : 200px;
+  height          : 50px;
   background-size : contain;
+  cursor          : pointer;
 `
 const menuItems = [
   {
@@ -70,9 +71,8 @@ export const Header = () => {
     setAnchorEl(null)
   }
   const open = Boolean(anchorEl)
-
   return (
-    <AppBar position={ location.pathname === "/" ? "fixed" : "relative" } sx={ {
+    <AppBar position={ location.pathname.includes('Q&A')? "relative" :"fixed" } sx={ {
       color     : "black",
       bgcolor   : trigger ? "white" : "transparent",
       transition: "linear 0.5s",
@@ -94,10 +94,13 @@ export const Header = () => {
           <List sx={ { width: "100%", maxWidth: 360 } }>
             { menuItems.map((item, index) => (
               <ListItem key={ index } sx={ { margin: "0 10px" } }>
-                <MenuItems onClick={ () => {
+                <MenuItems
+                  sx={{cursor:'pointer'}}
+                  onClick={ () => {
                   navigate(item.link)
                   handleClose()
-                } }>{ item.text }</MenuItems>
+                } }>{ item.text }
+                </MenuItems>
               </ListItem>
             )) }
           </List>
