@@ -42,8 +42,8 @@ export const NewHomeItem: FC<INewHomeItem> = ({ imageUrl, name, nickName, text }
           {/*  { nickName }*/ }
           {/*</Typography>*/ }
 
-          <Grid sx={ { marginTop: '4vh' } }>
-            <Typography color="black" sx={ { fontSize: '18px' } }>
+          <Grid sx={ { marginTop: '25px' } }>
+            <Typography variant='h6' color="black">
               { text }
             </Typography>
           </Grid>

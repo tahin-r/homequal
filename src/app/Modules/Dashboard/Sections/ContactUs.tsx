@@ -17,9 +17,9 @@ export const ContactUs = () => {
         Educating and empowering first-time home buyers
       </ItalicTypography>
 
-      <CenteredTypography sx={ { fontWeight: "bold" } }>
+      <Typography variant='h5' textAlign='center' mb={1}  sx={ { fontWeight: "bold" } }>
         Contact Us
-      </CenteredTypography>
+      </Typography>
 
       <CenteredTypography>214-692-5300</CenteredTypography>
 
@@ -28,7 +28,7 @@ export const ContactUs = () => {
       <Grid container spacing={ 2 } justifyContent="center" sx={ { padding: "20px 20px" } }>
         <Links/>
 
-        <Grid container item xs={ 12 } justifyContent="center">
+        <Grid container  justifyContent="center">
           <SocialMedia/>
         </Grid>
       </Grid>

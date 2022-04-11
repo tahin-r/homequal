@@ -4,32 +4,68 @@ import { TypographyOptions } from '@material-ui/core/styles/createTypography'
 import { Overrides }         from '@material-ui/core/styles/overrides'
 import { theme }             from './theme'
 
+import { BreakpointsOptions } from '@mui/material'
+
+const breakpoints: BreakpointsOptions = {
+  values: {
+    xs: 0 as number,
+    sm: 600 as number,
+    md: 900 as number,
+    lg: 1200 as number,
+    xl: 1536 as number,
+  },
+}
+
+
 const typography: TypographyOptions = {
-  htmlFontSize  : 18,
-  fontFamily    : 'Open Sans, serif',
-  h1            : {
+  htmlFontSize: 20,
+  fontFamily  : 'Open Sans, serif',
+  h1          : {
     fontWeight: 500,
   },
-  h2            : {
+  h2          : {
     fontWeight: 500,
   },
-  h3            : {
+  h3          : {
+
     fontWeight: 500,
   },
-  h4            : {
+  h4          : {
+    fontWeight                                                      : 500,
+    fontSize                                                        : '2rem',
+    [`@media screen and (min-width: ${ breakpoints.values?.md }px)`]: {
+      fontSize: "3rem",
+    },
+    [`@media screen and (min-width: ${ breakpoints.values?.xl }px)`]: {
+      fontSize: "4rem",
+    },
+  },
+  h5          : {
     fontWeight: 400,
+    fontSize                                                        : '1.5rem',
+    [`@media screen and (min-width: ${ breakpoints.values?.md }px)`]: {
+      fontSize: "1.7rem",
+    },
+    [`@media screen and (min-width: ${ breakpoints.values?.xl }px)`]: {
+      fontSize: "1.9rem",
+    },
   },
-  h5            : {
-    fontWeight: 400,
-  },
-  h6            : {
+  h6          : {
     fontWeight: 300,
+    fontSize                                                        : '1.2rem',
+    [`@media screen and (min-width: ${ breakpoints.values?.md }px)`]: {
+      fontSize: "1.4rem",
+    },
+    [`@media screen and (min-width: ${ breakpoints.values?.xl }px)`]: {
+      fontSize: "1.6rem",
+    },
   },
 
-  fontWeightBold: 500,
+  fontWeightBold : 500,
   fontWeightLight: 300,
 
 }
+
 
 const palette: PaletteOptions = {
   primary    : {
@@ -72,7 +108,7 @@ const palette: PaletteOptions = {
 }
 
 const overrides: Overrides = {
-// MuiTypography: {
+//  MuiTypography: {
 //     body1: {
 //       fontSize  : 14,
 //       fontFamily: 'Lato, Roboto, Helvetica, Arial, sans-serif'
@@ -420,8 +456,8 @@ const overrides: Overrides = {
 //     }
 //   }
 }
-
 export const muiTheme = createTheme({
+  breakpoints,
   typography,
   overrides,
   palette,

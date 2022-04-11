@@ -18,7 +18,7 @@ export const QuestionsSchema: any = {
     email_address: yup
       .string()
       .email("Enter a valid email")
-      .required("Cell is  required"),
+      .required("Email is required"),
   }),
   Q5: yup.object({
     co_first_name: yup.string().required("Last name is required"),

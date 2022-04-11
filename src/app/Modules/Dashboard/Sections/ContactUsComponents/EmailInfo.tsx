@@ -1,6 +1,5 @@
-import React                  from 'react'
-import { CenteredTypography } from '../../../../../shared/styles/strings'
-import { Typography }         from '@mui/material'
+import React                from 'react'
+import { Grid, Typography } from '@mui/material'
 
 interface IContacts {
   name: string
@@ -35,12 +34,10 @@ export const EmailInfo = () => {
     <>
       {
         contacts.map((item, index) => (
-          <CenteredTypography key={ index }>
-            <Typography sx={ { fontWeight: 'bold' } } component="span">
-              { item.name }
-            </Typography>
-            <Typography component="span">: { item.email }</Typography>
-          </CenteredTypography>
+          <Grid textAlign="center" mb={ 1 } key={ index }>
+            <Typography variant="h6" component="span">{ item.name }</Typography>
+            <Typography variant="h6" component="span">: { item.email }</Typography>
+          </Grid>
         ))
       }
     </>

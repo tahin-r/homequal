@@ -81,14 +81,18 @@ export const Links = () => {
 
       { links.map((item, index) => (
         <Grid item xs={ 6 } key={ index }>
-          <CenteredItemTypography>
+          <Typography variant="h5" textAlign="center" mb={ 1 } mt={ 3 }>
             { item.name }
-          </CenteredItemTypography>
+          </Typography>
           { item.items.map((itemLink, index) => (
-            <Typography key={ index }
-                        onClick={ () => navigate(itemLink.link) }
-                        sx={ { marginBottom: '5px', textAlign: 'center' } }>{ itemLink.text }</Typography>
-          )) }
+            <Grid container justifyContent="center" key={ index }>
+              <Typography variant="h6"
+                          mb={ 1 }
+                          onClick={ () => navigate(itemLink.link) }
+                          sx={ { cursor: 'pointer', width: 'auto' } }>
+                { itemLink.text }
+              </Typography>
+            </Grid>)) }
         </Grid>
       )) }
     </Grid>

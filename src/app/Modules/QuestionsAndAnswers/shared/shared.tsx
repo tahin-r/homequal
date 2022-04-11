@@ -1,14 +1,16 @@
-import { FormControlLabel, Radio, RadioGroup, TextField, Typography } from '@mui/material'
-import React, { FC }                                                  from 'react'
-import { FormikValues }          from 'formik/dist/types'
+import { Grid, Radio, TextField, Typography }            from '@mui/material'
+import React, { CSSProperties, FC, useEffect, useState } from 'react'
+import { FormikValues }                                  from 'formik/dist/types'
 
 interface IInputField {
   formik: FormikValues
   item: { text: string, value: string }
   index?: number
+  mainstyles?: CSSProperties
+  labelText?:string
 }
 
-export const InputField: FC<IInputField> = ({ formik, item, index }) => {
+export const InputField: FC<IInputField> = ({ formik, item, index, mainstyles,labelText }) => {
   return (
     <TextField autoFocus={ index === 0 }
                onChange={ formik.handleChange }
@@ -17,19 +19,18 @@ export const InputField: FC<IInputField> = ({ formik, item, index }) => {
                onBlur={ formik.handleBlur }
                value={ formik.values[item.value] }
                name={ item.value }
-               InputProps={ { style: { fontSize: 20, fontWeight: 'bold', width: '100%' } } }
-               sx={ { minWidth: '100px', maxWidth: '250px', width: 'auto' } }
+               InputProps={ { style: { fontSize: '1.4rem', fontWeight: 'bold' } } }
+               InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': { marginTop: '-10px', zIndex: 1 } } } }
+               sx={ { minWidth: '100px', maxWidth: '300px', paddingRight: '5px', margin: '10px 0 5px 0', mainstyles } }
                error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
                helperText={ formik.touched[item.value] &&
-                   <Typography variant='h5'
+                   <Typography component="span"
                                color="primary"
-                               sx={ { fontSize: '14px' } }>{ formik.errors[item.value] }
+                               sx={ { fontSize: '1rem' } }>{ formik.errors[item.value] }
                    </Typography> }
                label={
-                 <Typography variant="h6"
-                             color="black"
-                             sx={ { fontStyle: 'italic',fontWeight:'regular',fontSize:'18px' } }>
-                   { item.text }
+                 <Typography variant="h6" color="black" sx={ { fontStyle: 'italic', fontWeight: 'regular' } }>
+                   {labelText? labelText : item.text }
                  </Typography> }/>
   )
 }
@@ -37,30 +38,35 @@ export const InputField: FC<IInputField> = ({ formik, item, index }) => {
 interface IRadioField {
   formik: FormikValues
   index?: number
-  formName:string
-  itemText?:string
-  answers:{ text: string, value: string }[] | undefined
-  nomarginLeft?:boolean
-
+  formName: string
+  itemText?: string
+  answers?: { text: string, value: string }[]
+  nomarginLeft?: boolean
 }
 
-export const RadioField: FC<IRadioField> = ({ formik,formName,nomarginLeft, itemText, index,answers }) => {
-  return (
-    <RadioGroup name={ formName }
-                onBlur={ formik.handleBlur }
-                onChange={ formik.handleChange }
-                defaultValue={ answers && answers[0].value }
-                sx={ {marginLeft:nomarginLeft?0:'10vw'} }>
+export const RadioField: FC<IRadioField> = ({ formik, formName, nomarginLeft, answers }) => {
+  const [val, setVal] = useState<any>(answers && answers[0].value)
+  const handleCurrentAnswer = (event: any, checked: any, item: any) => {
+    setVal(item)
+    formik.handleChange(event, checked)
+  }
+  useEffect(() => {
+    formik.setFieldValue(formName, answers && answers[0].value)
+    setVal(answers && answers[0].value)
+  }, [formName])
 
-      { answers && answers.map((item, index) =>
-        <FormControlLabel onChange={ formik.handleChange }
-                          value={ item.value }
-                          name={ formName }
-                          key={ index }
-                          control={ <Radio/> }
-                          sx={ { maxHeight: '6vh' } }
-                          label={ itemText? itemText : <Typography variant="h6"> { item.text } </Typography> }/>,
-      ) }
-    </RadioGroup>
+
+  return (
+    <Grid container direction="column" sx={ { marginLeft: nomarginLeft ? '0' : '10vw' } }>
+      { answers && answers.map((item, index) => (
+        <Grid container key={ index } sx={ { margin: '5px 0' } }>
+          <Radio checked={ val === item.value }
+                 onChange={ (event, checked) => handleCurrentAnswer(event, checked, item.value) }
+                 value={ item.value }
+                 name={ formName }/>
+          <Typography variant="h6">{ item.text }</Typography>
+        </Grid>
+      )) }
+    </Grid>
   )
 }

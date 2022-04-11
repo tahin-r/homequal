@@ -22,14 +22,14 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ThemeProvider theme={ { ...muiTheme, ...theme } }>
       <MuiThemeProvider theme={ muiTheme }>
         <ScrollToTop/>
-        <ThemeProvider theme={ { ...muiTheme, ...theme } }>
           <BaseStyles/>
           <Header/>
           <AppRoutes/>
-        </ThemeProvider>
       </MuiThemeProvider>
+      </ThemeProvider>
     </BrowserRouter>
   )
 }

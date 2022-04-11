@@ -44,14 +44,14 @@ export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
           direction="column"
           sx={ { minHeight: 'calc( 100vh - 60px )', height: 'auto' } }>
 
-      <Typography variant="h6" mb={ 2 } sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '10px' } }>
+      <Typography variant="h5" mb={ 2 } sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '10px' } }>
         { rest.question(rest.formik.values) }
       </Typography>
 
       <form onSubmit={ rest.formik.handleSubmit }>
         { children }
 
-        <Typography sx={ { marginTop: '5vh', fontStyle: 'italic', padding: '3vw' } }>
+        <Typography variant="h6" sx={ { marginTop: '5vh', fontStyle: 'italic', padding: '3vw' } }>
           { rest.description }
         </Typography>
 
@@ -67,7 +67,7 @@ export const Wrapper: React.FC<any> = ({ children, ...rest }) => {
                     sx={ { transition: '2s' } }
                     onClick={ () => rest.current !== 'Q23' ? handleClick() : navigate('/') }>
 
-              <Typography variant="h6">Continue</Typography>
+              <Typography variant="h5">Continue</Typography>
 
             </Button>
 
@@ -145,7 +145,6 @@ export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
                                                                          item={ item }
                                                                          key={ index }
                                                                          index={ index }/>) }
-
       </Grid>
     </Wrapper>
   )
@@ -228,24 +227,37 @@ export const CreateAutoCompleteQuestion: FC<ICreateAutoCompleteQuestion> = ({
              formik={ formik }
              current={ current }
              setSchema={ setSchema }>
-      <Grid container
-            direction="column"
-            wrap="nowrap"
-            alignContent="center"
-            justifyContent="space-evenly"
-            alignItems="flex-start"
-            sx={ { paddingLeft: '5vh' } }>
+      <Grid container direction="column" wrap="nowrap" sx={ { paddingLeft: '5vh', maxWidth: '600px' } }>
         { inputs && inputs.map((item, index: number) => (
           <Grid key={ index }>
-            <Typography variant="h6">Option { index + 1 }</Typography>
-            <Grid container wrap="nowrap">
-              <InputField formik={ formik } item={ item }/>
+            <Typography variant="h5" mt={ 5 }>Option { index + 1 }</Typography>
+            <Grid container alignItems="center" justifyContent="space-between" width="100%" wrap='nowrap'>
+              <Grid maxWidth="150px" my={'1.5vw'}>
+                <InputField formik={ formik } item={ item }/>
+              </Grid>
+              <Grid  container flexShrink={1}  pt={1.7}>
               <Autocomplete id={ `${ formName }[1]` }
                             onChange={ (event, value) => formik.setFieldValue(`${ formName }[${ index }][1]`, value) }
                             options={ states }
-                            sx={ { minWidth: '170px' } }
+                            fullWidth
+                            renderOption={ (option: any) => (
+                              <Typography { ...option } style={ {
+                                fontSize: "1rem"
+                              } }>{ option.key }</Typography>
+                            ) }
+                            sx={ { paddingLeft: '0' } }
                             renderInput={ (params) =>
-                              <TextField { ...params } label="State"/> }/>
+                              <TextField { ...params } inputProps={ {
+                                ...params.inputProps,
+                                style: { fontSize: "1.3rem", fontWeight: 'bold'},
+                              } }
+                                         label={ <Typography width="auto"
+                                                             variant="h6"
+                                                             fontWeight='400'
+                                                             fontStyle="italic"
+                                                             sx={{paddingLeft:'-15px'}}
+                                                             color="black">State</Typography> }/> }/>
+              </Grid>
             </Grid>
           </Grid>
         )) }
@@ -374,7 +386,7 @@ export const CreateEndQuestion: FC<basicData> = ({
                 justifyContent="space-between"
                 wrap="nowrap">
 
-            <Typography variant="h6" color="primary" sx={ { verticalAlign: 'bottom',fontWeight:'regular' } }>
+            <Typography variant="h6" color="primary" sx={ { verticalAlign: 'bottom', fontWeight: 'regular' } }>
               { item }
             </Typography>
             { status >= index ? <img src={ doneArrow } width={ 45 } height={ 45 } alt="arrow"/>

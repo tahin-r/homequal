@@ -2,7 +2,7 @@ import styled                       from 'styled-components'
 import { Button, Grid, Typography } from '@mui/material'
 import React                        from 'react'
 
-export const CenteredTypography = styled(({ ...props }) => <Typography { ...props } />)`
+export const CenteredTypography = styled(({ ...props }) => <Typography variant='h6' { ...props } />)`
   text-align    : center;
   margin-bottom : 20px;
   padding       : 0 20px;
