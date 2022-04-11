@@ -13,18 +13,21 @@ const IconHolder = styled(({ ...props }) => <div { ...props } />)`
   background-size : cover;
   transition      : 0.5s;
   user-select     : none;
-  margin: 0 3vw;
+  
   @media screen and (min-width : 2001px) {
     min-width       : 7vw;
     min-height      : 7vw;
+    margin: 0 1.5vw;
   }
   @media screen and (max-width : 2000px) {
     min-width       : 70px;
     min-height      : 70px;
+    margin: 0 1vw;
   }
   @media screen and (max-width : 900px) {
     min-width       : 50px;
     min-height      : 50px;
+    margin: 0 1vw;
   }
 
   &:hover{

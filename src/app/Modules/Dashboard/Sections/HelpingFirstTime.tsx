@@ -3,6 +3,7 @@ import { FC }                              from "react"
 import styled                              from "styled-components"
 import { QualButton }                      from "../../../../shared/styles/strings"
 import { lendingLG, lendingMD, lendingXL } from "../../../../assets/images/dashboard/lending"
+import { useNavigate }                     from 'react-router-dom'
 
 export const Content = styled.div`
   position        : relative;
@@ -45,6 +46,8 @@ const TextContainer = styled.div`
 `
 
 export const HelpingFirstTime: FC = () => {
+  const navigate = useNavigate()
+
   return (
     <Content>
       <TextContainer>
@@ -53,7 +56,7 @@ export const HelpingFirstTime: FC = () => {
         </Typography>
       </TextContainer>
 
-      <QualButton sx={ { borderRadius: "30px" } }>
+      <QualButton sx={ { borderRadius: "30px" } } onClick={()=>navigate("Q&A/Q1")}>
         <Typography>Start Your Journey Now</Typography>
       </QualButton>
     </Content>

@@ -77,7 +77,7 @@ export const Links = () => {
   const navigate = useNavigate()
 
   return (
-    <Grid container sx={ { maxWidth: '500px' } }>
+    <Grid container my={ 3 } sx={ { maxWidth: '500px' } }>
 
       { links.map((item, index) => (
         <Grid item xs={ 6 } key={ index }>
@@ -88,6 +88,7 @@ export const Links = () => {
             <Grid container justifyContent="center" key={ index }>
               <Typography variant="h6"
                           mb={ 1 }
+                          textAlign="center"
                           onClick={ () => navigate(itemLink.link) }
                           sx={ { cursor: 'pointer', width: 'auto' } }>
                 { itemLink.text }
