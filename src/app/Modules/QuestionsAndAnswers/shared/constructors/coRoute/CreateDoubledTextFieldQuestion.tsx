@@ -56,16 +56,24 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
             <Grid key={ index } container justifyContent="flex-start" wrap="nowrap">
 
               <Grid sx={ { width: "auto", maxWidth: '100px', marginRight: '1vw', boxSizing: 'border-box' } }>
-                <InputField key={ index } item={ item } formik={ formik } labelText={ 'Payments' }/>
+                <InputField key={ index }
+                            item={ item }
+                            formik={ formik }
+                            labelText={ 'Payments' }
+                            mainstyles={ { paddingRight: '0' } }/>
               </Grid>
 
               <Grid sx={ { width: "auto", maxWidth: '100px', boxSizing: 'border-box' } }>
                 { coInputs && (
-                  <InputField key={ index + 5 } item={ coInputs[index] } formik={ formik } labelText={ 'Payments' }/>
+                  <InputField key={ index + 5 }
+                              item={ coInputs[index] }
+                              formik={ formik }
+                              labelText={ 'Payments' }
+                              mainstyles={ { paddingRight: '0' } }/>
                 ) }
               </Grid>
 
-              <Grid alignSelf="baseline" pt={ '1.8rem' } ml={2}>
+              <Grid alignSelf="baseline" ml={ 2 } pt={ '2rem' }>
                 <Typography variant="h6" sx={ { fontSize: '1.3rem' } }>{ item.text }</Typography>
               </Grid>
             </Grid>

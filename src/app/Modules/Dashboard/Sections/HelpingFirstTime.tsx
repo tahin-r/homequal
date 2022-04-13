@@ -56,8 +56,8 @@ export const HelpingFirstTime: FC = () => {
         </Typography>
       </TextContainer>
 
-      <QualButton sx={ { borderRadius: "30px" } } onClick={()=>navigate("Q&A/Q1")}>
-        <Typography>Start Your Journey Now</Typography>
+      <QualButton onClick={()=>navigate("Q&A/Q1")}>
+        <Typography variant='h5'>Start Your Journey Now</Typography>
       </QualButton>
     </Content>
   )

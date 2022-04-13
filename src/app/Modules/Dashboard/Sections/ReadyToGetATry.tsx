@@ -50,7 +50,7 @@ export const ReadyToGetATry = () => {
 
       <Grid container justifyContent="center">
         <QualButton sx={ { borderRadius: "30px" } } onClick={ () => console.log('clicked') }>
-          <Typography>Give it a Try!</Typography>
+          <Typography variant='h5'>Give it a Try!</Typography>
         </QualButton>
       </Grid>
     </Grid>
