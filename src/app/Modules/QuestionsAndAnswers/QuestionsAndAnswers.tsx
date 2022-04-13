@@ -1,18 +1,22 @@
 import { Grid }                                      from '@mui/material'
 import { useState }                                  from 'react'
-import {
-  CreateAutoCompleteQuestion, CreateCheckBoxQuestion, CreateDiagramQuestion, CreateEndQuestion, CreateRadioQuestion,
-  CreateTextFieldQuestion,
-}                                                    from './constructors'
 import { QuestionKey, questionsList, QuestionsType } from './questions'
-import { useFormik }                                 from 'formik'
-import * as yup                                      from 'yup'
-import { Route, Routes, useNavigate }                from 'react-router-dom'
-import { QuestionsSchema } from './validation'
-import {
-  CreateCOTextFieldQuestion, CreateDoubledCheckBoxQuestion, CreateDoubledRadioQuestion, CreateDoubledTextFieldQuestion,
-  CreateRadioTextQuestion, CreateVeteranQuestion,
-}                          from './coConstructors'
+import { useFormik }                  from 'formik'
+import * as yup                       from 'yup'
+import { Route, Routes, useNavigate } from 'react-router-dom'
+import { QuestionsSchema }                from './validation'
+import { CreateTextFieldQuestion }        from './shared/constructors/aloneRoute/CreateTextFieldQuestion'
+import { CreateEndQuestion }              from './shared/constructors/aloneRoute/CreateEndQuestion'
+import { CreateCheckBoxQuestion }         from './shared/constructors/aloneRoute/CreateCheckBoxQuestion'
+import { CreateDiagramQuestion }          from './shared/constructors/aloneRoute/CreateDiagramQuestion'
+import { CreateAutoCompleteQuestion }     from './shared/constructors/aloneRoute/CreateAutoCompleteQuestion'
+import { CreateRadioQuestion }            from './shared/constructors/aloneRoute/CreateRadioQuestion'
+import { CreateVeteranQuestion }          from './shared/constructors/coRoute/CreateVeteranQuestion'
+import { CreateCOTextFieldQuestion }      from './shared/constructors/coRoute/CreateCOTextFieldQuestion'
+import { CreateRadioTextQuestion }        from './shared/constructors/coRoute/CreateRadioTextQuestion'
+import { CreateDoubledRadioQuestion }     from './shared/constructors/coRoute/CreateDoubledRadioQuestion'
+import { CreateDoubledTextFieldQuestion } from './shared/constructors/coRoute/CreateDoubledTextFieldQuestion'
+import { CreateDoubledCheckBoxQuestion }  from './shared/constructors/coRoute/CreateDoubledCheckBoxQuestion'
 
 
 export const QuestionsAndAnswers = () => {
@@ -65,7 +69,8 @@ export const QuestionsAndAnswers = () => {
   const [currentSchema, setCurrentSchema] = useState(QuestionsSchema.Q1)
 
   const formik = useFormik({
-    validateOnBlur  : true,
+    validateOnChange: true,
+    validateOnMount:false,
     initialValues   : currentState,
     validationSchema: currentSchema,
     onSubmit        : (values) => HandleSubmit(values),
