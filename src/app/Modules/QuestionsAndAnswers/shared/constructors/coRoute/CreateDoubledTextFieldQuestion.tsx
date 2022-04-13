@@ -1,15 +1,13 @@
-import React, { FC }             from 'react'
-import { Wrapper }               from '../../Wrapper'
-import { Grid, Typography }      from '@mui/material'
-import { basicData, InputField } from '../shared'
+import React, { FC }                       from 'react'
+import { Wrapper }                         from '../../Wrapper'
+import { Grid, Typography }                from '@mui/material'
+import { basicData, InputField }           from '../shared'
+import { ICreateDoubledTextFieldQuestion } from '../../../questions'
 
-interface ICreateTextFieldQuestion extends basicData {
-  inputs?: { text: string; value: string }[]
-  coQuestion?: (state: any) => string
-  coInputs?: { text: string; value: string }[]
+interface IProps extends ICreateDoubledTextFieldQuestion, basicData {
 }
 
-export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
+export const CreateDoubledTextFieldQuestion: FC<IProps> = ({
   question,
   inputs,
   setCurrentQuestionHandler,
@@ -18,7 +16,6 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
   formik,
   current,
   setSchema,
-  coQuestion,
   coInputs,
 }) => {
   return (
@@ -30,7 +27,6 @@ export const CreateDoubledTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
              inputs={ inputs }
              current={ current }
              setSchema={ setSchema }
-             coQuestion={ coQuestion }
              coInputs={ coInputs }>
       <Grid container direction="column" wrap="nowrap" sx={ { paddingLeft: "5vw" } }>
         <Grid container>

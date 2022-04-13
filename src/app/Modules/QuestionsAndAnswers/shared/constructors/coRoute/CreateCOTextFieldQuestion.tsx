@@ -1,16 +1,13 @@
-import React, { FC }             from 'react'
-import { Grid, Typography }      from '@mui/material'
-import { basicData, InputField } from '../shared'
-import { Wrapper }               from '../../Wrapper'
+import React, { FC }                  from 'react'
+import { Grid, Typography }           from '@mui/material'
+import { basicData, InputField }      from '../shared'
+import { Wrapper }                    from '../../Wrapper'
+import { ICreateCOTextFieldQuestion } from '../../../questions'
 
-interface ICreateTextFieldQuestion extends basicData {
-  inputs?: { text: string; value: string }[]
-  coQuestion?: (state: any) => string
-  coInputs?: { text: string; value: string }[]
+interface IProps extends ICreateCOTextFieldQuestion, basicData {
 }
 
-
-export const CreateCOTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
+export const CreateCOTextFieldQuestion: FC<IProps> = ({
   question,
   inputs,
   setCurrentQuestionHandler,

@@ -1,11 +1,15 @@
-import React, { FC, useState } from 'react'
-import { basicData }           from '../shared'
-import { Wrapper }             from '../../Wrapper'
+import React, { FC, useState }                from 'react'
+import { basicData }                          from '../shared'
+import { Wrapper }                            from '../../Wrapper'
 import { CenteredTypography }                 from '../../../../../../shared/styles/strings'
 import { CircularProgress, Grid, Typography } from '@mui/material'
 import doneArrow                              from '../../../../../../assets/images/doneArrow.svg'
+import { basicTypes }                         from '../../../questions'
 
-export const CreateEndQuestion: FC<basicData> = ({
+interface IProps extends basicTypes,basicData{
+}
+
+export const CreateEndQuestion: FC<IProps> = ({
   setCurrentQuestionHandler,
   next,
   question,

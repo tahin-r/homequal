@@ -1,13 +1,12 @@
 import { basicData, InputField } from '../shared'
 import React, { FC }             from 'react'
 import { Wrapper }               from '../../Wrapper'
-import { Grid }                  from '@mui/material'
+import { Grid }                                 from '@mui/material'
+import { basicTypes, ICreateTextFieldQuestion } from '../../../questions'
 
-interface ICreateTextFieldQuestion extends basicData {
-  inputs?: { text: string, value: string }[] | undefined
+interface IProps extends ICreateTextFieldQuestion,basicData{
 }
-
-export const CreateTextFieldQuestion: FC<ICreateTextFieldQuestion> = ({
+export const CreateTextFieldQuestion: FC<IProps> = ({
   question,
   inputs,
   setCurrentQuestionHandler,

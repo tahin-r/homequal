@@ -1,7 +1,8 @@
-import { basicData, InputField } from '../shared'
-import React, { FC }             from 'react'
+import { basicData, InputField }                     from '../shared'
+import React, { FC }                                 from 'react'
 import { Wrapper }                                   from '../../Wrapper'
 import { Autocomplete, Grid, TextField, Typography } from '@mui/material'
+import { ICreateAutoCompleteQuestion }               from '../../../questions'
 
 const states = ['Alaska', 'Alabama', 'Arkansas', 'American Samoa', 'Arizona', 'California', 'Colorado', 'Connecticut',
   'District of Columbia',
@@ -14,12 +15,10 @@ const states = ['Alaska', 'Alabama', 'Arkansas', 'American Samoa', 'Arizona', 'C
   'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Virginia', 'Virgin Islands', 'Vermont', 'Washington', 'Wisconsin',
   'West Virginia', 'Wyoming']
 
-interface ICreateAutoCompleteQuestion extends basicData {
-  inputs?: { text: string, value: string }[] | undefined
-  formName?: string
+interface IProps extends basicData, ICreateAutoCompleteQuestion {
 }
 
-export const CreateAutoCompleteQuestion: FC<ICreateAutoCompleteQuestion> = ({
+export const CreateAutoCompleteQuestion: FC<IProps> = ({
   question,
   inputs,
   setCurrentQuestionHandler,
@@ -39,13 +38,13 @@ export const CreateAutoCompleteQuestion: FC<ICreateAutoCompleteQuestion> = ({
              formik={ formik }
              current={ current }
              setSchema={ setSchema }>
-      <Grid container direction="column" wrap="nowrap" sx={ { paddingLeft: '5vh', maxWidth: '600px' } }>
+      <Grid container direction="column" wrap="nowrap" sx={ { paddingLeft: '10vw', maxWidth: '600px' } } pr={ 2 }>
         { inputs && inputs.map((item, index: number) => (
           <Grid key={ index }>
             <Typography variant="h5" mt={ 5 }>Option { index + 1 }</Typography>
             <Grid container alignItems="center" justifyContent="space-between" width="100%" wrap="nowrap">
               <Grid maxWidth="150px" my={ '1.5vw' }>
-                <InputField formik={ formik } item={ item }/>
+                <InputField formik={ formik } item={ item } mainstyles={ { paddingRight: 0 } }/>
               </Grid>
               <Grid container flexShrink={ 1 } pt={ 1.7 }>
                 <Autocomplete id={ `${ formName }[1]` }

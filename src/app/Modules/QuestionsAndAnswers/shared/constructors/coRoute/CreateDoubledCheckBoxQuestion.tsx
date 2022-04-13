@@ -1,16 +1,13 @@
-import { basicData } from '../shared'
-import React, { FC } from 'react'
+import { basicData }                                               from '../shared'
+import React, { FC }                                               from 'react'
 import { Wrapper }                                                 from '../../Wrapper'
 import { Checkbox, FormControlLabel, FormGroup, Grid, Typography } from '@mui/material'
+import { basicTypes, ICreateDoubledCheck_Radio_BoxQuestion }       from '../../../questions'
 
-interface ICreateDoubledCheckBoxQuestion extends basicData {
-  answers?: { text: string; value: string }[]
-  co_answers?: { text: string; value: string }[]
-  formName?: string
-  co_formName?: string
+interface IProps extends ICreateDoubledCheck_Radio_BoxQuestion,basicData{
 }
 
-export const CreateDoubledCheckBoxQuestion: FC<ICreateDoubledCheckBoxQuestion> = ({
+export const CreateDoubledCheckBoxQuestion: FC<IProps> = ({
   question,
   answers,
   setCurrentQuestionHandler,

@@ -6,11 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/QuestionsAndAnswers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/QuestionsAndAnswers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/questions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateAutoCompleteQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateAutoCompleteQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateCheckBoxQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateCheckBoxQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateDiagramQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateDiagramQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateEndQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateEndQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateRadioQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateRadioQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateTextFieldQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateTextFieldQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateCOTextFieldQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateCOTextFieldQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledCheckBoxQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledCheckBoxQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledRadioQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledRadioQuestion.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledTextFieldQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledTextFieldQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateRadioTextQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateRadioTextQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateVeteranQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateVeteranQuestion.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/shared.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/shared.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/strings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/strings.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +125,7 @@
       <workItem from="1649670541264" duration="24724000" />
       <workItem from="1649758176721" duration="6352000" />
       <workItem from="1649780102860" duration="4828000" />
-      <workItem from="1649841540163" duration="13839000" />
+      <workItem from="1649841540163" duration="20945000" />
     </task>
     <servers />
   </component>

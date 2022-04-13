@@ -1,16 +1,13 @@
-import { basicData }                      from '../shared'
-import React, { FC, useEffect, useState } from 'react'
-import { Wrapper }                        from '../../Wrapper'
-import { Grid, Radio, Typography }        from '@mui/material'
+import { basicData }                             from '../shared'
+import React, { FC, useEffect, useState }        from 'react'
+import { Wrapper }                               from '../../Wrapper'
+import { Grid, Radio, Typography }               from '@mui/material'
+import { ICreateDoubledCheck_Radio_BoxQuestion } from '../../../questions'
 
-interface ICreateDoubledRadioQuestion extends basicData {
-  answers?: { text: string; value: string }[]
-  co_answers?: { text: string; value: string }[]
-  formName?: string
-  co_formName?: string
+interface IProps extends ICreateDoubledCheck_Radio_BoxQuestion, basicData {
 }
 
-export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
+export const CreateDoubledRadioQuestion: FC<IProps> = ({
   question,
   answers,
   setCurrentQuestionHandler,
@@ -24,15 +21,15 @@ export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
   co_formName,
 }) => {
 
-  const [value, setValue] = useState(answers && answers[0].value)
-  const [co_value, co_setValue] = useState(co_answers && co_answers[0].value)
+  const [value, setValue] = useState(answers[0].value)
+  const [co_value, co_setValue] = useState(co_answers[0].value)
 
   useEffect(
     () => {
-      setValue(answers && answers[0].value)
-      co_setValue(co_answers && co_answers[0].value)
-      formik.setFieldValue(formName, answers && answers[0].value)
-      formik.setFieldValue(co_formName, co_answers && co_answers[0].value)
+      setValue( answers[0].value)
+      co_setValue(co_answers[0].value)
+      formik.setFieldValue(formName,answers[0].value)
+      formik.setFieldValue(co_formName, co_answers[0].value)
     }, [current],
   )
 
@@ -70,20 +67,20 @@ export const CreateDoubledRadioQuestion: FC<ICreateDoubledRadioQuestion> = ({
         </Grid>
 
         <Grid container direction="column" wrap="nowrap" width={ 'auto' }>
-          { co_answers && formName && answers && answers.map((item, index) => (
-            <Grid container width={ '100%' } alignItems="center" key={ index } wrap="nowrap" my={ 1 } >
+          { answers.map((item, index) => (
+            <Grid container width={ '100%' } alignItems="center" key={ index } wrap="nowrap" my={ 1 }>
 
               <Radio checked={ value === item.value }
                      onChange={ (event, checked) => handleCurrentAnswer(event, checked, item.value) }
                      value={ item.value }
                      name={ formName }
-                     sx={ { transform: 'scale(1.3)',mr:1 } }/>
+                     sx={ { transform: 'scale(1.3)', mr: 1 } }/>
 
               <Radio checked={ co_value === co_answers[index].value }
                      onChange={ (event, checked) => co_handleCurrentAnswer(event, checked, co_answers[index].value) }
                      value={ co_answers[index].value }
                      name={ co_formName }
-                     sx={ { transform: 'scale(1.3)',mr:1 } }/>
+                     sx={ { transform: 'scale(1.3)', mr: 1 } }/>
               <Typography variant="h6">{ item.text }</Typography>
             </Grid>
           )) }

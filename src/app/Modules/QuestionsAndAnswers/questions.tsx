@@ -1,10 +1,78 @@
-const Q1 = {
+enum ConstructorTypes {
+  CreateTextFieldQuestion        = 'CreateTextFieldQuestion',
+  CreateRadioQuestion            = 'CreateRadioQuestion',
+  CreateCheckBoxQuestion         = 'CreateCheckBoxQuestion',
+  CreateDiagramQuestion          = 'CreateDiagramQuestion',
+  CreateAutoCompleteQuestion     = 'CreateAutoCompleteQuestion',
+  CreateEndQuestion              = 'CreateEndQuestion',
+  CreateCOTextFieldQuestion      = 'CreateCOTextFieldQuestion',
+  CreateDoubledTextFieldQuestion = 'CreateDoubledTextFieldQuestion',
+  CreateDoubledCheckBoxQuestion  = 'CreateDoubledCheckBoxQuestion',
+  CreateDoubledRadioQuestion     = 'CreateDoubledRadioQuestion',
+  CreateRadioTextQuestion        = 'CreateRadioTextQuestion',
+  CreateVeteranQuestion          = 'CreateVeteranQuestion'
+}
+
+export interface basicTypes {
+  question: (state: object | null) => string
+  elementConstructor: keyof typeof ConstructorTypes
+  description: string
+  current: QuestionKey
+  next: QuestionKey
+}
+
+export interface ICreateTextFieldQuestion extends basicTypes {
+  inputs: { value: string, text: string }[]
+}
+
+export interface ICreateRadio_CheckBox_Question extends basicTypes {
+  answers: { value: string, text: string }[]
+  formName: string
+}
+
+export interface ICreateAutoCompleteQuestion extends basicTypes {
+  inputs: { value: string, text: string }[]
+  formName: string
+}
+
+export interface ICreateCOTextFieldQuestion extends basicTypes {
+  inputs: { value: string, text: string }[]
+  coInputs: { value: string, text: string }[]
+  coQuestion: (state: object | null) => string
+}
+
+export interface ICreateDoubledTextFieldQuestion extends basicTypes {
+  inputs: { value: string, text: string }[]
+  coInputs: { value: string, text: string }[]
+}
+
+export interface ICreateDoubledCheck_Radio_BoxQuestion extends basicTypes {
+  formName: string
+  co_formName: string
+  answers: { value: string, text: string }[]
+  co_answers: { value: string, text: string }[]
+}
+
+export interface ICreateRadioTextQuestion extends ICreateDoubledCheck_Radio_BoxQuestion {
+  question1: (state: object | null) => string
+  co_question: (state: object | null) => string
+  co_question1: (state: object | null) => string
+  inputs: { value: string, text: string }[]
+  co_inputs: { value: string, text: string }[]
+}
+
+export interface ICreateVeteranQuestion extends ICreateDoubledCheck_Radio_BoxQuestion {
+  co_question: (state: object) => string
+}
+
+
+const Q1: ICreateTextFieldQuestion = {
   question          : () => "Hi, who do I have the pleasure of speaking with?",
   description       :
     "HomeQual believes that it takes a team to meet your goals. By providing your contact information, you are " +
     "giving us permission to contact you in order to help you with your home ownership goals. " +
     "If, at any time, you would like to opt-out, please let us know by using the opt-out button on your profile page.",
-  elementConstructor: "createTextFieldQuestion",
+  elementConstructor: "CreateTextFieldQuestion",
   current           : "Q1",
   next              : "Q2",
   inputs            : [
@@ -27,7 +95,7 @@ const Q1 = {
   ],
 }
 
-const Q2 = {
+const Q2: ICreateRadio_CheckBox_Question = {
   question          : (state: any) =>
     `Nice to meet you ${ state.first_name }. We will be sending you information you` +
     " request,specifics" +
@@ -52,7 +120,7 @@ const Q2 = {
   ],
 }
 
-const Q3 = {
+const Q3: ICreateRadio_CheckBox_Question = {
   question          : () =>
     "Let’s get started! Who will be on the loan application with you?",
   description       :
@@ -77,7 +145,7 @@ const Q3 = {
   ],
 }
 
-const Q4 = {
+const Q4: ICreateRadio_CheckBox_Question = {
   question          : () =>
     "In order to determine what types of loans you may qualify for, we`ll need to know your marital status",
   description       : "",
@@ -101,10 +169,10 @@ const Q4 = {
   ],
 }
 
-const Q5 = {
+const Q5: ICreateTextFieldQuestion = {
   question          : () => "Who will be on the loan with you",
   description       : "",
-  elementConstructor: "createTextFieldQuestion",
+  elementConstructor: "CreateTextFieldQuestion",
   current           : "Q5",
   next              : "Q6",
   inputs            : [
@@ -127,7 +195,7 @@ const Q5 = {
   ],
 }
 
-const Q6 = {
+const Q6: ICreateRadio_CheckBox_Question = {
   question          : (state: any) => `What is ${ state.co_first_name } marital status`,
   description       : "",
   elementConstructor: "CreateRadioQuestion",
@@ -150,7 +218,7 @@ const Q6 = {
   ],
 }
 
-const Q7 = {
+const Q7: ICreateRadio_CheckBox_Question = {
   question          : () => "Select an approximate date",
   description       :
     "TIP:  If you are leasing now, you might want to enter your lease expiration date.",
@@ -178,12 +246,12 @@ const Q7 = {
   ],
 }
 
-const Q8 = {
+const Q8: ICreateTextFieldQuestion = {
   question          : () =>
     "What is the maximum you want to spend monthly on your mortgage payment?",
   description       :
     "We may find that you qualify for more or less, and we will show you that later.",
-  elementConstructor: "createTextFieldQuestion",
+  elementConstructor: "CreateTextFieldQuestion",
   current           : "Q8",
   next              : "Q9",
   inputs            : [
@@ -194,12 +262,12 @@ const Q8 = {
   ],
 }
 
-const Q9 = {
+const Q9: ICreateTextFieldQuestion = {
   question          : () =>
     "How much money will you have available to purchase your new home?",
   description       :
     "Tip:  Enter the amount you will have saved by the time you apply for a mortgage.",
-  elementConstructor: "createTextFieldQuestion",
+  elementConstructor: "CreateTextFieldQuestion",
   current           : "Q9",
   next              : "Q10",
   inputs            : [
@@ -210,7 +278,7 @@ const Q9 = {
   ],
 }
 
-const Q10 = {
+const Q10: ICreateRadio_CheckBox_Question = {
   question          : (state: any) =>
     `What is the source of your $${ state.home_savings } funds? Check any that apply.`,
   description       :
@@ -243,23 +311,23 @@ const Q10 = {
   ],
 }
 
-const Q11 = {
+const Q11: ICreateTextFieldQuestion = {
   question          : (state: any) =>
     `Awesome! The next step is to see if you will qualify for a $${ state.monthly_payment_amount } monthly mortgage payment. To ` +
     "help make this decision, lenders will calculate your Debt to Income Ratio." +
     " Let’s quickly calculate yours now.",
   description       : "",
-  elementConstructor: "createTextFieldQuestion",
+  elementConstructor: "CreateTextFieldQuestion",
   current           : "Q11",
   next              : "Q12",
   inputs            : [],
 }
 
-const Q12 = {
+const Q12: ICreateTextFieldQuestion = {
   question          : () =>
     "What is your total monthly income from all sources before any taxes or deductions? What is your total monthly income from all sources before any taxes or deductions?",
   description       : "Enter your GROSS income, not what you end up taking home.",
-  elementConstructor: "createTextFieldQuestion",
+  elementConstructor: "CreateTextFieldQuestion",
   current           : "Q12",
   next              : "Q13",
   inputs            : [
@@ -270,12 +338,12 @@ const Q12 = {
   ],
 }
 
-const Q13 = {
+const Q13: ICreateTextFieldQuestion = {
   question          : () =>
     "OK. Now let’s look at your expenses. Enter your monthly payment for any that apply...",
   description       :
     "Don’t list expenses like utilities, mobile payments, insurance, etc.  Only those items on your credit report.",
-  elementConstructor: "createTextFieldQuestion",
+  elementConstructor: "CreateTextFieldQuestion",
   current           : "Q13",
   next              : "Q14",
   inputs            : [
@@ -298,17 +366,16 @@ const Q13 = {
   ],
 }
 
-const Q14 = {
+const Q14: basicTypes = {
   question          : (state: any) =>
     `${ state.first_name }, great news! Based on your information, your Debt to Income Ratio is ACCEPTABLE! `,
   description       : "",
   elementConstructor: "CreateDiagramQuestion",
   current           : "Q14",
   next              : "Q15",
-  inputs            : [],
 }
 
-const Q15 = {
+const Q15: ICreateRadio_CheckBox_Question = {
   question          : () =>
     "Lenders will analyze your employment history. Check any below that apply to you.",
   description       :
@@ -345,7 +412,7 @@ const Q15 = {
   ],
 }
 
-const Q16 = {
+const Q16: ICreateRadio_CheckBox_Question = {
   question          : () =>
     "Your credit score plays a major role in both your approvability odds as well as the interest rate. What do you think your credit score is?",
   description       :
@@ -382,7 +449,7 @@ const Q16 = {
   ],
 }
 
-const Q17 = {
+const Q17: ICreateRadio_CheckBox_Question = {
   question          : () =>
     "Lenders pay close attention to items on your report as well.Check any that apply.",
   description       :
@@ -423,7 +490,7 @@ const Q17 = {
   ],
 }
 
-const Q18 = {
+const Q18: ICreateRadio_CheckBox_Question = {
   question          : () => "Are any of your student loans in default?",
   description       : "This will help us further refine your Success Plan.",
   elementConstructor: "CreateRadioQuestion",
@@ -446,7 +513,7 @@ const Q18 = {
   ],
 }
 
-const Q19 = {
+const Q19: ICreateRadio_CheckBox_Question = {
   question          : () =>
     "You said you had a tax lien, judgement or foreclosure.Please check all that apply.",
   description       : "This will help us further refine your Success Plan.",
@@ -478,7 +545,7 @@ const Q19 = {
   ],
 }
 
-const Q20 = {
+const Q20: ICreateRadio_CheckBox_Question = {
   question          : () =>
     "Good work, you’re almost done. Now, let’s take a quick look at your current living situation…",
   description       : "Lenders will analyze your past 2 years living arrangements. ",
@@ -502,7 +569,7 @@ const Q20 = {
   ],
 }
 
-const Q21 = {
+const Q21: ICreateRadio_CheckBox_Question = {
   question          : () =>
     "Good work, you’re almost done. Now, let’s take a quick look at your current living situation…",
   description       : "",
@@ -522,7 +589,7 @@ const Q21 = {
   ],
 }
 
-const Q22 = {
+const Q22: ICreateAutoCompleteQuestion = {
   question          : () =>
     "And finally, where would you like to live? A major part of your mortgage payment is taxes. By providing a general area, we can calculate your taxes!",
   description       :
@@ -547,7 +614,7 @@ const Q22 = {
   ],
 }
 
-const Q23 = {
+const Q23: basicTypes = {
   question          : () => "",
   description       : "",
   elementConstructor: "CreateEndQuestion",
@@ -555,15 +622,15 @@ const Q23 = {
   next              : "Q23",
 }
 
-const Q12c = {
+const Q12c: ICreateCOTextFieldQuestion = {
   question          : () =>
     `What is your total monthly income from all sources before any taxes or deductions?`,
   coQuestion        : (state: any) =>
     `What is ${ state.co_first_name }\`s total monthly income from all sources before any taxes or deductions?`,
   description       : "Enter your GROSS income, not what you end up taking home.",
   elementConstructor: "CreateCOTextFieldQuestion",
-  current           : "Q12C",
-  next              : "Q13C",
+  current           : "Q12c",
+  next              : "Q13c",
   inputs            : [
     {
       value: "monthly_income",
@@ -578,13 +645,13 @@ const Q12c = {
   ],
 }
 
-const Q13c = {
+const Q13c: ICreateDoubledTextFieldQuestion = {
   question          : () =>
     `Lenders pay close attention to items on your report as well. Check any that apply.`,
   description       : "Enter your GROSS income, not what you end up taking home.",
   elementConstructor: "CreateDoubledTextFieldQuestion",
-  current           : "Q13C",
-  next              : "Q14C",
+  current           : "Q13c",
+  next              : "Q14c",
   inputs            : [
     {
       value: "auto_expense",
@@ -622,17 +689,16 @@ const Q13c = {
     },
   ],
 }
-const Q14c = {
+const Q14c: basicTypes = {
   question          : (state: any) =>
     `${ state.first_name }, great news! Based on your information, your Debt to Income Ratio is ACCEPTABLE! `,
   description       : "",
   elementConstructor: "CreateDiagramQuestion",
   current           : "Q14c",
   next              : "Q15c",
-  inputs            : [],
 }
 
-const Q15c = {
+const Q15c: ICreateDoubledCheck_Radio_BoxQuestion = {
   question          : () =>
     "Lenders will analyze your employment history. Check any below that apply to you.",
   description       :
@@ -640,8 +706,8 @@ const Q15c = {
   elementConstructor: "CreateDoubledCheckBoxQuestion",
   formName          : "credit_score_range",
   co_formName       : "co_credit_score_range",
-  current           : "Q15C",
-  next              : "Q16C",
+  current           : "Q15c",
+  next              : "Q16c",
   answers           : [
     {
       value: "employment_gaps",
@@ -695,7 +761,7 @@ const Q15c = {
     },
   ],
 }
-const Q16c = {
+const Q16c: ICreateDoubledCheck_Radio_BoxQuestion = {
   question          : () =>
     "Your credit score plays a major role in both your approvability odds as well as the interest rate. What do you think your credit score is?",
   description       :
@@ -703,8 +769,8 @@ const Q16c = {
   elementConstructor: "CreateDoubledRadioQuestion",
   formName          : "member_buyer_details",
   co_formName       : "co_member_buyer_details",
-  current           : "Q16C",
-  next              : "Q17C",
+  current           : "Q16c",
+  next              : "Q17c",
   answers           : [
     {
       value: "1",
@@ -758,7 +824,7 @@ const Q16c = {
     },
   ],
 }
-const Q17c = {
+const Q17c: ICreateDoubledCheck_Radio_BoxQuestion = {
   question          : () =>
     "Lenders will analyze your employment history. Check any below that apply to you.",
   description       :
@@ -766,8 +832,8 @@ const Q17c = {
   elementConstructor: "CreateDoubledCheckBoxQuestion",
   formName          : "member_buyer_details",
   co_formName       : "co_member_buyer_details",
-  current           : "Q17C",
-  next              : "Q18C",
+  current           : "Q17c",
+  next              : "Q18c",
   answers           : [
     {
       value: "late_payments",
@@ -830,14 +896,14 @@ const Q17c = {
   ],
 }
 
-const Q18c = {
+const Q18c: ICreateDoubledCheck_Radio_BoxQuestion = {
   question          : () => "Are any of your student loans in default?",
   description       : "This will help us further refine your Success Plan.",
   elementConstructor: "CreateDoubledRadioQuestion",
   formName          : "member_buyer_student_details",
   co_formName       : "co_member_buyer_student_details",
-  current           : "Q18C",
-  next              : "Q19C",
+  current           : "Q18c",
+  next              : "Q19c",
   answers           : [
     {
       value: "student_loan_default",
@@ -867,15 +933,15 @@ const Q18c = {
     },
   ],
 }
-const Q19c = {
+const Q19c: ICreateDoubledCheck_Radio_BoxQuestion = {
   question          : () =>
     "You said you had a tax lien, judgement or foreclosure.Please check all that apply.",
   description       : "This will help us further refine your Success Plan.",
   elementConstructor: "CreateDoubledRadioQuestion",
   formName          : "member_buyer_details",
   co_formName       : "co_member_buyer_details",
-  current           : "Q19C",
-  next              : "Q20C",
+  current           : "Q19c",
+  next              : "Q20c",
   answers           : [
     {
       value: "tax_lien",
@@ -921,10 +987,10 @@ const Q19c = {
     },
   ],
 }
-const Q20c = {
+const Q20c: ICreateRadioTextQuestion = {
   question          : () =>
     "Good work, you’re almost done. Now, let’s take a quick look at your current living situation…",
-  question1         : (state: any) => "My monthly housing payment is",
+  question1         : () => "My monthly housing payment is",
   co_question       : (state: any) =>
     `${ state.co_first_name }’s current living situation is …`,
   co_question1      : (state: any) =>
@@ -980,14 +1046,14 @@ const Q20c = {
     },
   ],
 }
-const Q21c = {
+const Q21c: ICreateVeteranQuestion = {
   question          : () => "Let’s see if you qualify for special veteran programs.",
   co_question       : (state: any) => `Is ${ state.co_first_name } a veteran?`,
   description       : "",
   elementConstructor: "CreateVeteranQuestion",
   formName          : "veteran",
   co_formName       : "co_veteran",
-  current           : "Q21C",
+  current           : "Q21c",
   next              : "Q22",
 
   answers   : [

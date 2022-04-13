@@ -1,14 +1,13 @@
-import { basicData } from '../shared'
-import React, { FC } from 'react'
+import { basicData }                                         from '../shared'
+import React, { FC }                                         from 'react'
 import { Wrapper }                                           from '../../Wrapper'
-import { Checkbox, FormControlLabel, FormGroup, Typography } from '@mui/material'
+import { Checkbox, FormControlLabel, FormGroup, Typography }           from '@mui/material'
+import { ICreateRadio_CheckBox_Question } from '../../../questions'
 
-interface ICreateCheckBoxQuestion extends basicData {
-  answers?: { text: string, value: string }[] | undefined
-  formName?: string
+interface IProps extends basicData, ICreateRadio_CheckBox_Question {
 }
 
-export const CreateCheckBoxQuestion: FC<ICreateCheckBoxQuestion> = ({
+export const CreateCheckBoxQuestion: FC<IProps> = ({
   question,
   answers,
   setCurrentQuestionHandler, next,

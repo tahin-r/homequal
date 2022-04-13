@@ -5,13 +5,7 @@ import { QuestionKey }                                   from '../../questions'
 
 export interface basicData {
   formik: FormikValues
-  question: (state: any) => string
-  elementConstructor: string
-  next: QuestionKey
   setCurrentQuestionHandler: (next: QuestionKey, current: QuestionKey) => void
-  description: string
-  current: string
-  question1?: (arg: any) => string
   setSchema: (current: QuestionKey) => void
 }
 

@@ -1,22 +1,22 @@
 import { Grid }                                      from '@mui/material'
 import { useState }                                  from 'react'
 import { QuestionKey, questionsList, QuestionsType } from './questions'
-import { useFormik }                  from 'formik'
-import * as yup                       from 'yup'
-import { Route, Routes, useNavigate } from 'react-router-dom'
-import { QuestionsSchema }                from './validation'
-import { CreateTextFieldQuestion }        from './shared/constructors/aloneRoute/CreateTextFieldQuestion'
-import { CreateEndQuestion }              from './shared/constructors/aloneRoute/CreateEndQuestion'
-import { CreateCheckBoxQuestion }         from './shared/constructors/aloneRoute/CreateCheckBoxQuestion'
-import { CreateDiagramQuestion }          from './shared/constructors/aloneRoute/CreateDiagramQuestion'
-import { CreateAutoCompleteQuestion }     from './shared/constructors/aloneRoute/CreateAutoCompleteQuestion'
-import { CreateRadioQuestion }            from './shared/constructors/aloneRoute/CreateRadioQuestion'
-import { CreateVeteranQuestion }          from './shared/constructors/coRoute/CreateVeteranQuestion'
-import { CreateCOTextFieldQuestion }      from './shared/constructors/coRoute/CreateCOTextFieldQuestion'
-import { CreateRadioTextQuestion }        from './shared/constructors/coRoute/CreateRadioTextQuestion'
-import { CreateDoubledRadioQuestion }     from './shared/constructors/coRoute/CreateDoubledRadioQuestion'
-import { CreateDoubledTextFieldQuestion } from './shared/constructors/coRoute/CreateDoubledTextFieldQuestion'
-import { CreateDoubledCheckBoxQuestion }  from './shared/constructors/coRoute/CreateDoubledCheckBoxQuestion'
+import { useFormik }                                 from 'formik'
+import * as yup                                      from 'yup'
+import { Route, Routes, useNavigate }                from 'react-router-dom'
+import { QuestionsSchema }                           from './validation'
+import { CreateTextFieldQuestion }                   from './shared/constructors/aloneRoute/CreateTextFieldQuestion'
+import { CreateEndQuestion }                         from './shared/constructors/aloneRoute/CreateEndQuestion'
+import { CreateCheckBoxQuestion }                    from './shared/constructors/aloneRoute/CreateCheckBoxQuestion'
+import { CreateDiagramQuestion }                     from './shared/constructors/aloneRoute/CreateDiagramQuestion'
+import { CreateAutoCompleteQuestion }                from './shared/constructors/aloneRoute/CreateAutoCompleteQuestion'
+import { CreateRadioQuestion }                       from './shared/constructors/aloneRoute/CreateRadioQuestion'
+import { CreateVeteranQuestion }                     from './shared/constructors/coRoute/CreateVeteranQuestion'
+import { CreateCOTextFieldQuestion }                 from './shared/constructors/coRoute/CreateCOTextFieldQuestion'
+import { CreateRadioTextQuestion }                   from './shared/constructors/coRoute/CreateRadioTextQuestion'
+import { CreateDoubledRadioQuestion }                from './shared/constructors/coRoute/CreateDoubledRadioQuestion'
+import { CreateDoubledTextFieldQuestion }            from './shared/constructors/coRoute/CreateDoubledTextFieldQuestion'
+import { CreateDoubledCheckBoxQuestion }             from './shared/constructors/coRoute/CreateDoubledCheckBoxQuestion'
 
 
 export const QuestionsAndAnswers = () => {
@@ -70,7 +70,7 @@ export const QuestionsAndAnswers = () => {
 
   const formik = useFormik({
     validateOnChange: true,
-    validateOnMount:false,
+    validateOnMount : false,
     initialValues   : currentState,
     validationSchema: currentSchema,
     onSubmit        : (values) => HandleSubmit(values),
@@ -118,16 +118,17 @@ export const QuestionsAndAnswers = () => {
 
 
   const constructor = (question: QuestionsType) => {
+
     const props = {
-      ...question,
+      ...question as any,
       formik : formik,
-      current: question.current,
+      current: question.current as QuestionKey,
       next   : question.next as QuestionKey,
       setCurrentQuestionHandler,
       setSchema,
     }
     switch (question.elementConstructor) {
-      case('createTextFieldQuestion'):
+      case('CreateTextFieldQuestion'):
         return <CreateTextFieldQuestion { ...props }/>
       case('CreateRadioQuestion'):
         return <CreateRadioQuestion  { ...props }/>

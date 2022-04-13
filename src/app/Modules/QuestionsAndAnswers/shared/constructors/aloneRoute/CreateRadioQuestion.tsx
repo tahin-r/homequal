@@ -1,14 +1,12 @@
 import React, { FC, useEffect }  from 'react'
 import { Wrapper }               from '../../Wrapper'
-import { basicData, RadioField } from '../shared'
+import { basicData, RadioField }                      from '../shared'
+import { basicTypes, ICreateRadio_CheckBox_Question } from '../../../questions'
 
-interface ICreateRadioQuestion extends basicData {
-  answers?: { text: string, value: string }[] | undefined
-  formName?: string
+interface IProps extends ICreateRadio_CheckBox_Question,basicData{
 }
 
-
-export const CreateRadioQuestion: FC<ICreateRadioQuestion> = ({
+export const CreateRadioQuestion: FC<IProps> = ({
   answers,
   setCurrentQuestionHandler,
   next,

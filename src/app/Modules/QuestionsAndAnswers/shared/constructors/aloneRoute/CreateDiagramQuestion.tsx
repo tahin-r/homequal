@@ -1,10 +1,14 @@
-import React, { FC } from 'react'
-import { basicData } from '../shared'
-import { Wrapper }   from '../../Wrapper'
+import React, { FC }        from 'react'
+import { basicData }        from '../shared'
+import { Wrapper }          from '../../Wrapper'
 import { Grid, Typography } from '@mui/material'
 import { PieChart }         from 'react-minimal-pie-chart'
+import { basicTypes }       from '../../../questions'
 
-export const CreateDiagramQuestion: FC<basicData> = ({
+interface IProps extends basicTypes,basicData{
+}
+
+export const CreateDiagramQuestion: FC<IProps> = ({
   question,
   setCurrentQuestionHandler,
   next,
