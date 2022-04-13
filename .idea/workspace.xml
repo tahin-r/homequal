@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Layout/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/SocialMedia.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/SocialMedia.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/constructors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/constructors.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/validation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/validation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/Resources/Resources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/SmallSections/Resources/Resources.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeComponents/NewHomeItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeComponents/NewHomeItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeOwnersLove.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeOwnersLove.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,7 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -113,7 +113,10 @@
       <workItem from="1649582902710" duration="2000" />
       <workItem from="1649583045755" duration="53000" />
       <workItem from="1649591086909" duration="2097000" />
-      <workItem from="1649670541264" duration="24416000" />
+      <workItem from="1649670541264" duration="24724000" />
+      <workItem from="1649758176721" duration="6352000" />
+      <workItem from="1649780102860" duration="4828000" />
+      <workItem from="1649841540163" duration="610000" />
     </task>
     <servers />
   </component>

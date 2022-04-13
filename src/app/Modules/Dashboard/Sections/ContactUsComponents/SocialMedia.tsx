@@ -13,27 +13,28 @@ const IconHolder = styled(({ ...props }) => <div { ...props } />)`
   background-size : cover;
   transition      : 0.5s;
   user-select     : none;
-  
+
   @media screen and (min-width : 2001px) {
-    min-width       : 7vw;
-    min-height      : 7vw;
-    margin: 0 1.5vw;
+    min-width  : 7vw;
+    min-height : 7vw;
+    margin     : 0 1.5vw;
   }
   @media screen and (max-width : 2000px) {
-    min-width       : 70px;
-    min-height      : 70px;
-    margin: 0 1vw;
+    min-width  : 70px;
+    min-height : 70px;
+    margin     : 0 1vw;
   }
   @media screen and (max-width : 900px) {
-    min-width       : 50px;
-    min-height      : 50px;
-    margin: 0 1vw;
+    min-width  : 50px;
+    min-height : 50px;
+    margin     : 0 1vw;
   }
 
-  &:hover{
+  &:hover {
     transition : 0.5s;
     transform  : scale(1.2);
   }
+
   &:active {
     transition : 0.5s;
     transform  : scale(0.8);
@@ -65,11 +66,10 @@ const icons = [
 export const SocialMedia = () => {
 
   return (
-    <Grid container justifyContent="center" wrap="nowrap">
+    <Grid container justifyContent="center" wrap="nowrap" mb={ 2 }>
       { icons.map((item, index) => (
         <a href={ item.link } key={ index }>
-          <IconHolder icon={ item.icon }
-          />
+          <IconHolder icon={ item.icon }/>
         </a>
       )) }
     </Grid>

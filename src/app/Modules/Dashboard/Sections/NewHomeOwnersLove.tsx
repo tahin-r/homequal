@@ -10,11 +10,9 @@ const ContentTypography = styled(CenteredTypography)`
   padding : 4vw 10vw;
 `
 const FeedbacksHolder = styled(({ ...props }) => (
-  <Grid{ ...props } ref={ props.scrollref } container wrap="nowrap" direction="row" alignSelf="center"/>))`
-  position   : relative;
+  <Grid{ ...props } ref={ props.scrollref } container wrap="nowrap"/>))`
   overflow-x : scroll;
   padding    : 20px 0 40px 0;
-  width      : 100vw;
 
   & > div {
     transition : ease-in 0.2s;
@@ -24,12 +22,12 @@ const FeedbacksHolder = styled(({ ...props }) => (
     transform  : scale(1.1);
     transition : ease-in 0.5s;
   }
-  
+
   @media screen and (max-width : 1000px) {
     &::-webkit-scrollbar {
       display : initial;
     }
-   
+
   }
 `
 
@@ -98,16 +96,19 @@ export const NewHomeOwnersLove = () => {
           Done for Them
         </ContentTypography>
       </Grid>
+      <Grid container justifyContent="center">
+        <FeedbacksHolder scrollref={ scrollref }>
+          { usersFeedback.map((item, i) => (
+            <NewHomeItem key={ i }
+                         imageUrl={ item.imageUrl }
+                         name={ item.name }
+                         nickName={ item.nickName }
+                         text={ item.text }/>
+          )) }
+        </FeedbacksHolder>
 
-      <FeedbacksHolder scrollref={ scrollref } container>
-        { usersFeedback.map((item, i) => (
-          <NewHomeItem key={ i }
-                       imageUrl={ item.imageUrl }
-                       name={ item.name }
-                       nickName={ item.nickName }
-                       text={ item.text }/>
-        )) }
-      </FeedbacksHolder>
+      </Grid>
+
     </Grid>
   )
 }
