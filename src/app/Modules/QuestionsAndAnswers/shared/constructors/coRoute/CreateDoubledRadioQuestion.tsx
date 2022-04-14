@@ -1,24 +1,19 @@
-import { basicData }                             from '../shared'
-import React, { FC, useEffect, useState }        from 'react'
-import { Wrapper }                               from '../../Wrapper'
+import { basicData }                            from '../shared'
+import React, { FC, memo, useEffect, useState } from 'react'
+import { Wrapper }                              from '../../Wrapper'
 import { Grid, Radio, Typography }               from '@mui/material'
 import { ICreateDoubledCheck_Radio_BoxQuestion } from '../../../questions'
 
 interface IProps extends ICreateDoubledCheck_Radio_BoxQuestion, basicData {
 }
 
-export const CreateDoubledRadioQuestion: FC<IProps> = ({
-  question,
+export const CreateDoubledRadioQuestion: FC<IProps> = memo(({
   answers,
-  setCurrentQuestionHandler,
-  next,
-  description,
   formik,
-  current,
-  setSchema,
   co_answers,
   formName,
   co_formName,
+  wrapperProps
 }) => {
 
   const [value, setValue] = useState(answers[0].value)
@@ -30,27 +25,21 @@ export const CreateDoubledRadioQuestion: FC<IProps> = ({
       co_setValue(co_answers[0].value)
       formik.setFieldValue(formName,answers[0].value)
       formik.setFieldValue(co_formName, co_answers[0].value)
-    }, [current],
+    }, [wrapperProps.current],
   )
 
   const handleCurrentAnswer = (event: any, checked: any, item: any) => {
+    // !!!!!
     setValue(item)
-    formik.handleChange(event, checked)
+    formik.handleChange(event)
   }
   const co_handleCurrentAnswer = (event: any, checked: any, item: any) => {
     co_setValue(item)
-    formik.handleChange(event, checked)
+    // !!!!!
+    formik.handleChange(event)
   }
   return (
-    <Wrapper next={ next }
-             setCurrentQuestionHandler={ setCurrentQuestionHandler }
-             description={ description }
-             question={ question }
-             formik={ formik }
-             answers={ answers }
-             current={ current }
-             setSchema={ setSchema }
-             co_answers={ co_answers }>
+    <Wrapper { ...wrapperProps }>
       <Grid container direction="column" wrap="nowrap" sx={ { padding: "0 0 0 10vw" } }>
         <Grid container>
           <Typography variant="h6" sx={ {
@@ -90,4 +79,4 @@ export const CreateDoubledRadioQuestion: FC<IProps> = ({
     </Wrapper>
 
   )
-}
+})

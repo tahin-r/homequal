@@ -1,5 +1,5 @@
 import { basicData, InputField }                     from '../shared'
-import React, { FC }                                 from 'react'
+import React, { FC, memo }                           from 'react'
 import { Wrapper }                                   from '../../Wrapper'
 import { Autocomplete, Grid, TextField, Typography } from '@mui/material'
 import { ICreateAutoCompleteQuestion }               from '../../../questions'
@@ -18,28 +18,17 @@ const states = ['Alaska', 'Alabama', 'Arkansas', 'American Samoa', 'Arizona', 'C
 interface IProps extends basicData, ICreateAutoCompleteQuestion {
 }
 
-export const CreateAutoCompleteQuestion: FC<IProps> = ({
-  question,
+export const CreateAutoCompleteQuestion: FC<IProps> = memo(({
   inputs,
-  setCurrentQuestionHandler,
-  next,
-  description,
   formik,
   formName,
-  current,
-  setSchema,
+  wrapperProps,
 }) => {
 
   return (
-    <Wrapper next={ next }
-             setCurrentQuestionHandler={ setCurrentQuestionHandler }
-             description={ description }
-             question={ question }
-             formik={ formik }
-             current={ current }
-             setSchema={ setSchema }>
+    <Wrapper { ...wrapperProps }>
       <Grid container direction="column" wrap="nowrap" sx={ { paddingLeft: '10vw', maxWidth: '600px' } } pr={ 2 }>
-        { inputs && inputs.map((item, index: number) => (
+        { inputs.map((item, index: number) => (
           <Grid key={ index }>
             <Typography variant="h5" mt={ 5 }>Option { index + 1 }</Typography>
             <Grid container alignItems="center" justifyContent="space-between" width="100%" wrap="nowrap">
@@ -76,4 +65,4 @@ export const CreateAutoCompleteQuestion: FC<IProps> = ({
 
     </Wrapper>
   )
-}
+})

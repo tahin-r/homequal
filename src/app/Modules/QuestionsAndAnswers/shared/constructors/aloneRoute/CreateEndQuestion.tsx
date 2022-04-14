@@ -1,41 +1,27 @@
-import React, { FC, useState }                from 'react'
-import { basicData }                          from '../shared'
+import React, { FC, memo, useState } from 'react'
+import { basicData }                 from '../shared'
 import { Wrapper }                            from '../../Wrapper'
 import { CenteredTypography }                 from '../../../../../../shared/styles/strings'
 import { CircularProgress, Grid, Typography } from '@mui/material'
 import doneArrow                              from '../../../../../../assets/images/doneArrow.svg'
 import { basicTypes }                         from '../../../questions'
 
-interface IProps extends basicTypes,basicData{
+interface IProps extends basicTypes, basicData {
 }
 
-export const CreateEndQuestion: FC<IProps> = ({
-  setCurrentQuestionHandler,
-  next,
-  question,
-  description,
-  formik,
-  current,
-  setSchema,
+export const CreateEndQuestion: FC<IProps> = memo(({
+  wrapperProps,
 }) => {
   const [status, setStatus] = useState(-1)
   const items = [' Analyzing Financial', 'Identifying Potential Issues', 'Calculating Cash Reward', 'Building Success Plan']
 
   return (
-    <Wrapper next={ next }
-             setCurrentQuestionHandler={ setCurrentQuestionHandler }
-             description={ description }
-             question={ question }
-             formik={ formik }
-             setSchema={ setSchema }
-             current={ current }
-             status={ status }>
+    <Wrapper { ...wrapperProps } status={ status }>
 
       <CenteredTypography variant="h5">
         That’s it. Give me a second
         to crunch some numbers.
       </CenteredTypography>
-
 
       { items.map((item, index) => {
 
@@ -67,4 +53,4 @@ export const CreateEndQuestion: FC<IProps> = ({
       }) }
     </Wrapper>
   )
-}
+})

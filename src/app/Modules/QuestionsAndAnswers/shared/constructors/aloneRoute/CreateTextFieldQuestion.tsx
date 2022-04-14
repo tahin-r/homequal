@@ -1,38 +1,28 @@
-import { basicData, InputField } from '../shared'
-import React, { FC }             from 'react'
-import { Wrapper }               from '../../Wrapper'
-import { Grid }                                 from '@mui/material'
-import { basicTypes, ICreateTextFieldQuestion } from '../../../questions'
+import { basicData, InputField }    from '../shared'
+import React, { FC, memo }          from 'react'
+import { Wrapper }                  from '../../Wrapper'
+import { Grid }                     from '@mui/material'
+import { ICreateTextFieldQuestion } from '../../../questions'
 
-interface IProps extends ICreateTextFieldQuestion,basicData{
+interface IProps extends ICreateTextFieldQuestion, basicData {
 }
-export const CreateTextFieldQuestion: FC<IProps> = ({
-  question,
+
+export const CreateTextFieldQuestion: FC<IProps> = memo(({
   inputs,
-  setCurrentQuestionHandler,
-  next,
-  description,
+  wrapperProps,
   formik,
-  current,
-  setSchema,
 }) => {
 
   return (
-    <Wrapper next={ next }
-             setCurrentQuestionHandler={ setCurrentQuestionHandler }
-             description={ description }
-             question={ question }
-             formik={ formik }
-             current={ current }
-             setSchema={ setSchema }>
+    <Wrapper { ...wrapperProps }>
 
       <Grid container direction="column" sx={ { paddingLeft: '10vw' } }>
 
-        { inputs && inputs.map((item: any, index: number) => <InputField formik={ formik }
-                                                                         item={ item }
-                                                                         key={ index }
-                                                                         index={ index }/>) }
+        { inputs.map((item: any, index: number) => <InputField formik={ formik }
+                                                               item={ item }
+                                                               key={ index }
+                                                               index={ index }/>) }
       </Grid>
     </Wrapper>
   )
-}
+})

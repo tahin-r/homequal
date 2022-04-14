@@ -1,12 +1,12 @@
-import { Grid, Radio, TextField, Typography }            from '@mui/material'
-import React, { CSSProperties, FC, useEffect, useState } from 'react'
-import { FormikValues }                                  from 'formik/dist/types'
-import { QuestionKey }                                   from '../../questions'
+import { Grid, Radio, TextField, Typography }                  from '@mui/material'
+import React, { CSSProperties, FC, memo, useEffect, useState } from 'react'
+import { FormikValues }                                        from 'formik/dist/types'
+import { FormikProps }                                         from 'formik'
+import { IWrapper }                                            from '../Wrapper'
 
 export interface basicData {
-  formik: FormikValues
-  setCurrentQuestionHandler: (next: QuestionKey, current: QuestionKey) => void
-  setSchema: (current: QuestionKey) => void
+  formik: FormikProps<any>
+  wrapperProps: IWrapper
 }
 
 interface IInputField {
@@ -17,7 +17,7 @@ interface IInputField {
   labelText?: string
 }
 
-export const InputField: FC<IInputField> = ({ formik, item, index, mainstyles, labelText }) => {
+export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyles, labelText }) => {
   return (
     <TextField autoFocus={ index === 0 }
                onChange={ formik.handleChange }
@@ -28,7 +28,9 @@ export const InputField: FC<IInputField> = ({ formik, item, index, mainstyles, l
                name={ item.value }
                InputProps={ { style: { fontSize: '1.4rem', fontWeight: 'bold' } } }
                InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': { marginTop: '-10px', zIndex: 1 } } } }
-               sx={ { minWidth: '100px', maxWidth: '400px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles } }
+               sx={ {
+                 minWidth: '100px', maxWidth: '400px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles,
+               } }
                error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
                helperText={ formik.touched[item.value] &&
                    <Typography component="span"
@@ -40,47 +42,46 @@ export const InputField: FC<IInputField> = ({ formik, item, index, mainstyles, l
                    { labelText ? labelText : item.text }
                  </Typography> }/>
   )
-}
+})
 
 interface IRadioField {
   formik: FormikValues
   index?: number
   formName: string
   itemText?: string
-  answers?: { text: string, value: string }[]
+  answers: { text: string, value: string }[]
   nomarginLeft?: boolean
 }
 
-export const RadioField: FC<IRadioField> = ({ formik, formName, nomarginLeft, answers }) => {
-  const [val, setVal] = useState<any>(answers && answers[0].value)
+export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLeft, answers }) => {
+  const [value, setValue] = useState<any>(answers[0].value)
   const handleCurrentAnswer = (event: any, checked: any, item: any) => {
-    setVal(item)
+    setValue(item)
     formik.handleChange(event, checked)
   }
   useEffect(() => {
-    formik.setFieldValue(formName, answers && answers[0].value)
-    setVal(answers && answers[0].value)
+    formik.setFieldValue(formName, answers[0].value)
+    setValue(answers[0].value)
   }, [formName])
 
 
   return (
     <Grid container direction="column" sx={ { marginLeft: nomarginLeft ? '0' : '10vw' } }>
-      { answers && answers.map((item, index) => (
+      { answers.map((item, index) => (
         <Grid container key={ index } sx={ { margin: '5px 0' } }>
-          <Radio checked={ val === item.value }
+          <Radio checked={ value === item.value }
                  id={ item.text + index }
                  onChange={ (event, checked) => handleCurrentAnswer(event, checked, item.value) }
                  value={ item.value }
                  name={ formName }
-                 sx={{transform:'scale(1.3)'}}/>
+                 sx={ { transform: 'scale(1.3)' } }/>
 
           <label htmlFor={ item.text + index }>
             <Typography variant="h6">{ item.text }</Typography>
           </label>
-
-
         </Grid>
       )) }
     </Grid>
   )
-}
+})
+

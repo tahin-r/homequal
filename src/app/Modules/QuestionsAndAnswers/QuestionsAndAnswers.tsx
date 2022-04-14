@@ -1,25 +1,15 @@
-import { Grid }                                      from '@mui/material'
-import { useState }                                  from 'react'
-import { QuestionKey, questionsList, QuestionsType } from './questions'
-import { useFormik }                                 from 'formik'
-import * as yup                                      from 'yup'
-import { Route, Routes, useNavigate }                from 'react-router-dom'
-import { QuestionsSchema }                           from './validation'
-import { CreateTextFieldQuestion }                   from './shared/constructors/aloneRoute/CreateTextFieldQuestion'
-import { CreateEndQuestion }                         from './shared/constructors/aloneRoute/CreateEndQuestion'
-import { CreateCheckBoxQuestion }                    from './shared/constructors/aloneRoute/CreateCheckBoxQuestion'
-import { CreateDiagramQuestion }                     from './shared/constructors/aloneRoute/CreateDiagramQuestion'
-import { CreateAutoCompleteQuestion }                from './shared/constructors/aloneRoute/CreateAutoCompleteQuestion'
-import { CreateRadioQuestion }                       from './shared/constructors/aloneRoute/CreateRadioQuestion'
-import { CreateVeteranQuestion }                     from './shared/constructors/coRoute/CreateVeteranQuestion'
-import { CreateCOTextFieldQuestion }                 from './shared/constructors/coRoute/CreateCOTextFieldQuestion'
-import { CreateRadioTextQuestion }                   from './shared/constructors/coRoute/CreateRadioTextQuestion'
-import { CreateDoubledRadioQuestion }                from './shared/constructors/coRoute/CreateDoubledRadioQuestion'
-import { CreateDoubledTextFieldQuestion }            from './shared/constructors/coRoute/CreateDoubledTextFieldQuestion'
-import { CreateDoubledCheckBoxQuestion }             from './shared/constructors/coRoute/CreateDoubledCheckBoxQuestion'
+import { Grid }                           from '@mui/material'
+import { memo, useCallback, useState }    from 'react'
+import { QuestionKeyType, questionsList } from './questions'
+import { useFormik }                      from 'formik'
+import * as yup                           from 'yup'
+import { Route, Routes, useNavigate }     from 'react-router-dom'
+import { QuestionsSchema }                from './validation'
+import { SetCurrentQuestionHandler }      from './MainRoutes'
+import { GenerateQuestion }               from './GenerateQuestion'
 
 
-export const QuestionsAndAnswers = () => {
+export const QuestionsAndAnswers = memo(() => {
 
   const initialState = {
     first_name                     : '',
@@ -71,93 +61,25 @@ export const QuestionsAndAnswers = () => {
   const formik = useFormik({
     validateOnChange: true,
     validateOnMount : false,
+    validateOnBlur  : false,
     initialValues   : currentState,
     validationSchema: currentSchema,
     onSubmit        : (values) => HandleSubmit(values),
   })
 
-  const setSchema = (question: QuestionKey) => {
-    setCurrentSchema(QuestionsSchema[question] ? QuestionsSchema[question] : yup.object({}))
-  }
-
-  const HandleSubmit = (values: any) => {
-    if (values !== currentState) {
-      setCurrentState(values)
+  const setSchema = (questionKey: QuestionKeyType) => {
+    if (QuestionsSchema[questionKey] !== currentSchema) {
+      setCurrentSchema(QuestionsSchema[questionKey] ? QuestionsSchema[questionKey] : yup.object({}))
     }
   }
-
-  const setCurrentQuestionHandler = (next: QuestionKey, current: QuestionKey | string) => {
-    let isAlone = formik.values.co_borrower_flag === '0'
-    let isHaveStudentLoan = formik.values.member_buyer_details.includes('late_student_loan')
-    let isHaveTax = formik.values.member_buyer_details.includes('tax_lien_judgement_foreclosure')
-    let isCoHaveStudentLoan = formik.values.co_member_buyer_details.includes('late_student_loan')
-    let isCoHaveTax = formik.values.co_member_buyer_details.includes('tax_lien_judgement_foreclosure')
-    let isSpouce = formik.values.co_borrower_flag === '1'
-    if (current === 'Q4' && isAlone) {
-      navigate('Q7')
-    } else if (current === 'Q5' && isSpouce) {
-      navigate('Q7')
-    } else if (current === 'Q17' && !isHaveStudentLoan && !isHaveTax) {
-      navigate('Q20')
-    } else if (current === 'Q17' && isHaveTax && !isHaveStudentLoan) {
-      navigate('Q19')
-    } else if (current === 'Q18' && !isHaveTax) {
-      navigate('Q20')
-    } else if (current === 'Q17C' && !isHaveStudentLoan && !isHaveTax && !isCoHaveStudentLoan && !isCoHaveTax) {
-      navigate('Q20C')
-    } else if (current === 'Q17C' && !isHaveStudentLoan && !isCoHaveStudentLoan && (isHaveTax || isCoHaveTax)) {
-      navigate('Q19C')
-    } else if (current === 'Q18C' && !isHaveTax && !isCoHaveTax) {
-      navigate('Q20C')
-    } else if (current === 'Q11' && !isAlone) {
-      navigate('Q12C')
-    } else {
-      navigate(`${ next }`)
-    }
-  }
-
-
-  const constructor = (question: QuestionsType) => {
-
-    const props = {
-      ...question as any,
-      formik : formik,
-      current: question.current as QuestionKey,
-      next   : question.next as QuestionKey,
-      setCurrentQuestionHandler,
-      setSchema,
-    }
-    switch (question.elementConstructor) {
-      case('CreateTextFieldQuestion'):
-        return <CreateTextFieldQuestion { ...props }/>
-      case('CreateRadioQuestion'):
-        return <CreateRadioQuestion  { ...props }/>
-      case('CreateCheckBoxQuestion'):
-        return <CreateCheckBoxQuestion{ ...props }/>
-      case('CreateAutoCompleteQuestion'):
-        return <CreateAutoCompleteQuestion { ...props }/>
-      case('CreateCOTextFieldQuestion'):
-        return <CreateCOTextFieldQuestion { ...props }/>
-      case('CreateDoubledTextFieldQuestion'):
-        return <CreateDoubledTextFieldQuestion { ...props }/>
-      case('CreateDoubledCheckBoxQuestion'):
-        return <CreateDoubledCheckBoxQuestion { ...props }/>
-      case ('CreateDoubledRadioQuestion'):
-        return <CreateDoubledRadioQuestion { ...props }/>
-      case ('CreateRadioTextQuestion'):
-        return <CreateRadioTextQuestion { ...props } />
-      case('CreateVeteranQuestion'):
-        return <CreateVeteranQuestion { ...props }/>
-      case ('CreateDiagramQuestion'):
-        return <CreateDiagramQuestion { ...props }/>
-      case ('CreateEndQuestion'): {
-        return <CreateEndQuestion { ...props }/>
-      }
-    }
-  }
+  const HandleSubmit = useCallback((values: any) => {
+    setCurrentState(values)
+  }, [])
 
   const questionRoutes = Object.values(questionsList).map((el, index) =>
-    <Route path={ `/${ Object.keys(questionsList)[index] }` } element={ constructor(el) } key={ index }/>)
+    <Route path={ `/${ Object.keys(questionsList)[index] }` }
+           element={ GenerateQuestion({ CurrentQuestion: el, formik, SetCurrentQuestionHandler, setSchema, navigate }) }
+           key={ index }/>)
 
   return (
     <Grid overflow="hidden" sx={ { maxWidth: '100vw', height: 'auto' } }>
@@ -167,6 +89,6 @@ export const QuestionsAndAnswers = () => {
     </Grid>
 
   )
-}
+})
 
 

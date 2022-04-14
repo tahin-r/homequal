@@ -1,5 +1,5 @@
-import React, { FC }        from 'react'
-import { basicData }        from '../shared'
+import React, { FC, memo } from 'react'
+import { basicData }       from '../shared'
 import { Wrapper }          from '../../Wrapper'
 import { Grid, Typography } from '@mui/material'
 import { PieChart }         from 'react-minimal-pie-chart'
@@ -8,12 +8,9 @@ import { basicTypes }       from '../../../questions'
 interface IProps extends basicTypes,basicData{
 }
 
-export const CreateDiagramQuestion: FC<IProps> = ({
-  question,
-  setCurrentQuestionHandler,
-  next,
+export const CreateDiagramQuestion: FC<IProps> = memo(({
   formik,
-  current,
+  wrapperProps
 }) => {
   const totalIncome = Number(formik.values.monthly_income) + Number(formik.values.co_monthly_income)
   const totalExpenses = Number(formik.values.auto_expense) +
@@ -41,11 +38,7 @@ export const CreateDiagramQuestion: FC<IProps> = ({
   ]
 
   return (
-    <Wrapper next={ next }
-             setCurrentQuestionHandler={ setCurrentQuestionHandler }
-             question={ question }
-             formik={ formik }
-             current={ current }>
+    <Wrapper {...wrapperProps} >
       <Grid container direction="column" wrap="nowrap" alignItems="center" sx={ { marginTop: '30px', height: '100%' } }>
         <Typography variant="h6" component="span" sx={ {
           padding: '10px', backgroundColor: 'rgba(29,106,141,0.63)', width: 'auto', color: 'white',
@@ -82,4 +75,4 @@ export const CreateDiagramQuestion: FC<IProps> = ({
       </Grid>
     </Wrapper>
   )
-}
+})

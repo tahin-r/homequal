@@ -1,5 +1,5 @@
-import React, { FC }                       from 'react'
-import { Wrapper }                         from '../../Wrapper'
+import React, { FC, memo } from 'react'
+import { Wrapper }         from '../../Wrapper'
 import { Grid, Typography }                from '@mui/material'
 import { basicData, InputField }           from '../shared'
 import { ICreateDoubledTextFieldQuestion } from '../../../questions'
@@ -7,27 +7,15 @@ import { ICreateDoubledTextFieldQuestion } from '../../../questions'
 interface IProps extends ICreateDoubledTextFieldQuestion, basicData {
 }
 
-export const CreateDoubledTextFieldQuestion: FC<IProps> = ({
-  question,
+export const CreateDoubledTextFieldQuestion: FC<IProps> = memo(({
   inputs,
-  setCurrentQuestionHandler,
-  next,
-  description,
   formik,
-  current,
-  setSchema,
   coInputs,
+  wrapperProps
 }) => {
+
   return (
-    <Wrapper next={ next }
-             setCurrentQuestionHandler={ setCurrentQuestionHandler }
-             description={ description }
-             question={ question }
-             formik={ formik }
-             inputs={ inputs }
-             current={ current }
-             setSchema={ setSchema }
-             coInputs={ coInputs }>
+    <Wrapper { ...wrapperProps }>
       <Grid container direction="column" wrap="nowrap" sx={ { paddingLeft: "5vw" } }>
         <Grid container>
           <Typography variant="h6" sx={ {
@@ -47,34 +35,31 @@ export const CreateDoubledTextFieldQuestion: FC<IProps> = ({
             { formik.values.co_first_name }`s
           </Typography>
         </Grid>
-        { inputs &&
-          inputs.map((item, index: number) => (
-            <Grid key={ index } container justifyContent="flex-start" wrap="nowrap">
+        { inputs.map((item, index: number) => (
+          <Grid key={ index } container justifyContent="flex-start" wrap="nowrap">
 
-              <Grid sx={ { width: "auto", maxWidth: '100px', marginRight: '1vw', boxSizing: 'border-box' } }>
-                <InputField key={ index }
-                            item={ item }
-                            formik={ formik }
-                            labelText={ 'Payments' }
-                            mainstyles={ { paddingRight: '0' } }/>
-              </Grid>
-
-              <Grid sx={ { width: "auto", maxWidth: '100px', boxSizing: 'border-box' } }>
-                { coInputs && (
-                  <InputField key={ index + 5 }
-                              item={ coInputs[index] }
-                              formik={ formik }
-                              labelText={ 'Payments' }
-                              mainstyles={ { paddingRight: '0' } }/>
-                ) }
-              </Grid>
-
-              <Grid alignSelf="baseline" ml={ 2 } pt={ '2rem' }>
-                <Typography variant="h6" sx={ { fontSize: '1.3rem' } }>{ item.text }</Typography>
-              </Grid>
+            <Grid sx={ { width: "auto", maxWidth: '100px', marginRight: '1vw', boxSizing: 'border-box' } }>
+              <InputField key={ index }
+                          item={ item }
+                          formik={ formik }
+                          labelText={ 'Payments' }
+                          mainstyles={ { paddingRight: '0' } }/>
             </Grid>
-          )) }
+
+            <Grid sx={ { width: "auto", maxWidth: '100px', boxSizing: 'border-box' } }>
+              <InputField key={ index + 5 }
+                          item={ coInputs[index] }
+                          formik={ formik }
+                          labelText={ 'Payments' }
+                          mainstyles={ { paddingRight: '0' } }/>
+            </Grid>
+
+            <Grid alignSelf="baseline" ml={ 2 } pt={ '2rem' }>
+              <Typography variant="h6" sx={ { fontSize: '1.3rem' } }>{ item.text }</Typography>
+            </Grid>
+          </Grid>
+        )) }
       </Grid>
     </Wrapper>
   )
-}
+})

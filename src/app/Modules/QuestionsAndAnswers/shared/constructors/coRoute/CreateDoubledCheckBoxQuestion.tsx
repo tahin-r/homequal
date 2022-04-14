@@ -1,36 +1,23 @@
-import { basicData }                                               from '../shared'
-import React, { FC }                                               from 'react'
-import { Wrapper }                                                 from '../../Wrapper'
+import { basicData }       from '../shared'
+import React, { FC, memo } from 'react'
+import { Wrapper }         from '../../Wrapper'
 import { Checkbox, FormControlLabel, FormGroup, Grid, Typography } from '@mui/material'
-import { basicTypes, ICreateDoubledCheck_Radio_BoxQuestion }       from '../../../questions'
+import { ICreateDoubledCheck_Radio_BoxQuestion }                   from '../../../questions'
 
-interface IProps extends ICreateDoubledCheck_Radio_BoxQuestion,basicData{
+interface IProps extends ICreateDoubledCheck_Radio_BoxQuestion, basicData {
 }
 
-export const CreateDoubledCheckBoxQuestion: FC<IProps> = ({
-  question,
+export const CreateDoubledCheckBoxQuestion: FC<IProps> = memo(({
   answers,
-  setCurrentQuestionHandler,
-  next,
-  description,
   formik,
-  current,
-  setSchema,
   co_answers,
   formName,
   co_formName,
+  wrapperProps,
 }) => {
 
   return (
-    <Wrapper next={ next }
-             setCurrentQuestionHandler={ setCurrentQuestionHandler }
-             description={ description }
-             question={ question }
-             formik={ formik }
-             answers={ answers }
-             current={ current }
-             setSchema={ setSchema }
-             co_answers={ co_answers }>
+    <Wrapper { ...wrapperProps }>
       <Grid container direction="column" wrap="nowrap" sx={ { padding: "5vw 3vw 0 5vw" } }>
         <Grid container>
           <Typography variant="h6" sx={ {
@@ -63,16 +50,14 @@ export const CreateDoubledCheckBoxQuestion: FC<IProps> = ({
                                       color="primary"
                                       sx={ { margin: "1vh 0", minWidth: "50px" } }/>
 
-                    { co_answers && (
-                      <FormControlLabel control={ <Checkbox sx={ { transform: 'scale(1.3)' } }/> }
-                                        label={
-                                          <Typography variant="h6" ml={ 1 }> { item.text } </Typography>
-                                        }
-                                        name={ co_formName }
-                                        value={ co_answers[index].value }
-                                        color="primary"
-                                        sx={ { margin: "1vh 0", width: "auto" } }/>
-                    ) }
+                    <FormControlLabel control={ <Checkbox sx={ { transform: 'scale(1.3)' } }/> }
+                                      label={
+                                        <Typography variant="h6" ml={ 1 }> { item.text } </Typography>
+                                      }
+                                      name={ co_formName }
+                                      value={ co_answers[index].value }
+                                      color="primary"
+                                      sx={ { margin: "1vh 0", width: "auto" } }/>
                   </Grid>
                 </div>
               )) }
@@ -81,4 +66,4 @@ export const CreateDoubledCheckBoxQuestion: FC<IProps> = ({
       </Grid>
     </Wrapper>
   )
-}
+})

@@ -19,7 +19,6 @@ function App() {
 
     return null
   }
-
   return (
     <BrowserRouter>
       <ThemeProvider theme={ { ...muiTheme, ...theme } }>

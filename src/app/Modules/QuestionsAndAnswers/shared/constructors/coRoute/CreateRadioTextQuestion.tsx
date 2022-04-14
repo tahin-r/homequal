@@ -1,5 +1,5 @@
 import { basicData, InputField, RadioField } from '../shared'
-import React, { FC }                         from 'react'
+import React, { FC, memo }                   from 'react'
 import { Wrapper }                           from '../../Wrapper'
 import { Grid, Typography }                  from '@mui/material'
 import { ICreateRadioTextQuestion }          from '../../../questions'
@@ -7,15 +7,10 @@ import { ICreateRadioTextQuestion }          from '../../../questions'
 interface IProps extends ICreateRadioTextQuestion, basicData {
 }
 
-export const CreateRadioTextQuestion: FC<IProps> = ({
-  question,
+export const CreateRadioTextQuestion: FC<IProps> = memo(({
+
   inputs,
-  setCurrentQuestionHandler,
-  next,
-  description,
   formik,
-  current,
-  setSchema,
   co_question,
   co_inputs,
   answers,
@@ -24,19 +19,13 @@ export const CreateRadioTextQuestion: FC<IProps> = ({
   co_question1,
   formName,
   co_formName,
+  wrapperProps,
 }) => {
   return (
-    <Wrapper next={ next }
-             setCurrentQuestionHandler={ setCurrentQuestionHandler }
-             description={ description }
-             question={ question }
-             formik={ formik }
-             inputs={ inputs }
-             current={ current }
-             setSchema={ setSchema }>
+    <Wrapper { ...wrapperProps }>
       <Grid container direction="column" sx={ { paddingLeft: "10vw" } }>
         <Grid container direction="column" wrap="nowrap" sx={ { width: "auto" } }>
-          { formName && <RadioField formik={ formik } formName={ formName } answers={ answers }/> }
+          <RadioField formik={ formik } formName={ formName } answers={ answers }/>
         </Grid>
 
         <Typography variant="h6" sx={ { fontWeight: "bold", marginTop: "40px" } }>
@@ -48,15 +37,15 @@ export const CreateRadioTextQuestion: FC<IProps> = ({
         )) }
 
         <Typography variant="h6" sx={ { fontWeight: "bold", marginTop: "40px" } }>
-          { co_question && co_question(formik.values) }
+          { co_question(formik.values) }
         </Typography>
 
         <Grid container direction="column" wrap="nowrap" sx={ { width: "auto" } }>
-          { co_formName && <RadioField formik={ formik } formName={ co_formName } answers={ co_answers }/> }
+          <RadioField formik={ formik } formName={ co_formName } answers={ co_answers }/>
         </Grid>
 
         <Typography variant="h6" sx={ { fontWeight: "bold", marginTop: "40px" } }>
-          { co_question1 && co_question1(formik.values) }
+          { co_question1(formik.values) }
         </Typography>
 
         { co_inputs.map((item, index: number) =>
@@ -65,4 +54,4 @@ export const CreateRadioTextQuestion: FC<IProps> = ({
       </Grid>
     </Wrapper>
   )
-}
+})
