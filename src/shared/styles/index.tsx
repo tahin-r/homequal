@@ -28,7 +28,7 @@ export const TextContainer = styled(Grid)`
   color      : ${ (props: any) => (props.color ? props.color : "black") };
   padding    : 40px;
   text-align : center;
-  width      : 100%;
+  width      : auto;
 `
 export const GreyTextContainer = styled(TextContainer)`
   padding          : 30px;
@@ -37,7 +37,7 @@ export const GreyTextContainer = styled(TextContainer)`
   text-align       : initial;
 `
 export const HeaderDivider = styled(Grid)`
-  width            : 100vw;
+  width            : 100%;
   height           : 60px;
   background-color : white;
   content: '';
