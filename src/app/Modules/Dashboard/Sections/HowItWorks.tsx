@@ -26,7 +26,7 @@ export const HowItWorks: FC = () => {
     <Grid container wrap="nowrap" justifyContent="flex-end">
       <Grid item sx={ { padding: "20px", maxWidth: "500px" } }>
         <Title variant={ "h5" }>How it Works</Title>
-        <TextContent variant={ "h6" }>
+        <TextContent variant={ "h5" } fontWeight='light'>
           You enter information - we analyze thousands of data points to create
           your personal step by step success plan!
         </TextContent>

@@ -1,8 +1,8 @@
 import { Grid }                                    from "@mui/material"
 import styled                                      from "styled-components"
-import { HomeQualTextTemplate }                    from "../../../../shared/strings/strings"
-import { CenteredTypography }                      from "../../../../shared/styles/strings"
-import { NewHomeItem }                             from "./NewHomeComponents/NewHomeItem"
+import { HomeQualTextTemplate } from "../../../../shared/strings/strings"
+import { CenteredTypography }   from "../../../../shared/styles"
+import { NewHomeItem }          from "./NewHomeComponents/NewHomeItem"
 import { RefObject, useEffect, useRef }            from "react"
 import { Bradley, Earl, Eric, Jay, Jerry, Joshua } from "../../../../assets/images/faces"
 

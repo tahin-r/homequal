@@ -2,10 +2,11 @@ import React  from "react"
 import styled from "styled-components"
 
 import { Grid, Typography }                 from "@mui/material"
-import { HomeQualTextTemplate }             from "../../../../shared/strings/strings"
+import { Copyrights, HomeQualTextTemplate } from "../../../../shared/strings/strings"
 import doneArrow                            from '../../../../assets/images/doneArrow.svg'
-import { GreyTextContainer, TextContainer } from '../../../../shared/styles/strings'
-import { careers, careersLG, careersMD }    from '../../../../assets/images/careers'
+import { GreyTextContainer, HeaderDivider, TextContainer } from '../../../../shared/styles'
+import { careers, careersLG, careersMD }                   from '../../../../assets/images/careers'
+import { SectionList }                                     from '../shared'
 
 const ContentImage = styled.div`
   position        : relative;
@@ -46,6 +47,7 @@ export const Careers = () => {
 
   return (
     <>
+      <HeaderDivider/>
       <ContentImage>
         {/*text*/ }
       </ContentImage>
@@ -67,30 +69,20 @@ export const Careers = () => {
 
 
       <GreyTextContainer color={ "black" }>
-        <Grid maxWidth={ '700px' }>
+        <Grid container direction="column" alignItems='center'>
+
           <Typography variant="h5" fontWeight="bold" textAlign="center" mb={ 2 }>
             We offer...
           </Typography>
 
-          { offer.map((item, index) => (
-            <Grid maxWidth={ '500px' } container key={ index } margin={ '5px 0' } wrap="nowrap">
-              <img src={ doneArrow } alt="arrow" width="35px" height="35px"/>
-              <Typography variant="h6">{ item }</Typography>
-            </Grid>),
-          ) }
+          <SectionList list={offer} />
 
           <Typography variant="h5" fontWeight="bold" textAlign="center" margin={ '16px 0' }>
             You are...
           </Typography>
+          <SectionList list={youAre} />
 
-          { youAre.map((item, index) => (
-            <Grid maxWidth={ '350px' } container key={ index } margin={ '5px 0' } wrap="nowrap">
-              <img src={ doneArrow } alt="arrow" width="35px" height="35px"/>
-              <Typography variant="h6">{ item }</Typography>
-            </Grid>),
-          ) }
         </Grid>
-
       </GreyTextContainer>
 
       <TextContainer>
@@ -98,6 +90,8 @@ export const Careers = () => {
           We are always eager to meet fresh talent, so send your resume to partners@homequal.com
         </Typography>
       </TextContainer>
+
+      <Copyrights/>
     </>
   )
 }

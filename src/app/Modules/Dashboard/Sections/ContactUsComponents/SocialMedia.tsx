@@ -27,7 +27,7 @@ const IconHolder = styled(({ ...props }) => <div { ...props } />)`
   @media screen and (max-width : 900px) {
     min-width  : 50px;
     min-height : 50px;
-    margin     : 0 1vw;
+    margin     : 0 calc(1vw + 5px);
   }
 
   &:hover {
@@ -66,7 +66,7 @@ const icons = [
 export const SocialMedia = () => {
 
   return (
-    <Grid container justifyContent="center" wrap="nowrap" mb={ 2 }>
+    <Grid container justifyContent="center" wrap="nowrap">
       { icons.map((item, index) => (
         <a href={ item.link } key={ index }>
           <IconHolder icon={ item.icon }/>

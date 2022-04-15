@@ -1,17 +1,18 @@
 import { Grid, styled, Typography }             from "@mui/material"
-import { CenteredTypography, ItalicTypography } from "../../../../shared/styles/strings"
+import { CenteredTypography, ItalicTypography } from "../../../../shared/styles"
 import HQlogo                                   from './../../../../assets/images/HomeQualIcon/hqlogolight.png'
 import { EmailInfo }                            from "./ContactUsComponents/EmailInfo"
 import { Links }                                from "./ContactUsComponents/Links"
 import { SocialMedia }                          from "./ContactUsComponents/SocialMedia"
-import { ContentWrapper }                       from "../../../../shared/styles/wrappers"
+import { ContentWrapper }                       from "../../../../shared/styles"
+import { Copyrights }                           from '../../../../shared/strings/strings'
 
 export const ContactUs = () => {
   const Img = styled('img')({})
   return (
     <ContentWrapper>
-      <Grid py={3} container justifyContent='center'>
-        <Img src={ HQlogo } width={'300px'}/>
+      <Grid py={ 3 } container justifyContent="center">
+        <Img src={ HQlogo } width={ '300px' }/>
       </Grid>
 
       <ItalicTypography>
@@ -29,14 +30,13 @@ export const ContactUs = () => {
       <Grid container justifyContent="center" sx={ { padding: "0 20px" } }>
         <Links/>
 
-        <Grid container justifyContent="center">
+        <Grid container justifyContent="center" my={ 4 }>
           <SocialMedia/>
         </Grid>
       </Grid>
 
-      <Typography variant="h6" sx={ { fontStyle: "italic", padding: "5px 20px", textAlign: "center" } }>
-        Copyright 2022 HomeQual. All Rights Reserved
-      </Typography>
+      <Copyrights/>
+
     </ContentWrapper>
-)
+  )
 }

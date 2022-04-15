@@ -1,6 +1,6 @@
 import { Grid, List, ListItem, ListItemAvatar, Typography } from "@mui/material"
 import styled                                               from "styled-components"
-import { CenteredTypography, ItalicTypography, QualButton } from "../../../../shared/styles/strings"
+import { CenteredTypography, ItalicTypography, QualButton } from "../../../../shared/styles"
 import doneArrow                                            from "../../../../assets/images/doneArrow.svg"
 import { useNavigate }                                      from "react-router-dom"
 
@@ -36,10 +36,10 @@ export const ReadyToGetATry = () => {
       </ItalicTypography>
 
       <Grid container justifyContent="center">
-        <List sx={ { width: "100%", maxWidth: 360 } }>
+        <List sx={ { width: "100%", maxWidth: 800 } }>
           { advantages.map((item, index) => (
             <ListItem key={ index }>
-              <ListItemAvatar sx={ { marginRight: "2vw" } }>
+              <ListItemAvatar sx={ { marginRight: "1vw" } }>
                 <ListIcon/>
               </ListItemAvatar>
               <Typography variant="h6">{ item }</Typography>
@@ -48,7 +48,7 @@ export const ReadyToGetATry = () => {
         </List>
       </Grid>
 
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" my={2}>
         <QualButton sx={ { borderRadius: "30px" } } onClick={ () => console.log('clicked') }>
           <Typography variant='h5'>Give it a Try!</Typography>
         </QualButton>

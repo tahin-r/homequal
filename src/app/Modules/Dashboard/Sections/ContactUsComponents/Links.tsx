@@ -1,7 +1,7 @@
 import React                  from 'react'
 import { Grid, Typography }   from '@mui/material'
 import styled                 from 'styled-components'
-import { CenteredTypography } from '../../../../../shared/styles/strings'
+import { CenteredTypography } from '../../../../../shared/styles'
 import { useNavigate }        from 'react-router-dom'
 
 const CenteredItemTypography = styled(CenteredTypography)`

@@ -81,7 +81,7 @@ export const Header = () => {
     } } elevation={ 0 }>
       <Toolbar>
         <IconButton edge="start" color="primary" aria-label="menu" onClick={ handleClick }>
-          <MenuIcon/>
+          <MenuIcon sx={{transform:'scale(1.4)'}}/>
         </IconButton>
 
         <Popover id={ "menuButton" } open={ open } anchorEl={ anchorEl } onClose={ handleClose } anchorOrigin={ {

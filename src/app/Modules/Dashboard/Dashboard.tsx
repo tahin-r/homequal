@@ -8,7 +8,6 @@ import { HaveAQuestions }    from "./Sections/HaveAQuestions"
 import { NewHomeOwnersLove } from "./Sections/NewHomeOwnersLove"
 import { ReadyToGetATry }    from "./Sections/ReadyToGetATry"
 import { ContactUs }         from "./Sections/ContactUs"
-import { VideoSection2 }     from './Sections/VideoSection2'
 
 export const Dashboard: FC = () => {
   return (
@@ -17,7 +16,6 @@ export const Dashboard: FC = () => {
       <DetermineYouHome/>
       <HowItWorks/>
       <VideoSection/>
-      <VideoSection2/>
       <HaveAQuestions/>
       <NewHomeOwnersLove/>
       <ReadyToGetATry/>

@@ -17,7 +17,7 @@ export const QualButton = styled(({ ...props }) => <Button { ...props } color="p
   min-width     : 300px;
   width         : 50vw;
   max-width     : 600px;
-  padding       : 15px 10px;
+  padding       : 15px 10px; 
   border-radius : 30px;
 
   h5 {
@@ -35,4 +35,13 @@ export const GreyTextContainer = styled(TextContainer)`
   color            : ${ (props: any) => (props.color ? props.color : "white") };
   background-color : ${ (props) => props.theme.colors.darkGrey };
   text-align       : initial;
+`
+export const HeaderDivider = styled(Grid)`
+  width            : 100vw;
+  height           : 60px;
+  background-color : white;
+  content: '';
+`
+export const ContentWrapper = styled(({ ...props }) => <Grid { ...props }/>)`
+    background-color:  ${ props => props.theme.colors.lightGrey };
 `

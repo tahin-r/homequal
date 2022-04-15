@@ -6,6 +6,7 @@ import {
 }                                  from '../../../../assets/images/articles'
 import { Grid, Paper, Typography } from '@mui/material'
 import styled                      from 'styled-components'
+import { Copyrights }              from '../../../../shared/strings/strings'
 
 const ItemPaper = styled(({ ...props }) => <Paper { ...props }  />)`
   position   : relative;
@@ -151,11 +152,11 @@ export const Resources = () => {
                 </Typography>
               </TextContainer>
 
-
             </Grid>
           </ItemPaper>
         )) }
       </Grid>
+      <Copyrights/>
     </Grid>
   )
 }

@@ -35,7 +35,7 @@ export const EmailInfo = () => {
       {
         contacts.map((item, index) => (
           <Grid textAlign="center" mb={ 1 } key={ index }>
-            <Typography variant="h6" component="span">{ item.name }</Typography>
+            <Typography variant="h6" component="span" fontWeight={'bold'}>{ item.name }</Typography>
             <Typography variant="h6" component="span">: { item.email }</Typography>
           </Grid>
         ))

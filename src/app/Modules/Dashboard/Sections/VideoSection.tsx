@@ -46,7 +46,7 @@ const VideoWrapper = styled(({ ...props }) => <Grid { ...props } />)`
 export const VideoSection: FC = () => {
   return (
     <VideoWrapper sx={ { marginTop: "10px" } } container>
-      <ReactPlayer url={ video } controls playing height={ "100%" } width={ "100%" } light playIcon={ <img src={ playButton }
+      <ReactPlayer url={ video } controls height={ "100%" } width={ "100%" } light playIcon={ <img src={ playButton }
                                                                                                            alt="icon"/>} />
     </VideoWrapper>
   )

@@ -1,7 +1,7 @@
 import React, { FC, memo, useState } from 'react'
 import { basicData }                 from '../shared'
 import { Wrapper }                            from '../../Wrapper'
-import { CenteredTypography }                 from '../../../../../../shared/styles/strings'
+import { CenteredTypography }                 from '../../../../../../shared/styles'
 import { CircularProgress, Grid, Typography } from '@mui/material'
 import doneArrow                              from '../../../../../../assets/images/doneArrow.svg'
 import { basicTypes }                         from '../../../questions'

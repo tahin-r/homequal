@@ -1,7 +1,7 @@
 import React                  from "react"
 import styled                 from "styled-components"
-import { CenteredTypography } from "../../../../shared/styles/strings"
-import { ContentWrapper }     from "../../../../shared/styles/wrappers"
+import { CenteredTypography } from "../../../../shared/styles"
+import { ContentWrapper }     from "../../../../shared/styles"
 import { Grid, Typography }   from "@mui/material"
 
 const Bubble = styled(({ ...props }) => <Grid { ...props } />)`
@@ -45,17 +45,17 @@ export const HaveAQuestions = () => {
                     direction="column"
                     justifyContent="center"
                     alignItems="center"
-                    sx={ { padding: "0 2vw" } }>
+                    sx={ { padding: "2vw 2vw 4vw 2vw" } }>
 
-      <CenteredTypography variant={ "h4" } sx={ { marginTop: "20px" } }>
+      <CenteredTypography variant={ "h4" } mt={'50px'} >
         Have questions, need a little assistence?
       </CenteredTypography>
 
-      <CenteredTypography variant={ "h5" }>
+      <CenteredTypography variant={ "h5"}  mt={'10px'}>
         Our interactive bot is always at your fingertips!
       </CenteredTypography>
 
-      <BubbleContainer container direction="column" width="auto">
+      <BubbleContainer container direction="column" width="auto" mt={'20px'}>
         <Bubble side={ "right" }>
           <Typography variant="h6" width="auto" boxSizing="border-box" display="inline-block">
             Hi, how can I help?

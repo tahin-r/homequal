@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 import { Grid, Typography }                                      from '@mui/material'
 import { aboutUsMain, logoA, logoB, logoC, logoD, logoE, logoF } from '../../../../assets/images/aboutUs'
-import { GreyTextContainer, TextContainer }                      from '../../../../shared/styles/strings'
+import { GreyTextContainer, HeaderDivider, TextContainer }       from '../../../../shared/styles'
+import { Copyrights }                                            from '../../../../shared/strings/strings'
 
 const ContentImage = styled.div`
   position        : relative;
@@ -47,12 +48,13 @@ export const AboutUs = () => {
 
   return (
     <>
+      <HeaderDivider/>
       <ContentImage>
         {/*text*/ }
       </ContentImage>
 
       <TextContainer>
-        <Typography variant="h5" fontWeight="bold" mb={ 2 }>
+        <Typography variant="h4" fontWeight="bold" mb={ 2 }>
           A home is where your life happens!
         </Typography>
 
@@ -65,11 +67,11 @@ export const AboutUs = () => {
         </Typography>
       </TextContainer>
 
-      <Typography variant="h5" fontWeight="bold" mt={ 2 } color="primary" textAlign="center">
+      <Typography variant="h4" fontWeight="bold" mt={ 3 } color="primary" textAlign="center">
         Holding your hand every step of the way.
       </Typography>
 
-      <Grid container columns={ 5 } justifyContent="center" maxWidth={ "1000px" } margin={ '0 auto' }>
+      <Grid container columns={ 5 } justifyContent="center" maxWidth={ "1000px" } my={'5vh'} mx={'auto'}>
         { list.map((item, index) => <Grid width={ 'auto' }
                                           item
                                           xs={ 2 }
@@ -84,7 +86,7 @@ export const AboutUs = () => {
       </Grid>
 
       <GreyTextContainer color={ "black" }>
-        <Typography variant="h5" fontWeight="bold" mb={ 2 } color="primary">
+        <Typography variant="h4" fontWeight="bold" mb={ 4 } color="primary">
           Your first home is where your life changes!
         </Typography>
 
@@ -104,7 +106,8 @@ export const AboutUs = () => {
         </Typography>
       </TextContainer>
 
-    </>
+      <Copyrights/>
+      </>
   )
 }
 

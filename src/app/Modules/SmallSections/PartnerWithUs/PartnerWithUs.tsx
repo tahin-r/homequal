@@ -1,10 +1,10 @@
 import React                                               from 'react'
 import { Grid, Typography }                                from '@mui/material'
 import styled                                              from 'styled-components'
-import { HomeQualTextTemplate }                            from '../../../../shared/strings/strings'
-import doneArrow                                           from '../../../../assets/images/doneArrow.svg'
-import { GreyTextContainer, TextContainer }                from '../../../../shared/styles/strings'
+import { Copyrights, HomeQualTextTemplate }                from '../../../../shared/strings/strings'
+import { GreyTextContainer, HeaderDivider, TextContainer } from '../../../../shared/styles'
 import { partnerwithus, partnerwithusLG, partnerwithusMD } from '../../../../assets/images/PartnerWithUs'
+import { SectionList }                                     from '../shared'
 
 const Content = styled.div`
   position        : relative;
@@ -42,7 +42,8 @@ export const PartnerWithUs = () => {
   ]
 
   return (
-    <Grid>
+    <>
+      <HeaderDivider/>
       <Content>
         <Typography variant="h4"
                     color="primary"
@@ -62,15 +63,8 @@ export const PartnerWithUs = () => {
       </LeftSidedText>
 
       <GreyTextContainer color={ 'black' }>
-        <Grid container direction="column">
-
-          { qualification.map((item, index) => (
-            <Grid container key={ index } margin={ '5px 0' } wrap="nowrap">
-              <img src={ doneArrow } alt="arrow" width="35px" height="35px"/>
-              <Typography variant="h6">{ item }</Typography>
-            </Grid>),
-          ) }
-
+        <Grid container direction="column" justifyContent="center">
+          <SectionList list={ qualification }/>
         </Grid>
       </GreyTextContainer>
 
@@ -81,7 +75,9 @@ export const PartnerWithUs = () => {
         </Typography>
       </LeftSidedText>
 
-    </Grid>
+      <Copyrights/>
+
+    </>
   )
 }
 

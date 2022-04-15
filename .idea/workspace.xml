@@ -7,22 +7,30 @@
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/QuestionsAndAnswers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/QuestionsAndAnswers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/questions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/Wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/Wrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateAutoCompleteQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateAutoCompleteQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateCheckBoxQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateCheckBoxQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateDiagramQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateDiagramQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Layout/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/EmailInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/EmailInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/SocialMedia.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/SocialMedia.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HowItWorks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HowItWorks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeOwnersLove.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeOwnersLove.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection2.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateEndQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateEndQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateRadioQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateRadioQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateTextFieldQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateTextFieldQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateCOTextFieldQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateCOTextFieldQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledCheckBoxQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledCheckBoxQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledRadioQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledRadioQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledTextFieldQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledTextFieldQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateRadioTextQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateRadioTextQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateVeteranQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateVeteranQuestion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/shared.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/shared.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/AboutUs/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/SmallSections/AboutUs/AboutUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/Careers/Careers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/SmallSections/Careers/Careers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/PartnerWithUs/PartnerWithUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/SmallSections/PartnerWithUs/PartnerWithUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/strings/strings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/strings/strings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/baseStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/theme/baseStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/muiTheme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/theme/muiTheme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/strings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/theme/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/wrappers.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -86,11 +94,11 @@
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\assets\theme" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\QuestionsAndAnswers" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\QuestionsAndAnswers\shared\constructors" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\QuestionsAndAnswers\shared\constructors\aloneRoute" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\SmallSections" />
-      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\SmallSections\Resources" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -128,7 +136,8 @@
       <workItem from="1649758176721" duration="6352000" />
       <workItem from="1649780102860" duration="4828000" />
       <workItem from="1649841540163" duration="21160000" />
-      <workItem from="1649921751730" duration="24851000" />
+      <workItem from="1649921751730" duration="25190000" />
+      <workItem from="1650011918133" duration="7740000" />
     </task>
     <servers />
   </component>

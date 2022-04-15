@@ -1,8 +1,8 @@
 import { createTheme }       from '@material-ui/core/styles'
 import { PaletteOptions }    from '@material-ui/core/styles/createPalette'
 import { TypographyOptions } from '@material-ui/core/styles/createTypography'
-import { Overrides }         from '@material-ui/core/styles/overrides'
-import { theme }             from './theme'
+import { Overrides } from '@material-ui/core/styles/overrides'
+import { theme }     from './theme'
 
 import { BreakpointsOptions } from '@mui/material'
 

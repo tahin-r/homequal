@@ -1,7 +1,7 @@
 import { Typography }                      from "@mui/material"
 import { FC }                              from "react"
 import styled                              from "styled-components"
-import { QualButton }                      from "../../../../shared/styles/strings"
+import { QualButton }                      from "../../../../shared/styles"
 import { lendingLG, lendingMD, lendingXL } from "../../../../assets/images/dashboard/lending"
 import { useNavigate }                     from 'react-router-dom'
 
