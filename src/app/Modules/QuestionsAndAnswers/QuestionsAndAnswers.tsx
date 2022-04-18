@@ -57,7 +57,7 @@ export const QuestionsAndAnswers = memo(() => {
   const navigate = useNavigate()
   const [currentState, setCurrentState] = useState<any>({ ...initialState })
   const [currentSchema, setCurrentSchema] = useState(QuestionsSchema.Q1)
-
+  
   const formik = useFormik({
     validateOnChange: true,
     validateOnMount : false,
@@ -66,7 +66,6 @@ export const QuestionsAndAnswers = memo(() => {
     validationSchema: currentSchema,
     onSubmit        : (values) => HandleSubmit(values),
   })
-
   const setSchema = (questionKey: QuestionKeyType) => {
     if (QuestionsSchema[questionKey] !== currentSchema) {
       setCurrentSchema(QuestionsSchema[questionKey] ? QuestionsSchema[questionKey] : yup.object({}))
@@ -76,9 +75,9 @@ export const QuestionsAndAnswers = memo(() => {
     setCurrentState(values)
   }, [])
 
-  const questionRoutes = Object.values(questionsList).map((el, index) =>
+  const questionRoutes = Object.values(questionsList).map((CurrentQuestion, index) =>
     <Route path={ `/${ Object.keys(questionsList)[index] }` }
-           element={ GenerateQuestion({ CurrentQuestion: el, formik, SetCurrentQuestionHandler, setSchema, navigate }) }
+           element={ GenerateQuestion({ CurrentQuestion, formik, SetCurrentQuestionHandler, setSchema, navigate }) }
            key={ index }/>)
 
   return (

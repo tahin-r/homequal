@@ -18,6 +18,7 @@ interface IInputField {
 }
 
 export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyles, labelText }) => {
+
   return (
     <TextField autoFocus={ index === 0 }
                onChange={ formik.handleChange }
@@ -63,7 +64,6 @@ export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLef
     formik.setFieldValue(formName, answers[0].value)
     setValue(answers[0].value)
   }, [formName])
-
 
   return (
     <Grid container direction="column" sx={ { marginLeft: nomarginLeft ? '0' : '10vw' } }>
