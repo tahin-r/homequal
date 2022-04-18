@@ -24,14 +24,14 @@ const PhoneImage = styled(({ ...props }) => (
 export const HowItWorks: FC = () => {
   return (
     <Grid container wrap="nowrap" justifyContent="flex-end">
-      <Grid item sx={ { padding: "20px", maxWidth: "500px" } }>
+      <Grid item sx={ { padding: "20px", maxWidth: "500px"} }>
         <Title variant={ "h5" }>How it Works</Title>
         <TextContent variant={ "h5" } fontWeight='light'>
           You enter information - we analyze thousands of data points to create
           your personal step by step success plan!
         </TextContent>
       </Grid>
-      <Grid item container sx={ { padding: "20px", width: "auto", height: "100%" } }>
+      <Grid item container sx={ { padding: "20px", width: "auto", height: "100%", marginY:'auto'} }>
         <PhoneImage/>
       </Grid>
     </Grid>
