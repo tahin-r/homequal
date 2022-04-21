@@ -1,6 +1,6 @@
-import { Typography }                       from "@mui/material"
-import { FC }                               from "react"
-import { HomeQualTextTemplate }             from "../../../../shared/strings/strings"
+import { Typography }                       from '@mui/material'
+import { FC }                               from 'react'
+import { HomeQualTextTemplate }             from '../../../../shared/strings/strings'
 import { GreyTextContainer, TextContainer } from '../../../../shared/styles'
 import styled                               from 'styled-components'
 
@@ -20,7 +20,7 @@ export const DetermineYouHome: FC = () => {
       </TextContainer>
       <CurrentGreyTextContainer>
         <Typography variant="h5" fontWeight="light">
-          <HomeQualTextTemplate variant={ "h5" } fontWeight="light"/> homeowners realize an average savings of $2,200
+          <HomeQualTextTemplate variant={ 'h5' } fontWeight="light"/> homeowners realize an average savings of $2,200
                                                                       per year in lower
                                                                       payments!
         </Typography>

@@ -1,10 +1,10 @@
 import React, { useEffect }                  from 'react'
 import { Header }                            from './app/Layout/Header'
-import { ThemeProvider } from 'styled-components'
-import { muiTheme }      from './assets/theme/muiTheme'
-import { theme }         from './assets/theme/theme'
-import { BaseStyles }    from './assets/theme/baseStyles'
-import { AppRoutes }     from './shared/Routes'
+import { ThemeProvider }                     from 'styled-components'
+import { muiTheme }                          from './assets/theme/muiTheme'
+import { theme }                             from './assets/theme/theme'
+import { BaseStyles }                        from './assets/theme/baseStyles'
+import { AppRoutes }                         from './shared/Routes'
 import { BrowserRouter, useLocation }        from 'react-router-dom'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
@@ -22,12 +22,12 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={ { ...muiTheme, ...theme } }>
-      <MuiThemeProvider theme={ muiTheme }>
-        <ScrollToTop/>
+        <MuiThemeProvider theme={ muiTheme }>
+          <ScrollToTop/>
           <BaseStyles/>
           <Header/>
           <AppRoutes/>
-      </MuiThemeProvider>
+        </MuiThemeProvider>
       </ThemeProvider>
     </BrowserRouter>
   )

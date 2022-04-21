@@ -1,11 +1,11 @@
-import { Grid, styled, Typography }             from "@mui/material"
-import { CenteredTypography, ItalicTypography } from "../../../../shared/styles"
-import HQlogo                                   from './../../../../assets/images/HomeQualIcon/hqlogolight.png'
-import { EmailInfo }                            from "./ContactUsComponents/EmailInfo"
-import { Links }                                from "./ContactUsComponents/Links"
-import { SocialMedia }                          from "./ContactUsComponents/SocialMedia"
-import { ContentWrapper }                       from "../../../../shared/styles"
-import { Copyrights }                           from '../../../../shared/strings/strings'
+import { Grid, styled, Typography }                             from '@mui/material'
+import { CenteredTypography, ContentWrapper, ItalicTypography } from '../../../../shared/styles'
+import HQlogo
+                                                                from './../../../../assets/images/HomeQualIcon/hqlogolight.png'
+import { EmailInfo }                                            from './ContactUsComponents/EmailInfo'
+import { Links }                                                from './ContactUsComponents/Links'
+import { SocialMedia }                                          from './ContactUsComponents/SocialMedia'
+import { Copyrights }                                           from '../../../../shared/strings/strings'
 
 export const ContactUs = () => {
   const Img = styled('img')({})
@@ -19,7 +19,7 @@ export const ContactUs = () => {
         Educating and empowering first-time home buyers
       </ItalicTypography>
 
-      <Typography variant="h5" textAlign="center" mb={ 1 } sx={ { fontWeight: "bold" } }>
+      <Typography variant="h5" textAlign="center" mb={ 1 } sx={ { fontWeight: 'bold' } }>
         Contact Us
       </Typography>
 
@@ -27,7 +27,7 @@ export const ContactUs = () => {
 
       <EmailInfo/>
 
-      <Grid container justifyContent="center" sx={ { padding: "0 20px" } }>
+      <Grid container justifyContent="center" sx={ { padding: '0 20px' } }>
         <Links/>
 
         <Grid container justifyContent="center" my={ 4 }>

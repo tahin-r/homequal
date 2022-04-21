@@ -1,6 +1,6 @@
-import { basicData }                            from '../shared'
-import React, { FC, memo, useEffect, useState } from 'react'
-import { Wrapper }                              from '../../Wrapper'
+import { basicData }                             from '../shared'
+import React, { FC, memo, useEffect, useState }  from 'react'
+import { Wrapper }                               from '../../Wrapper'
 import { Grid, Radio, Typography }               from '@mui/material'
 import { ICreateDoubledCheck_Radio_BoxQuestion } from '../../../questions'
 
@@ -13,7 +13,7 @@ export const CreateDoubledRadioQuestion: FC<IProps> = memo(({
   co_answers,
   formName,
   co_formName,
-  wrapperProps
+  wrapperProps,
 }) => {
 
   const [value, setValue] = useState(answers[0].value)
@@ -21,9 +21,9 @@ export const CreateDoubledRadioQuestion: FC<IProps> = memo(({
 
   useEffect(
     () => {
-      setValue( answers[0].value)
+      setValue(answers[0].value)
       co_setValue(co_answers[0].value)
-      formik.setFieldValue(formName,answers[0].value)
+      formik.setFieldValue(formName, answers[0].value)
       formik.setFieldValue(co_formName, co_answers[0].value)
     }, [wrapperProps.current],
   )
@@ -40,17 +40,17 @@ export const CreateDoubledRadioQuestion: FC<IProps> = memo(({
   }
   return (
     <Wrapper { ...wrapperProps }>
-      <Grid container direction="column" wrap="nowrap" sx={ { padding: "0 0 0 10vw" } }>
+      <Grid container direction="column" wrap="nowrap" sx={ { padding: '0 0 0 10vw' } }>
         <Grid container>
           <Typography variant="h6" sx={ {
-            maxWidth   : "48px",
-            marginRight: "20px",
-            textAlign  : "left",
-            fontWeight : "bold",
+            maxWidth   : '48px',
+            marginRight: '20px',
+            textAlign  : 'left',
+            fontWeight : 'bold',
           } }>
             You
           </Typography>
-          <Typography variant="h6" sx={ { width: "auto", textAlign: "left", fontWeight: "bold" } }>
+          <Typography variant="h6" sx={ { width: 'auto', textAlign: 'left', fontWeight: 'bold' } }>
             { formik.values.co_first_name }`s
           </Typography>
         </Grid>

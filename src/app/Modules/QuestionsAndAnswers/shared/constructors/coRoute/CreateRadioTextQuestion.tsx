@@ -23,12 +23,12 @@ export const CreateRadioTextQuestion: FC<IProps> = memo(({
 }) => {
   return (
     <Wrapper { ...wrapperProps }>
-      <Grid container direction="column" sx={ { paddingLeft: "10vw" } }>
-        <Grid container direction="column" wrap="nowrap" sx={ { width: "auto" } }>
+      <Grid container direction="column" sx={ { paddingLeft: '10vw' } }>
+        <Grid container direction="column" wrap="nowrap" sx={ { width: 'auto' } }>
           <RadioField formik={ formik } formName={ formName } answers={ answers }/>
         </Grid>
 
-        <Typography variant="h6" sx={ { fontWeight: "bold", marginTop: "40px" } }>
+        <Typography variant="h6" sx={ { fontWeight: 'bold', marginTop: '40px' } }>
           { question1(formik.values) }
         </Typography>
 
@@ -36,15 +36,15 @@ export const CreateRadioTextQuestion: FC<IProps> = memo(({
           <InputField key={ index } item={ item } formik={ formik }/>
         )) }
 
-        <Typography variant="h6" sx={ { fontWeight: "bold", marginTop: "40px" } }>
+        <Typography variant="h6" sx={ { fontWeight: 'bold', marginTop: '40px' } }>
           { co_question(formik.values) }
         </Typography>
 
-        <Grid container direction="column" wrap="nowrap" sx={ { width: "auto" } }>
+        <Grid container direction="column" wrap="nowrap" sx={ { width: 'auto' } }>
           <RadioField formik={ formik } formName={ co_formName } answers={ co_answers }/>
         </Grid>
 
-        <Typography variant="h6" sx={ { fontWeight: "bold", marginTop: "40px" } }>
+        <Typography variant="h6" sx={ { fontWeight: 'bold', marginTop: '40px' } }>
           { co_question1(formik.values) }
         </Typography>
 

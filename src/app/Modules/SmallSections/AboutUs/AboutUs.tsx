@@ -71,21 +71,21 @@ export const AboutUs = () => {
         Holding your hand every step of the way.
       </Typography>
 
-      <Grid container columns={ 5 } justifyContent="center" maxWidth={ "1000px" } my={'5vh'} mx={'auto'}>
+      <Grid container columns={ 5 } justifyContent="center" maxWidth={ '1000px' } my={ '5vh' } mx={ 'auto' }>
         { list.map((item, index) => <Grid width={ 'auto' }
                                           item
                                           xs={ 2 }
                                           container
                                           direction="column"
                                           key={ index }
-                                          alignItems={ "center" }
+                                          alignItems={ 'center' }
                                           m={ 2 }>
           <img src={ item.logo } alt="logo" width="50px" height="50px"/>
           <Typography variant="h6" textAlign="center">{ item.text }</Typography>
         </Grid>) }
       </Grid>
 
-      <GreyTextContainer color={ "black" }>
+      <GreyTextContainer color={ 'black' }>
         <Typography variant="h4" fontWeight="bold" mb={ 4 } color="primary">
           Your first home is where your life changes!
         </Typography>
@@ -107,7 +107,7 @@ export const AboutUs = () => {
       </TextContainer>
 
       <Copyrights/>
-      </>
+    </>
   )
 }
 

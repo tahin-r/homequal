@@ -57,7 +57,7 @@ export const QuestionsAndAnswers = memo(() => {
   const navigate = useNavigate()
   const [currentState, setCurrentState] = useState<any>({ ...initialState })
   const [currentSchema, setCurrentSchema] = useState(QuestionsSchema.Q1)
-  
+
   const formik = useFormik({
     validateOnChange: true,
     validateOnMount : false,

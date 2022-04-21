@@ -6,6 +6,7 @@ import { PartnerWithUs }       from '../app/Modules/SmallSections/PartnerWithUs/
 import { Careers }             from '../app/Modules/SmallSections/Careers/Careers'
 import { AboutUs }             from '../app/Modules/SmallSections/AboutUs/AboutUs'
 import { Resources }           from '../app/Modules/SmallSections/Resources/Resources'
+import { FAQ }                 from '../app/Modules/SmallSections/FAQ/FAQ'
 
 //
 // link: '/FAQs'
@@ -51,6 +52,10 @@ const mainRoutes = [
   {
     path   : '/resources',
     element: <Resources/>,
+  },
+  {
+    path   : '/FAQs',
+    element: <FAQ/>,
   },
 ]
 

@@ -25,11 +25,10 @@ export const HomeQualTextTemplate: FC<IHomeQualText> = ({ variant, fontWeight })
   )
 }
 export const Copyrights: FC = () => {
-  return <Typography variant="h6"
-                     sx={ {
-                       fontStyle: "italic", padding: "5px 20px", textAlign: "center",
-                       fontSize : { xs: '1rem', md: '1.1rem', lg: '1.2rem' },
-                     } }>
+  return <Typography variant="h6" sx={ {
+    fontStyle: 'italic', padding: '5px 20px', textAlign: 'center',
+    fontSize : { xs: '1rem', md: '1.1rem', lg: '1.2rem' },
+  } }>
     Copyright 2022 HomeQual. All Rights Reserved
   </Typography>
 }

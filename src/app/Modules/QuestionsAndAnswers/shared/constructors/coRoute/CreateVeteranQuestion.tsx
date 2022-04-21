@@ -6,6 +6,7 @@ import { ICreateVeteranQuestion }     from '../../../questions'
 
 interface IProps extends ICreateVeteranQuestion, basicData {
 }
+
 export const CreateVeteranQuestion: FC<IProps> = memo(({
   answers,
   formik,
@@ -26,7 +27,7 @@ export const CreateVeteranQuestion: FC<IProps> = memo(({
 
         <RadioField formik={ formik } formName={ formName } answers={ answers }/>
 
-        <Typography variant="h6" pl={ '10vw' } sx={ { fontWeight: "bold", marginTop: "40px" } }>
+        <Typography variant="h6" pl={ '10vw' } sx={ { fontWeight: 'bold', marginTop: '40px' } }>
           { co_question(formik.values) }
         </Typography>
 

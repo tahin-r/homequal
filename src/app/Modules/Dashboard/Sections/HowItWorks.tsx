@@ -1,7 +1,7 @@
-import { FC }               from "react"
-import { Grid, Typography } from "@mui/material"
-import styled               from "styled-components"
-import phoneImage           from "../../../../assets/images/phone.png"
+import { FC }               from 'react'
+import { Grid, Typography } from '@mui/material'
+import styled               from 'styled-components'
+import phoneImage           from '../../../../assets/images/phone.png'
 
 const Title = styled(({ ...props }) => <Typography { ...props } />)`
   margin-right  : 5px;
@@ -24,14 +24,14 @@ const PhoneImage = styled(({ ...props }) => (
 export const HowItWorks: FC = () => {
   return (
     <Grid container wrap="nowrap" justifyContent="flex-end">
-      <Grid item sx={ { padding: "20px", maxWidth: "500px"} }>
-        <Title variant={ "h5" }>How it Works</Title>
-        <TextContent variant={ "h5" } fontWeight='light'>
+      <Grid item sx={ { padding: '20px', maxWidth: '500px' } }>
+        <Title variant={ 'h5' }>How it Works</Title>
+        <TextContent variant={ 'h5' } fontWeight="light">
           You enter information - we analyze thousands of data points to create
           your personal step by step success plan!
         </TextContent>
       </Grid>
-      <Grid item container sx={ { padding: "20px", width: "auto", height: "100%", marginY:'auto'} }>
+      <Grid item container sx={ { padding: '20px', width: 'auto', height: '100%', marginY: 'auto' } }>
         <PhoneImage/>
       </Grid>
     </Grid>

@@ -18,7 +18,6 @@ interface IInputField {
 }
 
 export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyles, labelText }) => {
-
   return (
     <TextField autoFocus={ index === 0 }
                onChange={ formik.handleChange }

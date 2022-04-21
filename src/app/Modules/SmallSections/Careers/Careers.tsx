@@ -1,9 +1,8 @@
-import React  from "react"
-import styled from "styled-components"
+import React  from 'react'
+import styled from 'styled-components'
 
-import { Grid, Typography }                 from "@mui/material"
-import { Copyrights, HomeQualTextTemplate } from "../../../../shared/strings/strings"
-import doneArrow                            from '../../../../assets/images/doneArrow.svg'
+import { Grid, Typography }                                from '@mui/material'
+import { Copyrights, HomeQualTextTemplate }                from '../../../../shared/strings/strings'
 import { GreyTextContainer, HeaderDivider, TextContainer } from '../../../../shared/styles'
 import { careers, careersLG, careersMD }                   from '../../../../assets/images/careers'
 import { SectionList }                                     from '../shared'
@@ -68,19 +67,19 @@ export const Careers = () => {
       </TextContainer>
 
 
-      <GreyTextContainer color={ "black" }>
-        <Grid container direction="column" alignItems='center'>
+      <GreyTextContainer color={ 'black' }>
+        <Grid container direction="column" alignItems="center">
 
           <Typography variant="h5" fontWeight="bold" textAlign="center" mb={ 2 }>
             We offer...
           </Typography>
 
-          <SectionList list={offer} />
+          <SectionList list={ offer }/>
 
           <Typography variant="h5" fontWeight="bold" textAlign="center" margin={ '16px 0' }>
             You are...
           </Typography>
-          <SectionList list={youAre} />
+          <SectionList list={ youAre }/>
 
         </Grid>
       </GreyTextContainer>

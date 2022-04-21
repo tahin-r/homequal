@@ -18,7 +18,6 @@ export const CreateRadioQuestion: FC<IProps> = memo(({
   return (
     <>
       <Wrapper { ...wrapperProps }>
-
         <RadioField formik={ formik } formName={ formName } answers={ answers }/>
       </Wrapper>
     </>

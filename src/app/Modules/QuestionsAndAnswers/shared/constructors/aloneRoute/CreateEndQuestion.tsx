@@ -1,5 +1,5 @@
-import React, { FC, memo, useState } from 'react'
-import { basicData }                 from '../shared'
+import React, { FC, memo, useState }          from 'react'
+import { basicData }                          from '../shared'
 import { Wrapper }                            from '../../Wrapper'
 import { CenteredTypography }                 from '../../../../../../shared/styles'
 import { CircularProgress, Grid, Typography } from '@mui/material'

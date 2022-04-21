@@ -17,7 +17,7 @@ export const QualButton = styled(({ ...props }) => <Button { ...props } color="p
   min-width     : 300px;
   width         : 50vw;
   max-width     : 600px;
-  padding       : 15px 10px; 
+  padding       : 15px 10px;
   border-radius : 30px;
 
   h5 {
@@ -25,14 +25,14 @@ export const QualButton = styled(({ ...props }) => <Button { ...props } color="p
   }
 `
 export const TextContainer = styled(Grid)`
-  color      : ${ (props: any) => (props.color ? props.color : "black") };
+  color      : ${ (props: any) => (props.color ? props.color : 'black') };
   padding    : 40px;
   text-align : center;
   width      : auto;
 `
 export const GreyTextContainer = styled(TextContainer)`
   padding          : 30px;
-  color            : ${ (props: any) => (props.color ? props.color : "white") };
+  color            : ${ (props: any) => (props.color ? props.color : 'white') };
   background-color : ${ (props) => props.theme.colors.darkGrey };
   text-align       : initial;
 `
@@ -40,8 +40,8 @@ export const HeaderDivider = styled(Grid)`
   width            : 100%;
   height           : 60px;
   background-color : white;
-  content: '';
+  content          : '';
 `
 export const ContentWrapper = styled(({ ...props }) => <Grid { ...props }/>)`
-    background-color:  ${ props => props.theme.colors.lightGrey };
+  background-color : ${ props => props.theme.colors.lightGrey };
 `

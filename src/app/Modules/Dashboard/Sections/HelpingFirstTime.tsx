@@ -1,8 +1,8 @@
-import { Typography }                      from "@mui/material"
-import { FC }                              from "react"
-import styled                              from "styled-components"
-import { QualButton }                      from "../../../../shared/styles"
-import { lendingLG, lendingMD, lendingXL } from "../../../../assets/images/dashboard/lending"
+import { Typography }                      from '@mui/material'
+import { FC }                              from 'react'
+import styled                              from 'styled-components'
+import { QualButton }                      from '../../../../shared/styles'
+import { lendingLG, lendingMD, lendingXL } from '../../../../assets/images/dashboard/lending'
 import { useNavigate }                     from 'react-router-dom'
 
 export const Content = styled.div`
@@ -51,13 +51,13 @@ export const HelpingFirstTime: FC = () => {
   return (
     <Content>
       <TextContainer>
-        <Typography variant={'h4'} sx={ { textAlign: "left",fontWeight:'light' }  }>
+        <Typography variant={ 'h4' } sx={ { textAlign: 'left', fontWeight: 'light' } }>
           Helping first-time homebuyers obtain the dream of ownership
         </Typography>
       </TextContainer>
 
-      <QualButton onClick={()=>navigate("Q&A/Q1")}>
-        <Typography variant='h5'>Start Your Journey Now</Typography>
+      <QualButton onClick={ () => navigate('Q&A/Q1') }>
+        <Typography variant="h5">Start Your Journey Now</Typography>
       </QualButton>
     </Content>
   )

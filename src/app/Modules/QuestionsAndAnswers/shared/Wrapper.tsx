@@ -1,5 +1,5 @@
-import React, { memo, useEffect } from 'react'
-import { NavigateFunction }       from 'react-router-dom'
+import React, { memo, useEffect }   from 'react'
+import { NavigateFunction }         from 'react-router-dom'
 import { Button, Grid, Typography } from '@mui/material'
 import styled                       from 'styled-components'
 import { QuestionKeyType }          from '../questions'
@@ -12,7 +12,7 @@ const ColoredButton = styled(({ ...props }) => <Button { ...props } variant="out
                                                        disableRipple={ true }/>)`
   display          : block;
   width            : 80vw;
-  min-width        : 280px;
+  min-width        : 200px;
   max-width        : 500px;
   padding          : 10px;
   border-radius    : 10px;
@@ -27,6 +27,12 @@ const ColoredButton = styled(({ ...props }) => <Button { ...props } variant="out
   }
 
 `
+const StyledForm = styled(({ ...props }) => <form { ...props }/>)`
+  flex-grow      : 1;
+  display        : flex;
+  flex-direction : column;
+`
+
 
 export interface IWrapper {
   question: (state: {} | null) => string
@@ -39,6 +45,7 @@ export interface IWrapper {
   description?: string
   status?: number
 }
+
 export const Wrapper: React.FC<IWrapper> = memo(({
   formik,
   navigate,
@@ -61,6 +68,7 @@ export const Wrapper: React.FC<IWrapper> = memo(({
     await formik.submitForm()
     if (Object.keys(errors).length === 0) {
       SetCurrentQuestionHandler(next, current, formik, navigate)
+      formik.setTouched({})
     }
   }
   return (
@@ -69,32 +77,30 @@ export const Wrapper: React.FC<IWrapper> = memo(({
           container
           wrap={ 'nowrap' }
           direction="column"
-          sx={ { minHeight: 'calc( 100vh - 60px )', height: 'auto' } }>
+          sx={ { minHeight: 'calc( 100vh - 60px)' } }>
 
       <Typography variant="h5" mb={ 2 } sx={ { fontWeight: 'bold', padding: '0 10vw', marginTop: '25px' } }>
         { question(formik.values) }
       </Typography>
 
-      <form onSubmit={ formik.handleSubmit }>
+      <StyledForm onSubmit={ formik.handleSubmit }>
 
         { children }
 
         <Typography variant="h6" sx={ {
           marginY   : '2vh',
           fontStyle : 'italic',
-          padding   : '3vw 3vw 3vw 10vw',
+          padding   : '20px 3vw 20px 10vw',
           lineHeight: 1.2,
           fontSize  : '1.1rem',
         } }>
           { description }
         </Typography>
 
-
         { (current !== 'Q23' || status === 3) && (
-          <Grid flexShrink={ 0 }
-                container
-                justifyContent="center"
-                sx={ { bottom: '5px', height: '50px', marginTop: 'auto', marginBottom: '20px' } }>
+          <Grid container justifyContent="center" alignItems="center" sx={ {
+            height: '50px', mt: { xs: 'auto', sm: '50px' }, mb: '30px',
+          } }>
             <ColoredButton onClick={ () => setTimeout(() => current !== 'Q23' ? handleClick() : navigate('/'), 300) }>
               <Typography variant="h5" textTransform="capitalize">
                 Continue
@@ -103,7 +109,7 @@ export const Wrapper: React.FC<IWrapper> = memo(({
 
           </Grid>
         ) }
-      </form>
+      </StyledForm>
     </Grid>
   )
 })

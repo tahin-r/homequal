@@ -27,36 +27,44 @@ export const CreateAutoCompleteQuestion: FC<IProps> = memo(({
 
   return (
     <Wrapper { ...wrapperProps }>
-      <Grid container direction="column" wrap="nowrap" sx={ { paddingLeft: '10vw', maxWidth: '600px' } } pr={ 2 }>
+      <Grid container direction="column" wrap="nowrap" sx={ { paddingLeft: '10vw'} } pr={ 2 }>
         { inputs.map((item, index: number) => (
           <Grid key={ index }>
-            <Typography variant="h5" mt={ 5 }>Option { index + 1 }</Typography>
+            <Typography variant="h5" mt={ 5 } mb={2}>Option { index + 1 }</Typography>
             <Grid container alignItems="center" justifyContent="space-between" width="100%" wrap="nowrap">
-              <Grid maxWidth="150px" my={ '1.5vw' }>
-                <InputField formik={ formik } item={ item } mainstyles={ { paddingRight: 0 } }/>
+              <Grid maxWidth="150px" mt={ '0px' } container alignSelf="start" boxSizing='border-box'>
+                <InputField formik={ formik } item={ item } mainstyles={ { paddingRight: 0,paddingBottom:1, marginTop: 0 } }/>
               </Grid>
-              <Grid container flexShrink={ 1 } pt={ 1.7 }>
+              <Grid container flexShrink={ 1 } alignSelf="start" boxSizing='border-box'>
                 <Autocomplete id={ `${ formName }[1]` }
                               onChange={ (event, value) => formik.setFieldValue(`${ formName }[${ index }][1]`, value) }
                               options={ states }
                               fullWidth
                               renderOption={ (option: any) => (
                                 <Typography { ...option } style={ {
-                                  fontSize: "1rem",
+                                  fontSize: '1rem',
                                 } }>{ option.key }</Typography>
                               ) }
-                              sx={ { paddingLeft: '0' } }
-                              renderInput={ (params) =>
-                                <TextField { ...params } inputProps={ {
-                                  ...params.inputProps,
-                                  style: { fontSize: "1.3rem", fontWeight: 'bold' },
-                                } }
+                              sx={ { paddingLeft: '5px', height: '100%',boxSizing:'border-box',maxWidth:'500px'} }
+                              renderInput={ (params) => (
+                                <TextField { ...params }
+                                           InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': {
+                                             marginTop: '-10px', zIndex: 1, }, }, } }
+                                           inputProps={ {
+                                             ...params.inputProps as any,
+                                             style: { fontSize: '1.4rem', fontWeight: 'bold'},
+                                           } }
+                                           InputProps={ {
+                                             ...params.InputProps as any,
+                                             style: { paddingTop:5,paddingRight:50 },
+                                           } }
                                            label={ <Typography width="auto"
                                                                variant="h6"
                                                                fontWeight="400"
                                                                fontStyle="italic"
-                                                               sx={ { paddingLeft: '-15px' } }
-                                                               color="black">State</Typography> }/> }/>
+                                                               sx={ { marginLeft: '15px'} }
+                                                               color="black">State</Typography> }
+                                           sx={ { mt:1 } }/>) }/>
               </Grid>
             </Grid>
           </Grid>

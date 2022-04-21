@@ -1,10 +1,10 @@
-import MenuIcon                                                                               from "@mui/icons-material/Menu"
-import { AppBar, IconButton, List, ListItem, Popover, Toolbar, Typography, useScrollTrigger } from "@mui/material"
-import { SyntheticEvent, useState }                                                           from "react"
-import { useLocation, useNavigate }                                                           from "react-router-dom"
-import styled                                                                                 from "styled-components"
+import MenuIcon                                                                               from '@mui/icons-material/Menu'
+import { AppBar, IconButton, List, ListItem, Popover, Toolbar, Typography, useScrollTrigger } from '@mui/material'
+import { SyntheticEvent, useState }                                                           from 'react'
+import { useLocation, useNavigate }                                                           from 'react-router-dom'
+import styled                                                                                 from 'styled-components'
 import hqlighticon
-                                                                                              from "../../assets/images/HomeQualIcon/hqlogolight.png"
+                                                                                              from '../../assets/images/HomeQualIcon/hqlogolight.png'
 
 const MenuItems = styled(Typography)`
   font-size   : 15px;
@@ -12,7 +12,7 @@ const MenuItems = styled(Typography)`
 `
 const HqLogo = styled(({ ...props }) => <div { ...props } />)`
   background      : url(${ (props) =>
-          props.trigger === "true" ? hqlighticon : hqlighticon }) left 100% no-repeat;
+          props.trigger === 'true' ? hqlighticon : hqlighticon }) left 100% no-repeat;
   width           : 200px;
   height          : 50px;
   background-size : contain;
@@ -20,35 +20,35 @@ const HqLogo = styled(({ ...props }) => <div { ...props } />)`
 `
 const menuItems = [
   {
-    text: "Buy a Home",
+    text: 'Buy a Home',
     link: 'buy_a_home',
   },
   {
-    text: "Find a Lender",
+    text: 'Find a Lender',
     link: 'find_a_lender',
   },
   {
-    text: "Find a Real Estate Agent",
+    text: 'Find a Real Estate Agent',
     link: 'find_agent',
   },
   {
-    text: "Refinance",
+    text: 'Refinance',
     link: 'refinance',
   },
   {
-    text: "Speak with an Advisor",
+    text: 'Speak with an Advisor',
     link: 'speak_advisor',
   },
   {
-    text: "FAQs",
+    text: 'FAQs',
     link: 'FAQs',
   },
   {
-    text: "Resources",
+    text: 'Resources',
     link: 'resources',
   },
   {
-    text: "My Account",
+    text: 'My Account',
     link: 'my_account',
   },
 ]
@@ -66,37 +66,34 @@ export const Header = () => {
   const handleClick = (event: SyntheticEvent<any>) => {
     setAnchorEl(event.currentTarget)
   }
-
   const handleClose = () => {
     setAnchorEl(null)
   }
   const open = Boolean(anchorEl)
   return (
-    <AppBar position={ location.pathname.includes('Q&A')? "relative" :"fixed" } sx={ {
-      color     : "black",
-      bgcolor   : trigger ? "white" : "transparent",
-      transition: "linear 0.5s",
-      maxHeight : "60px",
-      maxWidth  : "100vw",
+    <AppBar position={ location.pathname.includes('Q&A') ? 'relative' : 'fixed' } sx={ {
+      color     : 'black',
+      bgcolor   : location.pathname === '/' ? trigger ? 'white' : 'transparent' : 'white',
+      transition: 'linear 0.5s',
+      maxHeight : '60px',
+      maxWidth  : '100vw',
     } } elevation={ 0 }>
       <Toolbar>
         <IconButton edge="start" color="primary" aria-label="menu" onClick={ handleClick }>
-          <MenuIcon sx={{transform:'scale(1.4)'}}/>
+          <MenuIcon sx={ { transform: 'scale(1.4)' } }/>
         </IconButton>
 
-        <Popover id={ "menuButton" } open={ open } anchorEl={ anchorEl } onClose={ handleClose } anchorOrigin={ {
-          vertical  : "bottom",
-          horizontal: "right",
+        <Popover id={ 'menuButton' } open={ open } anchorEl={ anchorEl } onClose={ handleClose } anchorOrigin={ {
+          vertical  : 'bottom',
+          horizontal: 'right',
         } } transformOrigin={ {
-          vertical  : "top",
-          horizontal: "left",
+          vertical  : 'top',
+          horizontal: 'left',
         } }>
-          <List sx={ { width: "100%", maxWidth: 360 } }>
+          <List sx={ { width: '100%', maxWidth: 360 } }>
             { menuItems.map((item, index) => (
-              <ListItem key={ index } sx={ { margin: "0 10px" } }>
-                <MenuItems
-                  sx={{cursor:'pointer'}}
-                  onClick={ () => {
+              <ListItem key={ index } sx={ { margin: '0 10px' } }>
+                <MenuItems sx={ { cursor: 'pointer' } } onClick={ () => {
                   navigate(item.link)
                   handleClose()
                 } }>{ item.text }
@@ -106,7 +103,7 @@ export const Header = () => {
           </List>
         </Popover>
 
-        <HqLogo trigger={ String(trigger) } onClick={ () => navigate("/") }/>
+        <HqLogo trigger={ String(trigger) } onClick={ () => navigate('/') }/>
       </Toolbar>
     </AppBar>
   )
