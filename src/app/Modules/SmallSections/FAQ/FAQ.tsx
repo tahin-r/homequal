@@ -30,7 +30,9 @@ export const Content = styled.div`
     background-size : cover;
   }
 `
+const StyledAccordion = styled(Accordion)`
 
+`
 
 export const FAQ = () => {
 
@@ -44,14 +46,14 @@ export const FAQ = () => {
             const QuestionComponent = item.question
 
             return (
-              <Accordion key={ index }>
+              <StyledAccordion key={ index }>
                 <AccordionSummary expandIcon={ <ExpandMoreIcon/> } aria-controls="panel1a-content" id="panel1a-header">
                   <QuestionComponent/>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails sx={{pb:'1.4rem'}}>
                   <AnswerComponent/>
                 </AccordionDetails>
-              </Accordion>
+              </StyledAccordion>
             )
           }) }
         </Container>

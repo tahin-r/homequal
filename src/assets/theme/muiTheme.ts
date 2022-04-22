@@ -110,4 +110,3 @@ export const muiTheme = createTheme({
   typography,
   palette,
 })
-console.log(muiTheme)
