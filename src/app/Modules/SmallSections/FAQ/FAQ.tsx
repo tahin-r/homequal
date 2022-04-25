@@ -47,7 +47,7 @@ export const FAQ = () => {
                 <AccordionSummary expandIcon={ <ExpandMoreIcon/> } aria-controls="panel1a-content" id="panel1a-header">
                   <QuestionComponent/>
                 </AccordionSummary>
-                <AccordionDetails sx={{pb:'1.4rem'}}>
+                <AccordionDetails sx={{pb:'2rem'}}>
                   <AnswerComponent/>
                 </AccordionDetails>
               </Accordion>
