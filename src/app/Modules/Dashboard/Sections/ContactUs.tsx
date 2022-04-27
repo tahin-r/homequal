@@ -9,6 +9,7 @@ import { Copyrights }                                           from '../../../.
 
 export const ContactUs = () => {
   const Img = styled('img')({})
+
   return (
     <ContentWrapper>
       <Grid py={ 3 } container justifyContent="center">

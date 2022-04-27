@@ -14,8 +14,17 @@ export const Dashboard: FC = () => {
     <Grid overflow={ 'hidden' }>
       <HelpingFirstTime/>
       <DetermineYouHome/>
-      <HowItWorks/>
-      <VideoSection/>
+      <Grid container alignItems="center" width="100%">
+        <Grid item xs={ 12 } lg={ 4 } >
+          <HowItWorks/>
+        </Grid>
+        <Grid item
+              xs={ 12 }
+              lg={ 8 }
+              sx={ { boxSizing: 'border-box', overflow: 'hidden', padding: { lg: 2 } } }>
+          <VideoSection/>
+        </Grid>
+      </Grid>
       <HaveAQuestions/>
       <NewHomeOwnersLove/>
       <ReadyToGetATry/>

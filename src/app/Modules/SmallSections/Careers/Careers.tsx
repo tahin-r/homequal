@@ -16,6 +16,7 @@ const ContentImage = styled.div`
   padding         : 10vh 0 14vh 3vw;
   background      : center left no-repeat border-box;
   background-size : cover;
+
   @media screen and (min-width : 2001px) {
     background-image : url(${ careers });
   }

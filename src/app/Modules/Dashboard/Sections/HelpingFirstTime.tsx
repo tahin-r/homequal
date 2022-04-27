@@ -29,20 +29,10 @@ export const Content = styled.div`
 `
 const TextContainer = styled.div`
   margin-top       : 10vh;
-  position         : relative;
   width            : 100%;
   background-color : rgba(141, 135, 135, 0.68);
   color            : white;
   padding          : 7% 20% 7% 7%;
-  box-sizing       : border-box;
-  text-align       : center;
-  font-weight      : 400;
-
-  p {
-    font-size   : 30px;
-    line-height : 1.2em;
-    font-weight : 400;
-  }
 `
 
 export const HelpingFirstTime: FC = () => {

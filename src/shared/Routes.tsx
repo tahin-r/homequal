@@ -7,6 +7,7 @@ import { Careers }             from '../app/Modules/SmallSections/Careers/Career
 import { AboutUs }             from '../app/Modules/SmallSections/AboutUs/AboutUs'
 import { Resources }           from '../app/Modules/SmallSections/Resources/Resources'
 import { FAQ }                 from '../app/Modules/SmallSections/FAQ/FAQ'
+import { NotFound }            from '../app/Modules/NotFound/NotFound'
 
 //
 // link: '/FAQs'
@@ -54,8 +55,16 @@ const mainRoutes = [
     element: <Resources/>,
   },
   {
+    path   : '/homebuyer_library',
+    element: <Resources/>,
+  },
+  {
     path   : '/FAQs',
     element: <FAQ/>,
+  },
+  {
+    path   : '/*',
+    element: <NotFound/>,
   },
 ]
 

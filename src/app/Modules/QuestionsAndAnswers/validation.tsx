@@ -1,5 +1,6 @@
 import * as yup from 'yup'
 
+
 export const QuestionsSchema: any = {
   Q1: yup.object({
     first_name: yup.string().required('First name is required'),
@@ -144,7 +145,7 @@ export const QuestionsSchema: any = {
 
     co_housing_payment_amount: yup
       .number()
-      .typeError('You must specify a number')
+      .typeError('You must specify a number'),
   }),
 
   Q22: yup.object({

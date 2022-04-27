@@ -1,11 +1,6 @@
 import { FC }         from 'react'
 import { Typography } from '@mui/material'
 import { Variant }    from '@mui/material/styles/createTypography'
-import styled         from 'styled-components'
-
-const ColoredText = styled(({ ...props }) => <Typography { ...props } />)`
-  color : #de1469;
-`
 
 interface IHomeQualText {
   variant: Variant,
@@ -17,8 +12,8 @@ export const HomeQualTextTemplate: FC<IHomeQualText> = ({ variant, fontWeight })
     <>
       <Typography variant={ variant } fontWeight={ fontWeight ?? 'initial' } component="span">Home
       </Typography>
-      <ColoredText variant={ variant } fontWeight={ fontWeight ?? 'initial' } component="span">Qual
-      </ColoredText>
+      <Typography variant={ variant } fontWeight={ fontWeight ?? 'initial' } color={ 'primary' } component="span">Qual
+      </Typography>
     </>
 
 

@@ -71,18 +71,19 @@ export const AboutUs = () => {
         Holding your hand every step of the way.
       </Typography>
 
-      <Grid container columns={ 5 } justifyContent="center" maxWidth={ '1000px' } my={ '5vh' } mx={ 'auto' }>
+      <Grid container justifyContent="center" my={ '5vh' } maxWidth={ '800px' } mx={ 'auto' }>
         { list.map((item, index) => <Grid width={ 'auto' }
                                           item
-                                          xs={ 2 }
+                                          xs={ 6 }
                                           container
                                           direction="column"
                                           key={ index }
                                           alignItems={ 'center' }
-                                          m={ 2 }>
-          <img src={ item.logo } alt="logo" width="50px" height="50px"/>
-          <Typography variant="h6" textAlign="center">{ item.text }</Typography>
-        </Grid>) }
+                                          my={ 2 }>
+            <img src={ item.logo } alt="logo" width="50px" height="50px"/>
+            <Typography variant="h6" textAlign="center">{ item.text }</Typography>
+          </Grid>,
+        ) }
       </Grid>
 
       <GreyTextContainer color={ 'black' }>

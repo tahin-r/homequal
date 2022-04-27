@@ -3,20 +3,20 @@ import { Grid, Typography } from '@mui/material'
 import styled               from 'styled-components'
 import phoneImage           from '../../../../assets/images/phone.png'
 
-const Title = styled(({ ...props }) => <Typography { ...props } />)`
-  margin-right  : 5px;
+const Title = styled(Typography)`
   margin-bottom : 20px;
   text-align    : right;
 `
-const TextContent = styled(({ ...props }) => <Typography { ...props } />)`
+const TextContent = styled(Typography)`
   text-align : right;
 `
-const PhoneImage = styled(({ ...props }) => (
-  <img src={ phoneImage } alt="phoneImage" { ...props } />
-))`
-  width           : 100%;
+const PhoneImage = styled.img.attrs({
+  src:phoneImage,
+  alt:"phoneImage"
+})`
+  width           : auto;
   min-width       : 100px;
-  max-width       : 120px;
+  max-width       : 140px;
   background-size : contain;
   box-sizing      : border-box;
 `

@@ -8,6 +8,7 @@ import { videoPlayerImage, videoPlayerImageLG, videoPlayerImageMD } from '../../
 import playButton                                                   from '../../../../assets/video/playIcon.svg'
 
 const VideoWrapper = styled(({ ...props }) => <Grid { ...props } />)`
+  position: relative;
   & .react-player__preview {
     width        : 100%;
     aspect-ratio : 16/9;
@@ -26,8 +27,8 @@ const VideoWrapper = styled(({ ...props }) => <Grid { ...props } />)`
   & .react-player__preview img {
     min-width  : 50px;
     min-height : 50px;
-    width      : 10vw;
-    height     : 10vw;
+    width      : 20%;
+    height     : 20%;
     transition : 0.2s;
     transform  : scale(1.5);
 
@@ -44,7 +45,7 @@ const VideoWrapper = styled(({ ...props }) => <Grid { ...props } />)`
 `
 export const VideoSection: FC = () => {
   return (
-    <VideoWrapper mt={ 1 } container>
+    <VideoWrapper container>
       <ReactPlayer url={ video }
                    controls
                    height={ '100%' }

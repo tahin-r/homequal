@@ -25,7 +25,7 @@ const Bubble = styled(({ ...props }) => <Grid { ...props } />)`
 
   }
 `
-const BubbleContainer = styled(({ ...props }) => <Grid { ...props } />)`
+const BubbleContainer = styled(Grid)`
   align-items : flex-start;
   @media screen and (min-width : 0px) {
     max-width : 500px;
@@ -47,14 +47,14 @@ export const HaveAQuestions = () => {
                     sx={ { padding: '2vw 2vw 4vw 2vw' } }>
 
       <CenteredTypography variant={ 'h4' } mt={ '50px' }>
-        Have questions, need a little assistence?
+        Have questions, need a little assistance?
       </CenteredTypography>
 
       <CenteredTypography variant={ 'h5' } mt={ '10px' }>
         Our interactive bot is always at your fingertips!
       </CenteredTypography>
 
-      <BubbleContainer container direction="column" width="auto" mt={ '20px' }>
+      <BubbleContainer container direction="column" width="auto" mt={ 3 }>
         <Bubble side={ 'right' }>
           <Typography variant="h6" width="auto" boxSizing="border-box" display="inline-block">
             Hi, how can I help?

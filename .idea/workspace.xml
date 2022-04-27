@@ -6,7 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="quick fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/FAQ/FAQ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/SmallSections/FAQ/FAQ.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Layout/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HaveAQuestions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HelpingFirstTime.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HowItWorks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/HowItWorks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ReadyToGetATry.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/VideoSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/validation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/validation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/AboutUs/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/SmallSections/AboutUs/AboutUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/Careers/Careers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/SmallSections/Careers/Careers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/theme/baseStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/baseStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/theme/muiTheme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/muiTheme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/theme/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/strings/strings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/strings/strings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +56,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="26ZCZIG8MJfOFCsK1KvFGBjbmn7" />
   <component name="ProjectViewState">
@@ -56,7 +75,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="ts.external.directory.path" value="D:\WebStorm\projects\HomeQual\HomeQual\node_modules\typescript\lib" />
     <property name="ts.rename.search.for.dynamic.occurrences" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -70,11 +89,11 @@
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\shared" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\SuccesPlan\Sections" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\assets\theme" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\QuestionsAndAnswers" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\QuestionsAndAnswers\shared\constructors" />
-      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\QuestionsAndAnswers\shared\constructors\aloneRoute" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -120,7 +139,10 @@
       <workItem from="1650444713290" duration="24050000" />
       <workItem from="1650534434253" duration="16044000" />
       <workItem from="1650624569268" duration="10159000" />
-      <workItem from="1650885668074" duration="98000" />
+      <workItem from="1650885668074" duration="915000" />
+      <workItem from="1650890804392" duration="6086000" />
+      <workItem from="1650975283724" duration="20158000" />
+      <workItem from="1651049438420" duration="13237000" />
     </task>
     <task id="LOCAL-00001" summary="FAQ Fix">
       <created>1650645202753</created>

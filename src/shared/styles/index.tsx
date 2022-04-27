@@ -24,11 +24,12 @@ export const QualButton = styled(({ ...props }) => <Button { ...props } color="p
     text-transform : none;
   }
 `
-export const TextContainer = styled(Grid)`
-  color      : ${ (props: any) => (props.color ? props.color : 'black') };
-  padding    : 40px;
-  text-align : center;
-  width      : auto;
+export const TextContainer = styled(({ ...props }) => <Grid { ...props }/>)`
+  color            : ${ (props: any) => (props.color ? props.color : 'black') };
+  padding          : 40px;
+  background-color : ${ (props: any) => (props.backgroundColor ? props.theme.colors[props.backgroundColor] : 'white') };
+  text-align       : center;
+  width            : auto;
 `
 export const GreyTextContainer = styled(TextContainer)`
   padding          : 30px;
@@ -41,6 +42,10 @@ export const HeaderDivider = styled(Grid)`
   height           : 60px;
   background-color : white;
   content          : '';
+
+  @media screen and (min-width : 600px) {
+    height : 64px;
+  }
 `
 export const ContentWrapper = styled(({ ...props }) => <Grid { ...props }/>)`
   background-color : ${ props => props.theme.colors.lightGrey };

@@ -2,9 +2,9 @@ import { Grid, List, ListItem, ListItemAvatar, Typography } from '@mui/material'
 import styled                                               from 'styled-components'
 import { CenteredTypography, ItalicTypography, QualButton } from '../../../../shared/styles'
 import doneArrow                                            from '../../../../assets/images/doneArrow.svg'
-import { useNavigate }                                      from 'react-router-dom'
+import React                                                from 'react'
 
-const ListIcon = styled(({ ...props }) => <div { ...props } />)`
+const ListIcon = styled.div`
   border-radius   : 50%;
   min-width       : 50px;
   min-height      : 50px;
@@ -23,11 +23,12 @@ const advantages = [
   'It’s completely FREE!',
 ]
 
+
 export const ReadyToGetATry = () => {
-  const navigate = useNavigate()
 
   return (
     <Grid sx={ { padding: '40px' } }>
+
       <CenteredTypography variant="h4">
         Ready to Give it a Try?
       </CenteredTypography>

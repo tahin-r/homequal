@@ -1,13 +1,6 @@
-import React                  from 'react'
-import { Grid, Typography }   from '@mui/material'
-import styled                 from 'styled-components'
-import { CenteredTypography } from '../../../../../shared/styles'
-import { useNavigate }        from 'react-router-dom'
-
-const CenteredItemTypography = styled(CenteredTypography)`
-  margin-bottom : 10px;
-  font-weight   : bold;
-`
+import React                from 'react'
+import { Grid, Typography } from '@mui/material'
+import { useNavigate }      from 'react-router-dom'
 
 interface ILinks {
   name: string
@@ -73,12 +66,10 @@ const links: Array<ILinks> = [
 ]
 
 export const Links = () => {
-
   const navigate = useNavigate()
 
   return (
     <Grid container my={ 3 } sx={ { maxWidth: '500px' } }>
-
       { links.map((item, index) => (
         <Grid item xs={ 6 } key={ index }>
           <Typography variant="h5" textAlign="center" mb={ 1 } mt={ 3 }>

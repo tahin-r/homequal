@@ -10,13 +10,16 @@ const MenuItems = styled(Typography)`
   font-size   : 15px;
   font-weight : 500;
 `
-const HqLogo = styled(({ ...props }) => <div { ...props } />)`
-  background      : url(${ (props) =>
-          props.trigger === 'true' ? hqlighticon : hqlighticon }) left 100% no-repeat;
-  width           : 200px;
-  height          : 50px;
+const HqLogo = styled.div`
+  background      : url(${ hqlighticon }) left center no-repeat;
+  width           : 260px;
+  height          : 60px;
   background-size : contain;
   cursor          : pointer;
+
+  @media screen and (min-width : 600px) {
+    height : 64px;
+  }
 `
 const menuItems = [
   {
@@ -70,27 +73,22 @@ export const Header = () => {
     setAnchorEl(null)
   }
   const open = Boolean(anchorEl)
+
   return (
     <AppBar position={ location.pathname.includes('Q&A') ? 'relative' : 'fixed' } sx={ {
-      color     : 'black',
+      transition: 'background-color 1s linear',
       bgcolor   : location.pathname === '/' ? trigger ? 'white' : 'transparent' : 'white',
-      transition: 'linear 0.5s',
-      maxHeight : '60px',
-      maxWidth  : '100vw',
     } } elevation={ 0 }>
-      <Toolbar>
-        <IconButton edge="start" color="primary" aria-label="menu" onClick={ handleClick }>
+      <Toolbar sx={ { transition: 'linear 0.5s' } }>
+        <IconButton edge="start" color="primary" onClick={ handleClick }>
           <MenuIcon sx={ { transform: 'scale(1.4)' } }/>
         </IconButton>
 
         <Popover id={ 'menuButton' } open={ open } anchorEl={ anchorEl } onClose={ handleClose } anchorOrigin={ {
           vertical  : 'bottom',
-          horizontal: 'right',
-        } } transformOrigin={ {
-          vertical  : 'top',
           horizontal: 'left',
         } }>
-          <List sx={ { width: '100%', maxWidth: 360 } }>
+          <List>
             { menuItems.map((item, index) => (
               <ListItem key={ index } sx={ { margin: '0 10px' } }>
                 <MenuItems sx={ { cursor: 'pointer' } } onClick={ () => {
@@ -103,7 +101,7 @@ export const Header = () => {
           </List>
         </Popover>
 
-        <HqLogo trigger={ String(trigger) } onClick={ () => navigate('/') }/>
+        <HqLogo onClick={ () => navigate('/') }/>
       </Toolbar>
     </AppBar>
   )
