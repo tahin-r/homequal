@@ -21,7 +21,7 @@ const PhoneImage = styled.img.attrs({
   background-size : contain;
   box-sizing      : border-box;
   position        : relative;
-  @media screen and (max-width : 400px) {
+  @media screen and (max-width : 370px) {
     position  : absolute;
     left      : 50%;
     top       : 50%;
@@ -36,7 +36,7 @@ const ContentHolder = styled.div`
   display         : flex;
   flex-wrap       : nowrap;
   justify-content : flex-end;
-  @media screen and (max-width : 400px) {
+  @media screen and (max-width : 370px) {
     display  : block;
     position : relative;
   }
@@ -46,7 +46,7 @@ const ImageHolder = styled.div`
   width   : auto;
   height  : 100%;
   margin : auto 0;
-  @media screen and (max-width : 400px) {
+  @media screen and (max-width : 370px) {
     padding : 0
   }
 `
