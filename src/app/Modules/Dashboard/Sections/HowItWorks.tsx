@@ -11,29 +11,59 @@ const TextContent = styled(Typography)`
   text-align : right;
 `
 const PhoneImage = styled.img.attrs({
-  src:phoneImage,
-  alt:"phoneImage"
+  src: phoneImage,
+  alt: 'phoneImage',
 })`
-  width           : auto;
+  width           : 25vw;
   min-width       : 100px;
   max-width       : 140px;
+  aspect-ratio    : 34/67;
   background-size : contain;
   box-sizing      : border-box;
+  position        : relative;
+  @media screen and (max-width : 400px) {
+    position  : absolute;
+    left      : 50%;
+    top       : 50%;
+    transform : translate(-50%, -50%);
+    z-index   : -1;
+    max-height:90%;
+    width:auto;
+    aspect-ratio    : 34/67;
+  }
+`
+const ContentHolder = styled.div`
+  display         : flex;
+  flex-wrap       : nowrap;
+  justify-content : flex-end;
+  @media screen and (max-width : 400px) {
+    display  : block;
+    position : relative;
+  }
+`
+const ImageHolder = styled.div`
+  padding : 20px;
+  width   : auto;
+  height  : 100%;
+  margin : auto 0;
+  @media screen and (max-width : 400px) {
+    padding : 0
+  }
 `
 
 export const HowItWorks: FC = () => {
   return (
-    <Grid container wrap="nowrap" justifyContent="flex-end">
-      <Grid item sx={ { padding: '20px', maxWidth: '500px' } }>
+    <ContentHolder>
+      <Grid item sx={ { padding: '20px', maxWidth: '500px', backgroundColor: 'rgba(255, 255, 255, 0.94)' } }>
         <Title variant={ 'h5' }>How it Works</Title>
-        <TextContent variant={ 'h5' } fontWeight="light">
+        <TextContent variant={ 'h6' } fontWeight="light">
           You enter information - we analyze thousands of data points to create
           your personal step by step success plan!
         </TextContent>
       </Grid>
-      <Grid item container sx={ { padding: '20px', width: 'auto', height: '100%', marginY: 'auto' } }>
+      <ImageHolder>
         <PhoneImage/>
-      </Grid>
-    </Grid>
+      </ImageHolder>
+    </ContentHolder>
   )
 }
