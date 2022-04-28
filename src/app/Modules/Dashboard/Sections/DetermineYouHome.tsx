@@ -15,15 +15,13 @@ export const DetermineYouHome: FC = () => {
             in less than two minutes.
           </Typography>
         </Growing>
-
       </TextContainer>
 
       <TextContainer backgroundColor={ 'darkGrey' }>
         <Growing>
           <Typography variant="h5" fontWeight="light" color={ 'white' } my={ 3 }>
             <HomeQualTextTemplate variant={ 'h5' } fontWeight="light"/> homeowners realize an average savings of $2,200
-                                                                        per year in lower
-                                                                        payments!
+            per year in lower payments!
           </Typography>
         </Growing>
       </TextContainer>
