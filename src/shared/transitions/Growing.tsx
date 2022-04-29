@@ -8,7 +8,9 @@ export const Growing: FC<{ children: ReactElement, timeout?: number }> = ({ chil
 
   return (
     <Grow in={ isVisible } ref={ ref } timeout={ timeout ?? 2000 }>
+      <div>
       { children }
+      </div>
     </Grow>
   )
 }

@@ -3,12 +3,12 @@ import { NavigateFunction } from 'react-router-dom'
 import { FormikProps }      from 'formik'
 
 export const SetCurrentQuestionHandler = (next: QuestionKeyType, current: QuestionKeyType, formik: FormikProps<any>, navigate: NavigateFunction) => {
-  let isAlone = formik.values.co_borrower_flag === '0'
-  let isHaveStudentLoan = formik.values.member_buyer_details.includes('late_student_loan')
-  let isHaveTax = formik.values.member_buyer_details.includes('tax_lien_judgement_foreclosure')
-  let isCoHaveStudentLoan = formik.values.co_member_buyer_details.includes('late_student_loan')
-  let isCoHaveTax = formik.values.co_member_buyer_details.includes('tax_lien_judgement_foreclosure')
-  let isSpouce = formik.values.co_borrower_flag === '1'
+  const isAlone = formik.values.co_borrower_flag === '0'
+  const isHaveStudentLoan = formik.values.member_buyer_details.includes('late_student_loan')
+  const isHaveTax = formik.values.member_buyer_details.includes('tax_lien_judgement_foreclosure')
+  const isCoHaveStudentLoan = formik.values.co_member_buyer_details.includes('late_student_loan')
+  const isCoHaveTax = formik.values.co_member_buyer_details.includes('tax_lien_judgement_foreclosure')
+  const isSpouce = formik.values.co_borrower_flag === '1'
 
   if (current === 'Q4' && isAlone) {
     navigate('Q7')

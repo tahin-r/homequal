@@ -102,7 +102,7 @@ export const Wrapper: React.FC<IWrapper> = memo(({
             height: '50px', mt: { xs: 'auto', sm: '50px' }, mb: '30px',
           } }>
             <ColoredButton onClick={ () => setTimeout(() => current !== 'Q23' ? handleClick() : navigate('/'), 300) }>
-              <Typography variant="h5" textTransform="capitalize">
+              <Typography variant="h5">
                 Continue
               </Typography>
             </ColoredButton>

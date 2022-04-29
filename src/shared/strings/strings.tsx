@@ -10,9 +10,11 @@ interface IHomeQualText {
 export const HomeQualTextTemplate: FC<IHomeQualText> = ({ variant, fontWeight }) => {
   return (
     <>
-      <Typography variant={ variant } fontWeight={ fontWeight ?? 'initial' } component="span">Home
+      <Typography variant={ variant } fontWeight={ fontWeight ?? 'initial' } component="span">
+        Home
       </Typography>
-      <Typography variant={ variant } fontWeight={ fontWeight ?? 'initial' } color={ 'primary' } component="span">Qual
+      <Typography variant={ variant } fontWeight={ fontWeight ?? 'initial' } color={ 'primary' } component="span">
+        Qual
       </Typography>
     </>
 

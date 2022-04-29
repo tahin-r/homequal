@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="quick fix">
+      <change afterPath="$PROJECT_DIR$/src/app/Modules/Resources/ResourcesDashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/DetermineYouHome.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/helpers/ViewPortChecker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/helpers/ViewPortChecker.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeComponents/NewHomeItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeComponents/NewHomeItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeOwnersLove.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeOwnersLove.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/NotFound/NotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/NotFound/NotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/MainRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/MainRoutes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/Wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/Wrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/Resources/Resources.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/strings/strings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/strings/strings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/theme/baseStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/baseStyles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/transitions/Growing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/transitions/Growing.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -48,6 +57,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -58,7 +68,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="ts.external.directory.path" value="D:\WebStorm\projects\HomeQual\HomeQual\node_modules\typescript\lib" />
     <property name="ts.rename.search.for.dynamic.occurrences" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -72,11 +82,11 @@
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\Resources" />
+      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\shared" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\SuccesPlan\Sections" />
       <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\assets\theme" />
-      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\QuestionsAndAnswers" />
-      <recent name="D:\WebStorm\projects\HomeQual\HomeQual\src\app\Modules\QuestionsAndAnswers\shared\constructors" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -126,7 +136,8 @@
       <workItem from="1650890804392" duration="6086000" />
       <workItem from="1650975283724" duration="20158000" />
       <workItem from="1651049438420" duration="18965000" />
-      <workItem from="1651131664380" duration="1316000" />
+      <workItem from="1651131664380" duration="20998000" />
+      <workItem from="1651217141166" duration="17930000" />
     </task>
     <task id="LOCAL-00001" summary="FAQ Fix">
       <created>1650645202753</created>

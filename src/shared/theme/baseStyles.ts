@@ -29,6 +29,12 @@ export const BaseStyles = createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display : block;
   }
+  ul,ol {
+    list-style: initial;
+  }
+  ul{
+    list-style-type: disc;
+  }
 
   #root {
     min-height : 100%;
@@ -53,11 +59,7 @@ export const BaseStyles = createGlobalStyle`
   b, strong {
     font-weight : 700;
   }
-
-  ol, ul {
-    list-style : none;
-  }
-
+  
   blockquote, q {
     quotes : none;
   }

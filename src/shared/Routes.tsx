@@ -5,9 +5,9 @@ import { QuestionsAndAnswers } from '../app/Modules/QuestionsAndAnswers/Question
 import { PartnerWithUs }       from '../app/Modules/SmallSections/PartnerWithUs/PartnerWithUs'
 import { Careers }             from '../app/Modules/SmallSections/Careers/Careers'
 import { AboutUs }             from '../app/Modules/SmallSections/AboutUs/AboutUs'
-import { Resources }           from '../app/Modules/SmallSections/Resources/Resources'
 import { FAQ }                 from '../app/Modules/SmallSections/FAQ/FAQ'
-import { NotFound }            from '../app/Modules/NotFound/NotFound'
+import { NotFound }  from '../app/Modules/NotFound/NotFound'
+import { Resources } from '../app/Modules/Resources/Resources'
 
 //
 // link: '/FAQs'
@@ -51,11 +51,7 @@ const mainRoutes = [
     element: <AboutUs/>,
   },
   {
-    path   : '/resources',
-    element: <Resources/>,
-  },
-  {
-    path   : '/homebuyer_library',
+    path   : '/resources/*',
     element: <Resources/>,
   },
   {

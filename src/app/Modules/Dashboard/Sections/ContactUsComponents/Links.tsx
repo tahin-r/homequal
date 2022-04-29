@@ -17,7 +17,7 @@ const links: Array<ILinks> = [
       },
       {
         text: 'Homebuyer Library',
-        link: '/homebuyer_library',
+        link: '/resources',
       },
     ],
   },

@@ -19,9 +19,7 @@ export const NotFound = () => {
       <HeaderDivider/>
       <Grid container direction="column" justifyContent='center' alignItems="center" sx={{height:'100%'}}>
         <Typography variant="h4" color="primary" textAlign='center'>UNDER CONSTRUCTION</Typography>
-        <Grid item sx={{flexShrink:0}} >
           <Image404/>
-        </Grid>
       </Grid>
     </Grid>
   )
