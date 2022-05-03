@@ -6,8 +6,8 @@ import { PartnerWithUs }       from '../app/Modules/SmallSections/PartnerWithUs/
 import { Careers }             from '../app/Modules/SmallSections/Careers/Careers'
 import { AboutUs }             from '../app/Modules/SmallSections/AboutUs/AboutUs'
 import { FAQ }                 from '../app/Modules/SmallSections/FAQ/FAQ'
-import { NotFound }  from '../app/Modules/NotFound/NotFound'
-import { Resources } from '../app/Modules/Resources/Resources'
+import { NotFound }            from '../app/Modules/NotFound/NotFound'
+import { Resources }           from '../app/Modules/Resources/Resources'
 
 //
 // link: '/FAQs'

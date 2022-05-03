@@ -1,10 +1,10 @@
 import { QuestionKeyType, QuestionsType } from './questions'
-import { FormikProps }                    from 'formik'
 import { NavigateFunction }               from 'react-router-dom'
+import { FormikProps }                    from 'formik';
 
 interface IGenerateQuestionProps {
   CurrentQuestion: QuestionsType
-  formik: FormikProps<any>
+  formik:FormikProps<any>
   SetCurrentQuestionHandler: (next: QuestionKeyType, current: QuestionKeyType, formik: FormikProps<any>, navigate: NavigateFunction) => void
   setSchema: (questionKey: QuestionKeyType) => void
   navigate: NavigateFunction

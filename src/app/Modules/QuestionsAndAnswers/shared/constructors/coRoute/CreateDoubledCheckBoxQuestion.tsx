@@ -39,8 +39,7 @@ export const CreateDoubledCheckBoxQuestion: FC<IProps> = memo(({
 
         <FormGroup onChange={ formik.handleChange }>
           <Grid container direction="column" wrap="nowrap">
-            { answers &&
-              answers.map((item: any, index: number) => (
+            { answers.map((item, index: number) => (
                   <Grid container justifyContent="flex-start" wrap={ 'nowrap' } key={ index }>
                     <FormControlLabel control={ <Checkbox sx={ { transform: 'scale(1.3)' } }/> }
                                       label=""

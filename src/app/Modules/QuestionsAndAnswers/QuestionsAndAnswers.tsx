@@ -8,10 +8,13 @@ import { QuestionsSchema }                from './validation'
 import { SetCurrentQuestionHandler }      from './MainRoutes'
 import { GenerateQuestion }               from './GenerateQuestion'
 
+interface IFormState {
+  [key:string]:string | string[]
+}
 
 export const QuestionsAndAnswers = memo(() => {
 
-  const initialState = {
+  const initialState:IFormState= {
     first_name                     : '',
     last_name                      : '',
     email_address                  : '',
@@ -55,8 +58,10 @@ export const QuestionsAndAnswers = memo(() => {
   }
 
   const navigate = useNavigate()
-  const [currentState, setCurrentState] = useState<any>({ ...initialState })
+  const [currentState, setCurrentState] = useState<IFormState>(initialState)
   const [currentSchema, setCurrentSchema] = useState(QuestionsSchema.Q1)
+
+
 
   const formik = useFormik({
     validateOnChange: true,
@@ -64,16 +69,18 @@ export const QuestionsAndAnswers = memo(() => {
     validateOnBlur  : false,
     initialValues   : currentState,
     validationSchema: currentSchema,
-    onSubmit        : (values) => HandleSubmit(values),
+    onSubmit        : (values:IFormState) => HandleSubmit(values),
   })
+
   const setSchema = (questionKey: QuestionKeyType) => {
     if (QuestionsSchema[questionKey] !== currentSchema) {
       setCurrentSchema(QuestionsSchema[questionKey] ? QuestionsSchema[questionKey] : yup.object({}))
     }
   }
-  const HandleSubmit = useCallback((values: any) => {
+  const HandleSubmit = useCallback((values: IFormState) => {
     setCurrentState(values)
   }, [])
+
 
   const questionRoutes = Object.values(questionsList).map((CurrentQuestion, index) =>
     <Route path={ `/${ Object.keys(questionsList)[index] }` }

@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 
 
-export const QuestionsSchema: any = {
+export const QuestionsSchema: any  = {
   Q1: yup.object({
     first_name: yup.string().required('First name is required'),
 

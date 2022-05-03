@@ -1,7 +1,7 @@
 import React, { FC, memo }                 from 'react'
-import { Wrapper }               from '../../Wrapper'
-import { Box, Grid, Typography } from '@mui/material'
-import { basicData, InputField } from '../shared'
+import { Wrapper }                         from '../../Wrapper'
+import { Box, Grid, Typography }           from '@mui/material'
+import { basicData, InputField }           from '../shared'
 import { ICreateDoubledTextFieldQuestion } from '../../../questions'
 
 interface IProps extends ICreateDoubledTextFieldQuestion, basicData {

@@ -1,6 +1,6 @@
-import { basicData }                             from '../shared'
-import React, { FC, memo, useEffect, useState }  from 'react'
-import { Wrapper }                               from '../../Wrapper'
+ import { basicData }                                           from '../shared'
+import React, { FC, memo, SyntheticEvent, useEffect, useState } from 'react'
+import { Wrapper }                                              from '../../Wrapper'
 import { Grid, Radio, Typography }               from '@mui/material'
 import { ICreateDoubledCheck_Radio_BoxQuestion } from '../../../questions'
 
@@ -28,12 +28,12 @@ export const CreateDoubledRadioQuestion: FC<IProps> = memo(({
     }, [wrapperProps.current],
   )
 
-  const handleCurrentAnswer = (event: any, checked: any, item: any) => {
-    // !!!!!
+  const handleCurrentAnswer = (event: SyntheticEvent, checked: boolean, item: string) => {
+
     setValue(item)
     formik.handleChange(event)
   }
-  const co_handleCurrentAnswer = (event: any, checked: any, item: any) => {
+  const co_handleCurrentAnswer = (event: SyntheticEvent, checked: boolean, item: string) => {
     co_setValue(item)
     // !!!!!
     formik.handleChange(event)

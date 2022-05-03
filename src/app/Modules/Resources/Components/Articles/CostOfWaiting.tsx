@@ -1,9 +1,15 @@
-import React                                 from 'react'
-import { Box, Typography }                   from '@mui/material'
+import React, { FC }       from 'react'
+import { Box, Typography } from '@mui/material'
 import { SimpleTypography, TitleTypography } from './sharedStyles'
 import { Container }                         from '@material-ui/core'
 
-export const CostOfWaiting = () => {
+interface ICostOfWaiting {
+  title: string
+  text: string
+  link: string
+  image: string
+}
+export const CostOfWaiting:FC<ICostOfWaiting> = (props) => {
 
   return (
     <Container fixed>

@@ -5,6 +5,9 @@ import { Grid, Typography } from '@mui/material'
 import { PieChart }         from 'react-minimal-pie-chart'
 import { basicTypes }       from '../../../questions'
 
+
+
+
 interface IProps extends basicTypes, basicData {
 }
 

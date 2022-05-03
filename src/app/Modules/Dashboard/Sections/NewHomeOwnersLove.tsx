@@ -3,7 +3,7 @@ import styled                                      from 'styled-components'
 import { HomeQualTextTemplate }                    from '../../../../shared/strings/strings'
 import { CenteredTypography }                      from '../../../../shared/styles'
 import { NewHomeItem }                             from './NewHomeComponents/NewHomeItem'
-import { useEffect, useRef }                       from 'react'
+import { RefAttributes, useEffect, useRef }        from 'react'
 import { Bradley, Earl, Eric, Jay, Jerry, Joshua } from '../../../../assets/images/faces'
 
 const ContentTypography = styled(CenteredTypography)`
@@ -78,11 +78,11 @@ const usersFeedback: Array<IUsersFeedback> = [
 ]
 
 export const NewHomeOwnersLove = () => {
-  const scrollref = useRef<any>(null)
+  const scrollref = useRef<HTMLElement>(null)
   useEffect(() => {
     if (scrollref?.current) {
       scrollref?.current.scrollTo(
-        (scrollref?.current.scrollWidth/12*5  - window.innerWidth/2),
+        (scrollref?.current.scrollWidth / 12 * 5 - window.innerWidth / 2),
         0,
       )
     }

@@ -18,7 +18,7 @@ export const CreateCheckBoxQuestion: FC<IProps> = memo(({
     <Wrapper { ...wrapperProps }>
 
       <FormGroup onChange={ formik.handleChange } sx={ { paddingLeft: '10vw' } }>
-        { answers && answers.map((item: any, index: number) => (
+        { answers && answers.map((item, index: number) => (
           <FormControlLabel control={ <Checkbox/> }
                             label={ <Typography variant="h6"> { item.text } </Typography> }
                             name={ formName }

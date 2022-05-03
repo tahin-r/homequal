@@ -1,9 +1,15 @@
-import React                                 from 'react'
-import { Typography }                        from '@mui/material'
+import React, { FC }  from 'react'
+import { Typography } from '@mui/material'
 import { SimpleTypography, TitleTypography } from './sharedStyles'
 import { Container }                         from '@material-ui/core'
 
-export const ClosingDay = () => {
+interface IClosingDay {
+  title: string
+  text: string
+  link: string
+  image: string
+}
+export const ClosingDay:FC<IClosingDay> = (props) => {
 
   return (
     <Container fixed>
@@ -18,7 +24,7 @@ export const ClosingDay = () => {
         The Closing Disclosure
       </TitleTypography>
       <TitleTypography variant="h5" fontWeight={ 'bold' }>
-        Three days prior to closing, you will receive a copy of your Closing Disclosure (CD).
+        Three days prior to closing, you will receive a copy of your Closing Disclosure (CD)
       </TitleTypography>
       <SimpleTypography>
         This disclosure breaks out all aspects of the mortgage including loan amount, down payment, interest rates,
@@ -33,7 +39,7 @@ export const ClosingDay = () => {
         What to bring to closing
       </TitleTypography>
       <SimpleTypography>
-        <Typography variant="h6" fontWeight="bold" display="inline">
+        <Typography variant="h6" fontWeight="bold" component={ 'span' } display="inline">
           Photo ID
         </Typography>
         : A government-issue photo ID will be needed by the title company. (If you are recently married and just changed
@@ -41,7 +47,7 @@ export const ClosingDay = () => {
         question on this, contact the title company).
       </SimpleTypography>
       <SimpleTypography>
-        <Typography variant="h6" fontWeight="bold" display="inline">
+        <Typography variant="h6" fontWeight="bold" component={ 'span' } display="inline">
           Your Money
         </Typography>
         : The Closing Disclosure will state how much money you need to bring to closing. Once you know the
@@ -77,7 +83,8 @@ export const ClosingDay = () => {
         the loan. Keep in mind you are not the only closing taking place and the funding department can get busy.
       </SimpleTypography>
       <SimpleTypography>
-        When the mortgage is funded, you will receive a call from the title company and / or your agent telling you it’s time for you to pick up the keys.
+        When the mortgage is funded, you will receive a call from the title company and / or your agent telling you it’s
+        time for you to pick up the keys.
       </SimpleTypography>
     </Container>
   )

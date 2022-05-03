@@ -18,7 +18,7 @@ export const CreateTextFieldQuestion: FC<IProps> = memo(({
 
       <Grid container direction="column" sx={ { paddingLeft: '10vw' } }>
 
-        { inputs.map((item: any, index: number) => <InputField formik={ formik }
+        { inputs.map((item, index: number) => <InputField formik={ formik }
                                                                item={ item }
                                                                key={ index }
                                                                index={ index }/>) }

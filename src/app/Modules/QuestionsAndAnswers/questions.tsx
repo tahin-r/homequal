@@ -11,10 +11,11 @@ import { CreateAutoCompleteQuestion }     from './shared/constructors/aloneRoute
 import { CreateDoubledTextFieldQuestion } from './shared/constructors/coRoute/CreateDoubledTextFieldQuestion'
 import { CreateDoubledCheckBoxQuestion }  from './shared/constructors/coRoute/CreateDoubledCheckBoxQuestion'
 import { FC }                             from 'react'
+import { FormikValues }                   from 'formik/dist/types';
 
 
 export interface basicTypes {
-  question: (state: object | null) => string
+  question: (state: FormikValues) => string
   elementConstructor: FC<any>
   description: string
   current: QuestionKeyType
@@ -38,7 +39,7 @@ export interface ICreateAutoCompleteQuestion extends basicTypes {
 export interface ICreateCOTextFieldQuestion extends basicTypes {
   inputs: { value: string, text: string }[]
   coInputs: { value: string, text: string }[]
-  coQuestion: (state: object | null) => string
+  coQuestion: (state: FormikValues) => string
 }
 
 export interface ICreateDoubledTextFieldQuestion extends basicTypes {
@@ -54,15 +55,15 @@ export interface ICreateDoubledCheck_Radio_BoxQuestion extends basicTypes {
 }
 
 export interface ICreateRadioTextQuestion extends ICreateDoubledCheck_Radio_BoxQuestion {
-  question1: (state: object | null) => string
-  co_question: (state: object | null) => string
-  co_question1: (state: object | null) => string
+  question1: (state: FormikValues) => string
+  co_question: (state: FormikValues) => string
+  co_question1: (state: FormikValues) => string
   inputs: { value: string, text: string }[]
   co_inputs: { value: string, text: string }[]
 }
 
 export interface ICreateVeteranQuestion extends ICreateDoubledCheck_Radio_BoxQuestion {
-  co_question: (state: object) => string
+  co_question: (state: FormikValues) => string
 }
 
 
@@ -96,7 +97,7 @@ const Q1: ICreateTextFieldQuestion = {
 }
 
 const Q2: ICreateRadio_CheckBox_Question = {
-  question          : (state: any) =>
+  question          : (state) =>
     `Nice to meet you ${ state.first_name }. We will be sending you information you` +
     ' request, specifics about your purchasing ability, and home buying tips. How would you prefer we contact you?',
   description       :
@@ -193,7 +194,7 @@ const Q5: ICreateTextFieldQuestion = {
 }
 
 const Q6: ICreateRadio_CheckBox_Question = {
-  question          : (state: any) => `What is ${ state.co_first_name } marital status`,
+  question          : (state) => `What is ${ state.co_first_name } marital status`,
   description       : '',
   elementConstructor: CreateRadioQuestion,
   current           : 'Q6',
@@ -276,7 +277,7 @@ const Q9: ICreateTextFieldQuestion = {
 }
 
 const Q10: ICreateRadio_CheckBox_Question = {
-  question          : (state: any) =>
+  question          : (state) =>
     `What is the source of your $${ state.home_savings } funds? Check any that apply.`,
   description       :
     'Tip: When starting the mortgage process, be careful moving money in and out of accounts or having any large deposits.  Lenders will ask a lot of questions if you do!',
@@ -309,7 +310,7 @@ const Q10: ICreateRadio_CheckBox_Question = {
 }
 
 const Q11: ICreateTextFieldQuestion = {
-  question          : (state: any) =>
+  question          : (state) =>
     `Awesome! The next step is to see if you will qualify for a $${ state.monthly_payment_amount } monthly mortgage payment. To ` +
     'help make this decision, lenders will calculate your Debt to Income Ratio.' +
     ' Let’s quickly calculate yours now.',
@@ -364,7 +365,7 @@ const Q13: ICreateTextFieldQuestion = {
 }
 
 const Q14: basicTypes = {
-  question          : (state: any) =>
+  question          : (state) =>
     `${ state.first_name }, great news! Based on your information, your Debt to Income Ratio is ACCEPTABLE! `,
   description       : '',
   elementConstructor: CreateDiagramQuestion,
@@ -622,7 +623,7 @@ const Q23: basicTypes = {
 const Q12C: ICreateCOTextFieldQuestion = {
   question          : () =>
     `What is your total monthly income from all sources before any taxes or deductions?`,
-  coQuestion        : (state: any) =>
+  coQuestion        : (state) =>
     `What is ${ state.co_first_name }\`s total monthly income from all sources before any taxes or deductions?`,
   description       : 'Enter your GROSS income, not what you end up taking home.',
   elementConstructor: CreateCOTextFieldQuestion,
@@ -687,7 +688,7 @@ const Q13C: ICreateDoubledTextFieldQuestion = {
   ],
 }
 const Q14C: basicTypes = {
-  question          : (state: any) =>
+  question          : (state) =>
     `${ state.first_name }, great news! Based on your information, your Debt to Income Ratio is ACCEPTABLE! `,
   description       : '',
   elementConstructor: CreateDiagramQuestion,
@@ -988,9 +989,9 @@ const Q20C: ICreateRadioTextQuestion = {
   question          : () =>
     'Good work, you’re almost done. Now, let’s take a quick look at your current living situation…',
   question1         : () => 'My monthly housing payment is',
-  co_question       : (state: any) =>
+  co_question       : (state) =>
     `${ state.co_first_name }’s current living situation is …`,
-  co_question1      : (state: any) =>
+  co_question1      : (state) =>
     `${ state.co_first_name }’s monthly housing payment is (only if does not live with you)`,
   description       : 'Lenders will analyze your past 2 years living arrangements.',
   elementConstructor: CreateRadioTextQuestion,
@@ -1045,7 +1046,7 @@ const Q20C: ICreateRadioTextQuestion = {
 }
 const Q21C: ICreateVeteranQuestion = {
   question          : () => 'Let’s see if you qualify for special veteran programs.',
-  co_question       : (state: any) => `Is ${ state.co_first_name } a veteran?`,
+  co_question       : (state) => `Is ${ state.co_first_name } a veteran?`,
   description       : '',
   elementConstructor: CreateVeteranQuestion,
   formName          : 'veteran',

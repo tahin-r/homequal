@@ -1,6 +1,6 @@
-import { Grid, Radio, TextField, Typography }                  from '@mui/material'
-import React, { CSSProperties, FC, memo, useEffect, useState } from 'react'
-import { FormikValues }                                        from 'formik/dist/types'
+import { Grid, Radio, TextField, Typography }                                  from '@mui/material'
+import React, { CSSProperties, FC, memo, SyntheticEvent, useEffect, useState } from 'react'
+import { FormikValues }                                                        from 'formik/dist/types'
 import { FormikProps }                                         from 'formik'
 import { IWrapper }                                            from '../Wrapper'
 
@@ -18,6 +18,7 @@ interface IInputField {
 }
 
 export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyles, labelText }) => {
+
   return (
     <TextField autoFocus={ index === 0 }
                onChange={ formik.handleChange }
@@ -54,8 +55,8 @@ interface IRadioField {
 }
 
 export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLeft, answers }) => {
-  const [value, setValue] = useState<any>(answers[0].value)
-  const handleCurrentAnswer = (event: any, checked: any, item: any) => {
+  const [value, setValue] = useState<string>(answers[0].value)
+  const handleCurrentAnswer = (event: SyntheticEvent, checked: boolean, item: string) => {
     setValue(item)
     formik.handleChange(event, checked)
   }

@@ -1,9 +1,9 @@
-import React                                 from 'react'
-import { Box, Typography }                   from '@mui/material'
+import React, { FC }       from 'react'
+import { Box, Typography } from '@mui/material'
 import { SimpleTypography, TitleTypography } from './sharedStyles'
 import { Container }                         from '@material-ui/core'
 
-export const FinalWalkThrough = () => {
+export const FinalWalkThrough:FC<any> = () => {
 
   return (
     <Container fixed>

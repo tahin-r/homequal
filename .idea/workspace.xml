@@ -5,19 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36ff136f-eee2-4dc3-a7c0-50c07e2aaae9" name="Changes" comment="quick fix">
-      <change afterPath="$PROJECT_DIR$/src/app/Modules/Resources/ResourcesDashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/ContactUsComponents/Links.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeComponents/NewHomeItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeComponents/NewHomeItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Layout/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeOwnersLove.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Dashboard/Sections/NewHomeOwnersLove.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/NotFound/NotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/NotFound/NotFound.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/MainRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/MainRoutes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/Wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/Wrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Modules/SmallSections/Resources/Resources.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/GenerateQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/GenerateQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/QuestionsAndAnswers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/QuestionsAndAnswers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/questions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateCheckBoxQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateCheckBoxQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateDiagramQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateDiagramQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateTextFieldQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/aloneRoute/CreateTextFieldQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledCheckBoxQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledCheckBoxQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledRadioQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledRadioQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledTextFieldQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/coRoute/CreateDoubledTextFieldQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/shared.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/shared/constructors/shared.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/validation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/QuestionsAndAnswers/validation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/ClosingDay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/ClosingDay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/CostOfWaiting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/CostOfWaiting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/DivorceAndYourCredit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/DivorceAndYourCredit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/FinalWalkThrough.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/FinalWalkThrough.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/sharedStyles/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/sharedStyles/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Resources/Resources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Resources/Resources.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Modules/Resources/ResourcesData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Modules/Resources/ResourcesData.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/strings/strings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/strings/strings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/theme/baseStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/baseStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/transitions/Growing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/transitions/Growing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -68,7 +80,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="D:\WebStorm\projects\HomeQual\HomeQual\node_modules\typescript\lib" />
     <property name="ts.rename.search.for.dynamic.occurrences" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -137,7 +149,10 @@
       <workItem from="1650975283724" duration="20158000" />
       <workItem from="1651049438420" duration="18965000" />
       <workItem from="1651131664380" duration="20998000" />
-      <workItem from="1651217141166" duration="17930000" />
+      <workItem from="1651217141166" duration="18465000" />
+      <workItem from="1651482880657" duration="2027000" />
+      <workItem from="1651486331030" duration="18842000" />
+      <workItem from="1651566310252" duration="19060000" />
     </task>
     <task id="LOCAL-00001" summary="FAQ Fix">
       <created>1650645202753</created>
@@ -174,6 +189,18 @@
     <MESSAGE value="FAQ Fix" />
     <MESSAGE value="quick fix" />
     <option name="LAST_COMMIT_MESSAGE" value="quick fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/Modules/Resources/Components/Articles/FindingYourHome.tsx</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
