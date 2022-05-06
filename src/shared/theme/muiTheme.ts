@@ -58,10 +58,8 @@ const typography: TypographyOptions = {
       fontSize: '1.6rem',
     },
   },
-
   fontWeightBold : 500,
   fontWeightLight: 300,
-
 }
 
 

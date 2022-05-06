@@ -2,12 +2,11 @@ import { Grid }                                                     from '@mui/m
 import { FC }                                                       from 'react'
 import ReactPlayer                                                  from 'react-player'
 import styled                                                       from 'styled-components'
-// @ts-ignore
 import video                                                        from '../../../../assets/video/HomeQualVideo.mp4'
 import { videoPlayerImage, videoPlayerImageLG, videoPlayerImageMD } from '../../../../assets/images/dashboard/video'
 import playButton                                                   from '../../../../assets/video/playIcon.svg'
 
-const VideoWrapper = styled(({ ...props }) => <Grid { ...props } />)`
+const VideoWrapper = styled.div`
   position: relative;
   & .react-player__preview {
     width        : 100%;
@@ -45,7 +44,7 @@ const VideoWrapper = styled(({ ...props }) => <Grid { ...props } />)`
 `
 export const VideoSection: FC = () => {
   return (
-    <VideoWrapper container>
+    <VideoWrapper>
       <ReactPlayer url={ video }
                    controls
                    height={ '100%' }

@@ -9,12 +9,12 @@ import { SetCurrentQuestionHandler }      from './MainRoutes'
 import { GenerateQuestion }               from './GenerateQuestion'
 
 interface IFormState {
-  [key:string]:string | string[]
+  [key: string]: string | string[]
 }
 
 export const QuestionsAndAnswers = memo(() => {
 
-  const initialState:IFormState= {
+  const initialState: IFormState = {
     first_name                     : '',
     last_name                      : '',
     email_address                  : '',
@@ -62,14 +62,13 @@ export const QuestionsAndAnswers = memo(() => {
   const [currentSchema, setCurrentSchema] = useState(QuestionsSchema.Q1)
 
 
-
   const formik = useFormik({
     validateOnChange: true,
     validateOnMount : false,
     validateOnBlur  : false,
     initialValues   : currentState,
     validationSchema: currentSchema,
-    onSubmit        : (values:IFormState) => HandleSubmit(values),
+    onSubmit        : (values: IFormState) => HandleSubmit(values),
   })
 
   const setSchema = (questionKey: QuestionKeyType) => {

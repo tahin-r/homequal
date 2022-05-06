@@ -1,7 +1,11 @@
-import { Typography }                                                    from '@mui/material'
-import styled                                                            from 'styled-components'
-import { FC, MutableRefObject, useContext, useEffect, useRef, useState } from 'react';
-import { NavBarContext }                                                 from '../../ArticleWrapper';
+import { Grid, Typography }                                                                   from '@mui/material'
+import styled                                                                                 from 'styled-components'
+import React, { FC, MutableRefObject, ReactElement, useContext, useEffect, useRef, useState } from 'react'
+import {
+  NavBarContext
+}                                                                                             from '../../ArticleWrapper'
+import doneArrow
+                                                                                              from '../../../../../../assets/images/doneArrow.svg'
 
 
 export const SimpleTypography = styled(({ ...props }) => <Typography variant="h6" { ...props } />)`
@@ -43,4 +47,27 @@ function useGetElement(ref: MutableRefObject<HTMLElement | undefined>) {
   }, [element])
   return element
 }
+
+export const CreateDefinition: (DefinitionName: string, SDefinition: string) => ReactElement = (DefinitionName, Definition) => {
+  return (
+    <SimpleTypography>
+      <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' } mr={ 1 }>
+        { DefinitionName }
+      </Typography>
+      { Definition }
+    </SimpleTypography>
+  )
+}
+export const ListItem: FC = (props) => {
+
+  return (
+    <SimpleTypography>
+      <Grid alignItems="flex-start" container wrap="nowrap">
+        <img src={ doneArrow } alt="arrow" width="50px" height="50px"/>
+        <Typography variant="h6">{ props.children }</Typography>
+      </Grid>
+    </SimpleTypography>
+  )
+}
+
 

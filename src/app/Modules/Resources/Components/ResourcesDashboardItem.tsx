@@ -14,11 +14,14 @@ const ItemPaper = styled(({ ...props }) => <Paper { ...props }  />)`
 
   @media screen and (min-width : 0px) {
     width  : 100%;
-    margin : 10px;
+    margin : 10px 30px;
   }
   @media screen and (min-width : 600px) {
-    Width  : 40%;
-    margin : 20px;
+    width  : 45%;
+    margin : 20px 10px;
+    @media screen and (min-width : 960px) {
+      width  : 45%;
+      margin : 20px 15px;
 `
 const TextContainer = styled(Grid)`
   overflow           : hidden;
@@ -46,16 +49,16 @@ interface IResourcesDashboardItem {
 
 export const ResourcesDashboardItem: FC<IResourcesDashboardItem> = ({ image, link, title, text }) => {
   const navigate = useNavigate()
+
   return (
     <>
       <ItemPaper elevation={ 12 } onClick={ () => navigate(link) } position={ 'relative' }>
         <ImageHolder image={ image }/>
         <Grid p={ 3 } height={ 'max-content' }>
-          <Typography variant="h5" sx={ { textAlign: 'center' } } display={ 'block' }>
-            { title }
-          </Typography>
-
           <TextContainer>
+            <Typography variant="h5" sx={ { textAlign: 'center' } }>
+              { title }
+            </Typography>
             <Typography variant="h6" lineHeight={ 1.3 } mt={ 2 }>
               { text.length !== 0 ? text : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi ' +
                 'error id magnam modi quiquisquam, quos rem vel voluptate! Aliquam asperiores at commodi doloremque ex ' +

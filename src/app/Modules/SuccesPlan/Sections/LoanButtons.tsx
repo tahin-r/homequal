@@ -3,17 +3,17 @@ import React, { useState }  from 'react'
 import { Grid, Typography } from '@mui/material'
 
 const DiagramButton = styled(({ ...props }) => <div { ...props } />)`
-box-sizing   : border-box;
-padding      : 10px 40px;
-margin       : 10px 20px;
-border-width : 1px;
-border-style : solid;
-border-color : ${ (props) => props.chosendiagrambutton === props.value ? props.theme.colors.primary : 'grey' };;
-color        : ${ (props) => props.chosendiagrambutton === props.value ? 'black' : 'grey' };
+  box-sizing   : border-box;
+  padding      : 10px 40px;
+  margin       : 10px 20px;
+  border-width : 1px;
+  border-style : solid;
+  border-color : ${ (props) => props.chosendiagrambutton === props.value ? props.theme.colors.primary : 'grey' };;
+  color        : ${ (props) => props.chosendiagrambutton === props.value ? 'black' : 'grey' };
 
-& > * {
-  font-weight : ${ (props) => props.chosendiagrambutton === props.value ? '500' : 'normal' };
-}
+  & > * {
+    font-weight : ${ (props) => props.chosendiagrambutton === props.value ? '500' : 'normal' };
+  }
 `
 
 

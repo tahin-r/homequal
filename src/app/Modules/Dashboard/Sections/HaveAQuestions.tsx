@@ -3,7 +3,7 @@ import styled                                 from 'styled-components'
 import { CenteredTypography, ContentWrapper } from '../../../../shared/styles'
 import { Grid, Typography }                   from '@mui/material'
 
-const Bubble = styled(({ ...props }) => <Grid { ...props } />)`
+const Bubble = styled(Grid)<{side?:string}>`
   border-radius    : 30px;
   display          : inline-block;
   font-size        : 16px;
@@ -55,7 +55,7 @@ export const HaveAQuestions = () => {
       </CenteredTypography>
 
       <BubbleContainer container direction="column" width="auto" mt={ 3 }>
-        <Bubble side={ 'right' }>
+        <Bubble >
           <Typography variant="h6" width="auto" boxSizing="border-box" display="inline-block">
             Hi, how can I help?
           </Typography>

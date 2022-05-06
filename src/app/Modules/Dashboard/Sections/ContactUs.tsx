@@ -30,7 +30,6 @@ export const ContactUs = () => {
 
       <Grid container justifyContent="center" sx={ { padding: '0 20px' } }>
         <Links/>
-
         <Grid container justifyContent="center" my={ 4 }>
           <SocialMedia/>
         </Grid>

@@ -16,19 +16,27 @@ import {
   makeOffer,
   movingDay,
   onlineEstimators,
-}                                     from '../../../assets/images/articles'
-import { BuyingYourFirstHome }        from './Components/Articles/BuyingYourFirstHome'
-import { ClosingDay }                 from './Components/Articles/ClosingDay'
-import { CostOfWaiting }              from './Components/Articles/CostOfWaiting'
-import { DivorceAndYourCredit }       from './Components/Articles/DivorceAndYourCredit'
-import { FinalWalkThrough }           from './Components/Articles/FinalWalkThrough'
-import { FindingYourHome }            from './Components/Articles/FindingYourHome';
-import { FindingTheRightMortgage }    from './Components/Articles/FindingTheRightMortgage';
-import { MortgageAndStudentLoanDebt } from './Components/Articles/MortgageAndStudentLoanDebt';
+}                                         from '../../../assets/images/articles'
+import { BuyingYourFirstHome }            from './Components/Articles/BuyingYourFirstHome'
+import { ClosingDay }                     from './Components/Articles/ClosingDay'
+import { CostOfWaiting }                  from './Components/Articles/CostOfWaiting'
+import { DivorceAndYourCredit }           from './Components/Articles/DivorceAndYourCredit'
+import { FinalWalkThrough }               from './Components/Articles/FinalWalkThrough'
+import { FindingYourHome }                from './Components/Articles/FindingYourHome';
+import { FindingTheRightMortgage }        from './Components/Articles/FindingTheRightMortgage';
+import { MortgageAndStudentLoanDebt }     from './Components/Articles/MortgageAndStudentLoanDebt';
+import { IsYourCreditScoreMortgageReady } from './Components/Articles/IsYourCreditScoreMortgageReady';
+import { HomeMaintenanceTips }            from './Components/Articles/HomeMaintenanceTips';
+import { HowMuchCanIBorrow }              from './Components/Articles/HowMuchCanIBorrow';
+import { OnlineEstimators }               from './Components/Articles/OnlineEstimators';
+import { MakeOffer }                      from './Components/Articles/MakeOffer';
+import { EarnestMoney }                   from './Components/Articles/EarnestMoney';
+import { PreparingForMovingDay }          from './Components/Articles/PreparingForMovingDay';
+import { Disclosure }                     from './Components/Articles/sharedStyles/Disclosure';
+import { HomeBuyingProcess }              from './HomeBuyingProcess';
 
 
-
-interface Iarticle {
+export interface Iarticle {
 
   title: string
   text: string
@@ -83,65 +91,63 @@ export const articles: Array<Iarticle> = [
     component: (props) => <FindingTheRightMortgage { ...props } />,
   }, {
     title    : 'Getting a Loan with Student Loan Debt',
-    text     : 'Today, more than two-thirds of college graduates have student debt. In fact, Americans are now more burdened by student loan debt than they are by credit card or auto debt.\n' +
-      '\n' +
-      'However, student loans don’t have to stop you from buying a home if you prepare properly. So what are your options? Here are a few things to keep in mind',
+    text     : 'Today, more than two-thirds of college graduates have student debt. In fact, Americans are now more burdened by student loan debt than they are by credit card or auto debt. However, student loans don’t have to stop you from buying a home if you prepare properly. So what are your options? Here are a few things to keep in mind',
     image    : gettingLoan,
     link     : 'gettingLoan',
     component: (props) => <MortgageAndStudentLoanDebt { ...props } />,
   }, {
     title    : 'Getting Your Credit Score in Shape',
-    text     : '',
+    text     : 'Your credit score is a 3-digit number that helps lenders decide if you are a good investment. A high credit score demonstrates you have a history of borrowing money and successfully paying it back. It shows you have the discipline to make payments on time and take control of your finances. FICO scores range from 350 to 850.',
     image    : gettingCredit,
     link     : 'gettingCredit',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <IsYourCreditScoreMortgageReady { ...props } />,
   }, {
     title    : 'Home Maintenance for the First Timer',
-    text     : '',
+    text     : 'Congrats on buying your first home. However, with all of this excitement, it’s easy to overlook routine home maintenance, especially when you’ve never had to tackle these tasks before. To keep things from getting overwhelming, it’s a good idea to tackle home maintenance routinely. Dive into these 8 home maintenance tips you’ll need to handle in the first year of buying a home.',
     image    : homeMaintenance,
     link     : 'homeMaintenance',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <HomeMaintenanceTips { ...props } />,
   }, {
     title    : 'How Much Can I Borrow',
-    text     : '',
+    text     : 'You want to buy your first home, but can you afford it? In a lot of cases, if you can afford to pay rent, you can afford to own a home. What keeps many from being homeowners is the fear of the unknown. Before you sign another lease, see what you can afford or steps you can take now to be ready later down the road.',
     image    : howMuchBorrow,
     link     : 'howMuchBorrow',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <HowMuchCanIBorrow { ...props } />,
   }, {
     title    : 'I’m Ready to Make an Offer',
-    text     : '',
+    text     : 'You\'ve found a home you love. Most likely if you love it, so will other potential buyers. So you must act fast and smart.',
     image    : makeOffer,
     link     : 'makeOffer',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <MakeOffer { ...props } />,
   }, {
     title    : 'Online Estimators',
-    text     : '',
+    text     : 'Online home estimators are designed to give a “general” estimate of what you would expect to pay for a home and should be only used as a guide. Also, some estimators do not incorporate taxes and insurance into the monthly payment meaning what you see on the screen is not an accurate account of what you will end up paying.',
     image    : onlineEstimators,
     link     : 'onlineEstimators',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <OnlineEstimators { ...props } />,
   }, {
     title    : 'Option Fee and Earnest Money',
-    text     : '',
+    text     : 'Within 3 days of your contract execution, you must deliver to the title company both your Option Fee and Earnest Money. If not, you are in violation of your contract and the seller may cancel. So what protection does the Option Fee or Earnest Money give you? Read below.',
     image    : earnestMoney,
     link     : 'earnestMoney',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <EarnestMoney { ...props } />,
   }, {
     title    : 'Preparing for Moving Day',
-    text     : '',
+    text     : 'Now that you are under contract and you have a closing date set, it’s time to start planning your move. It is common for your closing date to be extended so keep that in mind when you schedule your movers, utilities, etc. Give yourself some wiggle room and be in constant communication with your lender.',
     image    : movingDay,
     link     : 'movingDay',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <PreparingForMovingDay { ...props } />,
   }, {
     title    : 'Sellers Disclosure',
-    text     : '',
+    text     : 'A seller\'s disclosure brings transparency to a real estate transaction and can protect both buyers and sellers. In the disclosure, a seller provides written information about known issues that could hurt the property\'s value, such as termite damage, improper drainage or a leaky roof, as well as details like homeowner’s association fees and restrictions.',
     image    : disclosure,
     link     : 'disclosure',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <Disclosure { ...props } />,
   }, {
     title    : 'The Home Buying Process',
-    text     : '',
+    text     : 'Once you have your credit in shape, budget under control, it’s time to start the really fun part- finding your ideal home and moving in. Each stage of the process has many moving parts so below is a helpful overview of the keys steps you’ll need to take.',
     image    : buyingProcess,
     link     : 'buyingProcess',
-    component: (props) => <BuyingYourFirstHome { ...props } />,
+    component: (props) => <HomeBuyingProcess { ...props } />,
   },
 ]

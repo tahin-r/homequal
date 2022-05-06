@@ -3,7 +3,7 @@ import styled                                      from 'styled-components'
 import { HomeQualTextTemplate }                    from '../../../../shared/strings/strings'
 import { CenteredTypography }                      from '../../../../shared/styles'
 import { NewHomeItem }                             from './NewHomeComponents/NewHomeItem'
-import { RefAttributes, useEffect, useRef }        from 'react'
+import { useEffect, useRef }                       from 'react'
 import { Bradley, Earl, Eric, Jay, Jerry, Joshua } from '../../../../assets/images/faces'
 
 const ContentTypography = styled(CenteredTypography)`
@@ -97,7 +97,7 @@ export const NewHomeOwnersLove = () => {
         </ContentTypography>
       </Grid>
       <Grid container justifyContent="center">
-        <FeedbacksHolder scrollref={ scrollref }>
+        <FeedbacksHolder  scrollref={ scrollref }>
           { usersFeedback.map((item, i) => (
             <NewHomeItem key={ i }
                          imageUrl={ item.imageUrl }
@@ -106,9 +106,7 @@ export const NewHomeOwnersLove = () => {
                          text={ item.text }/>
           )) }
         </FeedbacksHolder>
-
       </Grid>
-
     </Grid>
   )
 }

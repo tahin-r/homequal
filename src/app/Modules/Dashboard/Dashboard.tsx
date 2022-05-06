@@ -11,10 +11,10 @@ import { ContactUs }         from './Sections/ContactUs'
 
 export const Dashboard: FC = () => {
   return (
-    <Grid overflow={ 'hidden' }>
+    <>
       <HelpingFirstTime/>
       <DetermineYouHome/>
-      <Grid container alignItems="center" width="100%">
+      <Grid container alignItems="center">
         <Grid item xs={ 12 } lg={ 4 } >
           <HowItWorks/>
         </Grid>
@@ -29,6 +29,6 @@ export const Dashboard: FC = () => {
       <NewHomeOwnersLove/>
       <ReadyToGetATry/>
       <ContactUs/>
-    </Grid>
+    </>
   )
 }

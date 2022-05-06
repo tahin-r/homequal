@@ -76,7 +76,7 @@ export const Header = () => {
 
   return (
     <AppBar position={ location.pathname.includes('Q&A') ? 'relative' : 'fixed' } sx={ {
-      zIndex:2,
+      zIndex    : 2,
       transition: 'background-color 1s linear',
       bgcolor   : location.pathname === '/' ? trigger ? 'white' : 'transparent' : 'white',
     } } elevation={ 0 }>
