@@ -5,12 +5,16 @@
 /.pnp
 .pnp.js
 
+# JetBrains Rider
+.idea/
+*.sln.iml
+.idea/workspace.xml
+
 # testing
 /coverage
 
 # production
 /build
-
 # misc
 .DS_Store
 .env.local
