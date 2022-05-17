@@ -77,7 +77,6 @@ export const CreateEndRefinanceQuestion: FC<IProps> = memo(({
                     size="large"
                     variant="contained"
                     color="primary"
-                    autoFocus
                 >
                     Call Me
                 </Button>
@@ -92,7 +91,6 @@ export const CreateEndRefinanceQuestion: FC<IProps> = memo(({
                     type="submit"
                     className={classes.textOrEmailButton}
                     size="large"
-                    autoFocus
                 >
                     Email Me
                 </Button>
@@ -103,7 +101,6 @@ export const CreateEndRefinanceQuestion: FC<IProps> = memo(({
                     type="submit"
                     className={classes.textOrEmailButton}
                     size="large"
-                    autoFocus
                 >
                     Text Me
                 </Button>
