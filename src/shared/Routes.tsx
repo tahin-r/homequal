@@ -8,6 +8,8 @@ import { AboutUs }             from '../app/Modules/SmallSections/AboutUs/AboutU
 import { FAQ }                 from '../app/Modules/SmallSections/FAQ/FAQ'
 import { NotFound }            from '../app/Modules/NotFound/NotFound'
 import { Resources }           from '../app/Modules/Resources/Resources'
+import { questionsList, refinanceQuestionsList } from '../app/Modules/QuestionsAndAnswers/questions'
+import { QuestionsSchema, refinanceQuestionsSchema }     from '../app/Modules/QuestionsAndAnswers/validation'
 
 //
 // link: '/FAQs'
@@ -36,7 +38,11 @@ const mainRoutes = [
   },
   {
     path   : 'Q&A/*',
-    element: <QuestionsAndAnswers/>,
+    element: <QuestionsAndAnswers QuestionsSchema={ QuestionsSchema } questionsList={ questionsList }/>,
+  },
+  {
+    path   : 'refinance/*',
+    element: <QuestionsAndAnswers QuestionsSchema={ refinanceQuestionsSchema } questionsList={ refinanceQuestionsList }/>,
   },
   {
     path   : '/partner_with_us',

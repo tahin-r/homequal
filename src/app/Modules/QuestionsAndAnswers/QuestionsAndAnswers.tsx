@@ -1,10 +1,9 @@
 import { Grid }                           from '@mui/material'
 import { memo, useCallback, useState }    from 'react'
-import { QuestionKeyType, questionsList } from './questions'
+import { QuestionKeyType } from './questions'
 import { useFormik }                      from 'formik'
 import * as yup                           from 'yup'
 import { Route, Routes, useNavigate }     from 'react-router-dom'
-import { QuestionsSchema }                from './validation'
 import { SetCurrentQuestionHandler }      from './MainRoutes'
 import { GenerateQuestion }               from './GenerateQuestion'
 
@@ -12,8 +11,13 @@ interface IFormState {
   [key: string]: string | string[]
 }
 
-export const QuestionsAndAnswers = memo(() => {
+interface QuestionsAndAnswersProps {
+  questionsList: any,
+  QuestionsSchema: any
+}
 
+export const QuestionsAndAnswers = memo((props: QuestionsAndAnswersProps) => {
+  const { questionsList, QuestionsSchema } = props
   const initialState: IFormState = {
     first_name                     : '',
     last_name                      : '',
@@ -21,6 +25,11 @@ export const QuestionsAndAnswers = memo(() => {
     cell_phone                     : '',
     communication_preference_id    : '',
     co_borrower_flag               : '',
+    credit_score                   : '',
+    address                        : '',
+    city                           : '',
+    state                          : '',
+    zip_code                       : '',
     marital_status                 : '',
     co_first_name                  : '',
     co_last_name                   : '',
@@ -32,6 +41,9 @@ export const QuestionsAndAnswers = memo(() => {
     home_savings                   : '',
     home_savings_details           : [],
     monthly_income                 : '',
+    property_value                 : '',
+    currently_owe                  : '',
+    interest_rate                  : '',
     co_monthly_income              : '',
     auto_expense                   : '',
     credit_card_expense            : '',
@@ -81,7 +93,7 @@ export const QuestionsAndAnswers = memo(() => {
   }, [])
 
 
-  const questionRoutes = Object.values(questionsList).map((CurrentQuestion, index) =>
+  const questionRoutes = Object.values(questionsList).map((CurrentQuestion: typeof questionsList.index, index) =>
     <Route path={ `/${ Object.keys(questionsList)[index] }` }
            element={ GenerateQuestion({ CurrentQuestion, formik, SetCurrentQuestionHandler, setSchema, navigate }) }
            key={ index }/>)

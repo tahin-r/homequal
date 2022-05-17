@@ -152,3 +152,42 @@ export const QuestionsSchema: any  = {
     live_state_1: yup.string().required('One city is required!'),
   }),
 }
+
+export const refinanceQuestionsSchema: any  = {
+  Q1: yup.object({
+    first_name: yup.string().required('First name is required'),
+
+    last_name: yup.string().required('Last name is required'),
+
+    cell_phone: yup
+        .string()
+        .typeError('you must specify a number')
+        .matches(
+            /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/,
+            'Wrong cell number',
+        )
+        .required('Cell number is required'),
+
+    email_address: yup
+        .string()
+        .email('Enter a valid email')
+        .required('Email is required'),
+  }),
+  Q3: yup.object({
+    property_value: yup.number().required('Property Value is required'),
+
+    currently_owe: yup.string().required('Currently Owe is required')
+  }),
+  Q4: yup.object({
+    interest_rate: yup.number().required('Interest rate is required')
+  }),
+  Q6: yup.object({
+    address: yup.string().required('Address is required'),
+
+    city: yup.string().required('City rate Value is required'),
+
+    state: yup.string().required('State rate is required'),
+
+    zip_code: yup.string().required('Zip code is required')
+  })
+}

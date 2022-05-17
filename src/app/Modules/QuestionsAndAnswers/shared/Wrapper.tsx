@@ -7,9 +7,9 @@ import { FormikProps }              from 'formik'
 
 
 const ColoredButton = styled(({ ...props }) => <Button { ...props } variant="outlined"
-                                                       color="primary"
-                                                       type="button"
-                                                       disableRipple={ true }/>)`
+ color="primary"
+ type="button"
+ disableRipple={ true }/>)`
   display          : block;
   width            : 80vw;
   min-width        : 200px;

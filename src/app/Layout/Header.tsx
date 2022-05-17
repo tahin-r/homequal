@@ -1,10 +1,17 @@
-import MenuIcon                                                                               from '@mui/icons-material/Menu'
-import { AppBar, IconButton, List, ListItem, Popover, Toolbar, Typography, useScrollTrigger } from '@mui/material'
-import { SyntheticEvent, useState }                                                           from 'react'
-import { useLocation, useNavigate }                                                           from 'react-router-dom'
-import styled                                                                                 from 'styled-components'
-import hqlighticon
-                                                                                              from '../../assets/images/HomeQualIcon/hqlogolight.png'
+import MenuIcon from '@mui/icons-material/Menu'
+import { AppBar,
+  IconButton,
+  List,
+  ListItem,
+  Popover,
+  Toolbar,
+  Typography,
+  useScrollTrigger
+} from '@mui/material'
+import { SyntheticEvent, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
+import hqlighticon from '../../assets/images/HomeQualIcon/hqlogolight.png'
 
 const MenuItems = styled(Typography)`
   font-size   : 15px;
@@ -36,7 +43,7 @@ const menuItems = [
   },
   {
     text: 'Refinance',
-    link: 'refinance',
+    link: 'refinance/Q1',
   },
   {
     text: 'Speak with an Advisor',
@@ -75,7 +82,7 @@ export const Header = () => {
   const open = Boolean(anchorEl)
 
   return (
-    <AppBar position={ location.pathname.includes('Q&A') ? 'relative' : 'fixed' } sx={ {
+    <AppBar position={ location.pathname.includes('Q&A') || location.pathname.includes('refinance') ? 'relative' : 'fixed' } sx={ {
       zIndex    : 2,
       transition: 'background-color 1s linear',
       bgcolor   : location.pathname === '/' ? trigger ? 'white' : 'transparent' : 'white',

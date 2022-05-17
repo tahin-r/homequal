@@ -1,7 +1,11 @@
 import { CreateTextFieldQuestion }        from './shared/constructors/aloneRoute/CreateTextFieldQuestion'
 import { CreateRadioQuestion }            from './shared/constructors/aloneRoute/CreateRadioQuestion'
+import { CreateDoubleQuestionsWithTextField } from './shared/constructors/aloneRoute/CreateDoubleQuestionsWithTextField'
+import { CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox }
+  from './shared/constructors/aloneRoute/CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox'
 import { CreateVeteranQuestion }          from './shared/constructors/coRoute/CreateVeteranQuestion'
 import { CreateEndQuestion }              from './shared/constructors/aloneRoute/CreateEndQuestion'
+import { CreateEndRefinanceQuestion }              from './shared/constructors/aloneRoute/CreateEndRefinanceQuestion'
 import { CreateCOTextFieldQuestion }      from './shared/constructors/coRoute/CreateCOTextFieldQuestion'
 import { CreateRadioTextQuestion }        from './shared/constructors/coRoute/CreateRadioTextQuestion'
 import { CreateCheckBoxQuestion }         from './shared/constructors/aloneRoute/CreateCheckBoxQuestion'
@@ -66,6 +70,18 @@ export interface ICreateVeteranQuestion extends ICreateDoubledCheck_Radio_BoxQue
   co_question: (state: FormikValues) => string
 }
 
+export interface ICreateDoubleQuestionsWithTextField extends basicTypes {
+  question1: (state: FormikValues) => string
+  firstInputs: { value: string, text: string }[]
+  secondInputs: { value: string, text: string }[]
+}
+
+export interface ICreateDoubleQuestionsWithTextFieldAndRadio_CheckBox extends basicTypes {
+  secondQuestion: (state: FormikValues) => string
+  inputs: { value: string, text: string }[]
+  answers: { value: string, text: string }[]
+  formName: string
+}
 
 const Q1: ICreateTextFieldQuestion = {
   question          : () => 'Hi, who do I have the pleasure of speaking with?',
@@ -1110,6 +1126,197 @@ export const questionsList = {
   Q20C: Q20C,
   Q21C: Q21C,
   Q23 : Q23,
+}
+
+const Q1R: ICreateTextFieldQuestion = {
+  question          : () => 'Hi, who do I have the pleasure of speaking with?',
+  description       :
+      'We ask for you contact information to create your secure refinance portal',
+  elementConstructor: CreateTextFieldQuestion,
+  current           : 'Q1',
+  next              : 'Q2',
+  inputs            : [
+    {
+      value: 'first_name',
+      text : 'First Name',
+    },
+    {
+      value: 'last_name',
+      text : 'Last Name',
+    },
+    {
+      value: 'email_address',
+      text : 'Email',
+    },
+    {
+      value: 'cell_phone',
+      text : 'Mobile',
+    },
+  ],
+}
+
+
+const Q2R: ICreateRadio_CheckBox_Question = {
+  question          : (state) =>
+      `Nice to meet you ${ state.first_name }. Let's get started! Who will be on thr loan application with you?`,
+  description       :
+      `This isn't who will be living in your new home, but who will be on the mortgage with you` ,
+  elementConstructor: CreateRadioQuestion,
+  current           : 'Q2',
+  next              : 'Q3',
+  formName          : 'co_borrower_flag',
+  answers           : [
+    {
+      value: '0',
+      text : 'Just Me',
+    },
+    {
+      value: '1',
+      text : 'My Spouse',
+    },
+    {
+      value: '2',
+      text : 'Someone Else',
+    },
+  ],
+}
+
+const Q3R: ICreateDoubleQuestionsWithTextField = {
+  question: () => 'What the current value of your property?',
+  question1: () => 'What do you currently owe the property?',
+  description: '',
+  elementConstructor: CreateDoubleQuestionsWithTextField,
+  current: 'Q3',
+  next: 'Q4',
+  firstInputs: [
+    {
+      value: 'property_value',
+      text: 'Property Value',
+    }
+  ],
+  secondInputs: [
+    {
+      value: 'currently_owe',
+      text: 'Currently Owe',
+    }
+  ],
+}
+
+const Q4R: ICreateDoubleQuestionsWithTextFieldAndRadio_CheckBox = {
+  question: () => 'What is your interest rate?',
+  secondQuestion: () => 'What type of loan do you have?',
+  description: '',
+  elementConstructor: CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox,
+  current: 'Q4',
+  next: 'Q5',
+  formName: 'type_of_loan',
+  inputs: [
+    {
+      value: 'interest_rate',
+      text: 'Interest rate',
+    }
+  ],
+  answers: [
+    {
+      value: '1',
+      text: 'Conventional',
+    },
+    {
+      value: '2',
+      text: 'FHA',
+    },
+    {
+      value: '3',
+      text: 'VA',
+    },
+    {
+      value: '4',
+      text: 'USDA',
+    }
+  ]
+}
+
+const Q5R: ICreateRadio_CheckBox_Question = {
+  question          : (state) =>
+      `Lenders will want to know your credit score. What is yours?`,
+  description       :
+      `If you are unsure, give us your best guess and we'll figure it out later.
+      Don't worry if your score isn't where want it, we have strategies to help you improve your fast.`
+      ,
+  elementConstructor: CreateRadioQuestion,
+  current           : 'Q5',
+  next              : 'Q6',
+  formName          : 'credit_score',
+  answers           : [
+    {
+      value: '1',
+      text : 'Less than 500',
+    },
+    {
+      value: '2',
+      text : '500 - 580',
+    },
+    {
+      value: '3',
+      text : '580 - 620',
+    },
+    {
+      value: '4',
+      text : '620 - 680',
+    },
+    {
+      value: '5',
+      text : '680 - 720',
+    },
+    {
+      value: '6',
+      text : 'Above 720',
+    }
+  ]
+}
+
+const Q6R: ICreateTextFieldQuestion = {
+  question          : () => 'What is the address of your property?',
+  description       : '',
+  elementConstructor: CreateTextFieldQuestion,
+  current           : 'Q6',
+  next              : 'Q7',
+  inputs            : [
+    {
+      value: 'address',
+      text : 'Address',
+    },
+    {
+      value: 'city',
+      text : 'City',
+    },
+    {
+      value: 'state',
+      text : 'State',
+    },
+    {
+      value: 'zip_code',
+      text : 'Zip code',
+    },
+  ],
+}
+
+const Q7R: basicTypes = {
+  question          : () => '',
+  description       : '',
+  elementConstructor: CreateEndRefinanceQuestion,
+  current           : 'Q23',
+  next              : 'Q7',
+}
+
+export const refinanceQuestionsList = {
+  Q1  : Q1R,
+  Q2  : Q2R,
+  Q3  : Q3R,
+  Q4  : Q4R,
+  Q5  : Q5R,
+  Q6  : Q6R,
+  Q7  : Q7R
 }
 
 export type QuestionKeyType = keyof typeof questionsList;
