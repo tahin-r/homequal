@@ -1,7 +1,10 @@
 import React, { FC, memo, useState }          from 'react'
 import { basicData }                          from '../shared'
 import { Wrapper }                            from '../../Wrapper'
-import { CenteredTypography }                 from '../../../../../../shared/styles'
+import {
+    CenteredTypography,
+    TextContainerWithSmallPadding
+} from '../../../../../../shared/styles'
 import { Button } from '@mui/material'
 import { basicTypes }                         from '../../../questions'
 import makeStyles from '@material-ui/core/styles/makeStyles'
@@ -13,7 +16,10 @@ interface IProps extends basicTypes, basicData {
 
 const useStyles = makeStyles({
     callButton: {
-        minWidth: '70%'
+        minWidth: '70%',
+        marginBottom: '-25px',
+        fontSize: '14px',
+        fontWeight: '600'
     },
     textOrEmailButton: {
         minWidth: '70%',
@@ -78,6 +84,10 @@ export const CreateEndRefinanceQuestion: FC<IProps> = memo(({
                     Call Me
                 </Button>
             </CenteredTypography>
+
+            <TextContainerWithSmallPadding variant="h6">
+                Expect call from 214-692-5300
+            </TextContainerWithSmallPadding>
 
             <CenteredTypography variant="h5">
                 <Button
