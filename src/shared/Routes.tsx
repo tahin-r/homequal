@@ -8,7 +8,10 @@ import { AboutUs }             from '../app/Modules/SmallSections/AboutUs/AboutU
 import { FAQ }                 from '../app/Modules/SmallSections/FAQ/FAQ'
 import { NotFound }            from '../app/Modules/NotFound/NotFound'
 import { Resources }           from '../app/Modules/Resources/Resources'
-import { questionsList, refinanceQuestionsList } from '../app/Modules/QuestionsAndAnswers/questions'
+import {
+  questionsList,
+  refinanceQuestionsList
+} from '../app/Modules/QuestionsAndAnswers/questions'
 import { QuestionsSchema, refinanceQuestionsSchema }     from '../app/Modules/QuestionsAndAnswers/validation'
 
 //

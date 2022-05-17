@@ -25,6 +25,7 @@ export const QuestionsAndAnswers = memo((props: QuestionsAndAnswersProps) => {
     cell_phone                     : '',
     communication_preference_id    : '',
     co_borrower_flag               : '',
+    co_borrower_flag_r               : '',
     credit_score                   : '',
     address                        : '',
     city                           : '',

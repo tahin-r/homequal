@@ -1164,7 +1164,7 @@ const Q2R: ICreateRadio_CheckBox_Question = {
   elementConstructor: CreateRadioQuestion,
   current           : 'Q2',
   next              : 'Q3',
-  formName          : 'co_borrower_flag',
+  formName          : 'co_borrower_flag_r',
   answers           : [
     {
       value: '0',
