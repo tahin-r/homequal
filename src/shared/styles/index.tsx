@@ -37,6 +37,8 @@ export const TextContainerWithSmallPadding = styled(({ ...props }) => <Grid { ..
   background-color : ${ (props) => (props.backgroundColor ? props.theme.colors[props.backgroundColor] : 'white') };
   text-align       : center;
   width            : auto;
+  font-size        : 14px;
+  font-weight       : 600;
 `
 export const GreyTextContainer = styled(TextContainer)`
   padding          : 30px;

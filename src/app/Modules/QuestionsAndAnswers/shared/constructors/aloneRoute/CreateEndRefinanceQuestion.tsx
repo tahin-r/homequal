@@ -17,9 +17,7 @@ interface IProps extends basicTypes, basicData {
 const useStyles = makeStyles({
     callButton: {
         minWidth: '70%',
-        marginBottom: '-25px',
-        fontSize: '14px',
-        fontWeight: '600'
+        marginBottom: '-25px'
     },
     textOrEmailButton: {
         minWidth: '70%',
@@ -85,7 +83,7 @@ export const CreateEndRefinanceQuestion: FC<IProps> = memo(({
                 </Button>
             </CenteredTypography>
 
-            <TextContainerWithSmallPadding variant="h6">
+            <TextContainerWithSmallPadding>
                 Expect call from 214-692-5300
             </TextContainerWithSmallPadding>
 
