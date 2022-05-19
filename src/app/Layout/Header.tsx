@@ -82,7 +82,14 @@ export const Header = () => {
   const open = Boolean(anchorEl)
 
   return (
-    <AppBar position={ location.pathname.includes('Q&A') || location.pathname.includes('refinance') ? 'relative' : 'fixed' } sx={ {
+    <AppBar position={
+      location.pathname.includes('Q&A')
+      || location.pathname.includes('refinance')
+      || location.pathname.includes('buy_a_home') 
+      || location.pathname.includes('find_a_lender')
+      || location.pathname.includes('find_agent')
+      ? 'relative' : 'fixed'
+    } sx={ {
       zIndex    : 2,
       transition: 'background-color 1s linear',
       bgcolor   : location.pathname === '/' ? trigger ? 'white' : 'transparent' : 'white',
