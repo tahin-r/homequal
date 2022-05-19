@@ -31,15 +31,15 @@ const HqLogo = styled.div`
 const menuItems = [
   {
     text: 'Buy a Home',
-    link: 'buy_a_home',
+    link: 'buy_a_home/Q1',
   },
   {
     text: 'Find a Lender',
-    link: 'find_a_lender',
+    link: 'find_a_lender/Q1',
   },
   {
     text: 'Find a Real Estate Agent',
-    link: 'find_agent',
+    link: 'find_agent/Q1',
   },
   {
     text: 'Refinance',

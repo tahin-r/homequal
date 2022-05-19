@@ -1155,7 +1155,6 @@ const Q1R: ICreateTextFieldQuestion = {
   ],
 }
 
-
 const Q2R: ICreateRadio_CheckBox_Question = {
   question          : (state) =>
       `Nice to meet you ${ state.first_name }. Let's get started! Who will be on thr loan application with you?`,
@@ -1317,6 +1316,46 @@ export const refinanceQuestionsList = {
   Q5  : Q5R,
   Q6  : Q6R,
   Q7  : Q7R
+}
+
+const Q1O: ICreateTextFieldQuestion = {
+  question          : () => 'Hi, who do I have the pleasure of speaking with?',
+  description       :
+      'We ask for you contact information to create your secure refinance portal',
+  elementConstructor: CreateTextFieldQuestion,
+  current           : 'Q1',
+  next              : 'Q2',
+  inputs            : [
+    {
+      value: 'first_name',
+      text : 'First Name',
+    },
+    {
+      value: 'last_name',
+      text : 'Last Name',
+    },
+    {
+      value: 'email_address',
+      text : 'Email',
+    },
+    {
+      value: 'cell_phone',
+      text : 'Mobile',
+    },
+  ],
+}
+
+const Q2O: basicTypes = {
+  question          : () => '',
+  description       : '',
+  elementConstructor: CreateEndRefinanceQuestion,
+  current           : 'Q23',
+  next              : 'Q2',
+}
+
+export const otherSectionsQuestionsList = {
+  Q1  : Q1O,
+  Q2  : Q2O,
 }
 
 export type QuestionKeyType = keyof typeof questionsList;

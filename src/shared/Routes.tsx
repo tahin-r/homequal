@@ -10,7 +10,8 @@ import { NotFound }            from '../app/Modules/NotFound/NotFound'
 import { Resources }           from '../app/Modules/Resources/Resources'
 import {
   questionsList,
-  refinanceQuestionsList
+  refinanceQuestionsList,
+  otherSectionsQuestionsList
 } from '../app/Modules/QuestionsAndAnswers/questions'
 import { QuestionsSchema, refinanceQuestionsSchema }     from '../app/Modules/QuestionsAndAnswers/validation'
 
@@ -38,6 +39,18 @@ const mainRoutes = [
   {
     path   : '/',
     element: <Dashboard/>,
+  },
+  {
+    path   : 'buy_a_home/*',
+    element: <QuestionsAndAnswers QuestionsSchema={ QuestionsSchema } questionsList={ otherSectionsQuestionsList }/>,
+  },
+  {
+    path   : 'find_a_lender/*',
+    element: <QuestionsAndAnswers QuestionsSchema={ QuestionsSchema } questionsList={ otherSectionsQuestionsList }/>,
+  },
+  {
+    path   : 'find_agent/*',
+    element: <QuestionsAndAnswers QuestionsSchema={ QuestionsSchema } questionsList={ otherSectionsQuestionsList }/>,
   },
   {
     path   : 'Q&A/*',
