@@ -89,10 +89,10 @@ export const QuestionsAndAnswers = memo((props: QuestionsAndAnswersProps) => {
       setCurrentSchema(QuestionsSchema[questionKey] ? QuestionsSchema[questionKey] : yup.object({}))
     }
   }
+
   const HandleSubmit = useCallback((values: IFormState) => {
     setCurrentState(values)
   }, [])
-
 
   const questionRoutes = Object.values(questionsList).map((CurrentQuestion: typeof questionsList.index, index) =>
     <Route path={ `/${ Object.keys(questionsList)[index] }` }

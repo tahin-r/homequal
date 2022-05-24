@@ -8,6 +8,8 @@ import { AboutUs }             from '../app/Modules/SmallSections/AboutUs/AboutU
 import { FAQ }                 from '../app/Modules/SmallSections/FAQ/FAQ'
 import { NotFound }            from '../app/Modules/NotFound/NotFound'
 import { Resources }           from '../app/Modules/Resources/Resources'
+import { PrivacyPolicy }       from '../app/Modules/PrivacyPolicy/PrivacyPolicy'
+import { TermsOfUse }       from '../app/Modules/TermsOfUse/TermsOfUse'
 import {
   questionsList,
   refinanceQuestionsList,
@@ -79,6 +81,14 @@ const mainRoutes = [
   {
     path   : '/FAQs',
     element: <FAQ/>,
+  },
+  {
+    path   : '/privacy_policy',
+    element: <PrivacyPolicy/>,
+  },
+  {
+    path   : '/terms_of_Use',
+    element: <TermsOfUse/>,
   },
   {
     path   : '/*',

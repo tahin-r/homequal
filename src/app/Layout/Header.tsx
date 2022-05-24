@@ -85,7 +85,7 @@ export const Header = () => {
     <AppBar position={
       location.pathname.includes('Q&A')
       || location.pathname.includes('refinance')
-      || location.pathname.includes('buy_a_home') 
+      || location.pathname.includes('buy_a_home')
       || location.pathname.includes('find_a_lender')
       || location.pathname.includes('find_agent')
       ? 'relative' : 'fixed'
