@@ -13,7 +13,7 @@ export const ContactUs = () => {
   return (
     <ContentWrapper>
       <Grid py={ 3 } container justifyContent="center">
-        <Img src={ HQlogo } width={ '300px' }/>
+        <Img src={ HQlogo } width={ '200px' }/>
       </Grid>
 
       <ItalicTypography>

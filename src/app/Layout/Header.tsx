@@ -19,7 +19,7 @@ const MenuItems = styled(Typography)`
 `
 const HqLogo = styled.div`
   background      : url(${ hqlighticon }) left center no-repeat;
-  width           : 260px;
+  width           : 175px;
   height          : 60px;
   background-size : contain;
   cursor          : pointer;

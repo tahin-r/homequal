@@ -3,6 +3,7 @@ import React, { CSSProperties, FC, memo, SyntheticEvent, useEffect, useState } f
 import { FormikValues }                                                        from 'formik/dist/types'
 import { FormikProps }                                         from 'formik'
 import { IWrapper }                                            from '../Wrapper'
+import makeStyles from '@material-ui/core/styles/makeStyles'
 
 export interface basicData {
   formik: FormikProps<any>
@@ -17,17 +18,32 @@ interface IInputField {
   labelText?: string
 }
 
+
+
 export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyles, labelText }) => {
+  const styles = makeStyles(theme => ({
+    notchedOutline: {
+      borderColor: '#ccc !important'
+    }
+  }))
+
+  const classes = styles()
 
   return (
     <TextField autoFocus={ index === 0 }
+               variant="outlined"
                onChange={ formik.handleChange }
-               variant="standard"
                color="primary"
                onBlur={ formik.handleBlur }
                value={ formik.values[item.value] }
                name={ item.value }
-               InputProps={ { style: { fontSize: '1.4rem', fontWeight: 'bold' } } }
+               autoComplete='no'
+               InputProps={ {
+                 style: { fontSize: '1.4rem', fontWeight: 'bold' },
+                 classes: {
+                   notchedOutline: classes.notchedOutline,
+                 },
+               } }
                InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': { marginTop: '-10px', zIndex: 1 } } } }
                sx={ {
                  minWidth: '100px', maxWidth: '400px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles,
@@ -41,7 +57,8 @@ export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyl
                label={
                  <Typography variant="h6" color="black" sx={ { fontStyle: 'italic', fontWeight: 'regular' } }>
                    { labelText ? labelText : item.text }
-                 </Typography> }/>
+                 </Typography> }
+    />
   )
 })
 
