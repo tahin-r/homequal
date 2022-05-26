@@ -46,7 +46,7 @@ export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyl
                } }
                InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': { marginTop: '-10px', zIndex: 1 } } } }
                sx={ {
-                 minWidth: '100px', maxWidth: '400px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles,
+                 minWidth: '100px', maxWidth: '600px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles,
                } }
                error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
                helperText={ formik.touched[item.value] &&
@@ -55,7 +55,7 @@ export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyl
                                sx={ { fontSize: '1rem' } }>{ formik.errors[item.value] }
                    </Typography> }
                label={
-                 <Typography variant="h6" color="black" sx={ { fontStyle: 'italic', fontWeight: 'regular' } }>
+                 <Typography variant="h6" color="#ccc" sx={ { fontSize: '15px !important', fontStyle: 'italic', fontWeight: 'regular' } }>
                    { labelText ? labelText : item.text }
                  </Typography> }
     />

@@ -99,8 +99,9 @@ export const QuestionsAndAnswers = memo((props: QuestionsAndAnswersProps) => {
            element={ GenerateQuestion({ CurrentQuestion, formik, SetCurrentQuestionHandler, setSchema, navigate }) }
            key={ index }/>)
 
+
   return (
-    <Grid overflow="hidden" sx={ { maxWidth: '100vw', height: 'auto' } }>
+    <Grid overflow="hidden" sx={ { height: 'auto', maxWidth: '1280px', margin: '0 auto' } }>
       <Routes>
         { questionRoutes }
       </Routes>
