@@ -30,8 +30,8 @@ export const TermsOfUse: FC<ITermsOfUse> = () => {
     return (
         <>
             <HeaderDivider/>
+            <ImageHolder image={ termsOfUse }/>
             <Container fixed>
-                <ImageHolder image={ termsOfUse }/>
                 <Typography variant="h4" color={ 'primary' } textAlign={ 'center' } my={ 2 }>
                     TERMS AND CONDITIONS
                 </Typography>

@@ -5,6 +5,8 @@ import { CenteredTypography }                      from '../../../../shared/styl
 import { NewHomeItem }                             from './NewHomeComponents/NewHomeItem'
 import { useEffect, useRef }                       from 'react'
 import { Bradley, Earl, Eric, Jay, Jerry, Joshua } from '../../../../assets/images/faces'
+import 'react-alice-carousel/lib/alice-carousel.css'
+import AliceCarousel from 'react-alice-carousel'
 
 const ContentTypography = styled(CenteredTypography)`
   padding : 4vw 10vw;
@@ -88,6 +90,33 @@ export const NewHomeOwnersLove = () => {
     }
   }, [])
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+  const items: any = []
+  usersFeedback.map((item, i) => (
+      items.push(
+        <NewHomeItem key={ i }
+                     imageUrl={ item.imageUrl }
+                     name={ item.name }
+                     nickName={ item.nickName }
+                     text={ item.text }/>
+      )
+  ))
+
+  const responsive = {
+    1024: {
+      items: 3
+    },
+    767: {
+      items: 1
+    }
+  }
+
   return (
     <Grid container justifyContent="center" direction="column" overflow="hidden" alignItems="center">
       <Grid item xs={ 12 }>
@@ -97,15 +126,14 @@ export const NewHomeOwnersLove = () => {
         </ContentTypography>
       </Grid>
       <Grid container justifyContent="center">
-        <FeedbacksHolder  scrollref={ scrollref }>
-          { usersFeedback.map((item, i) => (
-            <NewHomeItem key={ i }
-                         imageUrl={ item.imageUrl }
-                         name={ item.name }
-                         nickName={ item.nickName }
-                         text={ item.text }/>
-          )) }
-        </FeedbacksHolder>
+          <AliceCarousel
+              mouseTracking
+              items={items}
+              controlsStrategy="alternate"
+              autoPlay={true}
+              autoPlayInterval={5000}
+              responsive={responsive}
+          />
       </Grid>
     </Grid>
   )

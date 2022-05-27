@@ -30,8 +30,8 @@ export const PrivacyPolicy: FC<IPrivacyPolicy> = () => {
     return (
         <>
             <HeaderDivider/>
+            <ImageHolder image={ privacyPolicy }/>
             <Container fixed>
-                <ImageHolder image={ privacyPolicy }/>
                 <Typography variant="h4" color={ 'primary' } textAlign={ 'center' } my={ 2 }>
                     Privacy Policy
                 </Typography>
