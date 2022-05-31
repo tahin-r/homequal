@@ -55,6 +55,10 @@ const mainRoutes = [
     element: <QuestionsAndAnswers QuestionsSchema={ QuestionsSchema } questionsList={ otherSectionsQuestionsList }/>,
   },
   {
+    path   : 'speak_advisor/*',
+    element: <QuestionsAndAnswers QuestionsSchema={ QuestionsSchema } questionsList={ otherSectionsQuestionsList }/>,
+  },
+  {
     path   : 'Q&A/*',
     element: <QuestionsAndAnswers QuestionsSchema={ QuestionsSchema } questionsList={ questionsList }/>,
   },
