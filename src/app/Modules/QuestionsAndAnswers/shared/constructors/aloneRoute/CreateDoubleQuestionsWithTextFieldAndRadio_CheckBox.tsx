@@ -3,6 +3,12 @@ import React, { FC, memo }          from 'react'
 import { Wrapper }                  from '../../Wrapper'
 import {Grid, Typography} from '@mui/material'
 import { ICreateDoubleQuestionsWithTextFieldAndRadio_CheckBox } from '../../../questions'
+import makeStyles from '@material-ui/core/styles/makeStyles'
+const useStyles = makeStyles({
+    radioButtonsBlock: {
+        width: '90%'
+    }
+})
 
 interface IProps extends ICreateDoubleQuestionsWithTextFieldAndRadio_CheckBox, basicData {
 }
@@ -15,6 +21,7 @@ export const CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox: FC<IProps> = m
     wrapperProps,
     formik,
 }) => {
+    const classes = useStyles()
 
     return (
         <>
@@ -29,7 +36,12 @@ export const CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox: FC<IProps> = m
                         { secondQuestion(formik.values) }
                     </Typography>
 
-                    <RadioField formik={ formik } formName={ formName } answers={ answers }/>
+                    <RadioField
+                        formik={ formik }
+                        formName={ formName }
+                        answers={ answers }
+                        className={classes.radioButtonsBlock}
+                    />
                 </Grid>
             </Wrapper>
         </>

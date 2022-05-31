@@ -7,7 +7,7 @@ export const SimpleTypography = styled(({ ...props }) => <Typography variant="h6
   margin      : 1rem 0;
   white-space : pre-wrap;
   text-indent : 1rem;
-  text-align  : justify;
+  text-align  : left;
 `
 export const TitleText = styled(({ ...props }) => <Typography variant="h6"
                                                               fontWeight='bold' { ...props }/>)`

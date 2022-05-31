@@ -68,10 +68,11 @@ interface IRadioField {
   formName: string
   itemText?: string
   answers: { text: string, value: string }[]
-  nomarginLeft?: boolean
+  nomarginLeft?: boolean,
+  className?: string
 }
 
-export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLeft, answers }) => {
+export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLeft, answers, className }) => {
   const [value, setValue] = useState<string>(answers[0].value)
   const handleCurrentAnswer = (event: SyntheticEvent, checked: boolean, item: string) => {
     setValue(item)
@@ -83,7 +84,7 @@ export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLef
   }, [formName])
 
   return (
-    <Grid container direction="column" sx={ { marginLeft: nomarginLeft ? '0' : '10vw' } }>
+    <Grid className={className} container direction="column" sx={ { marginLeft: nomarginLeft ? '0' : '10vw' } }>
       { answers.map((item, index) => (
         <Grid container key={ index } sx={ { margin: '5px 0' } }>
           <Radio checked={ value === item.value }

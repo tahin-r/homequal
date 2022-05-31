@@ -3,6 +3,7 @@ import styled                                               from 'styled-compone
 import { CenteredTypography, ItalicTypography, QualButton } from '../../../../shared/styles'
 import doneArrow                                            from '../../../../assets/images/doneArrow.svg'
 import React                                                from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ListIcon = styled.div`
   border-radius   : 50%;
@@ -25,6 +26,7 @@ const advantages = [
 
 
 export const ReadyToGetATry = () => {
+  const navigate = useNavigate()
 
   return (
     <Grid sx={ { padding: '40px' } }>
@@ -50,7 +52,7 @@ export const ReadyToGetATry = () => {
       </Grid>
 
       <Grid container justifyContent="center" my={ 2 }>
-        <QualButton sx={ { borderRadius: '30px' } } onClick={ () => console.log('clicked') }>
+        <QualButton sx={ { borderRadius: '30px' } } onClick={ () => navigate('Q&A/Q1') }>
           <Typography variant="h5">Give it a Try!</Typography>
         </QualButton>
       </Grid>

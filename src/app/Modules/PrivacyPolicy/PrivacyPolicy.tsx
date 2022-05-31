@@ -11,6 +11,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import { HeaderDivider } from "../../../shared/styles";
 import styled from "styled-components";
 import { privacyPolicy } from './images'
+import { Copyrights } from '../../../shared/strings/strings'
 
 interface IPrivacyPolicy {
     image?: string
@@ -23,6 +24,10 @@ const ImageHolder = styled(({ ...props }) => <div { ...props }/>)`
   width           : 100%;
   background      : ${ (props) => `url(${ props.image }) center center no-repeat` };
   background-size : cover;
+  @media screen and (max-width : 500px) {
+    min-height: 130px;
+    background-size: contain;
+  }
 `
 
 export const PrivacyPolicy: FC<IPrivacyPolicy> = () => {
@@ -257,6 +262,7 @@ export const PrivacyPolicy: FC<IPrivacyPolicy> = () => {
                     form to get in touch with us. HomeQual may change, remove or add a Business in our discretion without notice to you.
                 </SimpleTypography>
 
+                <Copyrights/>
             </Container>
         </>
     )

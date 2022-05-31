@@ -6,9 +6,16 @@ import phoneImage           from '../../../../assets/images/phone.png'
 const Title = styled(Typography)`
   margin-bottom : 20px;
   text-align    : right;
+  @media screen and (max-width : 500px) {
+    max-width: 270px;
+  }
 `
 const TextContent = styled(Typography)`
   text-align : right;
+  @media screen and (max-width : 500px) {
+    line-height: 22px;
+    font-weight: 400;
+  }
 `
 const PhoneImage = styled.img.attrs({
   src: phoneImage,
@@ -21,24 +28,27 @@ const PhoneImage = styled.img.attrs({
   background-size : contain;
   box-sizing      : border-box;
   position        : relative;
-  @media screen and (max-width : 370px) {
+  @media screen and (max-width : 500px) {
     position  : absolute;
     left      : 50%;
     top       : 50%;
     transform : translate(-50%, -50%);
     z-index   : -1;
-    max-height:90%;
     width:auto;
     aspect-ratio    : 34/67;
+    max-height: 74%;
+    min-width: 70px;
+    left: 116%;
   }
 `
 const ContentHolder = styled.div`
   display         : flex;
   flex-wrap       : nowrap;
   justify-content : flex-end;
-  @media screen and (max-width : 370px) {
+  @media screen and (max-width : 500px) {
     display  : block;
     position : relative;
+    max-width: 265px;
   }
 `
 const ImageHolder = styled.div`
@@ -46,8 +56,8 @@ const ImageHolder = styled.div`
   width   : auto;
   height  : 100%;
   margin : auto 0;
-  @media screen and (max-width : 370px) {
-    padding : 0
+  @media screen and (max-width : 500px) {
+    padding : 0;
   }
 `
 

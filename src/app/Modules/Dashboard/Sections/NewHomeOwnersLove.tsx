@@ -109,12 +109,15 @@ export const NewHomeOwnersLove = () => {
   ))
 
   const responsive = {
+    0: {
+      items: 1
+    },
+    768: {
+      items: 2
+    },
     1024: {
       items: 3
     },
-    767: {
-      items: 1
-    }
   }
 
   return (
@@ -131,8 +134,10 @@ export const NewHomeOwnersLove = () => {
               items={items}
               controlsStrategy="alternate"
               autoPlay={true}
-              autoPlayInterval={5000}
+              autoPlayInterval={3000}
               responsive={responsive}
+              infinite={true}
+              disableButtonsControls={true}
           />
       </Grid>
     </Grid>

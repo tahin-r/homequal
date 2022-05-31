@@ -8,9 +8,10 @@ import {
     ListItemIcon
 } from '@material-ui/core'
 import CircleIcon from '@mui/icons-material/Circle';
-import { HeaderDivider } from "../../../shared/styles";
+import {ContentWrapper, HeaderDivider} from "../../../shared/styles";
 import styled from "styled-components";
 import { termsOfUse } from './images'
+import { Copyrights } from '../../../shared/strings/strings'
 
 interface ITermsOfUse {
     image?: string
@@ -23,6 +24,10 @@ const ImageHolder = styled(({ ...props }) => <div { ...props }/>)`
   width           : 100%;
   background      : ${ (props) => `url(${ props.image }) center center no-repeat` };
   background-size : cover;
+  @media screen and (max-width : 500px) {
+    min-height: 130px;
+    background-size: contain;
+  }
 `
 
 export const TermsOfUse: FC<ITermsOfUse> = () => {
@@ -464,6 +469,7 @@ export const TermsOfUse: FC<ITermsOfUse> = () => {
                     of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.
                 </SimpleTypography>
 
+                <Copyrights/>
             </Container>
         </>
     )
