@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Grid, Typography }                                      from '@mui/material'
 import { aboutUsMain, logoA, logoB, logoC, logoD, logoE, logoF } from '../../../../assets/images/aboutUs'
 import { GreyTextContainer, HeaderDivider, TextContainer }       from '../../../../shared/styles'
-import { Copyrights }                                            from '../../../../shared/strings/strings'
+import { ContactUs } from '../../Dashboard/Sections/ContactUs'
 
 const ContentImage = styled.div`
   position        : relative;
@@ -107,7 +107,7 @@ export const AboutUs = () => {
         </Typography>
       </TextContainer>
 
-      <Copyrights/>
+      <ContactUs/>
     </>
   )
 }

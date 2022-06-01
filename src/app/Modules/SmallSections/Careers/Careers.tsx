@@ -2,10 +2,12 @@ import React  from 'react'
 import styled from 'styled-components'
 
 import { Grid, Typography }                                from '@mui/material'
-import { Copyrights, HomeQualTextTemplate }                from '../../../../shared/strings/strings'
+import { HomeQualTextTemplate }                from '../../../../shared/strings/strings'
 import { GreyTextContainer, HeaderDivider, TextContainer } from '../../../../shared/styles'
 import { careers, careersLG, careersMD }                   from '../../../../assets/images/careers'
 import { SectionList }                                     from '../shared'
+
+import { ContactUs } from '../../Dashboard/Sections/ContactUs'
 
 const ContentImage = styled.div`
   position        : relative;
@@ -91,7 +93,7 @@ export const Careers = () => {
         </Typography>
       </TextContainer>
 
-      <Copyrights/>
+      <ContactUs/>
     </>
   )
 }

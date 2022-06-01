@@ -61,7 +61,7 @@ export const Wrapper: React.FC<IWrapper> = memo(({
 
   useEffect(() => {
     setSchema(current)
-  }, [current])
+  }, [current, setSchema])
 
   const handleClick = async () => {
     const errors = await formik.validateForm()

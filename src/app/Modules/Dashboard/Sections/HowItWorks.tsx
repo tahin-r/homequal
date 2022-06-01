@@ -45,10 +45,14 @@ const ContentHolder = styled.div`
   display         : flex;
   flex-wrap       : nowrap;
   justify-content : flex-end;
+  @media screen and (max-width : 1024px) {
+    justify-content : flex-start;
+  }
   @media screen and (max-width : 500px) {
     display  : block;
     position : relative;
     max-width: 265px;
+    justify-content : flex-end;
   }
 `
 const ImageHolder = styled.div`

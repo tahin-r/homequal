@@ -1,10 +1,11 @@
 import React                                               from 'react'
 import { Grid, Typography }                                from '@mui/material'
 import styled                                              from 'styled-components'
-import { Copyrights, HomeQualTextTemplate }                from '../../../../shared/strings/strings'
+import { HomeQualTextTemplate }                from '../../../../shared/strings/strings'
 import { GreyTextContainer, HeaderDivider, TextContainer } from '../../../../shared/styles'
 import { partnerwithus, partnerwithusLG, partnerwithusMD } from '../../../../assets/images/PartnerWithUs'
 import { SectionList }                                     from '../shared'
+import { ContactUs } from '../../Dashboard/Sections/ContactUs'
 
 const Content = styled.div`
   position        : relative;
@@ -75,7 +76,7 @@ export const PartnerWithUs = () => {
         </Typography>
       </LeftSidedText>
 
-      <Copyrights/>
+      <ContactUs/>
 
     </>
   )

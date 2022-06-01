@@ -7,11 +7,11 @@ import {
     ListItem,
     ListItemIcon
 } from '@material-ui/core'
-import CircleIcon from '@mui/icons-material/Circle';
-import {ContentWrapper, HeaderDivider} from "../../../shared/styles";
+import CircleIcon from '@mui/icons-material/Circle'
+import { HeaderDivider } from '../../../shared/styles'
 import styled from "styled-components";
 import { termsOfUse } from './images'
-import { Copyrights } from '../../../shared/strings/strings'
+import { ContactUs } from '../Dashboard/Sections/ContactUs'
 
 interface ITermsOfUse {
     image?: string
@@ -469,8 +469,8 @@ export const TermsOfUse: FC<ITermsOfUse> = () => {
                     of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.
                 </SimpleTypography>
 
-                <Copyrights/>
             </Container>
+            <ContactUs/>
         </>
     )
 }

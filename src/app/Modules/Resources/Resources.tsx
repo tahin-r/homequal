@@ -3,8 +3,8 @@ import { Route, Routes }      from 'react-router-dom'
 import { ResourcesDashboard } from './ResourcesDashboard'
 import { articles }           from './ResourcesData'
 import { HeaderDivider }      from '../../../shared/styles'
-import { Copyrights }         from '../../../shared/strings/strings'
 import { ArticleWrapper }     from './Components/ArticleWrapper'
+import { ContactUs } from '../Dashboard/Sections/ContactUs'
 
 
 export const Resources = () => {
@@ -21,7 +21,7 @@ export const Resources = () => {
         <Route index element={ <ResourcesDashboard/> }/>
         { ResourcesRoutes }
       </Routes>
-      <Copyrights/>
+      <ContactUs/>
     </>
   )
 }

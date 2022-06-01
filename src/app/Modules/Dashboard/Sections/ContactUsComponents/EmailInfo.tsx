@@ -1,5 +1,12 @@
 import React                from 'react'
 import { Grid, Typography } from '@mui/material'
+import makeStyles from '@material-ui/core/styles/makeStyles'
+
+const useStyles = makeStyles({
+  contactUsFontSize: {
+    fontSize: '1.3rem'
+  }
+})
 
 interface IContacts {
   name: string
@@ -30,13 +37,15 @@ const contacts: Array<IContacts> = [
 ]
 
 export const EmailInfo = () => {
+  const classes = useStyles()
+
   return (
     <>
       {
         contacts.map((item, index) => (
           <Grid textAlign="center" mb={ 1 } key={ index }>
-            <Typography variant="h6" component="span" fontWeight={ 'bold' }>{ item.name }</Typography>
-            <Typography variant="h6" component="span">: { item.email }</Typography>
+            <Typography className={classes.contactUsFontSize} variant="h6" component="span" fontWeight={ 'bold' }>{ item.name }</Typography>
+            <Typography className={classes.contactUsFontSize} variant="h6" component="span">: { item.email }</Typography>
           </Grid>
         ))
       }

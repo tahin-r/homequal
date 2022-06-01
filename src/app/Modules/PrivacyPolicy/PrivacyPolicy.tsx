@@ -11,7 +11,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import { HeaderDivider } from "../../../shared/styles";
 import styled from "styled-components";
 import { privacyPolicy } from './images'
-import { Copyrights } from '../../../shared/strings/strings'
+import { ContactUs } from '../Dashboard/Sections/ContactUs'
 
 interface IPrivacyPolicy {
     image?: string
@@ -262,8 +262,8 @@ export const PrivacyPolicy: FC<IPrivacyPolicy> = () => {
                     form to get in touch with us. HomeQual may change, remove or add a Business in our discretion without notice to you.
                 </SimpleTypography>
 
-                <Copyrights/>
             </Container>
+            <ContactUs/>
         </>
     )
 }

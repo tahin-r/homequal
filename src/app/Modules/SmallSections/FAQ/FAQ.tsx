@@ -6,6 +6,7 @@ import styled                                            from 'styled-components
 import { Container }                                     from '@material-ui/core'
 import { lendingLG, lendingMD, lendingXL }               from '../../../../assets/images/dashboard/lending'
 import { FAQData }                                       from './questions'
+import { ContactUs } from '../../Dashboard/Sections/ContactUs'
 
 
 export const Content = styled.div`
@@ -55,6 +56,7 @@ export const FAQ = () => {
           }) }
         </Container>
       </Content>
+      <ContactUs/>
     </>
   )
 }

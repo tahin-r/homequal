@@ -16,20 +16,28 @@ interface IProps extends basicTypes, basicData {
 
 const useStyles = makeStyles({
     callButton: {
-        minWidth: '70%',
-        marginBottom: '-25px'
+        marginBottom: '-25px',
+        minWidth: '300px',
+        width: '50vw',
+        maxWidth: '600px',
+        padding: '15px 10px',
+        borderRadius: '30px'
     },
     textOrEmailButton: {
-        minWidth: '70%',
         backgroundColor: '#fff',
         color: '#000',
         borderColor: 'rgb(237, 31, 138)',
         border: '1px solid',
+        minWidth: '300px',
+        width: '50vw',
+        maxWidth: '600px',
+        padding: '15px 10px',
+        borderRadius: '30px'
     },
     imageWrapper: {
         display: 'flex',
         justifyContent: 'center'
-    }
+    },
 })
 
 const ImageHolder = styled(({ ...props }) => <div { ...props } />)`

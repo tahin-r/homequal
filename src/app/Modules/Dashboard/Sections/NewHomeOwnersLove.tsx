@@ -6,31 +6,10 @@ import { NewHomeItem }                             from './NewHomeComponents/New
 import { useEffect, useRef }                       from 'react'
 import { Bradley, Earl, Eric, Jay, Jerry, Joshua } from '../../../../assets/images/faces'
 import 'react-alice-carousel/lib/alice-carousel.css'
-import AliceCarousel from 'react-alice-carousel'
+import Marquee from 'react-marquee-slider'
 
 const ContentTypography = styled(CenteredTypography)`
   padding : 4vw 10vw;
-`
-const FeedbacksHolder = styled(({ ...props }) => (
-  <Grid{ ...props } ref={ props.scrollref } container wrap="nowrap"/>))`
-  overflow-x : scroll;
-  padding    : 20px 0 40px 0;
-
-  & > div {
-    transition : ease-in 0.2s;
-  }
-
-  & > div:hover {
-    transform  : scale(1.1);
-    transition : ease-in 0.5s;
-  }
-
-  @media screen and (max-width : 1000px) {
-    &::-webkit-scrollbar {
-      display : initial;
-    }
-
-  }
 `
 
 interface IUsersFeedback {
@@ -90,36 +69,6 @@ export const NewHomeOwnersLove = () => {
     }
   }, [])
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
-  const items: any = []
-  usersFeedback.map((item, i) => (
-      items.push(
-        <NewHomeItem key={ i }
-                     imageUrl={ item.imageUrl }
-                     name={ item.name }
-                     nickName={ item.nickName }
-                     text={ item.text }/>
-      )
-  ))
-
-  const responsive = {
-    0: {
-      items: 1
-    },
-    768: {
-      items: 2
-    },
-    1024: {
-      items: 3
-    },
-  }
-
   return (
     <Grid container justifyContent="center" direction="column" overflow="hidden" alignItems="center">
       <Grid item xs={ 12 }>
@@ -129,16 +78,25 @@ export const NewHomeOwnersLove = () => {
         </ContentTypography>
       </Grid>
       <Grid container justifyContent="center">
-          <AliceCarousel
-              mouseTracking
-              items={items}
-              controlsStrategy="alternate"
-              autoPlay={true}
-              autoPlayInterval={3000}
-              responsive={responsive}
-              infinite={true}
-              disableButtonsControls={true}
-          />
+        <Marquee
+            key={0}
+            velocity={17}
+            direction='rtl'
+            scatterRandomly={false}
+            resetAfterTries={100}
+            onInit={() => {}}
+            onFinish={() => {}}
+        >
+          {
+            usersFeedback.map((item, i) => (
+              <NewHomeItem key={ i }
+                           imageUrl={ item.imageUrl }
+                           name={ item.name }
+                           nickName={ item.nickName }
+                           text={ item.text }/>
+            ))
+          }
+        </Marquee>
       </Grid>
     </Grid>
   )
