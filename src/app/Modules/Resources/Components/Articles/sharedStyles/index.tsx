@@ -11,7 +11,6 @@ import doneArrow
 export const SimpleTypography = styled(({ ...props }) => <Typography variant="h6" { ...props } />)`
   margin      : 1rem 0;
   white-space : pre-wrap;
-  text-indent : 1rem;
   text-align  : justify;
 `
 export const TitleText = styled(({ ...props }) => <Typography ref={ props.reflink } variant="h6"

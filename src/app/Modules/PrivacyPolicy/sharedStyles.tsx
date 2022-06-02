@@ -6,7 +6,6 @@ import React, { FC } from 'react'
 export const SimpleTypography = styled(({ ...props }) => <Typography variant="h6" { ...props } />)`
   margin      : 1rem 0;
   white-space : pre-wrap;
-  text-indent : 1rem;
   text-align  : left;
 `
 export const TitleText = styled(({ ...props }) => <Typography variant="h6"

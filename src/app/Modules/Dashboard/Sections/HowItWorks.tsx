@@ -45,7 +45,7 @@ const ContentHolder = styled.div`
   display         : flex;
   flex-wrap       : nowrap;
   justify-content : flex-end;
-  @media screen and (max-width : 1024px) {
+  @media screen and (max-width : 1200px) {
     justify-content : flex-start;
   }
   @media screen and (max-width : 500px) {
