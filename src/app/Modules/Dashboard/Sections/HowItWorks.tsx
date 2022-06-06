@@ -7,22 +7,25 @@ import makeStyles from '@material-ui/core/styles/makeStyles'
 const useStyles = makeStyles({
     grid: {
         ['@media(max-width: 1999px)'] : {
-            maxWidth: 'none !important'
+            maxWidth:  '518px'
         }
     }
 })
-
 const Title = styled(Typography)`
   margin-bottom : 20px;
-  text-align    : left;
+  text-align    : right;
   @media screen and (max-width : 500px) {
     max-width: 270px;
   }
 `
 const TextContent = styled(Typography)`
-  text-align : left;
+  text-align : right;
+  @media screen and (max-width : 1200px) {
+    font-size: 1.6rem;
+  }
   @media screen and (max-width : 500px) {
     line-height: 22px;
+    font-size: 1.2rem;
   }
 `
 const PhoneImage = styled.img.attrs({
@@ -55,12 +58,14 @@ const ContentHolder = styled.div`
   justify-content : flex-end;
   @media screen and (max-width : 1200px) {
     justify-content : flex-end;
+    padding-right: 100px;
   }
   @media screen and (max-width : 500px) {
     display  : block;
     position : relative;
     max-width: 265px;
     justify-content : flex-end;
+    padding-right: 0px;
   }
 `
 const ImageHolder = styled.div`
