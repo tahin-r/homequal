@@ -2,19 +2,27 @@ import { FC }               from 'react'
 import { Grid, Typography } from '@mui/material'
 import styled               from 'styled-components'
 import phoneImage           from '../../../../assets/images/phone.png'
+import makeStyles from '@material-ui/core/styles/makeStyles'
+
+const useStyles = makeStyles({
+    grid: {
+        ['@media(max-width: 1999px)'] : {
+            maxWidth: 'none !important'
+        }
+    }
+})
 
 const Title = styled(Typography)`
   margin-bottom : 20px;
-  text-align    : right;
+  text-align    : left;
   @media screen and (max-width : 500px) {
     max-width: 270px;
   }
 `
 const TextContent = styled(Typography)`
-  text-align : right;
+  text-align : left;
   @media screen and (max-width : 500px) {
     line-height: 22px;
-    font-weight: 400;
   }
 `
 const PhoneImage = styled.img.attrs({
@@ -46,7 +54,7 @@ const ContentHolder = styled.div`
   flex-wrap       : nowrap;
   justify-content : flex-end;
   @media screen and (max-width : 1200px) {
-    justify-content : flex-start;
+    justify-content : flex-end;
   }
   @media screen and (max-width : 500px) {
     display  : block;
@@ -66,10 +74,12 @@ const ImageHolder = styled.div`
 `
 
 export const HowItWorks: FC = () => {
+  const classes = useStyles()
+
   return (
     <ContentHolder>
-      <Grid item sx={ { padding: '20px', maxWidth: '500px', backgroundColor: 'rgba(255, 255, 255, 0.94)' } }>
-        <Title variant={ 'h5' }>How it Works</Title>
+      <Grid item className={classes.grid} sx={ { padding: '20px', maxWidth: '500px', backgroundColor: 'rgba(255, 255, 255, 0.94)' } }>
+        <Title variant={ 'h4' }>How it Works</Title>
         <TextContent variant={ 'h6' } fontWeight="light">
           You enter information - we analyze thousands of data points to create
           your personal step by step success plan!
