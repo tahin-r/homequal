@@ -1,6 +1,7 @@
 import { Grid }              from '@mui/material'
 import { FC }                from 'react'
 import { HelpingFirstTime }  from './Sections/HelpingFirstTime'
+import { DetermineYouHome }  from './Sections/DetermineYouHome'
 import { HowItWorks }        from './Sections/HowItWorks'
 import { VideoSection }      from './Sections/VideoSection'
 import { HaveAQuestions }    from './Sections/HaveAQuestions'
@@ -12,6 +13,7 @@ export const Dashboard: FC = () => {
   return (
     <>
       <HelpingFirstTime/>
+      <DetermineYouHome/>
       <Grid container alignItems="center">
         <Grid item xs={ 12 } lg={ 4 } >
           <HowItWorks/>
