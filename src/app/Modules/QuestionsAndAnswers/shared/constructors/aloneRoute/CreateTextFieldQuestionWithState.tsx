@@ -49,7 +49,7 @@ export const CreateTextFieldQuestionWithState: FC<IProps> = memo(({
                                       fontSize: '1rem',
                                   } }>{ option.key }</Typography>
                               ) }
-                              sx={ { height: '100%',boxSizing:'border-box',maxWidth:'440px'} }
+                              sx={ { height: '100%', marginBottom: '5px', boxSizing:'border-box',maxWidth:'440px'} }
                               renderInput={ (params) => (
                                   <TextField { ...params }
                                              InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': {
