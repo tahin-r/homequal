@@ -1,4 +1,4 @@
-import {basicData, InputField, RadioField} from '../shared'
+import {basicData, InputNumberField, RadioField} from '../shared'
 import React, { FC, memo }          from 'react'
 import { Wrapper }                  from '../../Wrapper'
 import {Grid, Typography} from '@mui/material'
@@ -29,7 +29,7 @@ export const CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox: FC<IProps> = m
             <Wrapper { ...wrapperProps }>
                 <Grid container direction="column" sx={ { paddingLeft: '10vw' } }>
 
-                    { inputs.map((item, index: number) => <InputField formik={ formik }
+                    { inputs.map((item, index: number) => <InputNumberField formik={ formik }
                                                                            item={ item }
                                                                            key={ index }
                                                                            index={ index }/>) }

@@ -43,109 +43,39 @@ export const QuestionsSchema: any  = {
 
   Q8: yup.object({
     monthly_payment_amount: yup
-      .number()
-      .typeError('You must specify a number')
+      .string()
       .required('Monthly payment is required'),
   }),
 
   Q9: yup.object({
     home_savings: yup
-      .number()
-      .typeError('You must specify a number')
+      .string()
       .required('Available yo purchase money is required'),
   }),
 
   Q12: yup.object({
     monthly_income: yup
-      .number()
-      .typeError('You must specify a number')
+      .string()
       .required('Total monthly income is required'),
   }),
 
   Q12C: yup.object({
     monthly_income: yup
-      .number()
-      .typeError('You must specify a number')
+      .string()
       .required('Total monthly income is required'),
 
     co_monthly_income: yup
-      .number()
-      .typeError('You must specify a number')
+      .string()
       .required('Total monthly income is required'),
   }),
 
-  Q13: yup.object({
-    auto_expense: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Auto payments value is required'),
-
-    credit_card_expense: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Credit card payments is required'),
-
-    student_loans: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Student loans payments is required'),
-
-    other_expenses: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Other expenses is required'),
-  }),
-
-  Q13C: yup.object({
-    auto_expense: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Auto payments value is required'),
-
-    credit_card_expense: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Credit card payments is required'),
-
-    student_loans: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Student loans payments is required'),
-
-    other_expenses: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Other expenses is required'),
-
-    co_auto_expense: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Auto payments value is required'),
-
-    co_credit_card_expense: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Credit card payments is required'),
-
-    co_student_loans: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Student loans payments is required'),
-
-    co_other_expenses: yup
-      .number()
-      .typeError('You must specify a number')
-      .required('Other expenses is required'),
-  }),
   Q20C: yup.object({
     housing_payment_amount: yup
-      .number()
-      .typeError('You must specify a number')
+      .string()
       .required('Monthly housing payments value is required'),
 
     co_housing_payment_amount: yup
-      .number()
-      .typeError('You must specify a number'),
+      .string()
   }),
 
   Q22: yup.object({
@@ -174,12 +104,12 @@ export const refinanceQuestionsSchema: any  = {
         .required('Email is required'),
   }),
   Q3: yup.object({
-    property_value: yup.number().required('Property Value is required'),
+    property_value: yup.string().required('Property Value is required'),
 
     currently_owe: yup.string().required('Currently Owe is required')
   }),
   Q4: yup.object({
-    interest_rate: yup.number().required('Interest rate is required')
+    interest_rate: yup.string().required('Interest rate is required')
   }),
   Q6: yup.object({
     address: yup.string().required('Address is required'),

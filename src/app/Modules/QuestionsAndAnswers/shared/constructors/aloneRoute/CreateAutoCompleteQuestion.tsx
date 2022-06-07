@@ -32,7 +32,7 @@ export const CreateAutoCompleteQuestion: FC<IProps> = memo(({
           <Grid key={ index }>
             <Typography variant="h5" mt={ 5 } mb={2}>Option { index + 1 }</Typography>
             <Grid container alignItems="center" justifyContent="space-between" width="100%" wrap="nowrap">
-              <Grid maxWidth="150px" mt={ '0px' } container alignSelf="start" boxSizing='border-box'>
+              <Grid maxWidth="300px" mt={ '0px' } container alignSelf="start" boxSizing='border-box'>
                 <InputField formik={ formik } item={ item } mainstyles={ { paddingRight: 0,paddingBottom:1, marginTop: 0 } }/>
               </Grid>
               <Grid container flexShrink={ 1 } alignSelf="start" boxSizing='border-box'>

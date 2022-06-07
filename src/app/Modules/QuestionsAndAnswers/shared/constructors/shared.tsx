@@ -4,6 +4,7 @@ import { FormikValues }                                                        f
 import { FormikProps }                                         from 'formik'
 import { IWrapper }                                            from '../Wrapper'
 import makeStyles from '@material-ui/core/styles/makeStyles'
+import NumberFormat from 'react-number-format'
 
 export interface basicData {
   formik: FormikProps<any>
@@ -19,6 +20,50 @@ interface IInputField {
 }
 
 
+
+export const InputNumberField: FC<IInputField> = memo(({ formik, item, index, mainstyles, labelText }) => {
+  const styles = makeStyles(theme => ({
+    notchedOutline: {
+      borderColor: '#ccc !important'
+    }
+  }))
+
+  const classes = styles()
+
+  return (
+      <NumberFormat
+          thousandSeparator={true}
+          customInput={TextField}
+          sx={ {
+            minWidth: '100px', maxWidth: '600px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles,
+          } }
+          autoFocus={ index === 0 }
+          variant="outlined"
+          onChange={ formik.handleChange }
+          color="primary"
+          onBlur={ formik.handleBlur }
+          value={ formik.values[item.value] }
+          name={ item.value }
+          autoComplete='no'
+          InputProps={ {
+            style: { fontSize: '1.4rem', fontWeight: 'bold' },
+            classes: {
+              notchedOutline: classes.notchedOutline,
+            },
+          } }
+          InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': { marginTop: '-10px', zIndex: 1 } } } }
+          helperText={ formik.touched[item.value] &&
+          <Typography component="span"
+                      color="primary"
+                      sx={ { fontSize: '1rem' } }>{ formik.errors[item.value] }
+          </Typography> }
+          label={
+            <Typography variant="h6" color="#ccc" sx={ { fontSize: '15px !important', fontStyle: 'italic', fontWeight: 'regular' } }>
+              { labelText ? labelText : item.text }
+            </Typography> }
+      />
+  )
+})
 
 export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyles, labelText }) => {
   const styles = makeStyles(theme => ({

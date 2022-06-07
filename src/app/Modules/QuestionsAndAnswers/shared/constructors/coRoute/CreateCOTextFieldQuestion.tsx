@@ -1,6 +1,6 @@
 import React, { FC, memo }            from 'react'
 import { Grid, Typography }           from '@mui/material'
-import { basicData, InputField }      from '../shared'
+import { basicData, InputNumberField }      from '../shared'
 import { Wrapper }                    from '../../Wrapper'
 import { ICreateCOTextFieldQuestion } from '../../../questions'
 
@@ -19,7 +19,7 @@ export const CreateCOTextFieldQuestion: FC<IProps> = memo(({
     <Wrapper { ...wrapperProps }>
       <Grid container direction="column" sx={ { paddingLeft: '10vw' } }>
         { inputs.map((item, index: number) => (
-          <InputField key={ index } item={ item } formik={ formik }/>
+          <InputNumberField key={ index } item={ item } formik={ formik }/>
         )) }
 
         <Typography variant="h5" sx={ { fontWeight: 'bold', marginY: '20px' } }>
@@ -27,7 +27,7 @@ export const CreateCOTextFieldQuestion: FC<IProps> = memo(({
         </Typography>
 
         { coInputs.map((item, index: number) => (
-          <InputField item={ item } formik={ formik } key={ index }/>
+          <InputNumberField item={ item } formik={ formik } key={ index }/>
         )) }
       </Grid>
     </Wrapper>

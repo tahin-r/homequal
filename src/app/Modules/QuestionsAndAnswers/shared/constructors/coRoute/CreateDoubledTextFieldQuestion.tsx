@@ -1,7 +1,7 @@
 import React, { FC, memo }                 from 'react'
 import { Wrapper }                         from '../../Wrapper'
 import { Box, Grid, Typography }           from '@mui/material'
-import { basicData, InputField }           from '../shared'
+import { basicData, InputNumberField }           from '../shared'
 import { ICreateDoubledTextFieldQuestion } from '../../../questions'
 
 interface IProps extends ICreateDoubledTextFieldQuestion, basicData {
@@ -39,14 +39,14 @@ export const CreateDoubledTextFieldQuestion: FC<IProps> = memo(({
           <Grid key={ index } container justifyContent="flex-start" wrap="nowrap">
 
             <Box sx={ { width: 'auto', maxWidth: '100px', marginRight: '1vw', boxSizing: 'border-box' } }>
-              <InputField key={ index }
+              <InputNumberField key={ index }
                           item={ item }
                           formik={ formik }
                           labelText={ 'Payments' }
                           mainstyles={ { paddingRight: '0' } }/>
             </Box>
             <Box sx={ { width: 'auto', maxWidth: '100px', boxSizing: 'border-box' } }>
-              <InputField key={ index + 5 }
+              <InputNumberField key={ index + 5 }
                           item={ coInputs[index] }
                           formik={ formik }
                           labelText={ 'Payments' }

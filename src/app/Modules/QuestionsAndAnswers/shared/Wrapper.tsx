@@ -59,9 +59,13 @@ export const Wrapper: React.FC<IWrapper> = memo(({
   question,
 }) => {
 
+
   useEffect(() => {
+    setTimeout(() => {
+      formik.validateForm()
+    }, 50)
     setSchema(current)
-  }, [current, setSchema])
+  }, [current, formik.submitCount])
 
   const handleClick = async () => {
     const errors = await formik.validateForm()
@@ -71,6 +75,7 @@ export const Wrapper: React.FC<IWrapper> = memo(({
       formik.setTouched({})
     }
   }
+
   return (
 
     <Grid position={ 'relative' }
@@ -97,7 +102,7 @@ export const Wrapper: React.FC<IWrapper> = memo(({
           { description }
         </Typography>
 
-        { (current !== 'Q23' || status === 3) && (
+        { (current !== 'Q23' || status === 3) && formik.isValid && (
           <Grid container justifyContent="center" alignItems="center" sx={ {
             height: '50px', mt: { xs: 'auto', sm: '50px' }, mb: '30px',
           } }>

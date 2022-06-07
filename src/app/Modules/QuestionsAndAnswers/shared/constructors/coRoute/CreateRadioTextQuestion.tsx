@@ -1,4 +1,4 @@
-import { basicData, InputField, RadioField } from '../shared'
+import { basicData, InputNumberField, RadioField } from '../shared'
 import React, { FC, memo }                   from 'react'
 import { Wrapper }                           from '../../Wrapper'
 import { Grid, Typography }                  from '@mui/material'
@@ -33,7 +33,7 @@ export const CreateRadioTextQuestion: FC<IProps> = memo(({
         </Typography>
 
         { inputs.map((item, index: number) => (
-          <InputField key={ index } item={ item } formik={ formik }/>
+          <InputNumberField key={ index } item={ item } formik={ formik }/>
         )) }
 
         <Typography variant="h6" sx={ { fontWeight: 'bold', marginTop: '40px' } }>
@@ -49,7 +49,7 @@ export const CreateRadioTextQuestion: FC<IProps> = memo(({
         </Typography>
 
         { co_inputs.map((item, index: number) =>
-          <InputField item={ item } formik={ formik } key={ index }/>,
+          <InputNumberField item={ item } formik={ formik } key={ index }/>,
         ) }
       </Grid>
     </Wrapper>

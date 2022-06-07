@@ -1,4 +1,7 @@
 import { CreateTextFieldQuestion }        from './shared/constructors/aloneRoute/CreateTextFieldQuestion'
+import { CreateTextNumberFieldQuestion }        from './shared/constructors/aloneRoute/CreateTextNumberFieldQuestion'
+import { CreateDoubleQuestionsWithTextNumberField }        from './shared/constructors/aloneRoute/CreateDoubleQuestionsWithTextNumberField'
+import { CreateTextFieldQuestionWithState }        from './shared/constructors/aloneRoute/CreateTextFieldQuestionWithState'
 import { CreateRadioQuestion }            from './shared/constructors/aloneRoute/CreateRadioQuestion'
 import { CreateDoubleQuestionsWithTextField } from './shared/constructors/aloneRoute/CreateDoubleQuestionsWithTextField'
 import { CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox }
@@ -265,7 +268,7 @@ const Q8: ICreateTextFieldQuestion = {
     'What is the maximum you want to spend monthly on your mortgage payment?',
   description       :
     'We may find that you qualify for more or less, and we will show you that later.',
-  elementConstructor: CreateTextFieldQuestion,
+  elementConstructor: CreateTextNumberFieldQuestion,
   current           : 'Q8',
   next              : 'Q9',
   inputs            : [
@@ -281,7 +284,7 @@ const Q9: ICreateTextFieldQuestion = {
     'How much money will you have available to purchase your new home?',
   description       :
     'Tip:  Enter the amount you will have saved by the time you apply for a mortgage.',
-  elementConstructor: CreateTextFieldQuestion,
+  elementConstructor: CreateTextNumberFieldQuestion,
   current           : 'Q9',
   next              : 'Q10',
   inputs            : [
@@ -341,7 +344,7 @@ const Q12: ICreateTextFieldQuestion = {
   question          : () =>
     'What is your total monthly income from all sources before any taxes or deductions? What is your total monthly income from all sources before any taxes or deductions?',
   description       : 'Enter your GROSS income, not what you end up taking home.',
-  elementConstructor: CreateTextFieldQuestion,
+  elementConstructor: CreateTextNumberFieldQuestion,
   current           : 'Q12',
   next              : 'Q13',
   inputs            : [
@@ -1130,8 +1133,7 @@ export const questionsList = {
 
 const Q1R: ICreateTextFieldQuestion = {
   question          : () => 'Hi, who do I have the pleasure of speaking with?',
-  description       :
-      'We ask for you contact information to create your secure refinance portal',
+  description       : '',
   elementConstructor: CreateTextFieldQuestion,
   current           : 'Q1',
   next              : 'Q2',
@@ -1181,10 +1183,10 @@ const Q2R: ICreateRadio_CheckBox_Question = {
 }
 
 const Q3R: ICreateDoubleQuestionsWithTextField = {
-  question: () => 'What the current value of your property?',
-  question1: () => 'What do you currently owe the property?',
+  question: () => 'What is the current value of your property?',
+  question1: () => 'What do you currently owe on the property?',
   description: '',
-  elementConstructor: CreateDoubleQuestionsWithTextField,
+  elementConstructor: CreateDoubleQuestionsWithTextNumberField,
   current: 'Q3',
   next: 'Q4',
   firstInputs: [
@@ -1277,7 +1279,7 @@ const Q5R: ICreateRadio_CheckBox_Question = {
 const Q6R: ICreateTextFieldQuestion = {
   question          : () => 'What is the address of your property?',
   description       : '',
-  elementConstructor: CreateTextFieldQuestion,
+  elementConstructor: CreateTextFieldQuestionWithState,
   current           : 'Q6',
   next              : 'Q7',
   inputs            : [
@@ -1320,8 +1322,7 @@ export const refinanceQuestionsList = {
 
 const Q1O: ICreateTextFieldQuestion = {
   question          : () => 'Hi, who do I have the pleasure of speaking with?',
-  description       :
-      'We ask for you contact information to create your secure refinance portal',
+  description       : '',
   elementConstructor: CreateTextFieldQuestion,
   current           : 'Q1',
   next              : 'Q2',

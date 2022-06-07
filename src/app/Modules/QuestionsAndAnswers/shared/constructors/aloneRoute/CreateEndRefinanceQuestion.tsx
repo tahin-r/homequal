@@ -2,8 +2,7 @@ import React, { FC, memo, useState }          from 'react'
 import { basicData }                          from '../shared'
 import { Wrapper }                            from '../../Wrapper'
 import {
-    CenteredTypography,
-    TextContainerWithSmallPadding
+    CenteredTypography
 } from '../../../../../../shared/styles'
 import { Button } from '@mui/material'
 import { basicTypes }                         from '../../../questions'
@@ -15,17 +14,8 @@ interface IProps extends basicTypes, basicData {
 }
 
 const useStyles = makeStyles({
-    callButton: {
-        marginBottom: '-25px',
-        minWidth: '300px',
-        width: '50vw',
-        maxWidth: '600px',
-        padding: '15px 10px',
-        borderRadius: '30px'
-    },
     textOrEmailButton: {
-        backgroundColor: '#fff',
-        color: '#000',
+        marginBottom: '15px',
         borderColor: 'rgb(237, 31, 138)',
         border: '1px solid',
         minWidth: '300px',
@@ -81,18 +71,12 @@ export const CreateEndRefinanceQuestion: FC<IProps> = memo(({
             <CenteredTypography variant="h5">
                 <Button
                     type="submit"
-                    className={classes.callButton}
+                    className={classes.textOrEmailButton}
                     size="large"
-                    variant="contained"
-                    color="primary"
                 >
                     Call Me
                 </Button>
             </CenteredTypography>
-
-            <TextContainerWithSmallPadding>
-                Expect call from 214-692-5300
-            </TextContainerWithSmallPadding>
 
             <CenteredTypography variant="h5">
                 <Button
