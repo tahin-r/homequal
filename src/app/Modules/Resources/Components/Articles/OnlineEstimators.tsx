@@ -1,7 +1,7 @@
-import React, { FC }                         from 'react'
-import { Iarticle }                          from '../../ResourcesData';
-import { SimpleTypography, TitleTypography } from './sharedStyles';
-import { Container }                         from '@material-ui/core';
+import React, { FC } from 'react'
+import { Iarticle } from '../../ResourcesData'
+import { SimpleTypography, TitleTypography } from './sharedStyles'
+import { Container } from '@material-ui/core'
 
 export const OnlineEstimators: FC<Iarticle> = () => {
   return (
@@ -32,4 +32,3 @@ export const OnlineEstimators: FC<Iarticle> = () => {
     </>
   )
 }
-

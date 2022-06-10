@@ -1,7 +1,6 @@
 import * as yup from 'yup'
 
-
-export const QuestionsSchema: any  = {
+export const QuestionsSchema: any = {
   Q1: yup.object({
     first_name: yup.string().required('First name is required'),
 
@@ -12,14 +11,14 @@ export const QuestionsSchema: any  = {
       .typeError('you must specify a number')
       .matches(
         /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/,
-        'Wrong cell number',
+        'Wrong cell number'
       )
       .required('Cell number is required'),
 
     email_address: yup
       .string()
       .email('Enter a valid email')
-      .required('Email is required'),
+      .required('Email is required')
   }),
   Q5: yup.object({
     co_first_name: yup.string().required('Last name is required'),
@@ -31,32 +30,32 @@ export const QuestionsSchema: any  = {
       .typeError('You must specify a number')
       .matches(
         /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/,
-        'Wrong cell number',
+        'Wrong cell number'
       )
       .required('Cell number is required'),
 
     co_email_address: yup
       .string()
       .email('Enter a valid email')
-      .required('Email is required'),
+      .required('Email is required')
   }),
 
   Q8: yup.object({
     monthly_payment_amount: yup
       .string()
-      .required('Monthly payment is required'),
+      .required('Monthly payment is required')
   }),
 
   Q9: yup.object({
     home_savings: yup
       .string()
-      .required('Available yo purchase money is required'),
+      .required('Available yo purchase money is required')
   }),
 
   Q12: yup.object({
     monthly_income: yup
       .string()
-      .required('Total monthly income is required'),
+      .required('Total monthly income is required')
   }),
 
   Q12C: yup.object({
@@ -66,7 +65,7 @@ export const QuestionsSchema: any  = {
 
     co_monthly_income: yup
       .string()
-      .required('Total monthly income is required'),
+      .required('Total monthly income is required')
   }),
 
   Q20C: yup.object({
@@ -79,29 +78,29 @@ export const QuestionsSchema: any  = {
   }),
 
   Q22: yup.object({
-    live_state_1: yup.string().required('One city is required!'),
-  }),
+    live_state_1: yup.string().required('One city is required!')
+  })
 }
 
-export const refinanceQuestionsSchema: any  = {
+export const refinanceQuestionsSchema: any = {
   Q1: yup.object({
     first_name: yup.string().required('First name is required'),
 
     last_name: yup.string().required('Last name is required'),
 
     cell_phone: yup
-        .string()
-        .typeError('you must specify a number')
-        .matches(
-            /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/,
-            'Wrong cell number',
-        )
-        .required('Cell number is required'),
+      .string()
+      .typeError('you must specify a number')
+      .matches(
+        /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/,
+        'Wrong cell number'
+      )
+      .required('Cell number is required'),
 
     email_address: yup
-        .string()
-        .email('Enter a valid email')
-        .required('Email is required'),
+      .string()
+      .email('Enter a valid email')
+      .required('Email is required')
   }),
   Q3: yup.object({
     property_value: yup.string().required('Property Value is required'),

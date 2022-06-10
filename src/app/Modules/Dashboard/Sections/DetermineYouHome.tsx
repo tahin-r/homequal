@@ -1,10 +1,9 @@
-import { Typography }           from '@mui/material'
-import React, { FC }            from 'react'
+import { Typography } from '@mui/material'
+import React, { FC } from 'react'
 import { HomeQualTextTemplate } from '../../../../shared/strings/strings'
-import { TextContainer }        from '../../../../shared/styles'
+import { TextContainer } from '../../../../shared/styles'
 
 export const DetermineYouHome: FC = () => {
-
   return (
     <>
       <TextContainer>

@@ -1,7 +1,7 @@
- import { basicData }                                           from '../shared'
+import { basicData } from '../shared'
 import React, { FC, memo, SyntheticEvent, useEffect, useState } from 'react'
-import { Wrapper }                                              from '../../Wrapper'
-import { Grid, Radio, Typography }               from '@mui/material'
+import { Wrapper } from '../../Wrapper'
+import { Grid, Radio, Typography } from '@mui/material'
 import { ICreateDoubledCheck_Radio_BoxQuestion } from '../../../questions'
 
 interface IProps extends ICreateDoubledCheck_Radio_BoxQuestion, basicData {
@@ -13,9 +13,8 @@ export const CreateDoubledRadioQuestion: FC<IProps> = memo(({
   co_answers,
   formName,
   co_formName,
-  wrapperProps,
+  wrapperProps
 }) => {
-
   const [value, setValue] = useState(answers[0].value)
   const [co_value, co_setValue] = useState(co_answers[0].value)
 
@@ -25,11 +24,10 @@ export const CreateDoubledRadioQuestion: FC<IProps> = memo(({
       co_setValue(co_answers[0].value)
       formik.setFieldValue(formName, answers[0].value)
       formik.setFieldValue(co_formName, co_answers[0].value)
-    }, [wrapperProps.current],
+    }, [wrapperProps.current]
   )
 
   const handleCurrentAnswer = (event: SyntheticEvent, checked: boolean, item: string) => {
-
     setValue(item)
     formik.handleChange(event)
   }
@@ -43,10 +41,10 @@ export const CreateDoubledRadioQuestion: FC<IProps> = memo(({
       <Grid container direction="column" wrap="nowrap" sx={ { padding: '0 0 0 10vw' } }>
         <Grid container>
           <Typography variant="h6" sx={ {
-            maxWidth   : '48px',
+            maxWidth: '48px',
             marginRight: '20px',
-            textAlign  : 'left',
-            fontWeight : 'bold',
+            textAlign: 'left',
+            fontWeight: 'bold'
           } }>
             You
           </Typography>

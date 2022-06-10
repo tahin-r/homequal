@@ -1,13 +1,12 @@
-import React                                             from 'react'
-import { HeaderDivider }                                 from '../../../../shared/styles'
+import React from 'react'
+import { HeaderDivider } from '../../../../shared/styles'
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material'
-import ExpandMoreIcon                                    from '@mui/icons-material/ExpandMore'
-import styled                                            from 'styled-components'
-import { Container }                                     from '@material-ui/core'
-import { lendingLG, lendingMD, lendingXL }               from '../../../../assets/images/dashboard/lending'
-import { FAQData }                                       from './questions'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import styled from 'styled-components'
+import { Container } from '@material-ui/core'
+import { lendingLG, lendingMD, lendingXL } from '../../../../assets/images/dashboard/lending'
+import { FAQData } from './questions'
 import { ContactUs } from '../../Dashboard/Sections/ContactUs'
-
 
 export const Content = styled.div`
   position        : relative;
@@ -19,21 +18,20 @@ export const Content = styled.div`
   box-sizing      : border-box;
 
   @media screen and (min-width : 2001px) {
-    background      : url(${ lendingXL }) center center no-repeat fixed border-box;
+    background      : url(${lendingXL}) center center no-repeat fixed border-box;
     background-size : cover;
   }
   @media screen and (max-width : 2000px) {
-    background      : url(${ lendingLG }) center center no-repeat fixed border-box;
+    background      : url(${lendingLG}) center center no-repeat fixed border-box;
     background-size : cover;
   }
   @media screen and (max-width : 900px) {
-    background      : url(${ lendingMD }) center center no-repeat fixed border-box;
+    background      : url(${lendingMD}) center center no-repeat fixed border-box;
     background-size : cover;
   }
 `
 
 export const FAQ = () => {
-
   return (
     <>
       <HeaderDivider/>
@@ -48,7 +46,7 @@ export const FAQ = () => {
                 <AccordionSummary expandIcon={ <ExpandMoreIcon/> } aria-controls="panel1a-content" id="panel1a-header">
                   <QuestionComponent/>
                 </AccordionSummary>
-                <AccordionDetails sx={{pb:'2rem'}}>
+                <AccordionDetails sx={{ pb: '2rem' }}>
                   <AnswerComponent/>
                 </AccordionDetails>
               </Accordion>

@@ -1,16 +1,14 @@
-import React, { useEffect }                  from 'react'
-import { Header }                            from './app/Layout/Header'
-import { ThemeProvider }                     from 'styled-components'
-import { muiTheme }                          from './shared/theme/muiTheme'
-import { theme }                             from './shared/theme/theme'
-import { BaseStyles }                        from './shared/theme/baseStyles'
-import { AppRoutes }                         from './shared/Routes'
-import { BrowserRouter, useLocation }        from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Header } from './app/Layout/Header'
+import { ThemeProvider } from 'styled-components'
+import { muiTheme } from './shared/theme/muiTheme'
+import { theme } from './shared/theme/theme'
+import { BaseStyles } from './shared/theme/baseStyles'
+import { AppRoutes } from './shared/Routes'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
-
-function App() {
-
+function App () {
   const ScrollToTop = () => {
     const { pathname } = useLocation()
     useEffect(() => {

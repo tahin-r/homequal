@@ -1,8 +1,8 @@
-import { basicData, RadioField }      from '../shared'
+import { basicData, RadioField } from '../shared'
 import React, { FC, memo, useEffect } from 'react'
-import { Wrapper }                    from '../../Wrapper'
-import { Typography }                 from '@mui/material'
-import { ICreateVeteranQuestion }     from '../../../questions'
+import { Wrapper } from '../../Wrapper'
+import { Typography } from '@mui/material'
+import { ICreateVeteranQuestion } from '../../../questions'
 
 interface IProps extends ICreateVeteranQuestion, basicData {
 }
@@ -14,11 +14,11 @@ export const CreateVeteranQuestion: FC<IProps> = memo(({
   co_formName,
   co_answers,
   co_question,
-  wrapperProps,
+  wrapperProps
 }) => {
   useEffect(
     () => formik.setFieldValue(formName, answers[0].value),
-    [formName, answers],
+    [formName, answers]
   )
 
   return (

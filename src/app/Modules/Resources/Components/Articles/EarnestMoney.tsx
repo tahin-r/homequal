@@ -1,8 +1,8 @@
-import React, { FC }                                           from 'react'
-import { Iarticle }                                            from '../../ResourcesData';
-import { CreateDefinition, SimpleTypography, TitleTypography } from './sharedStyles';
-import { Container }                                           from '@material-ui/core';
-import { Box, Typography }                                     from '@mui/material';
+import React, { FC } from 'react'
+import { Iarticle } from '../../ResourcesData'
+import { CreateDefinition, SimpleTypography, TitleTypography } from './sharedStyles'
+import { Container } from '@material-ui/core'
+import { Box, Typography } from '@mui/material'
 
 export const EarnestMoney: FC<Iarticle> = (props) => {
   return (
@@ -79,31 +79,47 @@ export const EarnestMoney: FC<Iarticle> = (props) => {
             <li>
               { CreateDefinition(
                 'Inspection Contingency -',
-                'The home inspection is a common reason for potential buyers to back away from a deal. If the inspection turns up major problems that the seller is unwilling to repair, or ones that you find too daunting, you can terminate the contract and receive your earnest money back. Make sure this happens during the Option Period. If you don’t want to back out of the deal, you could also work with the seller to have the repairs made or have them lower the price so you can do the repairs yourself.'
+                `The home inspection is a common reason for potential buyers to back away from a deal.
+                 If the inspection turns up major problems that the seller is unwilling to repair, 
+                 or ones that you find too daunting, you can terminate the contract and receive your earnest money 
+                 back. Make sure this happens during the Option Period. If you don’t want to back out of the deal, 
+                 you could also work with the seller to have the repairs made or have them lower the price so you can 
+                 do the repairs yourself.`
               ) }
             </li>
             <li>
               { CreateDefinition(
                 'Appraisal Contingency -',
-                'The appraisal contingency, which protects the buyer if the property is overvalued, is equally important. The lender hires a third-party appraiser to determine the fair market value of the home and to compare it to similar properties for sale. With this contingency, if the home is appraised at less than the sale price, you can choose not to move forward with the deal and you’ll get your earnest money back. Alternatively, you can use the appraisal to negotiate a new price.'
+                `The appraisal contingency, which protects the buyer if the property is overvalued, 
+                  is equally important. The lender hires a third-party appraiser to determine the fair market 
+                  value of the home and to compare it to similar properties for sale. With this contingency, 
+                  if the home is appraised at less than the sale price, you can choose not to move forward with 
+                  the deal and you’ll get your earnest money back. Alternatively, you can use the appraisal to 
+                  negotiate a new price.`
               ) }
             </li>
             <li>
               { CreateDefinition(
                 'Finance Contingency –',
-                'This contingency allows you to back out if your financing was not approved and you notified the seller within the time specified in your contract. You have the right to walk away and get your earnest money back; this is where the mortgage company can protect you.'
+                `This contingency allows you to back out if your financing was not approved and you 
+                  notified the seller within the time specified in your contract. You have the right to walk 
+                  away and get your earnest money back; this is where the mortgage company can protect you.`
               ) }
             </li>
             <li>
               { CreateDefinition(
                 'Contingency for Selling an Existing Home –',
-                'Some contracts also include a contingency for selling your existing home. If you can’t sell the home you currently own before you close on another home, this contingency lets you back out of the deal with your earnest money in hand.'
+                `Some contracts also include a contingency for selling your existing home. 
+                  If you can’t sell the home you currently own before you close on another home, this contingency lets 
+                  you back out of the deal with your earnest money in hand.`
               ) }
             </li>
             <li>
               { CreateDefinition(
                 'Home Owner Association (HOA) Contingency –',
-                'when you buy a home governed by an HOA, you typically have 7 days to review all the association’s rules and fees. If the seller doesn’t provide you with this document, you may be able to cancel the contract.'
+                `when you buy a home governed by an HOA, you typically have 7 days to review all
+                 the association’s rules and fees. If the seller doesn’t provide you with this document, 
+                 you may be able to cancel the contract.`
               ) }
             </li>
           </ul>
@@ -164,4 +180,3 @@ export const EarnestMoney: FC<Iarticle> = (props) => {
     </>
   )
 }
-

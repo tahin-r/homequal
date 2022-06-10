@@ -1,6 +1,6 @@
-import React                from 'react'
+import React from 'react'
 import { Grid, Typography } from '@mui/material'
-import { useNavigate }      from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 
 const useStyles = makeStyles({
@@ -19,60 +19,60 @@ interface ILinks {
 
 const links: Array<ILinks> = [
   {
-    name : 'Resources',
+    name: 'Resources',
     items: [
       {
         text: 'FAQs',
-        link: '/FAQs',
+        link: '/FAQs'
       },
       {
         text: 'Homebuyer Library',
-        link: '/resources',
-      },
-    ],
+        link: '/resources'
+      }
+    ]
   },
   {
-    name : 'Services',
+    name: 'Services',
     items: [
       {
         text: 'Real Estate',
-        link: '/real_estate',
+        link: '/real_estate'
       },
       {
         text: 'Lending',
-        link: '/lending',
-      }],
+        link: '/lending'
+      }]
   },
   {
-    name : 'Company',
+    name: 'Company',
     items: [
       {
         text: 'About Us',
-        link: '/about_us',
+        link: '/about_us'
       },
       {
         text: 'Careers',
-        link: '/careers',
+        link: '/careers'
       },
       {
         text: 'Partner With Us',
-        link: '/partner_with_us',
-      },
-    ],
+        link: '/partner_with_us'
+      }
+    ]
   },
   {
-    name : 'Legal',
+    name: 'Legal',
     items: [
       {
         text: 'Privacy Policy',
-        link: '/privacy_policy',
+        link: '/privacy_policy'
       },
       {
         text: 'Terms of Use',
-        link: '/terms_of_Use',
-      },
-    ],
-  },
+        link: '/terms_of_Use'
+      }
+    ]
+  }
 ]
 
 export const Links = () => {
@@ -103,4 +103,3 @@ export const Links = () => {
     </Grid>
   )
 }
-

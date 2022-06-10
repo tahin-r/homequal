@@ -1,21 +1,23 @@
-import styled               from 'styled-components'
-import React, { useState }  from 'react'
+import styled from 'styled-components'
+import React, { useState } from 'react'
 import { Grid, Typography } from '@mui/material'
 
 const DiagramButton = styled(({ ...props }) => <div { ...props } />)`
   box-sizing   : border-box;
+  min-width: 220px;
+  text-align: center;
+  cursor: pointer;
   padding      : 10px 40px;
   margin       : 10px 20px;
   border-width : 1px;
   border-style : solid;
-  border-color : ${ (props) => props.chosendiagrambutton === props.value ? props.theme.colors.primary : 'grey' };;
-  color        : ${ (props) => props.chosendiagrambutton === props.value ? 'black' : 'grey' };
+  border-color : ${(props) => props.chosendiagrambutton === props.value ? props.theme.colors.primary : 'grey'};;
+  color        : ${(props) => props.chosendiagrambutton === props.value ? 'black' : 'grey'};
 
   & > * {
-    font-weight : ${ (props) => props.chosendiagrambutton === props.value ? '500' : 'normal' };
+    font-weight : ${(props) => props.chosendiagrambutton === props.value ? '500' : 'normal'};
   }
 `
-
 
 export const LoanButtons = () => {
   const [chosenDiagramButton, setDiagramButton] = useState<string>()
@@ -31,24 +33,29 @@ export const LoanButtons = () => {
       <Grid container justifyContent="center" my={ 2 }>
 
         <DiagramButton value={ 'Conventional' }
-                       chosendiagrambutton={ chosenDiagramButton }
-                       onClick={ () => handleDiagramButtonClick('Conventional') }>
+          chosendiagrambutton={ chosenDiagramButton }
+          onClick={ () => handleDiagramButtonClick('Conventional') }
+        >
           <Typography variant="h6">
             Conventional
           </Typography>
         </DiagramButton>
 
-        <DiagramButton value={ 'FHA' }
-                       chosendiagrambutton={ chosenDiagramButton }
-                       onClick={ () => handleDiagramButtonClick('FHA') }>
+        <DiagramButton
+          value={ 'FHA' }
+          chosendiagrambutton={ chosenDiagramButton }
+          onClick={ () => handleDiagramButtonClick('FHA') }
+        >
           <Typography variant="h6">
             FHA
           </Typography>
         </DiagramButton>
 
-        <DiagramButton value={ 'VA' }
-                       chosendiagrambutton={ chosenDiagramButton }
-                       onClick={ () => handleDiagramButtonClick('VA') }>
+        <DiagramButton
+          value={ 'VA' }
+          chosendiagrambutton={ chosenDiagramButton }
+          onClick={ () => handleDiagramButtonClick('VA') }
+        >
           <Typography variant="h6">
             VA
           </Typography>

@@ -1,8 +1,8 @@
-import React, { FC }                         from 'react'
-import { Container }                         from '@material-ui/core';
-import { Box, Typography }                   from '@mui/material';
-import { SimpleTypography, TitleTypography } from './sharedStyles';
-import { Iarticle }                          from '../../ResourcesData';
+import React, { FC } from 'react'
+import { Container } from '@material-ui/core'
+import { Box, Typography } from '@mui/material'
+import { SimpleTypography, TitleTypography } from './sharedStyles'
+import { Iarticle } from '../../ResourcesData'
 
 export const IsYourCreditScoreMortgageReady: FC<Iarticle> = (props) => {
   return (
@@ -46,7 +46,7 @@ export const IsYourCreditScoreMortgageReady: FC<Iarticle> = (props) => {
             </SimpleTypography>
             <SimpleTypography>
               <li>
-                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' }  mr={1}>
+                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' } mr={1}>
                   Build Golden Accounts:
                 </Typography>
                 Golden accounts are the building blocks of your credit scores. A golden account is any account that is
@@ -56,7 +56,7 @@ export const IsYourCreditScoreMortgageReady: FC<Iarticle> = (props) => {
             </SimpleTypography>
             <SimpleTypography>
               <li>
-                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold'}  mr={1}>
+                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold'} mr={1}>
                   Build Your On-Time Payment History:
                 </Typography>
                 Start by making sure all of your accounts have a perfect payment history for 12 months. Then make it 24
@@ -64,14 +64,14 @@ export const IsYourCreditScoreMortgageReady: FC<Iarticle> = (props) => {
                 you can work something out with them.
               </li>
               <li>
-                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' }  mr={1}>
+                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' } mr={1}>
                   Limit New Accounts:
                 </Typography>
                 Once you have a few revolving accounts and at least one installment loan on your credit report, limit
                 the number of new accounts to no more than one per year.
               </li>
               <li>
-                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' }  mr={1}>
+                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' } mr={1}>
                   Know Your FICO Scores:
                 </Typography>
                 When you set out to get a loan, the lender will be looking at your FICO Score. There are many credit
@@ -79,7 +79,7 @@ export const IsYourCreditScoreMortgageReady: FC<Iarticle> = (props) => {
                 score may not be close to what your actual score is.
               </li>
               <li>
-                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' }  mr={1}>
+                <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' } mr={1}>
                   Be Smart In A Financial Pinch:
                 </Typography>
                 If you find yourself in a financial pinch, pay off the debts that appear on your credit report first and
@@ -127,4 +127,3 @@ export const IsYourCreditScoreMortgageReady: FC<Iarticle> = (props) => {
     </>
   )
 }
-

@@ -1,9 +1,9 @@
-import { Typography }                      from '@mui/material'
-import { FC }                              from 'react'
-import styled                              from 'styled-components'
-import { QualButton }                      from '../../../../shared/styles'
+import { Typography } from '@mui/material'
+import { FC } from 'react'
+import styled from 'styled-components'
+import { QualButton } from '../../../../shared/styles'
 import { lendingLG, lendingMD, lendingXL } from '../../../../assets/images/dashboard/lending'
-import { useNavigate }                     from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export const Content = styled.div`
   position        : relative;
@@ -15,15 +15,15 @@ export const Content = styled.div`
   padding         : 4vh 0 14vh 0;
 
   @media screen and (min-width : 2001px) {
-    background      : url(${ lendingXL }) center center no-repeat border-box;
+    background      : url(${lendingXL}) center center no-repeat border-box;
     background-size : cover;
   }
   @media screen and (max-width : 2000px) {
-    background      : url(${ lendingLG }) center center no-repeat border-box;
+    background      : url(${lendingLG}) center center no-repeat border-box;
     background-size : cover;
   }
   @media screen and (max-width : 900px) {
-    background      : url(${ lendingMD }) center center no-repeat border-box;
+    background      : url(${lendingMD}) center center no-repeat border-box;
     background-size : cover;
   }
 `

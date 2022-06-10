@@ -1,7 +1,7 @@
-import { basicData, InputField }    from '../shared'
-import React, { FC, memo }          from 'react'
-import { Wrapper }                  from '../../Wrapper'
-import { Grid }                     from '@mui/material'
+import { basicData, InputField } from '../shared'
+import React, { FC, memo } from 'react'
+import { Wrapper } from '../../Wrapper'
+import { Grid } from '@mui/material'
 import { ICreateTextFieldQuestion } from '../../../questions'
 
 interface IProps extends ICreateTextFieldQuestion, basicData {
@@ -10,9 +10,8 @@ interface IProps extends ICreateTextFieldQuestion, basicData {
 export const CreateTextFieldQuestion: FC<IProps> = memo(({
   inputs,
   wrapperProps,
-  formik,
+  formik
 }) => {
-
   return (
     <Wrapper { ...wrapperProps }>
 

@@ -1,10 +1,9 @@
-import React, { FC }       from 'react'
+import React, { FC } from 'react'
 import { Box, Typography } from '@mui/material'
 import { SimpleTypography, TitleTypography } from './sharedStyles'
-import { Container }                         from '@material-ui/core'
+import { Container } from '@material-ui/core'
 
 export const FinalWalkThrough:FC<any> = () => {
-
   return (
     <Container fixed>
       <Typography variant="h4" color={ 'primary' } textAlign={ 'center' } my={ 2 }>
@@ -94,11 +93,16 @@ export const FinalWalkThrough:FC<any> = () => {
       </Box>
 
       <SimpleTypography>
-        You can download a complete checklist by clicking here: <a href={ '#' }><Typography variant={ 'h6' }
-                                                                                            color={ 'primary' }
-                                                                                            component={ 'span' }>HomeQual-Walk-Through-Checklist</Typography></a>
+        You can download a complete checklist by clicking here:
+          <a href='/#'>
+              <Typography variant={ 'h6' }
+                color={ 'primary' }
+                component={ 'span' }>
+                  HomeQual-Walk-Through-Checklist
+              </Typography>
+          </a>
       </SimpleTypography>
-      <TitleTypography  fontWeight={ 'bold' }>
+      <TitleTypography fontWeight={ 'bold' }>
         What Should I Bring?
       </TitleTypography>
 

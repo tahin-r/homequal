@@ -1,7 +1,7 @@
-import React, { FC, useState }                           from 'react';
-import { IconButton, List, ListItem, Paper, Typography } from '@mui/material';
-import styled                                            from 'styled-components';
-import SearchIcon                                        from '@mui/icons-material/Search';
+import React, { FC, useState } from 'react'
+import { IconButton, List, ListItem, Paper, Typography } from '@mui/material'
+import styled from 'styled-components'
+import SearchIcon from '@mui/icons-material/Search'
 
 const NavButton = styled(({ ...props }) => <IconButton edge="start" color="primary" { ...props }/>)`
   top      : 10px;
@@ -19,7 +19,7 @@ const NavbarMenu = styled(({ ...props }) => <Paper elevation={ 12 }{ ...props }/
   position      : fixed;
   border-width  : 1px;
   border-style  : solid;
-  border-color  : ${ props => props.theme.colors.primary };
+  border-color  : ${props => props.theme.colors.primary};
   border-radius : 10px;
   transition    : 2s;
 
@@ -53,15 +53,14 @@ export const Navbar: FC<INavbar> = ({ items }) => {
 
   return (
     <>
-      { isMenuOpen ?
-        <NavbarMenu onMouseLeave={ () => SetMenuOpen(false) }>
+      { isMenuOpen
+        ? <NavbarMenu onMouseLeave={ () => SetMenuOpen(false) }>
           <List>
             { items.map((item, index) => {
-
               return (
                 <ListItem key={ index } sx={ { margin: '0 10px', padding: 0 } }>
                   <MenuItem sx={ { cursor: 'pointer' } } onClick={ () => {
-                    item.onScroll();
+                    item.onScroll()
                   } }>
                     { item.text }
                   </MenuItem>
@@ -70,13 +69,12 @@ export const Navbar: FC<INavbar> = ({ items }) => {
             }) }
           </List>
         </NavbarMenu>
-                   :
-        <NavButton onClick={ () => SetMenuOpen(true) } onMouseEnter={ () => SetMenuOpen(true) }>
+        : <NavButton onClick={ () => SetMenuOpen(true) } onMouseEnter={ () => SetMenuOpen(true) }>
           <SearchIcon sx={ { transform: 'scale(2)' } }/>
         </NavButton>
       }
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

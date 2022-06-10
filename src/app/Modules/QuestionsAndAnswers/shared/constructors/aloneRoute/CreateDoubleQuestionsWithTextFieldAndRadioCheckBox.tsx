@@ -1,30 +1,30 @@
-import {basicData, InputNumberField, RadioField} from '../shared'
-import React, { FC, memo }          from 'react'
-import { Wrapper }                  from '../../Wrapper'
-import {Grid, Typography} from '@mui/material'
-import { ICreateDoubleQuestionsWithTextFieldAndRadio_CheckBox } from '../../../questions'
+import { basicData, InputNumberField, RadioField } from '../shared'
+import React, { FC, memo } from 'react'
+import { Wrapper } from '../../Wrapper'
+import { Grid, Typography } from '@mui/material'
+import { ICreateDoubleQuestionsWithTextFieldAndRadioCheckBox } from '../../../questions'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 
 const useStyles = makeStyles({
-    radioButtonsBlock: {
-        width: '90%'
-    }
+  radioButtonsBlock: {
+    width: '90%'
+  }
 })
 
-interface IProps extends ICreateDoubleQuestionsWithTextFieldAndRadio_CheckBox, basicData {
+interface IProps extends ICreateDoubleQuestionsWithTextFieldAndRadioCheckBox, basicData {
 }
 
-export const CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox: FC<IProps> = memo(({
-    inputs,
-    answers,
-    formName,
-    secondQuestion,
-    wrapperProps,
-    formik,
+export const CreateDoubleQuestionsWithTextFieldAndRadioCheckBox: FC<IProps> = memo(({
+  inputs,
+  answers,
+  formName,
+  secondQuestion,
+  wrapperProps,
+  formik
 }) => {
-    const classes = useStyles()
+  const classes = useStyles()
 
-    return (
+  return (
         <>
             <Wrapper { ...wrapperProps }>
                 <Grid container direction="column" sx={ { paddingLeft: '10vw' } }>
@@ -46,5 +46,5 @@ export const CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox: FC<IProps> = m
                 </Grid>
             </Wrapper>
         </>
-    )
+  )
 })

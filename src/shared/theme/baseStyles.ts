@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
-import { reset }             from 'styled-reset'
-import { theme }             from './theme'
+import { reset } from 'styled-reset'
+import { theme } from './theme'
 
 export const BaseStyles = createGlobalStyle`
-  ${ reset }
+  ${reset}
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -88,12 +88,12 @@ export const BaseStyles = createGlobalStyle`
   }
 
   a {
-    color           : ${ theme.colors.primary };
+    color           : ${theme.colors.primary};
     text-decoration : none;
   }
 
   a:hover {
-    color  : ${ theme.colors.action };
+    color  : ${theme.colors.action};
     cursor : pointer;
   }
 

@@ -1,11 +1,11 @@
-import React  from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import { Grid, Typography }                                from '@mui/material'
-import { HomeQualTextTemplate }                from '../../../../shared/strings/strings'
+import { Grid, Typography } from '@mui/material'
+import { HomeQualTextTemplate } from '../../../../shared/strings/strings'
 import { GreyTextContainer, HeaderDivider, TextContainer } from '../../../../shared/styles'
-import { careers, careersLG, careersMD }                   from '../../../../assets/images/careers'
-import { SectionList }                                     from '../shared'
+import { careers, careersLG, careersMD } from '../../../../assets/images/careers'
+import { SectionList } from '../shared'
 
 import { ContactUs } from '../../Dashboard/Sections/ContactUs'
 
@@ -20,23 +20,22 @@ const ContentImage = styled.div`
   background-size : cover;
 
   @media screen and (min-width : 2001px) {
-    background-image : url(${ careers });
+    background-image : url(${careers});
   }
   @media screen and (max-width : 2000px) {
-    background-image : url(${ careersLG });
+    background-image : url(${careersLG});
   }
   @media screen and (max-width : 900px) {
-    background-image : url(${ careersMD });
+    background-image : url(${careersMD});
   }
 `
 
 export const Careers = () => {
-
   const offer = [
     'Fun, fast paced working environment',
     'Competitive pay and benefits',
     'Freedom to be yourself!',
-    'Flexible working hours',
+    'Flexible working hours'
   ]
 
   const youAre = [
@@ -44,14 +43,14 @@ export const Careers = () => {
     'Looking for a career, not just a job',
     'Passionate about real estate',
     'Creative, outside of the box thinking',
-    'Ready to advance your career',
+    'Ready to advance your career'
   ]
 
   return (
     <>
       <HeaderDivider/>
       <ContentImage>
-        {/*text*/ }
+        {/* text */ }
       </ContentImage>
 
       <TextContainer>
@@ -68,7 +67,6 @@ export const Careers = () => {
           ownership a reality.
         </Typography>
       </TextContainer>
-
 
       <GreyTextContainer color={ 'black' }>
         <Grid container direction="column" alignItems="center">

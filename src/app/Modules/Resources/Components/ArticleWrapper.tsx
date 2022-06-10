@@ -1,7 +1,6 @@
-import React, { createContext, FC, useEffect, useState } from 'react';
-import Navbar                                            from '../Navbar';
-import { Iarticle }                                      from '../ResourcesData';
-
+import React, { createContext, FC, useEffect, useState } from 'react'
+import Navbar from '../Navbar'
+import { Iarticle } from '../ResourcesData'
 
 export const NavBarContext = createContext<INavBarContext | null>(null)
 
@@ -10,7 +9,7 @@ interface INavBarContext {
 }
 
 export const ArticleWrapper: FC<{ item:Iarticle }> = ({ item }) => {
-  const [navbarList, setNavBarList] = useState<{ text: string, onScroll: () => void }[] | []>([])
+  const [navbarList, setNavBarList] = useState<{ text: string, onScroll:() => void }[] | []>([])
   useEffect(() => {
     setNavBarList([])
   }, [])

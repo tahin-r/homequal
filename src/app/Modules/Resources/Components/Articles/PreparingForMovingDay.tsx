@@ -1,8 +1,8 @@
-import React, { FC }                                   from 'react'
-import { Iarticle }                                    from '../../ResourcesData';
-import { Container }                                   from '@material-ui/core';
-import { Box, Typography }                             from '@mui/material';
-import { ListItem, SimpleTypography, TitleTypography } from './sharedStyles';
+import React, { FC } from 'react'
+import { Iarticle } from '../../ResourcesData'
+import { Container } from '@material-ui/core'
+import { Box, Typography } from '@mui/material'
+import { ListItem, SimpleTypography, TitleTypography } from './sharedStyles'
 
 export const PreparingForMovingDay: FC<Iarticle> = () => {
   return (
@@ -166,4 +166,3 @@ export const PreparingForMovingDay: FC<Iarticle> = () => {
     </>
   )
 }
-

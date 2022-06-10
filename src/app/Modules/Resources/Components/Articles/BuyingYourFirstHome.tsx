@@ -1,14 +1,13 @@
-import React, { FC }        from 'react'
-import { Typography }                        from '@mui/material'
+import React, { FC } from 'react'
+import { Typography } from '@mui/material'
 import { SimpleTypography, TitleTypography } from './sharedStyles'
-import { Container }                         from '@material-ui/core'
+import { Container } from '@material-ui/core'
 
 interface IBuyingYourFirstHome {
   image?: string
 }
 
 export const BuyingYourFirstHome: FC<IBuyingYourFirstHome> = () => {
-
   return (
     <Container fixed>
       <Typography variant="h4" color={ 'primary' } textAlign={ 'center' } my={ 2 }>

@@ -1,8 +1,8 @@
-import React                     from 'react'
-import styled                    from 'styled-components'
-import title                     from '../../../../assets/images/SuccesPlan/title.jpeg'
+import React from 'react'
+import styled from 'styled-components'
+import titleImage from '../../../../assets/images/SuccessPlan/successTitle.jpg'
 import { Box, Grid, Typography } from '@mui/material'
-import { HomeQualTextTemplate }  from '../../../../shared/strings/strings'
+import { HomeQualTextTemplate } from '../../../../shared/strings/strings'
 
 export const Content = styled.div`
   width           : 100%;
@@ -10,14 +10,20 @@ export const Content = styled.div`
   display         : flex;
   align-items     : center;
   height          : auto;
+  min-height: 440px;
   padding         : 4vh 0 4vh 4vw;
-  background      : url(${ title }) left center no-repeat border-box;
+  background      : url(${titleImage}) left center no-repeat border-box;
   background-size : cover;
   color           : black;
+  @media screen and (max-width : 1024px) {
+    background-position: -260px 0;
+  }
+  @media screen and (max-width : 767px) {
+    background-position: -530px 0;
+  }
 `
 
 export const Title = () => {
-
   return (
     <>
       <Content>
@@ -27,7 +33,7 @@ export const Title = () => {
           </Typography>
 
           <Typography variant="h4">
-            Name SecondName
+            Dave Anderson
           </Typography>
           <Box sx={ { display: 'flex' } }>
             <Typography variant="h6" fontWeight="bolder">Member ID :</Typography>
@@ -38,10 +44,9 @@ export const Title = () => {
         </Grid>
       </Content>
 
-      {/*<Box sx={ { padding: '20px', textAlign: 'center', bgcolor: 'primary.main', color: 'white' } }>*/ }
-      {/*  <Typography variant="h5">YOUR HOME AFFORDABILITY</Typography>*/ }
-      {/*</Box>*/ }
-
+      {/* <Box sx={ { padding: '20px', textAlign: 'center', bgcolor: 'primary.main', color: 'white' } }> */ }
+      {/*  <Typography variant="h5">YOUR HOME AFFORDABILITY</Typography> */ }
+      {/* </Box> */ }
 
     </>
   )

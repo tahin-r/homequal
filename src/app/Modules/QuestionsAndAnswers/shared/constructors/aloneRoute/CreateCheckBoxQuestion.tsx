@@ -1,8 +1,8 @@
-import { basicData }                                         from '../shared'
-import React, { FC, memo }                                   from 'react'
-import { Wrapper }                                           from '../../Wrapper'
+import { basicData } from '../shared'
+import React, { FC, memo } from 'react'
+import { Wrapper } from '../../Wrapper'
 import { Checkbox, FormControlLabel, FormGroup, Typography } from '@mui/material'
-import { ICreateRadio_CheckBox_Question }                    from '../../../questions'
+import { ICreateRadio_CheckBox_Question } from '../../../questions'
 
 interface IProps extends basicData, ICreateRadio_CheckBox_Question {
 }
@@ -11,7 +11,7 @@ export const CreateCheckBoxQuestion: FC<IProps> = memo(({
   answers,
   formik,
   formName,
-  wrapperProps,
+  wrapperProps
 
 }) => {
   return (

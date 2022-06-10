@@ -1,8 +1,13 @@
-import { QuestionKeyType }  from './questions'
+import { QuestionKeyType } from './questions'
 import { NavigateFunction } from 'react-router-dom'
-import { FormikProps }      from 'formik'
+import { FormikProps } from 'formik'
 
-export const SetCurrentQuestionHandler = (next: QuestionKeyType, current: QuestionKeyType, formik: FormikProps<any>, navigate: NavigateFunction) => {
+export const SetCurrentQuestionHandler = (
+  next: QuestionKeyType,
+  current: QuestionKeyType,
+  formik: FormikProps<any>,
+  navigate: NavigateFunction
+) => {
   const isAlone = formik.values.co_borrower_flag === '0'
   const isHaveStudentLoan = formik.values.member_buyer_details.includes('late_student_loan')
   const isHaveTax = formik.values.member_buyer_details.includes('tax_lien_judgement_foreclosure')
@@ -29,6 +34,6 @@ export const SetCurrentQuestionHandler = (next: QuestionKeyType, current: Questi
   } else if (current === 'Q11' && !isAlone) {
     navigate('Q12C')
   } else {
-    navigate(`${ next }`)
+    navigate(`${next}`)
   }
 }

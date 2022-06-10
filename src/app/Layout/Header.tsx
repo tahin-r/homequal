@@ -1,5 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu'
-import { AppBar,
+import {
+  AppBar,
   IconButton,
   List,
   ListItem,
@@ -18,7 +19,7 @@ const MenuItems = styled(Typography)`
   font-weight : 500;
 `
 const HqLogo = styled.div`
-  background      : url(${ hqlighticon }) left center no-repeat;
+  background      : url(${hqlighticon}) left center no-repeat;
   width           : 175px;
   height          : 60px;
   background-size : contain;
@@ -31,36 +32,36 @@ const HqLogo = styled.div`
 const menuItems = [
   {
     text: 'Buy a Home',
-    link: 'buy_a_home/Q1',
+    link: 'buy_a_home/Q1'
   },
   {
     text: 'Find a Lender',
-    link: 'find_a_lender/Q1',
+    link: 'find_a_lender/Q1'
   },
   {
     text: 'Find a Real Estate Agent',
-    link: 'find_agent/Q1',
+    link: 'find_agent/Q1'
   },
   {
     text: 'Refinance',
-    link: 'refinance/Q1',
+    link: 'refinance/Q1'
   },
   {
     text: 'Speak with an Advisor',
-    link: 'speak_advisor/Q1',
+    link: 'speak_advisor/Q1'
   },
   {
     text: 'FAQs',
-    link: 'FAQs',
+    link: 'FAQs'
   },
   {
     text: 'Resources',
-    link: 'resources',
+    link: 'resources'
   },
   {
     text: 'My Account',
-    link: 'my_account',
-  },
+    link: 'my_account'
+  }
 ]
 
 export const Header = () => {
@@ -69,8 +70,8 @@ export const Header = () => {
   const navigate = useNavigate()
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold        : window.innerHeight,
-    target           : window,
+    threshold: window.innerHeight,
+    target: window
   })
 
   const handleClick = (event: SyntheticEvent<HTMLButtonElement>) => {
@@ -83,17 +84,18 @@ export const Header = () => {
 
   return (
     <AppBar position={
-      location.pathname.includes('Q&A')
-      || location.pathname.includes('refinance')
-      || location.pathname.includes('buy_a_home')
-      || location.pathname.includes('find_a_lender')
-      || location.pathname.includes('find_agent')
-      || location.pathname.includes('speak_advisor')
-      ? 'relative' : 'fixed'
+      location.pathname.includes('Q&A') ||
+      location.pathname.includes('refinance') ||
+      location.pathname.includes('buy_a_home') ||
+      location.pathname.includes('find_a_lender') ||
+      location.pathname.includes('find_agent') ||
+      location.pathname.includes('speak_advisor')
+        ? 'relative'
+        : 'fixed'
     } sx={ {
-      zIndex    : 2,
+      zIndex: 2,
       transition: 'background-color 1s linear',
-      bgcolor   : location.pathname === '/' ? trigger ? 'white' : 'transparent' : 'white',
+      bgcolor: location.pathname === '/' ? trigger ? 'white' : 'transparent' : 'white'
     } } elevation={ 0 }>
       <Toolbar sx={ { transition: 'linear 0.5s' } }>
         <IconButton edge="start" color="primary" onClick={ handleClick }>
@@ -101,8 +103,8 @@ export const Header = () => {
         </IconButton>
 
         <Popover id={ 'menuButton' } open={ open } anchorEl={ anchorEl } onClose={ handleClose } anchorOrigin={ {
-          vertical  : 'bottom',
-          horizontal: 'left',
+          vertical: 'bottom',
+          horizontal: 'left'
         } }>
           <List>
             { menuItems.map((item, index) => (

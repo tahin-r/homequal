@@ -1,9 +1,9 @@
-import React  from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import { Grid, Typography }                                      from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { aboutUsMain, logoA, logoB, logoC, logoD, logoE, logoF } from '../../../../assets/images/aboutUs'
-import { GreyTextContainer, HeaderDivider, TextContainer }       from '../../../../shared/styles'
+import { GreyTextContainer, HeaderDivider, TextContainer } from '../../../../shared/styles'
 import { ContactUs } from '../../Dashboard/Sections/ContactUs'
 
 const ContentImage = styled.div`
@@ -13,44 +13,43 @@ const ContentImage = styled.div`
   align-items     : center;
   height          : 20vh;
   padding         : 10vh 0 14vh 3vw;
-  background      : url(${ aboutUsMain }) center center no-repeat border-box;
+  background      : url(${aboutUsMain}) center center no-repeat border-box;
   background-size : cover;
 `
 
 export const AboutUs = () => {
-
   const list = [
     {
       text: 'Will I Qualify',
-      logo: logoA,
+      logo: logoA
     },
     {
       text: 'Get Pre-Approved',
-      logo: logoB,
+      logo: logoB
     },
     {
       text: 'Agent Match',
-      logo: logoC,
+      logo: logoC
     },
     {
       text: 'View Homes',
-      logo: logoD,
+      logo: logoD
     },
     {
       text: 'Claim Rebate',
-      logo: logoE,
+      logo: logoE
     },
     {
       text: 'Move In',
-      logo: logoF,
-    },
+      logo: logoF
+    }
   ]
 
   return (
     <>
       <HeaderDivider/>
       <ContentImage>
-        {/*text*/ }
+        {/* text */ }
       </ContentImage>
 
       <TextContainer>
@@ -82,7 +81,7 @@ export const AboutUs = () => {
                                           my={ 2 }>
             <img src={ item.logo } alt="logo" width="50px" height="50px"/>
             <Typography variant="h6" textAlign="center">{ item.text }</Typography>
-          </Grid>,
+          </Grid>
         ) }
       </Grid>
 
@@ -111,4 +110,3 @@ export const AboutUs = () => {
     </>
   )
 }
-

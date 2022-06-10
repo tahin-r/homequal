@@ -1,8 +1,8 @@
 import { Grid, List, ListItem, ListItemAvatar, Typography } from '@mui/material'
-import styled                                               from 'styled-components'
+import styled from 'styled-components'
 import { CenteredTypography, ItalicTypography, QualButton } from '../../../../shared/styles'
-import doneArrow                                            from '../../../../assets/images/doneArrow.svg'
-import React                                                from 'react'
+import doneArrow from '../../../../assets/images/doneArrow.svg'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const ListIcon = styled.div`
@@ -13,7 +13,7 @@ const ListIcon = styled.div`
   max-height      : 70px;
   width           : 10vw;
   height          : 10vw;
-  background      : transparent url(${ doneArrow }) 100% 100%;
+  background      : transparent url(${doneArrow}) 100% 100%;
   background-size : cover;
 `
 const advantages = [
@@ -21,9 +21,8 @@ const advantages = [
   'See what you can afford',
   'Discover any cash refunds you may qualify for',
   'Start looking for a new home!',
-  'It’s completely FREE!',
+  'It’s completely FREE!'
 ]
-
 
 export const ReadyToGetATry = () => {
   const navigate = useNavigate()

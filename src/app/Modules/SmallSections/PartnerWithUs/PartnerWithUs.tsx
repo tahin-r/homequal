@@ -1,10 +1,10 @@
-import React                                               from 'react'
-import { Grid, Typography }                                from '@mui/material'
-import styled                                              from 'styled-components'
-import { HomeQualTextTemplate }                from '../../../../shared/strings/strings'
+import React from 'react'
+import { Grid, Typography } from '@mui/material'
+import styled from 'styled-components'
+import { HomeQualTextTemplate } from '../../../../shared/strings/strings'
 import { GreyTextContainer, HeaderDivider, TextContainer } from '../../../../shared/styles'
 import { partnerwithus, partnerwithusLG, partnerwithusMD } from '../../../../assets/images/PartnerWithUs'
-import { SectionList }                                     from '../shared'
+import { SectionList } from '../shared'
 import { ContactUs } from '../../Dashboard/Sections/ContactUs'
 
 const Content = styled.div`
@@ -17,13 +17,13 @@ const Content = styled.div`
   background      : center right no-repeat border-box;
   background-size : cover;
   @media screen and (min-width : 2001px) {
-    background-image : url(${ partnerwithus });
+    background-image : url(${partnerwithus});
   }
   @media screen and (max-width : 2000px) {
-    background-image : url(${ partnerwithusLG });
+    background-image : url(${partnerwithusLG});
   }
   @media screen and (max-width : 900px) {
-    background-image : url(${ partnerwithusMD });
+    background-image : url(${partnerwithusMD});
   }
 `
 
@@ -32,14 +32,13 @@ const LeftSidedText = styled(TextContainer)`
 `
 
 export const PartnerWithUs = () => {
-
   const qualification = [
     'Ethical, transparent and honest',
     'State licensed where applicable',
     'Highly reviewed across social media',
     'Passionate about first time homebuyers',
     'Local market expert',
-    'Competitive in rates and fees',
+    'Competitive in rates and fees'
   ]
 
   return (
@@ -81,4 +80,3 @@ export const PartnerWithUs = () => {
     </>
   )
 }
-

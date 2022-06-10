@@ -1,21 +1,20 @@
-import { basicData, InputNumberField }    from '../shared'
-import React, { FC, memo }          from 'react'
-import { Wrapper }                  from '../../Wrapper'
-import {Grid, Typography} from '@mui/material'
-import { ICreateDoubleQuestionsWithTextField } from '../../../questions'
+import { basicData, InputNumberField } from '../shared'
+import React, { FC, memo } from 'react'
+import { Wrapper } from '../../Wrapper'
+import { Grid, Typography } from '@mui/material'
+import { ICreateDoubleQuestionsWithTextNumberField } from '../../../questions'
 
-interface IProps extends ICreateDoubleQuestionsWithTextField, basicData {
+interface IProps extends ICreateDoubleQuestionsWithTextNumberField, basicData {
 }
 
 export const CreateDoubleQuestionsWithTextNumberField: FC<IProps> = memo(({
-                                                                        firstInputs,
-                                                                        secondInputs,
-                                                                        question1,
-                                                                        wrapperProps,
-                                                                        formik,
-                                                                    }) => {
-
-    return (
+  firstInputs,
+  secondInputs,
+  question1,
+  wrapperProps,
+  formik
+}) => {
+  return (
         <>
             <Wrapper { ...wrapperProps }>
                 <Grid container direction="column" sx={ { paddingLeft: '10vw' } }>
@@ -31,9 +30,9 @@ export const CreateDoubleQuestionsWithTextNumberField: FC<IProps> = memo(({
                     { secondInputs.map((item, index: number) => <InputNumberField formik={ formik }
                                                                             item={ item }
                                                                             key={ index }
-                                                                            index={ index+1 }/>) }
+                                                                            index={ index + 1 }/>) }
                 </Grid>
             </Wrapper>
         </>
-    )
+  )
 })

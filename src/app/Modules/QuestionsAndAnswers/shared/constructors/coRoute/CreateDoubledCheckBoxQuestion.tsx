@@ -1,8 +1,8 @@
-import { basicData }                                               from '../shared'
-import React, { FC, memo }                                         from 'react'
-import { Wrapper }                                                 from '../../Wrapper'
+import { basicData } from '../shared'
+import React, { FC, memo } from 'react'
+import { Wrapper } from '../../Wrapper'
 import { Checkbox, FormControlLabel, FormGroup, Grid, Typography } from '@mui/material'
-import { ICreateDoubledCheck_Radio_BoxQuestion }                   from '../../../questions'
+import { ICreateDoubledCheck_Radio_BoxQuestion } from '../../../questions'
 
 interface IProps extends ICreateDoubledCheck_Radio_BoxQuestion, basicData {
 }
@@ -13,25 +13,24 @@ export const CreateDoubledCheckBoxQuestion: FC<IProps> = memo(({
   co_answers,
   formName,
   co_formName,
-  wrapperProps,
+  wrapperProps
 }) => {
-
   return (
     <Wrapper { ...wrapperProps }>
       <Grid container direction="column" wrap="nowrap" sx={ { padding: '5vw 3vw 0 5vw' } }>
         <Grid container>
           <Typography variant="h6" sx={ {
-            maxWidth   : '49px',
+            maxWidth: '49px',
             marginRight: '20px',
-            textAlign  : 'left',
-            fontWeight : 'bold',
+            textAlign: 'left',
+            fontWeight: 'bold'
           } }>
             You
           </Typography>
           <Typography variant="h6" sx={ {
-            width     : 'auto',
-            textAlign : 'left',
-            fontWeight: 'bold',
+            width: 'auto',
+            textAlign: 'left',
+            fontWeight: 'bold'
           } }>
             { formik.values.co_first_name }`s
           </Typography>
@@ -56,7 +55,7 @@ export const CreateDoubledCheckBoxQuestion: FC<IProps> = memo(({
                                       color="primary"
                                       sx={ { margin: '1vh 0', width: 'auto' } }/>
                   </Grid>
-              )) }
+            )) }
           </Grid>
         </FormGroup>
       </Grid>

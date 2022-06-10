@@ -1,6 +1,6 @@
-import styled                       from 'styled-components'
+import styled from 'styled-components'
 import { Button, Grid, Typography } from '@mui/material'
-import React                        from 'react'
+import React from 'react'
 
 export const CenteredTypography = styled(({ ...props }) => <Typography variant="h6" { ...props } />)`
   text-align    : center;
@@ -25,16 +25,16 @@ export const QualButton = styled(({ ...props }) => <Button { ...props } color="p
   }
 `
 export const TextContainer = styled(({ ...props }) => <Grid { ...props }/>)`
-  color            : ${ (props) => (props.color ? props.color : 'black') };
+  color            : ${(props) => (props.color ? props.color : 'black')};
   padding          : 40px;
-  background-color : ${ (props) => (props.backgroundColor ? props.theme.colors[props.backgroundColor] : 'white') };
+  background-color : ${(props) => (props.backgroundColor ? props.theme.colors[props.backgroundColor] : 'white')};
   text-align       : center;
   width            : auto;
 `
 export const TextContainerWithSmallPadding = styled(({ ...props }) => <Grid { ...props }/>)`
-  color            : ${ (props) => (props.color ? props.color : 'black') };
+  color            : ${(props) => (props.color ? props.color : 'black')};
   padding          : 10px;
-  background-color : ${ (props) => (props.backgroundColor ? props.theme.colors[props.backgroundColor] : 'white') };
+  background-color : ${(props) => (props.backgroundColor ? props.theme.colors[props.backgroundColor] : 'white')};
   text-align       : center;
   width            : auto;
   font-size        : 14px;
@@ -42,8 +42,8 @@ export const TextContainerWithSmallPadding = styled(({ ...props }) => <Grid { ..
 `
 export const GreyTextContainer = styled(TextContainer)`
   padding          : 30px;
-  color            : ${ props => (props.color ? props.color : 'white') };
-  background-color : ${ props => props.theme.colors.darkGrey };
+  color            : ${props => (props.color ? props.color : 'white')};
+  background-color : ${props => props.theme.colors.darkGrey};
   text-align       : initial;
 `
 export const HeaderDivider = styled(Grid)`
@@ -57,5 +57,5 @@ export const HeaderDivider = styled(Grid)`
   }
 `
 export const ContentWrapper = styled(({ ...props }) => <Grid { ...props }/>)`
-  background-color : ${ props => props.theme.colors.lightGrey };
+  background-color : ${props => props.theme.colors.lightGrey};
 `

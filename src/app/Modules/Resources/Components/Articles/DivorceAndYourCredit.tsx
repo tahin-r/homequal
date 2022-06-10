@@ -1,10 +1,9 @@
-import React, { FC }       from 'react'
+import React, { FC } from 'react'
 import { Box, Typography } from '@mui/material'
 import { SimpleTypography, TitleTypography } from './sharedStyles'
-import { Container }                         from '@material-ui/core'
+import { Container } from '@material-ui/core'
 
 export const DivorceAndYourCredit:FC<any> = () => {
-
   return (
     <Container fixed>
       <Typography variant="h4" color={ 'primary' } textAlign={ 'center' } my={ 2 }>

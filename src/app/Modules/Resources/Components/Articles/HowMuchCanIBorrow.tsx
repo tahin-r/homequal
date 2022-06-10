@@ -1,8 +1,8 @@
-import React, { FC }                         from 'react'
-import { Iarticle }                          from '../../ResourcesData';
-import { Container }                         from '@material-ui/core';
-import { Typography }                        from '@mui/material';
-import { SimpleTypography, TitleTypography } from './sharedStyles';
+import React, { FC } from 'react'
+import { Iarticle } from '../../ResourcesData'
+import { Container } from '@material-ui/core'
+import { Typography } from '@mui/material'
+import { SimpleTypography, TitleTypography } from './sharedStyles'
 
 export const HowMuchCanIBorrow: FC<Iarticle> = () => {
   return (
@@ -82,4 +82,3 @@ export const HowMuchCanIBorrow: FC<Iarticle> = () => {
     </>
   )
 }
-

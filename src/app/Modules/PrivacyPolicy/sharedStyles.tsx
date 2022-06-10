@@ -2,7 +2,6 @@ import { Typography } from '@mui/material'
 import styled from 'styled-components'
 import React, { FC } from 'react'
 
-
 export const SimpleTypography = styled(({ ...props }) => <Typography variant="h6" { ...props } />)`
   margin      : 1rem 0;
   white-space : pre-wrap;
@@ -16,7 +15,6 @@ export const TitleText = styled(({ ...props }) => <Typography variant="h6"
 `
 
 export const TitleTypography: FC<any> = (props) => {
-
   return (
       <TitleText { ...props }>
         { props.children }

@@ -1,12 +1,11 @@
-import { Grid, Typography }                                                                   from '@mui/material'
-import styled                                                                                 from 'styled-components'
+import { Grid, Typography } from '@mui/material'
+import styled from 'styled-components'
 import React, { FC, MutableRefObject, ReactElement, useContext, useEffect, useRef, useState } from 'react'
 import {
   NavBarContext
-}                                                                                             from '../../ArticleWrapper'
+} from '../../ArticleWrapper'
 import doneArrow
-                                                                                              from '../../../../../../assets/images/doneArrow.svg'
-
+  from '../../../../../../assets/images/doneArrow.svg'
 
 export const SimpleTypography = styled(({ ...props }) => <Typography variant="h6" { ...props } />)`
   margin      : 1rem 0;
@@ -24,7 +23,7 @@ export const TitleTypography: FC<any> = (props) => {
   const currentRef = useRef<HTMLElement>()
   const currentElement = useGetElement(currentRef)
   const text = (currentElement && currentElement.innerText) || ''
-  const onScroll = () => currentElement && currentElement.scrollIntoView({ block: "start", behavior: "smooth" })
+  const onScroll = () => currentElement && currentElement.scrollIntoView({ block: 'start', behavior: 'smooth' })
   useEffect(() => {
     if (currentElement) {
       addNavBarItem(text, onScroll)
@@ -38,7 +37,7 @@ export const TitleTypography: FC<any> = (props) => {
   )
 }
 
-function useGetElement(ref: MutableRefObject<HTMLElement | undefined>) {
+function useGetElement (ref: MutableRefObject<HTMLElement | undefined>) {
   const [element, setElement] = useState<HTMLElement>()
 
   useEffect(() => {
@@ -47,7 +46,10 @@ function useGetElement(ref: MutableRefObject<HTMLElement | undefined>) {
   return element
 }
 
-export const CreateDefinition: (DefinitionName: string, SDefinition: string) => ReactElement = (DefinitionName, Definition) => {
+export const CreateDefinition: (DefinitionName: string, SDefinition: string) => ReactElement = (
+  DefinitionName,
+  Definition
+) => {
   return (
     <SimpleTypography>
       <Typography variant={ 'h6' } component={ 'span' } fontWeight={ 'bold' } mr={ 1 }>
@@ -58,7 +60,6 @@ export const CreateDefinition: (DefinitionName: string, SDefinition: string) => 
   )
 }
 export const ListItem: FC = (props) => {
-
   return (
     <SimpleTypography>
       <Grid alignItems="flex-start" container wrap="nowrap">
@@ -68,5 +69,3 @@ export const ListItem: FC = (props) => {
     </SimpleTypography>
   )
 }
-
-

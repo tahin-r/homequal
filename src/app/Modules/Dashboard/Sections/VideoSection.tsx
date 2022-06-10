@@ -1,9 +1,9 @@
-import { FC }                                                       from 'react'
-import ReactPlayer                                                  from 'react-player'
-import styled                                                       from 'styled-components'
-import video                                                        from '../../../../assets/video/HomeQualVideo.mp4'
+import { FC } from 'react'
+import ReactPlayer from 'react-player'
+import styled from 'styled-components'
+import video from '../../../../assets/video/HomeQualVideo.mp4'
 import { videoPlayerImage, videoPlayerImageLG, videoPlayerImageMD } from '../../../../assets/images/dashboard/video'
-import playButton                                                   from '../../../../assets/video/playIcon.svg'
+import playButton from '../../../../assets/video/playIcon.svg'
 
 const VideoWrapper = styled.div`
   position: relative;
@@ -12,13 +12,13 @@ const VideoWrapper = styled.div`
     aspect-ratio : 16/9;
 
     @media screen and (min-width : 2001px) {
-      background-image : url(${ videoPlayerImage });
+      background-image : url(${videoPlayerImage});
     }
     @media screen and (max-width : 2000px) {
-      background-image : url(${ videoPlayerImageLG });
+      background-image : url(${videoPlayerImageLG});
     }
     @media screen and (max-width : 900px) {
-      background-image : url(${ videoPlayerImageMD });
+      background-image : url(${videoPlayerImageMD});
     }
   }
 

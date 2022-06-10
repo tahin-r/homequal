@@ -1,8 +1,8 @@
-import React, { FC }                                   from 'react'
-import { Iarticle }                                    from '../../../ResourcesData';
-import { Container }                                   from '@material-ui/core';
-import { Box, Typography }                             from '@mui/material';
-import { ListItem, SimpleTypography, TitleTypography } from './index';
+import React, { FC } from 'react'
+import { Iarticle } from '../../../ResourcesData'
+import { Container } from '@material-ui/core'
+import { Box, Typography } from '@mui/material'
+import { ListItem, SimpleTypography, TitleTypography } from './index'
 
 export const Disclosure: FC<Iarticle> = () => {
   return (
@@ -167,4 +167,3 @@ export const Disclosure: FC<Iarticle> = () => {
     </>
   )
 }
-

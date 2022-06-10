@@ -1,15 +1,15 @@
-import React                                  from 'react'
-import styled                                 from 'styled-components'
+import React from 'react'
+import styled from 'styled-components'
 import { CenteredTypography, ContentWrapper } from '../../../../shared/styles'
-import { Grid, Typography }                   from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 
 const Bubble = styled(Grid)<{side?:string}>`
   border-radius    : 30px;
   display          : inline-block;
   font-size        : 16px;
-  border           : ${ (props) => props.side === 'left' ? null : `2px solid  ${ props.theme.colors.primary }` };
-  background-color : ${ (props) => props.side === 'left' ? props.theme.colors.grey : 'white' };
-  margin-left      : ${ (props) => props.side === 'left' ? '40px' : null };
+  border           : ${(props) => props.side === 'left' ? null : `2px solid  ${props.theme.colors.primary}`};
+  background-color : ${(props) => props.side === 'left' ? props.theme.colors.grey : 'white'};
+  margin-left      : ${(props) => props.side === 'left' ? '40px' : null};
   padding          : 20px;
   margin-bottom    : 15px;
   box-sizing       : border-box;
@@ -72,7 +72,6 @@ export const HaveAQuestions = () => {
           </Typography>
         </Bubble>
       </BubbleContainer>
-
 
     </ContentWrapper>
   )

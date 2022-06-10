@@ -1,11 +1,10 @@
-import React, { FC }                                   from 'react'
-import { Box, Typography }                             from '@mui/material';
-import { ListItem, SimpleTypography, TitleTypography } from './Components/Articles/sharedStyles';
-import { Container }                                   from '@material-ui/core';
-import { Iarticle }                                    from './ResourcesData';
+import React, { FC } from 'react'
+import { Typography } from '@mui/material'
+import { SimpleTypography, TitleTypography } from './Components/Articles/sharedStyles'
+import { Container } from '@material-ui/core'
+import { Iarticle } from './ResourcesData'
 
 export const HomeBuyingProcess: FC<Iarticle> = () => {
-
   return (
     <>
       <Container fixed>
@@ -88,4 +87,3 @@ export const HomeBuyingProcess: FC<Iarticle> = () => {
     </>
   )
 }
-

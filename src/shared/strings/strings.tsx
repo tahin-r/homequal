@@ -1,6 +1,6 @@
-import { FC }         from 'react'
+import { FC } from 'react'
 import { Typography } from '@mui/material'
-import { Variant }    from '@mui/material/styles/createTypography'
+import { Variant } from '@mui/material/styles/createTypography'
 
 interface IHomeQualText {
   variant: Variant,
@@ -18,13 +18,14 @@ export const HomeQualTextTemplate: FC<IHomeQualText> = ({ variant, fontWeight })
       </Typography>
     </>
 
-
   )
 }
 export const Copyrights: FC = () => {
   return <Typography variant="h6" sx={ {
-    fontStyle: 'italic', padding: '5px 20px', textAlign: 'center',
-    fontSize : { xs: '1rem', md: '1.1rem', lg: '1.2rem' },
+    fontStyle: 'italic',
+    padding: '5px 20px',
+    textAlign: 'center',
+    fontSize: { xs: '1rem', md: '1.1rem', lg: '1.2rem' }
   } }>
     Copyright 2022 HomeQual. All Rights Reserved
   </Typography>

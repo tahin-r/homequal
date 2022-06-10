@@ -1,7 +1,7 @@
-import React, { FC }  from 'react'
+import React, { FC } from 'react'
 import { Typography } from '@mui/material'
 import { SimpleTypography, TitleTypography } from './sharedStyles'
-import { Container }                         from '@material-ui/core'
+import { Container } from '@material-ui/core'
 
 interface IClosingDay {
   title: string
@@ -10,7 +10,6 @@ interface IClosingDay {
   image: string
 }
 export const ClosingDay:FC<IClosingDay> = (props) => {
-
   return (
     <Container fixed>
       <Typography variant="h4" color={ 'primary' } textAlign={ 'center' } my={ 2 }>

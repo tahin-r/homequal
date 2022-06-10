@@ -1,8 +1,8 @@
-import React, { FC }                         from 'react'
-import { Box, Typography }                   from '@mui/material';
-import { SimpleTypography, TitleTypography } from './sharedStyles';
-import { Container }                         from '@material-ui/core';
-import { Iarticle }                          from '../../ResourcesData';
+import React, { FC } from 'react'
+import { Box, Typography } from '@mui/material'
+import { SimpleTypography, TitleTypography } from './sharedStyles'
+import { Container } from '@material-ui/core'
+import { Iarticle } from '../../ResourcesData'
 
 export const MakeOffer: FC<Iarticle> = (props) => {
   return (
@@ -120,4 +120,3 @@ export const MakeOffer: FC<Iarticle> = (props) => {
     </>
   )
 }
-

@@ -1,10 +1,10 @@
-import React, { FC }               from 'react'
+import React, { FC } from 'react'
 import { Grid, Paper, Typography } from '@mui/material'
-import styled                      from 'styled-components'
-import { useNavigate }             from 'react-router-dom'
+import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
-const ItemPaper = styled(({ ...props }) => <Paper { ...props }  />)`
-  border     : ${ (props) => `2px solid ${ props.theme.colors.primary }` };
+const ItemPaper = styled(({ ...props }) => <Paper { ...props } />)`
+  border     : ${(props) => `2px solid ${props.theme.colors.primary}`};
   transition : 0.5s;
 
   &:active, &:hover {
@@ -35,7 +35,7 @@ const ImageHolder = styled(({ ...props }) => <div { ...props }/>)`
   box-sizing      : border-box;
   min-height      : 150px;
   width           : 100%;
-  background      : ${ (props) => `url(${ props.image }) center center no-repeat` };
+  background      : ${(props) => `url(${props.image}) center center no-repeat`};
   background-size : cover;
 `
 
@@ -45,7 +45,6 @@ interface IResourcesDashboardItem {
   title: string
   text: string
 }
-
 
 export const ResourcesDashboardItem: FC<IResourcesDashboardItem> = ({ image, link, title, text }) => {
   const navigate = useNavigate()
@@ -60,10 +59,12 @@ export const ResourcesDashboardItem: FC<IResourcesDashboardItem> = ({ image, lin
               { title }
             </Typography>
             <Typography variant="h6" lineHeight={ 1.3 } mt={ 2 }>
-              { text.length !== 0 ? text : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi ' +
-                'error id magnam modi quiquisquam, quos rem vel voluptate! Aliquam asperiores at commodi doloremque ex ' +
-                'ipsa ipsam ipsum iustomolestiae mollitia nobis, omnis quibusdam quis quod sequi soluta sunt suscipit ' +
-                'temporibus teneturvelit! Ab aperiam maiores natus odio voluptatem? ' }
+              { text.length !== 0
+                ? text
+                : `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi 
+                error id magnam modi quiquisquam, quos rem vel voluptate! Aliquam asperiores at commodi doloremque ex 
+                ipsa ipsam ipsum iustomolestiae mollitia nobis, omnis quibusdam quis quod sequi soluta sunt suscipit 
+                temporibus teneturvelit! Ab aperiam maiores natus odio voluptatem? ` }
             </Typography>
           </TextContainer>
         </Grid>

@@ -1,8 +1,8 @@
-import { Grid, Radio, TextField, Typography }                                  from '@mui/material'
+import { Grid, Radio, TextField, Typography } from '@mui/material'
 import React, { CSSProperties, FC, memo, SyntheticEvent, useEffect, useState } from 'react'
-import { FormikValues }                                                        from 'formik/dist/types'
-import { FormikProps }                                         from 'formik'
-import { IWrapper }                                            from '../Wrapper'
+import { FormikValues } from 'formik/dist/types'
+import { FormikProps } from 'formik'
+import { IWrapper } from '../Wrapper'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import NumberFormat from 'react-number-format'
 
@@ -19,8 +19,6 @@ interface IInputField {
   labelText?: string
 }
 
-
-
 export const InputNumberField: FC<IInputField> = memo(({ formik, item, index, mainstyles, labelText }) => {
   const styles = makeStyles(theme => ({
     notchedOutline: {
@@ -35,7 +33,7 @@ export const InputNumberField: FC<IInputField> = memo(({ formik, item, index, ma
           thousandSeparator={true}
           customInput={TextField}
           sx={ {
-            minWidth: '100px', maxWidth: '600px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles,
+            minWidth: '100px', maxWidth: '600px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles
           } }
           autoFocus={ index === 0 }
           variant="outlined"
@@ -48,8 +46,8 @@ export const InputNumberField: FC<IInputField> = memo(({ formik, item, index, ma
           InputProps={ {
             style: { fontSize: '1.4rem', fontWeight: 'bold' },
             classes: {
-              notchedOutline: classes.notchedOutline,
-            },
+              notchedOutline: classes.notchedOutline
+            }
           } }
           InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': { marginTop: '-10px', zIndex: 1 } } } }
           helperText={ formik.touched[item.value] &&
@@ -58,8 +56,10 @@ export const InputNumberField: FC<IInputField> = memo(({ formik, item, index, ma
                       sx={ { fontSize: '1rem' } }>{ formik.errors[item.value] }
           </Typography> }
           label={
-            <Typography variant="h6" color="#ccc" sx={ { fontSize: '15px !important', fontStyle: 'italic', fontWeight: 'regular' } }>
-              { labelText ? labelText : item.text }
+            <Typography variant="h6" color="#ccc" sx={ {
+              fontSize: '15px !important', fontStyle: 'italic', fontWeight: 'regular'
+            } }>
+              { labelText || item.text }
             </Typography> }
       />
   )
@@ -86,12 +86,12 @@ export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyl
                InputProps={ {
                  style: { fontSize: '1.4rem', fontWeight: 'bold' },
                  classes: {
-                   notchedOutline: classes.notchedOutline,
-                 },
+                   notchedOutline: classes.notchedOutline
+                 }
                } }
                InputLabelProps={ { sx: { '&.MuiInputLabel-shrink': { marginTop: '-10px', zIndex: 1 } } } }
                sx={ {
-                 minWidth: '100px', maxWidth: '600px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles,
+                 minWidth: '100px', maxWidth: '600px', paddingRight: '10vw', margin: '10px 0 5px 0', ...mainstyles
                } }
                error={ formik.touched[item.value] && Boolean(formik.errors[item.value]) }
                helperText={ formik.touched[item.value] &&
@@ -100,8 +100,10 @@ export const InputField: FC<IInputField> = memo(({ formik, item, index, mainstyl
                                sx={ { fontSize: '1rem' } }>{ formik.errors[item.value] }
                    </Typography> }
                label={
-                 <Typography variant="h6" color="#ccc" sx={ { fontSize: '15px !important', fontStyle: 'italic', fontWeight: 'regular' } }>
-                   { labelText ? labelText : item.text }
+                 <Typography variant="h6" color="#ccc" sx={ {
+                   fontSize: '15px !important', fontStyle: 'italic', fontWeight: 'regular'
+                 } }>
+                   { labelText || item.text }
                  </Typography> }
     />
   )
@@ -117,7 +119,13 @@ interface IRadioField {
   className?: string
 }
 
-export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLeft, answers, className }) => {
+export const RadioField: FC<IRadioField> = memo(({
+  formik,
+  formName,
+  nomarginLeft,
+  answers,
+  className
+}) => {
   const [value, setValue] = useState<string>(answers[0].value)
   const handleCurrentAnswer = (event: SyntheticEvent, checked: boolean, item: string) => {
     setValue(item)
@@ -126,7 +134,7 @@ export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLef
   useEffect(() => {
     formik.setFieldValue(formName, answers[0].value)
     setValue(answers[0].value)
-  }, [formName])
+  }, [formName, answers])
 
   return (
     <Grid className={className} container direction="column" sx={ { marginLeft: nomarginLeft ? '0' : '10vw' } }>
@@ -147,4 +155,3 @@ export const RadioField: FC<IRadioField> = memo(({ formik, formName, nomarginLef
     </Grid>
   )
 })
-

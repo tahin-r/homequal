@@ -1,15 +1,15 @@
-import { FC }               from 'react'
+import { FC } from 'react'
 import { Grid, Typography } from '@mui/material'
-import styled               from 'styled-components'
-import phoneImage           from '../../../../assets/images/phone.png'
+import styled from 'styled-components'
+import phoneImage from '../../../../assets/images/phone.png'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 
 const useStyles = makeStyles({
-    grid: {
-        ['@media(max-width: 1999px)'] : {
-            maxWidth:  '518px'
-        }
+  grid: {
+    '@media(max-width: 1999px)': {
+      maxWidth: '518px'
     }
+  }
 })
 const Title = styled(Typography)`
   margin-bottom : 20px;
@@ -30,7 +30,7 @@ const TextContent = styled(Typography)`
 `
 const PhoneImage = styled.img.attrs({
   src: phoneImage,
-  alt: 'phoneImage',
+  alt: 'phoneImage'
 })`
   width           : 25vw;
   min-width       : 100px;
@@ -83,7 +83,11 @@ export const HowItWorks: FC = () => {
 
   return (
     <ContentHolder>
-      <Grid item className={classes.grid} sx={ { padding: '20px', maxWidth: '500px', backgroundColor: 'rgba(255, 255, 255, 0.94)' } }>
+      <Grid
+        item
+        className={classes.grid}
+        sx={ { padding: '20px', maxWidth: '500px', backgroundColor: 'rgba(255, 255, 255, 0.94)' } }
+      >
         <Title variant={ 'h4' }>How it Works</Title>
         <TextContent variant={ 'h6' } fontWeight="light">
           You enter information - we analyze thousands of data points to create

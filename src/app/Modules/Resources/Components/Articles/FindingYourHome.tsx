@@ -1,10 +1,9 @@
-import { Box, Typography }                   from '@mui/material';
-import { Container }                         from '@material-ui/core'
-import { SimpleTypography, TitleTypography } from './sharedStyles';
-import React, { FC }                         from 'react';
+import { Box, Typography } from '@mui/material'
+import { Container } from '@material-ui/core'
+import { SimpleTypography, TitleTypography } from './sharedStyles'
+import React, { FC } from 'react'
 
 export const FindingYourHome: FC<any> = () => {
-
   return (
     <Container fixed>
       <Typography variant="h4" color={ 'primary' } textAlign={ 'center' } my={ 2 }>

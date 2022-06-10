@@ -1,10 +1,9 @@
-import React, { memo, useEffect }   from 'react'
-import { NavigateFunction }         from 'react-router-dom'
+import React, { memo, useEffect } from 'react'
+import { NavigateFunction } from 'react-router-dom'
 import { Button, Grid, Typography } from '@mui/material'
-import styled                       from 'styled-components'
-import { QuestionKeyType }          from '../questions'
-import { FormikProps }              from 'formik'
-
+import styled from 'styled-components'
+import { QuestionKeyType } from '../questions'
+import { FormikProps } from 'formik'
 
 const ColoredButton = styled(({ ...props }) => <Button { ...props } variant="outlined"
  color="primary"
@@ -22,7 +21,7 @@ const ColoredButton = styled(({ ...props }) => <Button { ...props } variant="out
 
   &:active {
     transition       : 0.1s;
-    background-color : ${ (props) => props.theme.colors.primary };
+    background-color : ${(props) => props.theme.colors.primary};
     color            : white
   }
 
@@ -33,14 +32,17 @@ const StyledForm = styled(({ ...props }) => <form { ...props }/>)`
   flex-direction : column;
 `
 
-
 export interface IWrapper {
   question: (state: {} | null) => string
   formik: FormikProps<any>,
   navigate: NavigateFunction,
   current: QuestionKeyType,
   next: QuestionKeyType,
-  SetCurrentQuestionHandler: (next: QuestionKeyType, current: QuestionKeyType, formik: FormikProps<any>, navigate: NavigateFunction) => void,
+  SetCurrentQuestionHandler: (
+    next: QuestionKeyType,
+    current: QuestionKeyType,
+    formik: FormikProps<any>,
+    navigate: NavigateFunction) => void,
   setSchema: (questionKey: QuestionKeyType) => void,
   description?: string
   status?: number
@@ -56,10 +58,8 @@ export const Wrapper: React.FC<IWrapper> = memo(({
   setSchema,
   description,
   status,
-  question,
+  question
 }) => {
-
-
   useEffect(() => {
     setTimeout(() => {
       formik.validateForm()
@@ -93,20 +93,20 @@ export const Wrapper: React.FC<IWrapper> = memo(({
         { children }
 
         <Typography variant="h6" sx={ {
-          marginY   : '2vh',
-          fontStyle : 'italic',
-          padding   : '20px 3vw 20px 10vw',
+          marginY: '2vh',
+          fontStyle: 'italic',
+          padding: '20px 3vw 20px 10vw',
           lineHeight: 1.2,
-          fontSize  : '1.1rem',
+          fontSize: '1.1rem'
         } }>
           { description }
         </Typography>
 
         { (current !== 'Q23' || status === 3) && formik.isValid && (
           <Grid container justifyContent="center" alignItems="center" sx={ {
-            height: '50px', mt: { xs: 'auto', sm: '50px' }, mb: '30px',
+            height: '50px', mt: { xs: 'auto', sm: '50px' }, mb: '30px'
           } }>
-            <ColoredButton onClick={ () => setTimeout(() => current !== 'Q23' ? handleClick() : navigate('/'), 300) }>
+            <ColoredButton onClick={ () => setTimeout(() => current !== 'Q23' ? handleClick() : navigate('/success'), 300) }>
               <Typography variant="h5">
                 Continue
               </Typography>

@@ -1,7 +1,7 @@
-import React, { FC }  from 'react';
-import { Typography } from '@mui/material';
-import { SimpleTypography, TitleTypography } from './sharedStyles';
-import { Container }                         from '@material-ui/core';
+import React, { FC } from 'react'
+import { Typography } from '@mui/material'
+import { SimpleTypography, TitleTypography } from './sharedStyles'
+import { Container } from '@material-ui/core'
 
 export const MortgageAndStudentLoanDebt:FC<any> = () => {
   return (

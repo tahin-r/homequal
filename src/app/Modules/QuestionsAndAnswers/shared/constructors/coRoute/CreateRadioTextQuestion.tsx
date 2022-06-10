@@ -1,8 +1,8 @@
 import { basicData, InputNumberField, RadioField } from '../shared'
-import React, { FC, memo }                   from 'react'
-import { Wrapper }                           from '../../Wrapper'
-import { Grid, Typography }                  from '@mui/material'
-import { ICreateRadioTextQuestion }          from '../../../questions'
+import React, { FC, memo } from 'react'
+import { Wrapper } from '../../Wrapper'
+import { Grid, Typography } from '@mui/material'
+import { ICreateRadioTextQuestion } from '../../../questions'
 
 interface IProps extends ICreateRadioTextQuestion, basicData {
 }
@@ -19,7 +19,7 @@ export const CreateRadioTextQuestion: FC<IProps> = memo(({
   co_question1,
   formName,
   co_formName,
-  wrapperProps,
+  wrapperProps
 }) => {
   return (
     <Wrapper { ...wrapperProps }>
@@ -49,7 +49,7 @@ export const CreateRadioTextQuestion: FC<IProps> = memo(({
         </Typography>
 
         { co_inputs.map((item, index: number) =>
-          <InputNumberField item={ item } formik={ formik } key={ index }/>,
+          <InputNumberField item={ item } formik={ formik } key={ index }/>
         ) }
       </Grid>
     </Wrapper>

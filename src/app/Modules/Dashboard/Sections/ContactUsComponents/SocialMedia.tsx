@@ -1,15 +1,15 @@
 import { Grid } from '@mui/material'
-import React    from 'react'
-import styled   from 'styled-components'
+import React from 'react'
+import styled from 'styled-components'
 import {
-  FaceBookIcon, LinkedInIcon, TicTocIcon, TwitterIcon, YoutubeIcon,
-}               from '../../../../../assets/images/SocialMediaImages'
+  FaceBookIcon, LinkedInIcon, TicTocIcon, TwitterIcon, YoutubeIcon
+} from '../../../../../assets/images/SocialMediaImages'
 
 const IconHolder = styled(({ ...props }) => <div { ...props } />)`
   border-radius   : 50%;
   min-width       : 50px;
   min-height      : 50px;
-  background      : url(${ props => props.icon }) 100% 100%;
+  background      : url(${props => props.icon}) 100% 100%;
   background-size : cover;
   transition      : 0.5s;
   user-select     : none;
@@ -44,27 +44,26 @@ const IconHolder = styled(({ ...props }) => <div { ...props } />)`
 const icons = [
   {
     icon: TicTocIcon,
-    link: 'https://www.tiktok.com/@myhomequal',
+    link: 'https://www.tiktok.com/@myhomequal'
   },
   {
     icon: YoutubeIcon,
-    link: 'https://www.youtube.com/channel/UCKCgpn57ik5kKI9T489hc-w',
+    link: 'https://www.youtube.com/channel/UCKCgpn57ik5kKI9T489hc-w'
   },
   {
     icon: TwitterIcon,
-    link: ' https://twitter.com/myhomequal',
+    link: ' https://twitter.com/myhomequal'
   },
   {
     icon: LinkedInIcon,
-    link: 'https://www.linkedin.com/company/homequal/about/?viewAsMember=true',
+    link: 'https://www.linkedin.com/company/homequal/about/?viewAsMember=true'
   },
   {
     icon: FaceBookIcon,
-    link: 'https://www.facebook.com/myhomequal',
+    link: 'https://www.facebook.com/myhomequal'
   }]
 
 export const SocialMedia = () => {
-
   return (
     <Grid container justifyContent="center" wrap="nowrap">
       { icons.map((item, index) => (

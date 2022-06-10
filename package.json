@@ -45,9 +45,78 @@
   },
   "eslintConfig": {
     "extends": [
+      "standard",
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "max-len": ["warn", {
+        "code": 120,
+        "ignoreComments": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }],
+      "camelcase": ["error", {
+        "allow": [
+          "co_answers",
+          "co_formName",
+          "co_question",
+          "co_inputs",
+          "co_question1",
+          "co_value",
+          "co_handleCurrentAnswer",
+          "co_setValue",
+          "ICreateDoubledCheck_Radio_BoxQuestion",
+          "CreateDoubleQuestionsWithTextFieldAndRadio_CheckBox",
+          "ICreateDoubleQuestionsWithTextFieldAndRadio_CheckBox",
+          "ICreateRadio_CheckBox_Question",
+          "first_name",
+          "last_name",
+          "cell_phone",
+          "email_address",
+          "co_first_name",
+          "co_last_name",
+          "co_cell_phone",
+          "co_email_address",
+          "monthly_payment_amount",
+          "home_savings",
+          "monthly_income",
+          "co_monthly_income",
+          "housing_payment_amount",
+          "co_housing_payment_amount",
+          "live_state_1",
+          "property_value",
+          "currently_owe",
+          "interest_rate",
+          "zip_code",
+          "live_state_3",
+          "live_state_2",
+          "co_living_situation",
+          "living_situation",
+          "co_credit_score_range",
+          "credit_score_range",
+          "member_buyer_student_details",
+          "co_member_buyer_student_details",
+          "member_buyer_details",
+          "co_member_buyer_details",
+          "co_other_expenses",
+          "co_student_loans",
+          "co_credit_card_expense",
+          "co_auto_expense",
+          "other_expenses",
+          "student_loans",
+          "credit_card_expense",
+          "auto_expense",
+          "move_range",
+          "co_marital_status",
+          "marital_status",
+          "credit_score",
+          "co_borrower_flag_r",
+          "co_borrower_flag",
+          "communication_preference_id"
+        ]
+      }]
+    }
   },
   "browserslist": {
     "production": [
@@ -62,6 +131,9 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.24"
+    "@types/styled-components": "^5.1.24",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0"
   }
 }
