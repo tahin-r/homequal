@@ -270,7 +270,7 @@ const Q8: ICreateTextFieldQuestion = {
     'We may find that you qualify for more or less, and we will show you that later.',
   elementConstructor: CreateTextNumberFieldQuestion,
   current: 'Q8',
-  next: 'Q9',
+  next: 'Q23',
   inputs: [
     {
       value: 'monthly_payment_amount',

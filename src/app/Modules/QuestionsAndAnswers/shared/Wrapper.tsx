@@ -4,6 +4,7 @@ import { Button, Grid, Typography } from '@mui/material'
 import styled from 'styled-components'
 import { QuestionKeyType } from '../questions'
 import { FormikProps } from 'formik'
+import useCurrentFormikValues from '../../../../shared/hooks/useCurrentFormikValues'
 
 const ColoredButton = styled(({ ...props }) => <Button { ...props } variant="outlined"
  color="primary"
@@ -60,7 +61,9 @@ export const Wrapper: React.FC<IWrapper> = memo(({
   status,
   question
 }) => {
+  const { saveCurrentFormikValues } = useCurrentFormikValues()
   useEffect(() => {
+    saveCurrentFormikValues(formik.values)
     setTimeout(() => {
       formik.validateForm()
     }, 50)

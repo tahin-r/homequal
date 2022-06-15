@@ -6,6 +6,7 @@ import RemoveIcon from '@mui/icons-material/Remove'
 import AddIcon from '@mui/icons-material/Add'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import NumberFormat from 'react-number-format'
+import useCurrentFormikValues from '../../../../shared/hooks/useCurrentFormikValues'
 
 const PaymentButtons = styled(({ ...props }) => <SvgIcon { ...props }/>)`
   width            : 5vw;
@@ -19,6 +20,7 @@ const PaymentButtons = styled(({ ...props }) => <SvgIcon { ...props }/>)`
   background-image : url(${(props: any) => props.hello});
   border-radius    : 50%;
   font-size        : 50px;
+  cursor        : pointer;
 `
 const Img = styled.img`
   max-width : 90vw;
@@ -37,12 +39,26 @@ const TableItem = styled(Box)`
 `
 
 export const Diagrams = () => {
-  const [monthlyPayment, setMonthlyPayment] = useState(0)
+  const { currentFormikValues } = useCurrentFormikValues()
+  const [monthlyPayment, setMonthlyPayment] = useState(currentFormikValues.monthly_payment_amount || 0)
   const handleMonthlyPaymentChange = (e: any) => {
     const value = e.target.value
-    if (/^[0-9]*$/.test(value)) {
-      setMonthlyPayment(value)
-    }
+    const monthlyPaymentClear = typeof value === 'string'
+      ? value.replace(',', '')
+      : value
+    setMonthlyPayment(monthlyPaymentClear)
+  }
+  const paymentsIncrease = () => {
+    const monthlyPaymentClear = typeof monthlyPayment === 'string'
+      ? monthlyPayment.replace(',', '')
+      : monthlyPayment
+    setMonthlyPayment(+monthlyPaymentClear + 1)
+  }
+  const paymentsDecrease = () => {
+    const monthlyPaymentClear = typeof monthlyPayment === 'string'
+      ? monthlyPayment.replace(',', '')
+      : monthlyPayment
+    setMonthlyPayment(+monthlyPaymentClear > 0 ? +monthlyPaymentClear - 1 : 0)
   }
 
   const styles = makeStyles(theme => ({
@@ -108,7 +124,7 @@ export const Diagrams = () => {
             <TableItem textAlign="center">
               <Typography className={classes.tableItemText} variant="h6" mb={ 1 }> MONTHLY PAYMENT </Typography>
               <Box sx={ { display: 'flex', justifyContent: 'space-around' } }>
-                <PaymentButtons component={ RemoveIcon }/>
+                <PaymentButtons onClick={ paymentsDecrease } component={ RemoveIcon }/>
                 <NumberFormat
                   thousandSeparator={true}
                   customInput={TextField}
@@ -122,7 +138,7 @@ export const Diagrams = () => {
                     }
                   } }
                 />
-                <PaymentButtons component={ AddIcon }/>
+                <PaymentButtons onClick={ paymentsIncrease } component={ AddIcon }/>
               </Box>
             </TableItem>
             <TableItem textAlign="center">
@@ -163,7 +179,7 @@ export const Diagrams = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Typography sx={ { minHeight: '62px', marginTop: '15px' } } variant="h6" textAlign="center">
+      <Typography sx={ { minHeight: '62px', marginTop: '15px', marginBottom: '15px' } } variant="h6" textAlign="center">
         Your qualification odds and home affordability calculator are an estimate
         of what you could afford and are provided as help-self tools for illustrative
         purposes only and are not guaranteed as to their applicability or

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import titleImage from '../../../../assets/images/SuccessPlan/successTitle.jpg'
 import { Box, Grid, Typography } from '@mui/material'
 import { HomeQualTextTemplate } from '../../../../shared/strings/strings'
+import useCurrentFormikValues from '../../../../shared/hooks/useCurrentFormikValues'
 
 export const Content = styled.div`
   width           : 100%;
@@ -24,6 +25,8 @@ export const Content = styled.div`
 `
 
 export const Title = () => {
+  const { currentFormikValues } = useCurrentFormikValues()
+
   return (
     <>
       <Content>
@@ -33,7 +36,7 @@ export const Title = () => {
           </Typography>
 
           <Typography variant="h4">
-            Dave Anderson
+            {currentFormikValues.first_name} {currentFormikValues.last_name}
           </Typography>
           <Box sx={ { display: 'flex' } }>
             <Typography variant="h6" fontWeight="bolder">Member ID :</Typography>
