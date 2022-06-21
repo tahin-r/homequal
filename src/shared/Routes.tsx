@@ -99,6 +99,10 @@ const mainRoutes = [
     element: <TermsOfUse/>
   },
   {
+    path: '/solution_odds',
+    element: <SuccessPlan/>
+  },
+  {
     path: '/success',
     element: <SuccessPlan/>
   },

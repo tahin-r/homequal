@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Box, Grid, SvgIcon, TextField, Typography } from '@mui/material'
-import pie from '../../../../assets/images/SuccessPlan/pie.png'
+import pie from '../../../../../assets/images/SuccessPlan/pie.png'
 import RemoveIcon from '@mui/icons-material/Remove'
 import AddIcon from '@mui/icons-material/Add'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import NumberFormat from 'react-number-format'
-import useCurrentFormikValues from '../../../../shared/hooks/useCurrentFormikValues'
+import useCurrentFormikValues from '../../../../../shared/hooks/useCurrentFormikValues'
 
 const PaymentButtons = styled(({ ...props }) => <SvgIcon { ...props }/>)`
   width            : 5vw;
