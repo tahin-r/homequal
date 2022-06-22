@@ -103,6 +103,10 @@ const mainRoutes = [
     element: <SuccessPlan/>
   },
   {
+    path: '/get_lender_letter',
+    element: <SuccessPlan/>
+  },
+  {
     path: '/success',
     element: <SuccessPlan/>
   },

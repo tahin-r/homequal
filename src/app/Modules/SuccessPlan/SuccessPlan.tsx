@@ -6,6 +6,7 @@ import { Diagrams } from './Sections/SuccessPlan/Diagrams'
 import { SuccessButton } from './Sections/SuccessButton'
 import { LoanButtons } from './Sections/SuccessPlan/LoanButtons'
 import { SolutionOdds } from './Sections/SolutionOdds/SolutionOdds'
+import { GetLenderLetter } from './Sections/GetLenderLetter/GetLenderLetter'
 import { useLocation } from 'react-router-dom'
 
 const sections = [
@@ -17,7 +18,8 @@ const sections = [
   },
   {
     link: '/get_lender_letter',
-    title: 'Get Your Lender Pre-Approval Letter'
+    title: 'Get Your Lender Pre-Approval Letter',
+    element: <GetLenderLetter/>
   },
   {
     link: '/design_your_home',
