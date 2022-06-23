@@ -1,28 +1,8 @@
-import React from 'react'
-import { Box, Radio, FormControlLabel, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import { Box, Radio, FormControlLabel, Typography, RadioGroup } from '@mui/material'
 import styled from 'styled-components'
 import getLetter from '../../../../../assets/images/SuccessPlan/getletter.jpg'
-
-const blocks = [
-  {
-    firstTitle: 'Housing Payment vs Mortgage Payment',
-    firstText: `Your new mortgage payment is considerably higher than your current
-    rent/mortgage payment which will cause the lender concern`,
-    secondTitle: 'HomeQual Recommends',
-    secondText: `You can improve your odds by preparing a letter of explanation
-    indicating you will be able to make the new payment`,
-    label: 'Close'
-  },
-  {
-    firstTitle: 'Amount Saved',
-    firstText: `The a mount you currently have saved may not be enough to cover the 
-    costs of the loan`,
-    secondTitle: 'HomeQual Recommends',
-    secondText: `We have ways to lower the amount of cash you will need. Speak with
-    your Advisor to learn how`,
-    label: 'Resolved'
-  }
-]
+import { GetLenderLetterPopup } from './GetLenderLetterPopup'
 
 const Img = styled.img`
   width     : 100%;
@@ -31,6 +11,8 @@ const Img = styled.img`
 `
 
 export const GetLenderLetter = () => {
+  const [currentGetLenderValue, setCurrentGetLenderValue] = useState('Y')
+
   return (
     <>
       <Box
@@ -46,59 +28,98 @@ export const GetLenderLetter = () => {
           Get Your Lender Pre-Approval Letter
         </Typography>
       </Box>
-      <Img src={ getLetter }/>
       <Box
         sx={ {
-          display: 'flex',
-          maxWidth: '800px',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          backgroundColor: '#fff',
-          padding: '0 20px',
-          margin: '0 auto',
-          borderRadius: '3px'
+          position: 'relative'
         } }
-        color="primary"
       >
-        <Typography variant='h5' marginBottom='40px' textAlign='center' color='#999'>
-          The first step in buying a home is becoming pre-approved
-          by a lender. This let's you know exactly what you can afford,
-          and show sellers you are qualified and a serious buyer.
-        </Typography>
-        <Typography variant="h5" marginBottom='40px' textAlign="center" color="#999">
-          In order to assign you a lender, we will need your
-          permission to send your contact information to the lender.
-        </Typography>
+        <Img src={ getLetter }/>
         <Box
           sx={ {
             display: 'flex',
+            maxWidth: '800px',
             flexDirection: 'column',
             justifyContent: 'center',
             backgroundColor: '#fff',
-            padding: '25px 60px',
-            margin: '0 auto 60px',
-            border: '1px solid rgb(237,31,138)',
-            borderRadius: '2px',
-            boxShadow: '10px 5px 5px #ccc'
+            padding: '0 20px',
+            margin: '0 auto',
+            borderRadius: '3px'
           } }
+          color="primary"
         >
-          <FormControlLabel control={ <Radio sx={ { transform: 'scale(1.3)' } }/> }
-            label={<Typography fontSize='34px' fontWeight='bold'>Yes, I give my autorisation</Typography>}
-            name='getLender'
-            value='Y'
-            id='getLenderY'
-            color="primary"
-            sx={ { margin: '1vh 0', minWidth: '50px', fontSize: '17px' } }
-          />
-          <FormControlLabel control={ <Radio sx={ { transform: 'scale(1.3)' } }/> }
-            label={<Typography fontSize='34px' fontWeight='bold'>No, I already have a lender</Typography>}
-            name='getLender'
-            value='N'
-            id='getLenderN'
-            color="primary"
-            sx={ { margin: '1vh 0', minWidth: '50px', fontSize: '17px' } }
-          />
+          <Typography variant='h5' marginBottom='40px' textAlign='center' color='#999'>
+            The first step in buying a home is becoming pre-approved
+            by a lender. This let's you know exactly what you can afford,
+            and show sellers you are qualified and a serious buyer.
+          </Typography>
+          <Typography variant="h5" marginBottom='40px' textAlign="center" color="#999">
+            In order to assign you a lender, we will need your
+            permission to send your contact information to the lender.
+          </Typography>
+          <Box
+            sx={ {
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              backgroundColor: '#fff',
+              padding: '25px 60px',
+              margin: '0 auto 60px',
+              border: '1px solid rgb(237,31,138)',
+              borderRadius: '2px',
+              boxShadow: '10px 5px 5px #ccc'
+            } }
+          >
+            <RadioGroup
+              name='getLender-buttons-group'
+              defaultValue='Y'
+              onChange={ (e, value) => {
+                setCurrentGetLenderValue(value)
+              } }
+            >
+              <FormControlLabel control={ <Radio id='getLenderY' sx={ { transform: 'scale(1.3)' } }/> }
+                label={
+                  <Typography
+                    fontSize='34px'
+                    fontWeight='bold'
+                    sx={ {
+                      ['@media screen and (max-width: 500px)']: {
+                        fontSize: '18px'
+                      }
+                    } }
+                  >
+                    Yes, I give my authorization
+                  </Typography>
+                }
+                name='getLender'
+                value='Y'
+                color="primary"
+                sx={ { margin: '1vh 0', minWidth: '50px', fontSize: '17px' } }
+              />
+              <FormControlLabel control={ <Radio id='getLenderN'sx={ { transform: 'scale(1.3)' } }/> }
+                label={
+                  <Typography
+                    fontSize='34px'
+                    fontWeight='bold'
+                    sx={ {
+                      ['@media screen and (max-width: 500px)']: {
+                        fontSize: '18px'
+                      }
+                    } }
+                  >
+                    No, I already have a lender
+                  </Typography>
+                }
+                name='getLender'
+                value='N'
+                color="primary"
+                sx={ { margin: '1vh 0', minWidth: '50px', fontSize: '17px' } }
+              />
+            </RadioGroup>
+          </Box>
         </Box>
+        {
+          currentGetLenderValue === 'N' && <GetLenderLetterPopup/>
+        }
       </Box>
     </>
   )
