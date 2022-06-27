@@ -1,16 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Box, Radio, FormControlLabel, Typography, RadioGroup } from '@mui/material'
-import styled from 'styled-components'
-
-const Img = styled.img`
-  width     : 100%;
-  margin-bottom: 60px;
-  max-height: 450px;
-`
 
 export const GetLenderLetterPopup = () => {
-  const [currentGetLenderValue, setCurrentGetLenderValue] = useState('Y')
-
   return (
     <>
       <Box
@@ -93,9 +84,6 @@ export const GetLenderLetterPopup = () => {
               ['@media screen and (max-width: 500px)']: {
                 padding: '10px 10px'
               }
-            } }
-            onChange={ (e, value) => {
-              setCurrentGetLenderValue(value)
             } }
           >
             <FormControlLabel

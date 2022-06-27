@@ -11,6 +11,8 @@ import { Resources } from '../app/Modules/Resources/Resources'
 import { PrivacyPolicy } from '../app/Modules/PrivacyPolicy/PrivacyPolicy'
 import { TermsOfUse } from '../app/Modules/TermsOfUse/TermsOfUse'
 import { SuccessPlan } from '../app/Modules/SuccessPlan/SuccessPlan'
+import { Login } from '../app/Modules/Login/Login'
+import { ForgotYourPassword } from '../app/Modules/Login/ForgotYourPassword'
 import {
   questionsList,
   refinanceQuestionsList,
@@ -109,6 +111,14 @@ const mainRoutes = [
   {
     path: '/success',
     element: <SuccessPlan/>
+  },
+  {
+    path: '/login',
+    element: <Login/>
+  },
+  {
+    path: '/forgot_your_password',
+    element: <ForgotYourPassword/>
   },
   {
     path: '/*',

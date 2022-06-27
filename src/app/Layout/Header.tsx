@@ -89,6 +89,8 @@ export const Header = () => {
       location.pathname.includes('buy_a_home') ||
       location.pathname.includes('find_a_lender') ||
       location.pathname.includes('find_agent') ||
+      location.pathname.includes('login') ||
+      location.pathname.includes('forgot_your_password') ||
       location.pathname.includes('speak_advisor')
         ? 'relative'
         : 'fixed'
