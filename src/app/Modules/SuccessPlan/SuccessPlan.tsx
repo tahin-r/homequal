@@ -7,6 +7,7 @@ import { SuccessButton } from './Sections/SuccessButton'
 import { LoanButtons } from './Sections/SuccessPlan/LoanButtons'
 import { SolutionOdds } from './Sections/SolutionOdds/SolutionOdds'
 import { GetLenderLetter } from './Sections/GetLenderLetter/GetLenderLetter'
+import { DesignHome } from './Sections/DesignHome/DesignHome'
 import { useLocation } from 'react-router-dom'
 
 const sections = [
@@ -23,7 +24,8 @@ const sections = [
   },
   {
     link: '/design_your_home',
-    title: 'Design Your Dream Home'
+    title: 'Design Your Dream Home',
+    element: <DesignHome/>
   },
   {
     link: '/get_real_estate_and_view',
@@ -54,10 +56,10 @@ export const SuccessPlan = () => {
   return (
     <>
       <HeaderDivider/>
-      <Title/>
       {
         path === '/success'
           ? <>
+            <Title/>
             <SuccessActiveButton/>
             <LoanButtons/>
             <Diagrams/>

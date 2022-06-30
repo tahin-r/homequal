@@ -109,6 +109,10 @@ const mainRoutes = [
     element: <SuccessPlan/>
   },
   {
+    path: '/design_your_home',
+    element: <SuccessPlan/>
+  },
+  {
     path: '/success',
     element: <SuccessPlan/>
   },
